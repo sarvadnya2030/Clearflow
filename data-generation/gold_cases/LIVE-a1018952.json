@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-a1018952",
+  "fault_type": "DB_TIMEOUT",
+  "injector_claimed_root": "settlement",
+  "injection_time": "2026-09-02T03:10:06.689021+00:00",
+  "duration_seconds": 20,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: settlement: DOWN (consecutive=1) at 03:10:08.354, RECOVERED shortly after",
+    "Direct event-type count across the window: 12 PAYMENT_ROUTED vs 0 SETTLEMENT_COMPLETE"
+  ],
+  "reasoning_trace": "Fourth independent injection of this fault type (round 4). Witness monitor: settlement DOWN then RECOVERED, generated independently. Direct event-type count across the window: 12 payments reached PAYMENT_ROUTED via routing-execution, but exactly 0 reached SETTLEMENT_COMPLETE. Fourth consecutive clean replication of the same evidentiary shape. Conclusion reached from evidence alone, before reading the injector's own log: settlement.",
+  "blind_conclusion": "settlement",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (settlement) matches the injector's own ground-truth log exactly. Fourth independent replication of this fault type -- consistent, stable evidentiary pattern across all four runs."
+}

@@ -1,0 +1,17 @@
+{
+  "incident_id": "LIVE-374da004",
+  "fault_type": "IDEMPOTENCY_COLLISION_STORM",
+  "injector_claimed_root": "gateway",
+  "injection_time": "2026-09-01T21:58:58.568051+00:00",
+  "duration_seconds": 5,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "health_witness_monitor output: no event fired at all",
+    "All gateway-service events in the exact 5-6s injection window (21:58:58 to 21:59:04), checked individually",
+    "grep -i duplicate against the raw dev-logs/gateway.log file directly (a different evidence source than ES, checked independently this time)"
+  ],
+  "reasoning_trace": "Clean re-run of this fault type with the pipeline bug fixed (inject_gold_case.py no longer prints the injector's raw stdout, so no ground-truth leak this time -- verified by checking the console output before investigating, it correctly showed only a generic completion message). Read the witness monitor output first: no event fired -- correct, gateway's process never crashes for this fault type. Reviewed every gateway-service event in the exact injection window: all are PAYMENT_SUBMITTED / Outbox enqueued / solacePublish for distinct payment IDs from ongoing background traffic (3/s), each processing normally through the full pipeline. Nothing resembling a duplicate-submission rejection, a 409, or an idempotency-related log line anywhere. Separately checked the raw gateway.log file directly with grep (a different evidence source than the ES query, in case of an ES indexing gap) -- zero matches for 'duplicate', confirming the earlier finding independently, not just repeating the same query. Genuine conclusion from the available evidence: there is nothing here to distinguish gateway (or any service) as the root cause -- the 409-rejected duplicate submissions leave no trace at any layer checked (ES logs, raw application log file, external health witness). This is not a wrong guess; it is a correct recognition that this evidence tier contains no signal for this fault type, structurally different from the crash-fault cases (data destroyed by SIGKILL) -- here the data was simply never created, because gateway's idempotency check rejects the request before anything is logged.",
+  "blind_conclusion": "insufficient evidence to determine a root cause from this evidence tier (not a guess of any service)",
+  "confirmed": false,
+  "confirmation_basis": "The injector's ground truth is gateway, which the blind investigation did not and could not reach from evidence -- but this is honestly reported as 'correctly recognized no evidence' rather than 'wrong guess'. Independently re-confirmed the same evidentiary gap found in the earlier contaminated case (LIVE-fb98b217), this time via a clean methodology (no leak) and an additional evidence source (raw log file grep, not just ES). Real, robust, twice-independently-verified finding: IDEMPOTENCY_COLLISION_STORM belongs in the same 'genuinely no distinguishing evidence' category as the crash-fault cases already documented, but for a structurally different reason -- a business-layer rejection that occurs before any log event is created, not data destroyed by a process kill."
+}

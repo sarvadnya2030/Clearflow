@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-50580610",
+  "fault_type": "NETWORK_LATENCY",
+  "injector_claimed_root": "validation-enrichment",
+  "injection_time": "2026-09-01T23:34:06.869367+00:00",
+  "duration_seconds": 20,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: validation-enrichment: DOWN (consecutive=1) at 23:34:08.990, RECOVERED shortly after",
+    "Traced 8 payments submitted across the window"
+  ],
+  "reasoning_trace": "Second independent injection of this fault type. Read the witness monitor output first, blind: validation-enrichment DOWN, then RECOVERED. Traced 8 payments in the window. All show the same pattern already established for this fault type: gateway PAYMENT_SUBMITTED, audit AUDIT_CHAIN_APPENDED, fraud-scoring FRAUD_SCORE_COMPUTED (independent of the sequential chain), audit AUDIT_CHAIN_APPENDED -- and then nothing further. None show PAYMENT_VALIDATED. Clean, consistent stall specific to validation-enrichment, replicating the exact evidentiary shape of the first NETWORK_LATENCY gold case (LIVE-c714ec37). Conclusion reached from evidence alone, before reading the injector's own log: validation-enrichment.",
+  "blind_conclusion": "validation-enrichment",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (validation-enrichment) matches the injector's own ground-truth log exactly. Second independent replication of this fault type -- same evidentiary shape as the first case."
+}

@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-084a3a65",
+  "fault_type": "CPU_SATURATION",
+  "injector_claimed_root": "aml-compliance",
+  "injection_time": "2026-09-01T23:46:09.440725+00:00",
+  "duration_seconds": 20,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: aml-compliance: DOWN (consecutive=1) at 23:46:11.618, RECOVERED shortly after",
+    "Traced 5 payments submitted across the window"
+  ],
+  "reasoning_trace": "Second independent injection of this fault type. Read the witness monitor output first, blind: aml-compliance DOWN, then RECOVERED. Traced 5 payments in the window. All show the same pattern already established for this fault type: gateway PAYMENT_SUBMITTED, audit, validation-enrichment PAYMENT_VALIDATED, audit, fraud-scoring FRAUD_SCORE_COMPUTED (independent of the sequential chain), audit -- and then nothing further. None show AML_SCREENING_COMPLETE. Clean, consistent stall specific to aml-compliance, replicating the exact evidentiary shape of the first CPU_SATURATION gold case (LIVE-75f80ed7). Conclusion reached from evidence alone, before reading the injector's own log: aml-compliance.",
+  "blind_conclusion": "aml-compliance",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (aml-compliance) matches the injector's own ground-truth log exactly. Second independent replication of this fault type -- same evidentiary shape as the first case."
+}

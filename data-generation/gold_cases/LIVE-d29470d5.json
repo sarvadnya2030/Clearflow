@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-d29470d5",
+  "fault_type": "SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE",
+  "injector_claimed_root": "settlement",
+  "injection_time": "2026-09-01T22:22:11.287065+00:00",
+  "duration_seconds": 30,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the full 30s injection window, sorted by @timestamp",
+    "Health witness log: settlement: DOWN (consecutive=1) at 22:22:13.414, RECOVERED shortly after",
+    "Traced 8 payments submitted across the full window (88f06dd7, c8a7a300, a7967033, f3cb1b90, 7d5d0601, a8122962, a8d24153, 4907b97a)"
+  ],
+  "reasoning_trace": "This fault type is labeled cross_domain/cascade, so per the project's own known history these can have a confounding secondary symptom that outshines the real root -- traced more payments than usual across the full 30s window specifically to check for that, not just accepting the first signal. Witness monitor: settlement DOWN then RECOVERED, generated independently with no foreknowledge. Traced 8 payments spanning the entire window. All 8 show the identical pattern: gateway PAYMENT_SUBMITTED, validation-enrichment PAYMENT_VALIDATED (one payment, a7967033, got a legitimate business PAYMENT_REJECTED at validation -- not a stall, a real outcome), aml-compliance AML_SCREENING_COMPLETE, routing-execution RAIL_SELECTED and PAYMENT_ROUTED, fraud-scoring FRAUD_SCORE_COMPUTED (independent of the sequential chain, as established in earlier cases) -- and then nothing further. None of the 8 show a SETTLEMENT_COMPLETE event. Unlike what the cascade/confounded label might suggest, no other service shows any anomaly here: routing-execution's RAIL_SELECTED and PAYMENT_ROUTED fire promptly and normally for every payment, aml-compliance clears every payment quickly, validation-enrichment shows no unusual latency. The stall is clean and specific to settlement, matching the DB_TIMEOUT case's pattern exactly (same root service, same evidentiary shape). Conclusion reached from evidence alone, before reading the injector's own log: settlement.",
+  "blind_conclusion": "settlement",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (settlement) matches the injector's own ground-truth log exactly. Corroborated by both the independent health witness and a consistent payment-funnel stall boundary across 8 traced payments spanning the full window -- deliberately checked more payments than usual given this fault type's 'cascade' label, and found no misleading secondary symptom in this particular run."
+}

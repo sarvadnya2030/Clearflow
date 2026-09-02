@@ -1,0 +1,44 @@
+server:
+  port: 8086
+spring:
+  config:
+    import: "optional:vault://,optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}"
+  application:
+    name: audit
+  data:
+    cassandra:
+      keyspace-name: clearflow
+      contact-points: ${SPRING_DATA_CASSANDRA_CONTACT_POINTS:localhost}
+      local-datacenter: datacenter1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,info
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://localhost:4318/v1/traces}
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  info:
+    title: ClearFlow ${spring.application.name}
+    version: 1.0.0
+    description: ISO 20022 payment processing microservice

@@ -1,0 +1,24 @@
+{
+  "namespace": "com.clearflow.common.avro",
+  "type": "record",
+  "name": "PaymentInitiatedEvent",
+  "doc": "ISO 20022 pacs.008 payment initiated event — published to CLEARFLOW.PAYMENT.SUBMITTED",
+  "fields": [
+    { "name": "paymentId",      "type": "string", "doc": "ClearFlow internal UUID" },
+    { "name": "correlationId",  "type": "string" },
+    { "name": "instructionId",  "type": "string", "doc": "ISO 20022 InstrId" },
+    { "name": "endToEndId",     "type": "string", "doc": "ISO 20022 EndToEndId (max 35 chars)" },
+    { "name": "uetr",           "type": "string", "doc": "SWIFT GPI Unique End-to-End Transaction Reference" },
+    { "name": "debtorIbanMasked",   "type": "string" },
+    { "name": "creditorIbanMasked", "type": "string" },
+    { "name": "amount",         "type": { "type": "bytes", "logicalType": "decimal", "precision": 18, "scale": 2 } },
+    { "name": "currency",       "type": "string", "doc": "ISO 4217 3-letter code" },
+    { "name": "debtorCountry",  "type": "string", "doc": "ISO 3166-1 alpha-2" },
+    { "name": "creditorCountry","type": "string", "doc": "ISO 3166-1 alpha-2" },
+    { "name": "channel",        "type": { "type": "enum", "name": "PaymentChannel",
+      "symbols": ["SWIFT", "SEPA", "FEDWIRE", "FASTER_PAYMENTS", "INTERNAL"] }
+    },
+    { "name": "timestamp",      "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "sourceService",  "type": "string", "default": "gateway" }
+  ]
+}

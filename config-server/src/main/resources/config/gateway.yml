@@ -1,0 +1,8 @@
+security:
+  cors:
+    allowed-origins:
+      - http://localhost:3000
+rate-limit:
+  requests-per-second: 100
+oauth2:
+  issuer-uri: ${OAUTH2_ISSUER_URI:http://localhost:8090/realms/clearflow}

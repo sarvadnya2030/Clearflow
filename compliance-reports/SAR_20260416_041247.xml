@@ -1,0 +1,1109 @@
+<?xml version="1.0" ?>
+<FinCEN_SAR xmlns="http://www.fincen.gov/base" GeneratedDate="2026-04-16" ReportId="SAR-CLEARFLOW-20260416_041247" FilingInstitution="ClearFlow Payment Network" FilingInstitutionTIN="XX-CLEARFLOW">
+  <FilingSummary>
+    <TotalSARs>50</TotalSARs>
+    <ReportingPeriodStart>2026-01-16</ReportingPeriodStart>
+    <ReportingPeriodEnd>2026-04-16</ReportingPeriodEnd>
+    <TotalSuspiciousAmount>53645585.0</TotalSuspiciousAmount>
+  </FilingSummary>
+  <SuspiciousActivityReport sequence="1">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0001</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-19</ActivityDate>
+    <PaymentId>c2d9f86b-21c5-4ae0-95cf-3b08dd0c2ec1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1996705.28</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>MINSK EXPORT GROUP</Name>
+      <Country>KP</Country>
+      <IBAN>KP973727771497194792</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="2">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0002</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-03</ActivityDate>
+    <PaymentId>3eeb507a-b59c-452f-b9db-4b4f8e9490b6</PaymentId>
+    <SuspiciousAmount>
+      <Amount>209008.11</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>SY</Country>
+      <IBAN>KP954962124660320479</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="3">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0003</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-27</ActivityDate>
+    <PaymentId>125f6f00-93d5-4d92-87a8-c3b3f405eb88</PaymentId>
+    <SuspiciousAmount>
+      <Amount>19640.42</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>MINSK EXPORT GROUP</Name>
+      <Country>KP</Country>
+      <IBAN>KP906537282633833493</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>FRAUD_CRITICAL</ActivityType>
+      <Description>Fraud score critical — riskBand=CRITICAL amount=19640.42</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="4">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0004</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-13</ActivityDate>
+    <PaymentId>44f94914-dbfa-4186-b942-c023df849f5e</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1235692.98</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>MINSK EXPORT GROUP</Name>
+      <Country>CU</Country>
+      <IBAN>KP519350695724252218</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="5">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0005</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-29</ActivityDate>
+    <PaymentId>15d8f047-5b3f-4878-a392-8a1be85a35b5</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1450287.81</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>MINSK EXPORT GROUP</Name>
+      <Country>SD</Country>
+      <IBAN>KP300953519087561869</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="6">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0006</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-02</ActivityDate>
+    <PaymentId>89ed560d-4f4a-4446-aec1-77d5363351ab</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1320238.94</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>SD</Country>
+      <IBAN>KP225872770422590393</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="7">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0007</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>077709f4-2a1c-437a-a1a0-969f1be00c17</PaymentId>
+    <SuspiciousAmount>
+      <Amount>460878.67</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>KP</Country>
+      <IBAN>KP804337933279531792</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="8">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0008</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-26</ActivityDate>
+    <PaymentId>2fa5533e-c6fc-42b4-811a-f4d1fa6e4f96</PaymentId>
+    <SuspiciousAmount>
+      <Amount>645994.94</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN HOLDINGS</Name>
+      <Country>RU</Country>
+      <IBAN>KP481967070461370448</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="9">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0009</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-02</ActivityDate>
+    <PaymentId>334f4e64-8274-4730-9400-920f5bbb6e61</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1577836.39</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN HOLDINGS</Name>
+      <Country>SY</Country>
+      <IBAN>KP251138066247350975</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SUSPICIOUS_TRANSACTION</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="10">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0010</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>3aabb9a6-2c34-4f06-8254-2fc1c5822a05</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1199660.49</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN HOLDINGS</Name>
+      <Country>SD</Country>
+      <IBAN>KP102502687895092007</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>FRAUD_CRITICAL</ActivityType>
+      <Description>Fraud score critical — riskBand=CRITICAL amount=1199660.49</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="11">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0011</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-30</ActivityDate>
+    <PaymentId>cabf51a1-b3ae-45d0-a715-fbdaed61979f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>976457.56</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>SY</Country>
+      <IBAN>KP337484506306888828</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="12">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0012</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>8720cb6c-5e61-4532-962b-81ca518752f4</PaymentId>
+    <SuspiciousAmount>
+      <Amount>189656.59</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>CU</Country>
+      <IBAN>KP510288338605146287</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="13">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0013</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-28</ActivityDate>
+    <PaymentId>9cf6fae5-e36d-41e4-aa78-5010751952e4</PaymentId>
+    <SuspiciousAmount>
+      <Amount>897878.35</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>SD</Country>
+      <IBAN>KP903068235164093662</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SUSPICIOUS_TRANSACTION</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="14">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0014</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-21</ActivityDate>
+    <PaymentId>30244e0f-8b70-4e8e-a117-66cb3d1dceaf</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1814085.49</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>SY</Country>
+      <IBAN>KP874006316816702435</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SUSPICIOUS_TRANSACTION</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="15">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0015</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-19</ActivityDate>
+    <PaymentId>b8d7669d-7e48-473b-8480-5ff8717ce2ba</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1406473.27</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>IR</Country>
+      <IBAN>KP115945635322964430</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="16">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0016</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-01</ActivityDate>
+    <PaymentId>99b1eccc-9099-4637-95f4-83507b220e40</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1954691.83</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>IR</Country>
+      <IBAN>KP604577555247495515</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SUSPICIOUS_TRANSACTION</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="17">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0017</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>85fcc67d-c128-4e26-917f-133fece1f695</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1701208.82</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>SD</Country>
+      <IBAN>KP886859728457048674</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="18">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0018</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-22</ActivityDate>
+    <PaymentId>ea5c4129-f928-46a7-b813-475229e0bf3e</PaymentId>
+    <SuspiciousAmount>
+      <Amount>14977.24</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>IR</Country>
+      <IBAN>KP969818480669481578</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="19">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0019</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-11</ActivityDate>
+    <PaymentId>2948efff-c1ad-4ff7-b48d-77ebd36f6414</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1703773.88</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN HOLDINGS</Name>
+      <Country>CU</Country>
+      <IBAN>KP876712958474523991</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SUSPICIOUS_TRANSACTION</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="20">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0020</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-07</ActivityDate>
+    <PaymentId>46548a21-7694-49aa-a6ed-1a2951cfc75b</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1796530.6</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>TEHRAN CAPITAL LLC</Name>
+      <Country>KP</Country>
+      <IBAN>KP453999259533934318</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>FRAUD_CRITICAL</ActivityType>
+      <Description>Fraud score critical — riskBand=CRITICAL amount=1796530.6</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="21">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0021</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-05</ActivityDate>
+    <PaymentId>cf61d0e0-8133-42b6-a1a6-89f011a47168</PaymentId>
+    <SuspiciousAmount>
+      <Amount>996856.54</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>SD</Country>
+      <IBAN>KP237455195371299014</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>FRAUD_CRITICAL</ActivityType>
+      <Description>Fraud score critical — riskBand=CRITICAL amount=996856.54</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="22">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0022</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-19</ActivityDate>
+    <PaymentId>14d2252e-867e-48be-9394-6de23f2c0348</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1321565.97</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN HOLDINGS</Name>
+      <Country>SD</Country>
+      <IBAN>KP663536166645224408</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="23">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0023</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-06</ActivityDate>
+    <PaymentId>32978638-4fd5-434e-89a3-8c6d61645340</PaymentId>
+    <SuspiciousAmount>
+      <Amount>968085.21</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>SD</Country>
+      <IBAN>KP102909395652888465</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="24">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0024</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>f44aee9a-d23a-49da-aa4f-5ab76610b61f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1977486.25</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>IR</Country>
+      <IBAN>KP904659262728109395</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="25">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0025</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-10</ActivityDate>
+    <PaymentId>b656bb58-9a6d-4ee5-ae2b-9323dcb32a62</PaymentId>
+    <SuspiciousAmount>
+      <Amount>928273.5</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>IR</Country>
+      <IBAN>KP210877050954803367</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="26">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0026</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-30</ActivityDate>
+    <PaymentId>b7064482-f8d9-4ed5-bd91-31b6dd80ae09</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1313724.15</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>MINSK EXPORT GROUP</Name>
+      <Country>IR</Country>
+      <IBAN>KP214489401609711168</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="27">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0027</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-21</ActivityDate>
+    <PaymentId>f1d74b26-0221-4300-b9dc-05f39a247c11</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1390738.94</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN HOLDINGS</Name>
+      <Country>KP</Country>
+      <IBAN>KP407261920958970607</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="28">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0028</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-20</ActivityDate>
+    <PaymentId>4f46a8cb-3868-4c4c-a5e2-6e7494c8f578</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1684017.49</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>KP</Country>
+      <IBAN>KP247905755379684443</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>FRAUD_CRITICAL</ActivityType>
+      <Description>Fraud score critical — riskBand=CRITICAL amount=1684017.49</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="29">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0029</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-13</ActivityDate>
+    <PaymentId>e5cda14d-86f9-4877-835a-9c57db703eea</PaymentId>
+    <SuspiciousAmount>
+      <Amount>883661.0</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>MINSK EXPORT GROUP</Name>
+      <Country>SY</Country>
+      <IBAN>KP530951731254654140</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="30">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0030</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>6a0cc4dd-2eb1-4bbe-88ef-01b127f1b935</PaymentId>
+    <SuspiciousAmount>
+      <Amount>728563.33</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>KP</Country>
+      <IBAN>KP855951453240479924</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="31">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0031</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-18</ActivityDate>
+    <PaymentId>2585b8ea-d832-4e01-a470-91be5fa63207</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1353476.86</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>KP</Country>
+      <IBAN>KP386543707434756383</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="32">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0032</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>42367e2b-697f-42ca-8fe4-67fe6d060e87</PaymentId>
+    <SuspiciousAmount>
+      <Amount>739316.02</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>MINSK EXPORT GROUP</Name>
+      <Country>KP</Country>
+      <IBAN>KP264668977403364921</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>FRAUD_CRITICAL</ActivityType>
+      <Description>Fraud score critical — riskBand=CRITICAL amount=739316.02</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="33">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0033</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>6ce8d093-930e-447e-a0c5-c9715c8c70bb</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1788517.17</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>CU</Country>
+      <IBAN>KP200209346778081196</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="34">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0034</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-10</ActivityDate>
+    <PaymentId>9c0a3b77-ef47-439a-8ed3-11b2a252c65f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1133408.15</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>TEHRAN CAPITAL LLC</Name>
+      <Country>SD</Country>
+      <IBAN>KP418581646103910378</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="35">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0035</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-05</ActivityDate>
+    <PaymentId>2b206f12-6f73-4aef-bef0-4b477d2e7dd7</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1719540.46</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN HOLDINGS</Name>
+      <Country>KP</Country>
+      <IBAN>KP670725717729198132</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="36">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0036</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-29</ActivityDate>
+    <PaymentId>58dd2c26-f85a-4e66-bebb-1cc54612cfe9</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1629759.46</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>SD</Country>
+      <IBAN>KP791708156829038146</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="37">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0037</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-17</ActivityDate>
+    <PaymentId>e2ad1a84-a954-4832-a5f4-daf8f9e52f24</PaymentId>
+    <SuspiciousAmount>
+      <Amount>82379.34</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>IR</Country>
+      <IBAN>KP211849846861006534</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="38">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0038</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-17</ActivityDate>
+    <PaymentId>bc4eae3c-cf79-4c84-8a83-09ee7d899e28</PaymentId>
+    <SuspiciousAmount>
+      <Amount>503096.17</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>SD</Country>
+      <IBAN>KP979794060763280256</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>FRAUD_CRITICAL</ActivityType>
+      <Description>Fraud score critical — riskBand=CRITICAL amount=503096.17</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="39">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0039</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-08</ActivityDate>
+    <PaymentId>36d23d95-d9d9-4578-9ba3-a51efcc307dd</PaymentId>
+    <SuspiciousAmount>
+      <Amount>761517.33</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>IR</Country>
+      <IBAN>KP416312528130435557</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="40">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0040</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-10</ActivityDate>
+    <PaymentId>f6fdc1b4-deea-40b6-a8b7-bd25c33e6b8f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1025735.95</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>MINSK EXPORT GROUP</Name>
+      <Country>SY</Country>
+      <IBAN>KP922947274169935747</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SUSPICIOUS_TRANSACTION</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="41">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0041</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-16</ActivityDate>
+    <PaymentId>310ec3ea-7ff6-45dd-8ad6-1f683b493d45</PaymentId>
+    <SuspiciousAmount>
+      <Amount>759333.43</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>TEHRAN CAPITAL LLC</Name>
+      <Country>SD</Country>
+      <IBAN>KP749552026351614084</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>FRAUD_CRITICAL</ActivityType>
+      <Description>Fraud score critical — riskBand=CRITICAL amount=759333.43</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="42">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0042</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-19</ActivityDate>
+    <PaymentId>76a8cfa3-bb95-49d1-8cd1-9f3db706e2dc</PaymentId>
+    <SuspiciousAmount>
+      <Amount>538539.05</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>CU</Country>
+      <IBAN>KP432120276468271943</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="43">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0043</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-05</ActivityDate>
+    <PaymentId>c0f7670b-8842-44de-a894-b268deaac6c7</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1538394.74</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>MINSK EXPORT GROUP</Name>
+      <Country>CU</Country>
+      <IBAN>KP747149689118351954</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="44">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0044</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>efc29dc7-ae9e-440f-ae83-e8a6bf2f559f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>871177.31</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>CU</Country>
+      <IBAN>KP874464496295595075</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="45">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0045</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>2f23d297-10d9-4ef7-831a-e0c7749d67bf</PaymentId>
+    <SuspiciousAmount>
+      <Amount>168909.1</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>TEHRAN CAPITAL LLC</Name>
+      <Country>KP</Country>
+      <IBAN>KP824639489214295245</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="46">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0046</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-09</ActivityDate>
+    <PaymentId>72a11a93-d453-439e-9662-4acae17e4101</PaymentId>
+    <SuspiciousAmount>
+      <Amount>901932.82</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>MINSK EXPORT GROUP</Name>
+      <Country>IR</Country>
+      <IBAN>KP142705119492338465</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>FRAUD_CRITICAL</ActivityType>
+      <Description>Fraud score critical — riskBand=CRITICAL amount=901932.82</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="47">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0047</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-25</ActivityDate>
+    <PaymentId>102377a8-c273-4225-b970-179c08b22fdd</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1172553.79</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>RU</Country>
+      <IBAN>KP714675058908542874</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="48">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0048</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-17</ActivityDate>
+    <PaymentId>b2c847c2-faf2-4ce0-a512-484f9cf27575</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1344853.68</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>MINSK EXPORT GROUP</Name>
+      <Country>RU</Country>
+      <IBAN>KP245573262560984966</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="49">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0049</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-27</ActivityDate>
+    <PaymentId>cf4bdee9-402c-4dec-b4e8-0b3a8c2665c2</PaymentId>
+    <SuspiciousAmount>
+      <Amount>121977.26</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>SY</Country>
+      <IBAN>KP485347354173323643</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="50">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_041247-0050</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-02</ActivityDate>
+    <PaymentId>239dfd2e-a111-4df9-880f-330c12cfc033</PaymentId>
+    <SuspiciousAmount>
+      <Amount>726516.87</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>MINSK EXPORT GROUP</Name>
+      <Country>KP</Country>
+      <IBAN>KP964977210719615825</IBAN>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>Automated compliance flag</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+</FinCEN_SAR>

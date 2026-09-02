@@ -1,0 +1,5 @@
+routing:
+  liquidity-limits:
+    EUR: 50000000
+    USD: 50000000
+    GBP: 25000000

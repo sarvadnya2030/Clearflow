@@ -1,0 +1,16 @@
+    Result   : ✓ HTTP 202 ACCEPTED — paymentId=3edbeb7f-ed6d-490d-ab8d-966254e8e5dc
+    Result   : ✓ HTTP 202 ACCEPTED — paymentId=7b82e796-af6c-4e1a-b137-7ff87cdbcc04
+    Result   : ✓ HTTP 202 ACCEPTED — paymentId=c86b899e-e7b1-4186-a485-a14723bf67b3
+    Result   : ✓ HTTP 202 ACCEPTED — paymentId=10c9b770-7e09-4feb-a752-8681986568ba
+    Result   : ✓ HTTP 202 ACCEPTED — paymentId=32dad68b-0840-4f29-8be9-8530492cf052
+    ✓ [ 1/10] HTTP 202  paymentId=caf0e63b-4c2f-419e-8228-40408d458fce
+    ✓ [ 2/10] HTTP 202  paymentId=ee62dc9a-e0c2-4fbb-b354-bfdaf9c2fc34
+    ✓ [ 3/10] HTTP 202  paymentId=31b6e766-4365-4132-b736-80129cd90058
+    ✓ [ 4/10] HTTP 202  paymentId=68a8ef20-8366-48b5-bfc2-5fd23bb706fe
+    ✓ [ 5/10] HTTP 202  paymentId=b52e4d9c-5956-4e22-8ad8-dda97cc6cb11
+    ✓ [ 6/10] HTTP 202  paymentId=4cba97a5-5783-4efa-8ca3-12e8e68d8ee3
+    ✓ [ 7/10] HTTP 202  paymentId=ae7bbbd3-eb54-4894-8fd3-40ad3f168eb9
+    ✓ [ 8/10] HTTP 202  paymentId=0caa26fd-2208-483a-8004-28c0073c6f19
+    ✓ [ 9/10] HTTP 202  paymentId=35aebee0-4188-4f2d-a366-99d913c3f8ac
+    ✓ [10/10] HTTP 202  paymentId=17d6a04a-12bf-4746-be23-a2fdf25da326
+    Accepted  : 15  (202 — in pipeline)

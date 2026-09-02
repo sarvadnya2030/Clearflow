@@ -1,0 +1,39 @@
+{
+  "title": "ClearFlow Payment Operations",
+  "uid": "clearflow-payments",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "15s",
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Gateway Request Rate",
+      "targets": [
+        {
+          "expr": "sum(rate(http_server_requests_seconds_count{job=\"gateway\"}[1m]))"
+        }
+      ],
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 }
+    },
+    {
+      "type": "timeseries",
+      "title": "5xx Error Rate",
+      "targets": [
+        {
+          "expr": "sum(rate(http_server_requests_seconds_count{status=~\"5..\"}[5m]))"
+        }
+      ],
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 }
+    },
+    {
+      "type": "stat",
+      "title": "Audit Topic Throughput",
+      "targets": [
+        {
+          "expr": "sum(rate(kafka_server_brokertopicmetrics_messagesin_total[1m]))"
+        }
+      ],
+      "gridPos": { "h": 6, "w": 8, "x": 0, "y": 8 }
+    }
+  ]
+}

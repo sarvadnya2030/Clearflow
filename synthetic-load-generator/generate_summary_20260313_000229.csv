@@ -1,0 +1,2 @@
+timestamp,total_sent,success,duplicates,errors,tps,elapsed_seconds,p50_ms,p99_ms
+2026-03-13T00:02:29.895850,2060,0,0,2060,523.77,3.93,12.28,47.12

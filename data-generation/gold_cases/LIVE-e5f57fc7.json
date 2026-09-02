@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-e5f57fc7",
+  "fault_type": "DB_TIMEOUT",
+  "injector_claimed_root": "settlement",
+  "injection_time": "2026-09-01T23:10:14.826859+00:00",
+  "duration_seconds": 20,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: settlement: DOWN (consecutive=1) at 23:10:17.056, RECOVERED shortly after",
+    "Traced 11 payments submitted across the window"
+  ],
+  "reasoning_trace": "Second independent injection of this fault type (round 2 of repeat sampling). Read the witness monitor output first, blind: settlement DOWN, then RECOVERED. Traced 11 payments spanning the window. All 11 show the same pattern already established for this fault type: gateway PAYMENT_SUBMITTED, audit, validation-enrichment PAYMENT_VALIDATED (or a normal business PAYMENT_REJECTED for two payments -- 2305a3b0 and 51ad8a19 -- not a stall), aml-compliance AML_SCREENING_COMPLETE, routing-execution RAIL_SELECTED and PAYMENT_ROUTED, fraud-scoring FRAUD_SCORE_COMPUTED -- and then nothing further. None show SETTLEMENT_COMPLETE. Consistent, clean stall specific to settlement, replicating the same evidentiary shape as the first DB_TIMEOUT gold case (LIVE-cd1f76ee). Conclusion reached from evidence alone, before reading the injector's own log: settlement.",
+  "blind_conclusion": "settlement",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (settlement) matches the injector's own ground-truth log exactly. Second independent replication of this fault type -- same evidentiary shape as the first case, reinforcing that this pattern is reliable, not a one-off."
+}

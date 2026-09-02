@@ -1,0 +1,4 @@
+settlement:
+  batch-cron: "0 0 22 * * *"
+  clickhouse-url: jdbc:clickhouse://clickhouse:8123/clearflow
+  cassandra-contact-points: cassandra

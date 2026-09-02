@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-86e563f1",
+  "fault_type": "AML_SERVICE_DEGRADATION_RETRY_CASCADE",
+  "injector_claimed_root": "aml-compliance",
+  "injection_time": "2026-09-02T00:34:07.058133+00:00",
+  "duration_seconds": 30,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the full 30s injection window, sorted by @timestamp",
+    "Health witness log: aml-compliance: DOWN (consecutive=1) at 00:34:09.251, RECOVERED shortly after",
+    "Traced 17 payments submitted across the full window"
+  ],
+  "reasoning_trace": "Second independent injection of this cascade-labeled fault type. Traced 17 payments across the full 30s window, again watching for a retry-shaped confounding symptom given the fault type's name. Witness monitor: aml-compliance DOWN then RECOVERED, generated independently. All 17 payments show the same pattern: gateway, audit, validation-enrichment (PAYMENT_VALIDATED, or a normal business PAYMENT_REJECTED for several payments -- not stalls), fraud-scoring, audit -- and then nothing further. None show AML_SCREENING_COMPLETE. No elevated latency or retry-shaped symptom anywhere in validation-enrichment or fraud-scoring across the full window. This replicates the exact evidentiary shape of the first AML_SERVICE_DEGRADATION_RETRY_CASCADE gold case (LIVE-92d99e70) -- clean, no confound in this run either, despite the 'RETRY_CASCADE' name. Conclusion reached from evidence alone, before reading the injector's own log: aml-compliance.",
+  "blind_conclusion": "aml-compliance",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (aml-compliance) matches the injector's own ground-truth log exactly. Second independent replication of this fault type -- same clean evidentiary shape as the first case, no confounding retry symptom manifested either time."
+}

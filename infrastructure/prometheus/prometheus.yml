@@ -1,0 +1,36 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: gateway
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["localhost:8080"]
+  - job_name: fraud-scoring
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["localhost:8081"]
+  - job_name: validation-enrichment
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["localhost:8082"]
+  - job_name: aml-compliance
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["localhost:8083"]
+  - job_name: routing-execution
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["localhost:8084"]
+  - job_name: settlement
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["localhost:8085"]
+  - job_name: audit
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["localhost:8086"]
+  - job_name: mcp-readonly-gateway
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["localhost:8087"]

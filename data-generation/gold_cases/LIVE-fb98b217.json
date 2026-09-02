@@ -1,0 +1,18 @@
+{
+  "incident_id": "LIVE-fb98b217",
+  "fault_type": "IDEMPOTENCY_COLLISION_STORM",
+  "injector_claimed_root": "gateway",
+  "injection_time": "2026-09-01T21:47:19.165737+00:00",
+  "duration_seconds": 5,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "health_witness_monitor output: no event fired at all (correctly -- gateway never crashes for this fault type)",
+    "Traced the original accepted payment (30f73a5f) end-to-end: fully normal, settled in <200ms",
+    "Broad ES search for 'duplicate'/'conflict'/'409' across all clearflow-* indices in the exact injection window: zero hits",
+    "Direct live re-query against ES (not just the captured bundle) for message containing 'uplicate' in the window: zero hits, confirmed independently"
+  ],
+  "reasoning_trace": "METHODOLOGY NOTE, disclosed honestly per the gold_cases discipline: this case's blind investigation was CONTAMINATED. inject_gold_case.py (as it existed at the time this case was run) printed the injector subprocess's raw stdout to the console/log file I was polling while waiting for the injection to complete -- that output includes a line announcing '(root=gateway, family=payment_domain, mechanism=idempotency)', which I saw before starting the evidence review. This is a real bug in the pipeline (now fixed -- see the same-day commit removing this print), not something to hide or quietly work around. Reporting this honestly rather than pretending the investigation was clean.\n\nSeparately, and this part IS a genuine, independent finding regardless of the contamination: the underlying evidence itself is empty. The health witness fired no event at all (correct behavior -- gateway's process never crashes for this fault type, so there's nothing for an /actuator/health poller to catch). The original accepted payment (30f73a5f) processed completely normally end-to-end. A broad search across all clearflow-* ES indices for any message containing 'duplicate', 'conflict', or '409' in the exact injection window returned zero hits, both in the captured evidence bundle and in a direct, independent live re-query against ES afterward. The 14 rejected duplicate submissions (409 responses) were rejected at the gateway's HTTP layer before any payment record or structured log event was ever created for them -- there is no forensic trace of the idempotency collision anywhere in this evidence tier. Even with the contamination set aside, a genuinely blind investigator using only ES logs and the health witness would have had nothing to work with here.",
+  "blind_conclusion": "gateway (SEEN VIA CONTAMINATED PROCESS, NOT A CLEAN BLIND RESULT)",
+  "confirmed": false,
+  "confirmation_basis": "NOT confirmed via clean methodology -- the investigator saw the injector's own ground-truth announcement before investigating, due to a real bug in inject_gold_case.py (now fixed). The genuine, uncontaminated finding is that ES-log-tier evidence for this fault type is empty by a different mechanism than crash faults (business-layer rejection with no log trace, not a destroyed log from a kill -9) -- needs a clean re-run with the fixed pipeline to get an actually valid gold case for IDEMPOTENCY_COLLISION_STORM, and/or a different evidence tier (e.g. gateway's raw HTTP access logs, if they exist and are queryable, which were not checked here)."
+}

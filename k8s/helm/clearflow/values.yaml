@@ -1,0 +1,131 @@
+global:
+  image:
+    registry: ghcr.io/clearflow
+    pullPolicy: IfNotPresent
+    tag: latest
+  env:
+    SPRING_PROFILES_ACTIVE: kubernetes
+  javaOpts: "-Xmx512m -XX:+UseG1GC -XX:+ExitOnOutOfMemoryError"
+
+# ── Infrastructure toggles ──────────────────────────────────
+kafka:
+  enabled: true
+  replicaCount: 3
+  kraft:
+    enabled: true
+  persistence:
+    size: 50Gi
+
+redis:
+  enabled: true
+  auth:
+    password: clearflow123
+  replica:
+    replicaCount: 1
+
+# ── Per-service configuration ───────────────────────────────
+
+gateway:
+  replicaCount: 2
+  port: 8080
+  resources:
+    requests: { cpu: 250m, memory: 512Mi }
+    limits:   { cpu: 1000m, memory: 1Gi }
+  hpa:
+    minReplicas: 2
+    maxReplicas: 10
+    targetCPUUtilizationPercentage: 60
+  ingress:
+    enabled: true
+    className: nginx
+    host: clearflow.internal
+    tls: true
+  env:
+    OAUTH2_ISSUER_URI: http://keycloak:8080/realms/clearflow
+
+fraudScoring:
+  replicaCount: 2
+  port: 8081
+  resources:
+    requests: { cpu: 200m, memory: 384Mi }
+    limits:   { cpu: 800m, memory: 768Mi }
+  hpa:
+    minReplicas: 2
+    maxReplicas: 8
+    targetCPUUtilizationPercentage: 70
+
+validationEnrichment:
+  replicaCount: 2
+  port: 8082
+  resources:
+    requests: { cpu: 200m, memory: 384Mi }
+    limits:   { cpu: 800m, memory: 768Mi }
+  hpa:
+    minReplicas: 2
+    maxReplicas: 6
+    targetCPUUtilizationPercentage: 70
+
+amlCompliance:
+  replicaCount: 2
+  port: 8083
+  resources:
+    requests: { cpu: 300m, memory: 512Mi }
+    limits:   { cpu: 1000m, memory: 1Gi }
+  hpa:
+    minReplicas: 2
+    maxReplicas: 6
+    targetCPUUtilizationPercentage: 65
+
+routingExecution:
+  replicaCount: 2
+  port: 8084
+  resources:
+    requests: { cpu: 200m, memory: 384Mi }
+    limits:   { cpu: 800m, memory: 768Mi }
+  hpa:
+    minReplicas: 2
+    maxReplicas: 6
+    targetCPUUtilizationPercentage: 70
+
+settlement:
+  replicaCount: 2
+  port: 8085
+  resources:
+    requests: { cpu: 300m, memory: 512Mi }
+    limits:   { cpu: 1200m, memory: 1Gi }
+  hpa:
+    minReplicas: 2
+    maxReplicas: 4
+    targetCPUUtilizationPercentage: 60
+
+audit:
+  replicaCount: 2
+  port: 8086
+  resources:
+    requests: { cpu: 150m, memory: 256Mi }
+    limits:   { cpu: 600m, memory: 512Mi }
+  hpa:
+    minReplicas: 2
+    maxReplicas: 4
+    targetCPUUtilizationPercentage: 70
+
+mcpGateway:
+  replicaCount: 1
+  port: 8087
+  resources:
+    requests: { cpu: 200m, memory: 512Mi }
+    limits:   { cpu: 800m, memory: 1Gi }
+  hpa:
+    minReplicas: 1
+    maxReplicas: 3
+    targetCPUUtilizationPercentage: 70
+  env:
+    OLLAMA_BASE_URL: http://ollama:11434
+
+# ── Secrets (override in values-staging/production.yaml) ────
+secrets:
+  oraclePassword: clearflow123
+  redisPassword: clearflow123
+  artemisPassword: clearflow123
+  openrouterApiKey: ""
+  vaultToken: clearflow-dev-token

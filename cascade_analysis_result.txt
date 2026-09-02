@@ -1,0 +1,18 @@
+======================================================================
+  ClearFlow Cascading Failure Analyzer
+======================================================================
+
+[1] Collecting logs from all services...
+    Collected logs from 7 services
+
+[2] Analyzing cascade with Claude...
+    ⚠️  ANTHROPIC_API_KEY not set. Set it via: export ANTHROPIC_API_KEY=sk-...
+
+======================================================================
+  ANALYSIS RESULTS
+======================================================================
+{
+  "error": "API key not set"
+}
+
+======================================================================

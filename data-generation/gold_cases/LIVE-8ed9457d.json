@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-8ed9457d",
+  "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+  "injector_claimed_root": "validation-enrichment",
+  "injection_time": "2026-09-01T22:58:09.101102+00:00",
+  "duration_seconds": 30,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the full 30s injection window, sorted by @timestamp",
+    "Health witness log: validation-enrichment: DOWN (consecutive=1) at 22:58:11.320, RECOVERED shortly after",
+    "Traced 22 payments submitted across the full window, specifically watching gateway for the confound the fault type's name suggests"
+  ],
+  "reasoning_trace": "This fault type's name explicitly suggests gateway as a possible confound, so watched gateway's own behavior closely across the full 30s window, not just validation-enrichment. Witness monitor: validation-enrichment DOWN then RECOVERED, generated independently. Traced 22 payments spanning the entire window. Gateway itself shows no anomaly whatsoever -- every payment gets a prompt PAYMENT_SUBMITTED log line with normal spacing, no delay, no error, no elevated latency. All 22 payments then show audit AUDIT_CHAIN_APPENDED and fraud-scoring FRAUD_SCORE_COMPUTED (independent of the sequential chain, as established in prior cases) completing normally and quickly -- and then nothing further. None of the 22 show a PAYMENT_VALIDATED event, and consequently nothing downstream of it either (no AML_SCREENING_COMPLETE, no PAYMENT_ROUTED, no SETTLEMENT_COMPLETE). The stall is clean and specific to validation-enrichment; gateway, despite being named in the fault type, shows no real anomaly in this evidence tier. Conclusion reached from evidence alone, before reading the injector's own log: validation-enrichment.",
+  "blind_conclusion": "validation-enrichment",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (validation-enrichment) matches the injector's own ground-truth log exactly. Corroborated by both the independent health witness and a consistent payment-funnel stall boundary across 22 traced payments -- deliberately checked gateway closely given the fault type's name, found no real gateway-level anomaly, confirming the confound (if any) did not manifest in this run."
+}

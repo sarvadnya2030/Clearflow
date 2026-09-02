@@ -1,0 +1,4 @@
+mcp:
+  rate-limit-per-minute: 20
+  allowed-origins:
+    - http://localhost:3000

@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-f8458870",
+  "fault_type": "DB_TIMEOUT",
+  "injector_claimed_root": "settlement",
+  "injection_time": "2026-09-02T01:10:08.837133+00:00",
+  "duration_seconds": 20,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: settlement: DOWN (consecutive=1) at 01:10:10.976, RECOVERED shortly after",
+    "Traced 6 payments submitted across the window"
+  ],
+  "reasoning_trace": "Third independent injection of this fault type (round 3). Witness monitor: settlement DOWN then RECOVERED, generated independently. Traced 6 payments in the window. All show the well-established pattern for this fault type: gateway, audit, validation-enrichment, aml-compliance, routing-execution (RAIL_SELECTED and PAYMENT_ROUTED both fire promptly), fraud-scoring -- and then nothing further. None show SETTLEMENT_COMPLETE. Third consecutive clean replication of the same evidentiary shape (LIVE-cd1f76ee, LIVE-e5f57fc7, now this one). Conclusion reached from evidence alone, before reading the injector's own log: settlement.",
+  "blind_conclusion": "settlement",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (settlement) matches the injector's own ground-truth log exactly. Third independent replication of this fault type -- consistent, stable evidentiary pattern across all three runs."
+}

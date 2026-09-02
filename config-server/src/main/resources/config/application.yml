@@ -1,0 +1,6 @@
+kafka:
+  brokers: ${KAFKA_BROKERS:kafka:9092}
+redis:
+  host: ${REDIS_HOST:redis}
+vault:
+  uri: ${VAULT_ADDR:http://vault:8200}

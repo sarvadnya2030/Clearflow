@@ -1,0 +1,234 @@
+UID,Name,Type,Programs,Remarks
+1001,AL QAIDA NETWORK,Entity,SDGT,AKA: Al-Qaeda; Al Qaida; Al-Qa'ida
+1002,HAMAS,Entity,SDGT|IFSR,AKA: Islamic Resistance Movement; Harakat al-Muqawamah al-Islamiyah
+1003,HEZBOLLAH,Entity,SDGT,AKA: Hizbullah; Hizballah; Party of God
+1004,IBRAHIM HASSAN AL-ASIRI,Individual,SDGT,AKA: Ibrahim Al-Asiri; Abu Saleh
+1005,ISLAMIC STATE OF IRAQ AND SYRIA,Entity,SDGT,AKA: ISIS; ISIL; Daesh; Islamic State
+1006,JABHAT AL-NUSRA,Entity,SDGT,AKA: Al-Nusra Front; Jabhat Fatah al-Sham
+1007,AL-SHABAAB,Entity,SDGT,AKA: Harakat Al-Shabaab Al-Mujahideen; HSM
+1008,BOKO HARAM,Entity,SDGT,AKA: Jamatu Ahlis Sunna Lidda'awati Wal-Jihad
+1009,LASHKAR-E-TAYYIBA,Entity,SDGT,AKA: LeT; Lashkar e Toiba; Army of the Pure
+1010,IRGC QODS FORCE,Entity,SDGT|IFSR,AKA: IRGC-QF; Sepah Pasdaran Qods
+1011,PALESTINIAN ISLAMIC JIHAD,Entity,SDGT,AKA: PIJ; Islamic Jihad of Palestine
+1012,JABHAT ANSAR AL-DIN,Entity,SDGT,AKA: Front for the Defense of the Sunnis
+1013,JUND AL-SHAM,Entity,SDGT,AKA: Soldiers of Greater Syria
+1014,ABU SAYYAF GROUP,Entity,SDGT,AKA: ASG; Al Harakat Al Islamiyya
+1015,ANSAR AL-ISLAM,Entity,SDGT,AKA: Supporters of Islam; Ansar al-Sunna
+1016,JEMAAH ISLAMIYAH,Entity,SDGT,AKA: JI; Jama'ah Islamiyah
+1017,TEHRIK-I-TALIBAN PAKISTAN,Entity,SDGT,AKA: TTP; Pakistani Taliban; Tehreek-e-Taliban Pakistan
+1018,AL-AQSA MARTYRS BRIGADE,Entity,SDGT,AKA: Al Aqsa Martyrs Brigades; AAMB
+1019,HAQQANI NETWORK,Entity,SDGT,AKA: Haqqani Terrorist Network; HTN
+1020,HOUTHI MOVEMENT,Entity,SDGT,AKA: Ansarallah; Ansar Allah; Houthis
+1021,ISLAMIC JIHAD UNION,Entity,SDGT,AKA: IJU; Islamic Jihad Group
+1022,AL-QAIDA IN THE ARABIAN PENINSULA,Entity,SDGT,AKA: AQAP; Al-Qaeda in Yemen
+1023,AL-QAIDA IN THE ISLAMIC MAGHREB,Entity,SDGT,AKA: AQIM; Salafist Group for Preaching and Combat
+1024,HARAKAT AL-MUQAWAMA AL-ISLAMIYA,Entity,SDGT,AKA: Hamas Political Bureau; Hamas Abroad
+1025,ANSARUL ISLAM,Entity,SDGT,AKA: Ansar ul Islam; Ansar al Islam Burkina
+1026,BANK SADERAT IRAN,Entity,IFSR,AKA: Bank Saderat PLC; BSI
+1027,BANK MELLI IRAN,Entity,IFSR,AKA: Bank Melli; BMI; Melli Bank PLC
+1028,NATIONAL IRANIAN TANKER COMPANY,Entity,IFSR,AKA: NITC; National Iranian Tanker Co
+1029,MAHAN AIR,Entity,IFSR,AKA: Mahan Airways; Mahan Airlines
+1030,IRAN AIR,Entity,IFSR,AKA: Homa; Airline of Iran
+1031,NATIONAL IRANIAN OIL COMPANY,Entity,IFSR,AKA: NIOC; Sherkat-e Melli Naft-e Iran
+1032,IRAN PETROCHEMICAL COMMERCIAL COMPANY,Entity,IFSR,AKA: IPCC; Iran Petrochem Commercial
+1033,PERSIAN GULF PETROCHEMICAL INDUSTRIES,Entity,IFSR|NPWMD,AKA: PGPIC; Persian Gulf Petrochemical
+1034,ISLAMIC REVOLUTIONARY GUARD CORPS,Entity,SDGT|IFSR,AKA: IRGC; Sepah; Pasdaran
+1035,MINISTRY OF INTELLIGENCE AND SECURITY IRAN,Entity,IFSR,AKA: MOIS; VEVAK; Iranian Intelligence Ministry
+1036,IRAN SHIPPING LINES,Entity,IFSR,AKA: IRISL; Islamic Republic of Iran Shipping Lines
+1037,BANK SEPAH,Entity,IFSR|NPWMD,AKA: Sepah Bank; Bank Sepah International PLC
+1038,TEJARAT BANK,Entity,IFSR,AKA: Bank Tejarat; Tejarat Bank PLC
+1039,POST BANK OF IRAN,Entity,IFSR,AKA: Post Bank Iran; Postbank Iran
+1040,FIRST EAST EXPORT BANK,Entity,IFSR,AKA: FEEB; First East Export
+1041,IRGC AIR FORCE,Entity,SDGT|IFSR,AKA: IRGC-AF; Islamic Revolutionary Guard Corps Air Force
+1042,IRGC NAVY,Entity,SDGT|IFSR,AKA: IRGC-N; Sepah Navy
+1043,IRAN AIRCRAFT MANUFACTURING INDUSTRIAL COMPANY,Entity,IFSR,AKA: HESA; Hava Space Engineering
+1044,IRAN ELECTRONICS INDUSTRIES,Entity,IFSR|NPWMD,AKA: IEI; Sanaye Electronic Iran
+1045,MOBIN INTERNATIONAL,Entity,IFSR,AKA: Mobin Net; Mobin International AG
+1046,SORINET COMMERCIAL TRUST,Entity,IFSR,AKA: Sorinet Group; Sorinet Commercial
+1047,ANSAR BANK,Entity,IFSR,AKA: Bank Ansar; Ansar Financial Institution
+1048,MEHR IRAN CREDIT UNION,Entity,IFSR,AKA: Mehr Credit Union; Cooperative Credit Mehr
+1049,SARMAYEH BANK,Entity,IFSR,AKA: Capital Bank Iran; Bank Sarmayeh
+1050,MIDDLE EAST BANK,Entity,IFSR,AKA: Bank Khavarmianeh; MEB Iran
+1051,BANK KESHAVARZI,Entity,IFSR,AKA: Agricultural Bank of Iran; Keshavarzi Bank
+1052,BANK MASKAN,Entity,IFSR,AKA: Housing Bank of Iran; Maskan Bank
+1053,IRAN TRANSFO,Entity,IFSR|NPWMD,AKA: Iranian Transformer Manufacturing; Iran Transfo Co
+1054,SAFF INVESTMENT COMPANY,Entity,IFSR,AKA: Saff Investment; Saff Capital Iran
+1055,PETROIRAN DEVELOPMENT COMPANY,Entity,IFSR,AKA: PEDCO; Petroiran Development
+1056,ROSSIYA BANK,Entity,UKRAINE-EO13685,AKA: Rossiya; Joint Stock Bank Rossiya
+1057,SMP BANK,Entity,UKRAINE-EO13685,AKA: SMP Bank Russia; Severnyi Morskoi Put
+1058,PROMSVYAZBANK,Entity,UKRAINE-EO13685,AKA: PSB; Promsvyazbank PJSC
+1059,GAZPROMBANK,Entity,UKRAINE-EO13662,AKA: GPB; Gazprombank JSC; Gazprom Bank
+1060,VTB BANK,Entity,UKRAINE-EO13662,AKA: VTB; Vneshtorgbank; Bank VTB
+1061,VNESHECONOMBANK,Entity,UKRAINE-EO13662,AKA: VEB; State Development Corporation VEB.RF
+1062,NOVIKOMBANK,Entity,UKRAINE-EO13685,AKA: Novikombank OJSC; Novikov Commercial Bank
+1063,GENBANK,Entity,UKRAINE-EO13685,AKA: GENBANK PJSC; General Bank Russia
+1064,BANK RUSSIA,Entity,UKRAINE-EO13685,AKA: Bank Rossiya; Russia Bank
+1065,WAGNER GROUP,Entity,UKRAINE-EO13662,AKA: PMC Wagner; Wagner Private Military Company
+1066,CONCORD MANAGEMENT AND CONSULTING,Entity,UKRAINE-EO13662,AKA: Concord Management; Concord Catering
+1067,PRIGOZHIN YEVGENIY VIKTOROVICH,Individual,UKRAINE-EO13662,AKA: Yevgeny Prigozhin; Chef of the Kremlin
+1068,INTERNET RESEARCH AGENCY,Entity,UKRAINE-EO13662,AKA: IRA; Mediasintez
+1069,ROSSOTRUDNICHESTVO,Entity,UKRAINE-EO13662,AKA: Federal Agency for CIS Affairs
+1070,BANK OTKRITIE,Entity,UKRAINE-EO13662,AKA: Otkritie Bank; FC Otkritie Bank
+1071,ALFA BANK RUSSIA,Entity,UKRAINE-EO13662,AKA: Alfa-Bank PJSC; AO Alfa-Bank
+1072,CREDIT BANK OF MOSCOW,Entity,UKRAINE-EO13662,AKA: MKB; Moskovskiy Kreditniy Bank
+1073,SBERBANK OF RUSSIA,Entity,UKRAINE-EO13662,AKA: Sberbank; Savings Bank of Russian Federation
+1074,SOVCOMBANK,Entity,UKRAINE-EO13662,AKA: PJSC Sovcombank; Sovcombankrus
+1075,ROSSELKHOZBANK,Entity,UKRAINE-EO13662,AKA: Russian Agricultural Bank; RSHB
+1076,TINKOFF BANK,Entity,UKRAINE-EO13662,AKA: Tinkoff; TCS Bank; T-Bank
+1077,BANK DOM RF,Entity,UKRAINE-EO13662,AKA: Dom.RF Bank; Housing Development Mortgage Agency
+1078,NORILSK NICKEL,Entity,UKRAINE-EO13662,AKA: Nornickel; MMC Norilsk Nickel PJSC
+1079,ROSNEFT OIL COMPANY,Entity,UKRAINE-EO13662,AKA: Rosneft; OAO Rosneft
+1080,LUKOIL PJSC,Entity,UKRAINE-EO13662,AKA: Lukoil; OAO Lukoil
+1081,LAZARUS GROUP,Entity,DPRK3,AKA: Hidden Cobra; Guardians of Peace; APT38
+1082,BLUENOROFF,Entity,DPRK3,AKA: Stardust Chollima; APT38 Sub-group
+1083,RECONNAISSANCE GENERAL BUREAU,Entity,DPRK3,AKA: RGB; Chongch'al Ch'ongguk
+1084,KOREA KWANGSON BANKING CORPORATION,Entity,DPRK3,AKA: KKBC; Kwangson Banking
+1085,MANSUDAE OVERSEAS PROJECT GROUP,Entity,DPRK3,AKA: Mansudae Art Studio; Mansudae Overseas
+1086,KOREA MINING DEVELOPMENT TRADING CORPORATION,Entity,DPRK3,AKA: KOMID; Korea Mining Development
+1087,GREEN PINE ASSOCIATED CORPORATION,Entity,DPRK3,AKA: Chonsurie; Korea Ryonbong
+1088,RYONBONG GENERAL CORPORATION,Entity,DPRK3,AKA: Korea Ryonbong; Ryonbong
+1089,KOREA DAESONG GENERAL TRADING CORPORATION,Entity,DPRK3,AKA: Daesong; Korea Daesong
+1090,OFFICE 39,Entity,DPRK3,AKA: Room 39; Division 39; Korea Kumgangsan Investment
+1091,ANDARIEL GROUP,Entity,DPRK3,AKA: Andariel; APT45; Silent Chollima
+1092,KIMSUKY,Entity,DPRK3,AKA: Thallium; Black Banshee; APT43
+1093,NORTH KOREAN WORKERS PARTY,Entity,DPRK3,AKA: KWP; Korean Workers Party; WPK
+1094,DPRK WEAPONS TRADING COMPANY,Entity,DPRK3,AKA: DPRK Arms Export; Pyongyang Trade Corp
+1095,RYUGYONG COMMERCIAL BANK,Entity,DPRK3,AKA: Ryugyong Bank; Korea Ryugyong
+1096,SINALOA CARTEL,Entity,TCO,AKA: Guadalajara Cartel; Federation; CDS
+1097,JALISCO NEW GENERATION CARTEL,Entity,TCO,AKA: CJNG; Cartel Jalisco Nueva Generacion
+1098,CLAN DEL GOLFO,Entity,TCO,AKA: Los Urabeños; Autodefensas Gaitanistas de Colombia
+1099,LOS ZETAS,Entity,TCO,AKA: Zetas; Z Company
+1100,BELTRAN LEYVA ORGANIZATION,Entity,TCO,AKA: BLO; Beltran Leyva Cartel
+1101,GULF CARTEL,Entity,TCO,AKA: Cartel del Golfo; CDG; Matamoros Cartel
+1102,ARELLANO FELIX ORGANIZATION,Entity,TCO,AKA: Tijuana Cartel; AFO
+1103,JUAREZ CARTEL,Entity,TCO,AKA: Cartel de Juarez; Vicente Carrillo Fuentes Organization
+1104,KNIGHTS TEMPLAR CARTEL,Entity,TCO,AKA: Caballeros Templarios; Los Templarios
+1105,NDRANGHETA,Entity,TCO,AKA: Ndrangheta; Calabrian Mafia
+1106,CAMORRA,Entity,TCO,AKA: Camorra Napolitana; Nuova Camorra Organizzata
+1107,SOLNTSEVSKAYA BRATVA,Entity,TCO,AKA: Solntsevo Brotherhood; Solntsevskaya Group
+1108,YAMAGUCHI-GUMI,Entity,TCO,AKA: Yamaguchigu; Kobe Yamaguchi
+1109,HEIJIN ENTERPRISES,Entity,TCO,AKA: Black Money; Heijin Group Taiwan
+1110,PRIMERA USURPADORES,Entity,TCO,AKA: Primera; Gang 18
+1111,MARA SALVATRUCHA,Entity,TCO,AKA: MS-13; MS13; La Mara
+1112,BARRIO AZTECA,Entity,TCO,AKA: Los Aztecas; Barrio Azteca Gang
+1113,TREN DE ARAGUA,Entity,TCO,AKA: TDA; Aragua Train
+1114,PRIMEIRO COMANDO DA CAPITAL,Entity,TCO,AKA: PCC; First Capital Command Brazil
+1115,RED COMMAND BRAZIL,Entity,TCO,AKA: CV; Comando Vermelho; Red Command
+1116,JOHN SMYTH,Individual,SANCTIONS,Deliberate near-miss — John Smith variant
+1117,LAZURUS GROUP,Entity,DPRK3,Deliberate soundex variant of LAZARUS GROUP
+1118,MULLER HANS,Individual,SANCTIONS,AKA: Müller Hans; Hans Mueller — diacritics test variant
+1119,IBRAHIM AL-ASIRI,Individual,SDGT,Tokenised form of IBRAHIM HASSAN AL-ASIRI
+1120,HAMAS EZZEDEEN,Entity,SDGT,AKA: Ezzedeen Al-Qassam; Phonetic HAMAS variant
+1121,KHALED AHMAD,Individual,SANCTIONS,Deliberate phonetic variant — Khalid Ahmad
+1122,AL KAIDA NETZWERK,Entity,SDGT,German transliteration variant of Al-Qaeda Network
+1123,HIZBOLLAH,Entity,SDGT,Alternate romanisation of HEZBOLLAH
+1124,IRGC QF,Entity,SDGT|IFSR,Abbreviated form of IRGC QODS FORCE
+1125,LAZARUZ GROUP,Entity,DPRK3,Typo variant — LAZARUZ vs LAZARUS
+1126,HIZB-UL-MUJAHIDEEN,Entity,SDGT,AKA: Hizb-ul Mujahideen; Party of Holy Warriors
+1127,JOHN SMIT,Individual,SANCTIONS,Another near-miss variant — John Smit
+1128,ISLAMIC JIHAD PALESTINE,Entity,SDGT,Short form of PALESTINIAN ISLAMIC JIHAD
+1129,QUDS FORCE,Entity,SDGT|IFSR,Alternate romanisation — IRGC Quds vs Qods
+1130,HEINRICH MULLER,Individual,SANCTIONS,AKA: Heinrich Mueller; Heinrich Müller — compound diacritic
+1131,IRAN LNG COMPANY,Entity,IFSR,AKA: Iran LNG; ILNG — liquefied natural gas export entity
+1132,KHATAM AL-ANBIYA,Entity,SDGT|IFSR,AKA: KAA; IRGC construction arm; Qaragah
+1133,QUDS AVIATION INDUSTRIES,Entity,IFSR|NPWMD,AKA: IRGC Aviation; Quds Av Industries
+1134,IRGC COOPERATIVE FOUNDATION,Entity,IFSR,AKA: IRGC Cooperative; Bonyad Taavon Sepah
+1135,ARIAN BANK,Entity,IFSR,AKA: Arian Bank Afghanistan; Aryan Bank
+1136,FUTURE BANK BSC,Entity,IFSR,AKA: Future Bank Bahrain; Iran-Bahrain joint venture
+1137,BANCO INTERNACIONAL DE DESARROLLO,Entity,UKRAINE-EO13662,AKA: BID Venezuela; International Development Bank VE
+1138,BANCA PRIVADA D'ANDORRA,Entity,SANCTIONS,AKA: BPA Andorra; Banca Privada Andorra SA
+1139,TRANSNEFT PJSC,Entity,UKRAINE-EO13662,AKA: Transneft; Russian oil pipeline monopoly
+1140,SURGUTNEFTEGAS,Entity,UKRAINE-EO13662,AKA: Surgutneftegaz; SNGs PJSC
+1141,SLAVNEFT,Entity,UKRAINE-EO13662,AKA: Slavneft PJSC; Slavic Oil
+1142,ZARUBEZHNEFT,Entity,UKRAINE-EO13662,AKA: Zarubezhneft JSC; Foreign Oil Russia
+1143,ROSATOM STATE NUCLEAR ENERGY CORPORATION,Entity,UKRAINE-EO13662,AKA: Rosatom; ROSATOM Corp
+1144,ROSTEC CORPORATION,Entity,UKRAINE-EO13662,AKA: Rostec; State Corporation Rostec
+1145,ROSCOSMOS,Entity,UKRAINE-EO13662,AKA: Russian Space Agency; Roskosmos
+1146,CARTEL DEL NORESTE,Entity,TCO,AKA: CDN; Northeast Cartel; Los Zetas Noreste
+1147,SANGRE NUEVA GENERACION,Entity,TCO,AKA: SNG; New Generation Blood Cartel Mexico
+1148,LA FAMILIA MICHOACANA,Entity,TCO,AKA: La Familia; LFM; Knights Templar predecessor
+1149,ABDULAZEEZ OMAR,Individual,SDGT,AKA: Abu Khaled Al-Suri; AQAP facilitator
+1150,LAZARUS GROOP,Entity,DPRK3,Deliberate double-typo variant — LAZARUS GROOP vs LAZARUS GROUP
+2001,PUTIN VLADIMIR VLADIMIROVICH,Individual,UKRAINE-EO13662,AKA: Vladimir Putin; V.V. Putin; President of Russia
+2002,LAVROV SERGEI VIKTOROVICH,Individual,UKRAINE-EO13662,AKA: Sergei Lavrov; Sergey Lavrov; Russian Foreign Minister
+2003,PATRUSHEV NIKOLAI PLATONOVICH,Individual,UKRAINE-EO13662,AKA: Nikolai Patrushev; N.P. Patrushev
+2004,SECHIN IGOR IVANOVICH,Individual,UKRAINE-EO13662,AKA: Igor Sechin; Rosneft CEO
+2005,MILLER ALEXEI BORISOVICH,Individual,UKRAINE-EO13662,AKA: Alexei Miller; Aleksei Miller; Gazprom CEO
+2006,ROTENBERG ARKADY ROMANOVICH,Individual,UKRAINE-EO13685,AKA: Arkady Rotenberg; Arkadi Rotenberg
+2007,ROTENBERG BORIS ROMANOVICH,Individual,UKRAINE-EO13685,AKA: Boris Rotenberg
+2008,TIMCHENKO GENNADY NIKOLAEVICH,Individual,UKRAINE-EO13662,AKA: Gennady Timchenko; Gunvor Group
+2009,KOVALTCHUK YURI VALENTINOVICH,Individual,UKRAINE-EO13685,AKA: Yuri Kovalchuk; Kovalchuk Yury; Putin banker
+2010,VOLODIN VYACHESLAV VIKTOROVICH,Individual,UKRAINE-EO13662,AKA: Vyacheslav Volodin; Speaker State Duma
+2011,ABRAMOVICH ROMAN ARKADYEVICH,Individual,UKRAINE-EO13662,AKA: Roman Abramovich; Chelsea FC owner
+2012,DERIPASKA OLEG VLADIMIROVICH,Individual,UKRAINE-EO13662,AKA: Oleg Deripaska; Rusal owner
+2013,VEKSELBERG VIKTOR FELIKSOVICH,Individual,UKRAINE-EO13662,AKA: Viktor Vekselberg; Renova Group
+2014,FRIDMAN MIKHAIL MARATOVICH,Individual,UKRAINE-EO13662,AKA: Mikhail Fridman; Alfa Group founder
+2015,AVEN PETR OLEGOVICH,Individual,UKRAINE-EO13662,AKA: Pyotr Aven; Alfa Bank chairman
+2016,MALOFEEV KONSTANTIN VALEREVICH,Individual,UKRAINE-EO13662,AKA: Konstantin Malofeev; Orthodox oligarch
+2017,PRIGOZHIN EVGENY VICTOROVICH,Individual,UKRAINE-EO13662,AKA: Evgeny Prigozhin; Yevgeny Prigozhin; Wagner founder
+2018,KADYROV RAMZAN AKHMADOVICH,Individual,UKRAINE-EO13662,AKA: Ramzan Kadyrov; Chechen leader
+2019,GERASIMOV VALERY VASILYEVICH,Individual,UKRAINE-EO13662,AKA: Valery Gerasimov; Chief of General Staff Russia
+2020,ZOLOTOV VIKTOR VASILYEVICH,Individual,UKRAINE-EO13662,AKA: Viktor Zolotov; Rosgvardiya head
+2021,NARYSHKIN SERGEI EVGENYEVICH,Individual,UKRAINE-EO13662,AKA: Sergei Naryshkin; SVR director
+2022,BORTNIKOV ALEXANDER VASILYEVICH,Individual,UKRAINE-EO13662,AKA: Alexander Bortnikov; FSB director
+2023,SHOIGU SERGEI KUZHUGETOVICH,Individual,UKRAINE-EO13662,AKA: Sergei Shoigu; Defense Minister Russia
+2024,MISHUSTIN MIKHAIL VLADIMIROVICH,Individual,UKRAINE-EO13662,AKA: Mikhail Mishustin; Russian Prime Minister
+2025,NOVAK ALEXANDER VALENTINOVICH,Individual,UKRAINE-EO13662,AKA: Alexander Novak; Deputy PM Russia energy
+3001,KHAMENEI ALI,Individual,IRAN,AKA: Ali Khamenei; Ayatollah Khamenei; Supreme Leader Iran
+3002,RAISI EBRAHIM,Individual,IRAN,AKA: Ebrahim Raisi; Ibrahim Raisi; Iranian President
+3003,SOLEIMANI QASSEM,Individual,SDGT|IFSR,AKA: Qasem Soleimani; Qassim Suleimani; IRGC-QF commander
+3004,GHALIBAF MOHAMMAD BAQER,Individual,IRAN,AKA: Mohammad Bagher Ghalibaf; Iranian Parliament Speaker
+3005,HAJIZADEH AMIR ALI,Individual,SDGT|IFSR,AKA: Amirali Hajizadeh; IRGC Aerospace commander
+3006,SALAMI HOSSEIN,Individual,SDGT|IFSR,AKA: Hossein Salami; IRGC commander in chief
+3007,ESMAIL QAANI,Individual,SDGT|IFSR,AKA: Ismail Qaani; Esmaeil Qa'ani; IRGC-QF successor
+3008,JAFARI MOHAMMAD ALI,Individual,SDGT|IFSR,AKA: Mohammad Ali Jafari; former IRGC chief
+3009,VELAYATI ALI AKBAR,Individual,IRAN,AKA: Ali Akbar Velayati; Khamenei foreign advisor
+3010,SHAMKHANI ALI,Individual,IRAN,AKA: Ali Shamkhani; Supreme National Security Council
+3011,REZAEI MOHSEN,Individual,IRAN,AKA: Mohsen Rezai; IRGC former chief
+3012,ZARIF MOHAMMAD JAVAD,Individual,IRAN,AKA: Mohammad Javad Zarif; Javad Zarif; former FM Iran
+3013,ZANGENEH BIJAN NAMDAR,Individual,IRAN,AKA: Bijan Zanganeh; Oil Minister Iran
+3014,AGHAZADEH GHOLAM REZA,Individual,IFSR|NPWMD,AKA: Gholamreza Aghazadeh; former nuclear chief Iran
+3015,AHMADINEJAD MAHMOUD,Individual,IRAN,AKA: Mahmoud Ahmadinejad; former President Iran
+4001,KIM JONG UN,Individual,DPRK3,AKA: Kim Jong-un; Marshal Kim; Supreme Leader DPRK
+4002,KIM YO JONG,Individual,DPRK3,AKA: Kim Yo-jong; Kim Jong Un sister; DPRK propaganda chief
+4003,CHOE RYONG HAE,Individual,DPRK3,AKA: Choe Ryong-hae; DPRK State Affairs Commission
+4004,KWON YONG JIN,Individual,DPRK3,AKA: Kwon Jong-gun; DPRK foreign ministry official
+4005,JO CHOL SOO,Individual,DPRK3,AKA: Jo Chol-su; DPRK missile program
+4006,JANG KWANG IL,Individual,DPRK3,AKA: Jang Kwang-il; Korea Taesong Trading
+4007,KIM SONG CHOL,Individual,DPRK3,AKA: Kim Song-chol; Lazarus Group operator
+4008,PARK JIN HYOK,Individual,DPRK3,AKA: Park Jin Hyok; Lazarus Group hacker; Jin Hyok Park
+4009,JON CHANG HYOK,Individual,DPRK3,AKA: Jon Chang-hyok; Andariel Group operator
+4010,KIM IL,Individual,DPRK3,AKA: Kim Il; Bluenoroff operator; DPRK cyber unit
+5001,MADURO NICOLAS,Individual,VENEZUELA,AKA: Nicolas Maduro Moros; Venezuelan President
+5002,CABELLO RONDON DIOSDADO,Individual,VENEZUELA,AKA: Diosdado Cabello; PDVSA chairman
+5003,EL AISSAMI TARECK ZAIDAN,Individual,VENEZUELA|TCO,AKA: Tareck El Aissami; Venezuelan VP; drug trafficking
+5004,MIRABAL BUSTAMANTE NESTOR LUIS,Individual,VENEZUELA,AKA: Nestor Mirabal; CLAP food program corruption
+5005,FLORES DE MADURO CILIA,Individual,VENEZUELA,AKA: Cilia Flores; First Lady Venezuela
+5006,RIVERO JOSE FELIX,Individual,VENEZUELA|TCO,AKA: Jose Felix Rivero; Venezuelan armed forces
+5007,RAMIREZ JOSE DOMINGO,Individual,TCO|VENEZUELA,AKA: Domingo Ramirez; drug trafficking Venezuela
+5008,BERNAL FREDDY ALIRIO,Individual,VENEZUELA,AKA: Freddy Bernal; CLAP food system Venezuela
+6001,MIN AUNG HLAING,Individual,BURMA,AKA: Senior General Min Aung Hlaing; Myanmar junta leader
+6002,SOE WIN,Individual,BURMA,AKA: General Soe Win; Myanmar Deputy Commander
+6003,MYANMA OIL AND GAS ENTERPRISE,Entity,BURMA,AKA: MOGE; Myanmar Oil Gas Enterprise
+6004,MYANMAR ECONOMIC CORPORATION,Entity,BURMA,AKA: MEC; Tatmadaw holding company
+6005,MYANMAR ECONOMIC HOLDINGS LIMITED,Entity,BURMA,AKA: MEHL; Myanmar Economic Holdings
+7001,LUKASHENKO ALEXANDER GRIGORYEVICH,Individual,BELARUS,AKA: Alexander Lukashenko; Belarusian President; Batka
+7002,LUKASHENKO VIKTOR ALEXANDROVICH,Individual,BELARUS,AKA: Viktor Lukashenko; son of Alexander Lukashenko
+7003,BELARUSIAN POTASH COMPANY,Entity,BELARUS,AKA: BPC; Belaruskali; Belarusian potash exporter
+7004,BELTA STATE NEWS AGENCY,Entity,BELARUS,AKA: BelTA; Belarusian Telegraph Agency
+7005,BELNEFTEKHIM,Entity,BELARUS,AKA: Belarusneft; Belarusian Oil and Chemical concern
+8001,TORRES JORGE LUIS,Individual,CUBA,AKA: Jorge Luis Torres Cuba; PCC Central Committee
+8002,RODRIGUEZ GIL MARCO ANTONIO,Individual,CUBA,AKA: Marco Antonio Rodriguez; Cuban intelligence
+8003,CUBAMETALES,Entity,CUBA,AKA: Cuba Metals; Empresa Cubana de Metales
+8004,CIMEX CORPORATION,Entity,CUBA,AKA: Cimex SA; Cuban retail monopoly
+8005,FINCIMEX,Entity,CUBA,AKA: Financiera Cimex; Cuban financial services company
+9001,GUZMAN LOERA JOAQUIN ARCHIVALDO,Individual,TCO,AKA: El Chapo; Shorty; Joaquin El Chapo Guzman
+9002,ESCOBAR GAVIRIA PABLO EMILIO,Individual,TCO,AKA: Pablo Escobar; El Patron; King of Cocaine (deceased)
+9003,ZAMBADA GARCIA ISMAEL MARIO,Individual,TCO,AKA: El Mayo; Ismael Zambada; Sinaloa Cartel leader
+9004,CARO QUINTERO RAFAEL,Individual,TCO,AKA: Rafael Caro Quintero; RCQ; Narco of narcos
+9005,MENESES CANTILLO HENRY DE JESUS,Individual,TCO,AKA: Henry Meneses; Colombian trafficking
+9006,FUENTES AMADO JUAREZ,Individual,TCO,AKA: Lord of the Skies; Amado Carrillo Fuentes
+9007,ARELLANO FELIX BENJAMIN,Individual,TCO,AKA: Benjamin Arellano Felix; Tijuana Cartel leader
+9008,MENCHO NEMESIO OSEGUERA CERVANTES,Individual,TCO,AKA: El Mencho; CJNG leader
+9009,MONTOYA SANCHEZ DIEGO LEON,Individual,TCO,AKA: Don Diego; Colombian narco commander
+9010,GAVIRIA BERRÍO DAIRO ANTONIO,Individual,TCO,AKA: Otoniel; Clan del Golfo leader; captured 2021

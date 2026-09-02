@@ -1,0 +1,26 @@
+apiVersion: v2
+name: clearflow
+description: ClearFlow — ISO 20022 Payment Orchestration Platform
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+
+keywords:
+  - payments
+  - iso20022
+  - banking
+  - fintech
+  - microservices
+
+maintainers:
+  - name: ClearFlow Platform Team
+
+dependencies:
+  - name: kafka
+    version: "28.x.x"
+    repository: "https://charts.bitnami.com/bitnami"
+    condition: kafka.enabled
+  - name: redis
+    version: "19.x.x"
+    repository: "https://charts.bitnami.com/bitnami"
+    condition: redis.enabled

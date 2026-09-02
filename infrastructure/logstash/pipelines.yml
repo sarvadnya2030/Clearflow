@@ -1,0 +1,14 @@
+# Logstash multi-pipeline configuration
+# Each pipeline runs independently with its own consumer group
+
+- pipeline.id: clearflow-main
+  path.config: "/usr/share/logstash/pipeline/clearflow.conf"
+  pipeline.workers: 4
+  pipeline.batch.size: 125
+  pipeline.batch.delay: 50
+
+- pipeline.id: clearflow-security
+  path.config: "/usr/share/logstash/pipeline/security-pipeline.conf"
+  pipeline.workers: 2
+  pipeline.batch.size: 50
+  pipeline.batch.delay: 100

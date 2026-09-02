@@ -1,0 +1,31 @@
+global:
+  image:
+    tag: latest
+  env:
+    SPRING_PROFILES_ACTIVE: kubernetes
+
+gateway:
+  replicaCount: 1
+  ingress:
+    host: clearflow-staging.internal
+
+fraudScoring:
+  replicaCount: 1
+
+validationEnrichment:
+  replicaCount: 1
+
+amlCompliance:
+  replicaCount: 1
+
+routingExecution:
+  replicaCount: 1
+
+settlement:
+  replicaCount: 1
+
+audit:
+  replicaCount: 1
+
+mcpGateway:
+  replicaCount: 1

@@ -1,0 +1,52 @@
+server:
+  port: 8085
+spring:
+  config:
+    import: "optional:vault://,optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}"
+  application:
+    name: settlement
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:oracle:thin:@localhost:1521/CLEARFLOW}
+    username: system
+    password: ${ORACLE_PASSWORD:clearflow123}
+  jpa:
+    hibernate:
+      ddl-auto: none
+clearflow:
+  analytics:
+    clickhouse:
+      url: ${CLICKHOUSE_URL:jdbc:clickhouse://localhost:8123/default}
+      enabled: ${CLICKHOUSE_ENABLED:true}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,info
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://localhost:4318/v1/traces}
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  info:
+    title: ClearFlow ${spring.application.name}
+    version: 1.0.0
+    description: ISO 20022 payment processing microservice

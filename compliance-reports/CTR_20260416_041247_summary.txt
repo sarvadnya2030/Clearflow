@@ -1,0 +1,23 @@
+ClearFlow — Currency Transaction Report Filing Summary
+======================================================
+Report ID        : CTR-CLEARFLOW-20260416_041247
+Filing Date      : 2026-04-16
+Institution      : ClearFlow Payment Network
+
+STATISTICS
+----------
+CTRs filed              : 120
+Total cash volume       : $30,758,810.04
+Average transaction     : $256,323.42
+Structuring detected    : 0 (no smurfing patterns)
+
+REGULATORY BASIS
+----------------
+- Bank Secrecy Act 31 U.S.C. § 5313 — CTR mandatory for cash > $10,000
+- FinCEN Form 104 equivalent (automated XML filing)
+- 15-day filing deadline from transaction date
+
+OUTPUT FILES
+------------
+XML filing : CTR_20260416_041247.xml
+This summary : CTR_20260416_041247_summary.txt

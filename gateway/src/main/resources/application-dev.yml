@@ -1,0 +1,62 @@
+spring:
+  config:
+    # Vault is tried first; falls back silently to application.yml values if Vault is down
+    import:
+      - "optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}"
+      - "optional:vault://secret/clearflow/gateway"
+  cloud:
+    vault:
+      enabled: true
+      fail-fast: false          # never crash a service because Vault is offline
+      host: ${VAULT_HOST:localhost}
+      port: ${VAULT_PORT:8200}
+      scheme: http
+      authentication: TOKEN
+      token: ${VAULT_TOKEN:root}
+      kv:
+        enabled: true
+        backend: secret
+        default-context: clearflow/gateway
+        application-name: gateway
+  kafka:
+    bootstrap-servers: localhost:29092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      enable-idempotence: true
+      retries: 3
+      properties:
+        spring.json.add.type.headers: true
+        max.in.flight.requests.per.connection: 5
+  artemis:
+    broker-url: tcp://localhost:61616
+    user: ${ARTEMIS_USER:clearflow}
+    password: ${ARTEMIS_PASSWORD:clearflow123}
+    pool:
+      max-connections: 200
+      idle-timeout: 60000
+  jms:
+    template:
+      default-destination: queue:clearflow.payment.initiated
+      receive-timeout: 5000
+      delivery-mode: persistent
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: ${REDIS_PASSWORD:clearflow123}
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 500
+        failureRateThreshold: 80.0
+        slowCallRateThreshold: 80.0
+        slowCallDurationThreshold: 10000
+        waitDurationInOpenState: 10000
+        permittedNumberOfCallsInHalfOpenState: 200
+    instances:
+      activemq:
+        baseConfig: default

@@ -1,0 +1,7 @@
+aml:
+  sdn-refresh-ms: 86400000
+  fuzzy-threshold: 0.85
+camunda:
+  client:
+    zeebe:
+      gateway-url: http://camunda:26500

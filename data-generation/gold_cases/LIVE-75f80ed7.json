@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-75f80ed7",
+  "fault_type": "CPU_SATURATION",
+  "injector_claimed_root": "aml-compliance",
+  "injection_time": "2026-09-01T21:37:22.195198+00:00",
+  "duration_seconds": 20,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: aml-compliance: DOWN (consecutive=1) at 21:37:24.360, RECOVERED shortly after",
+    "Traced 5 payments submitted in the window immediately after the witness event (54973f6b, b14c7e99, b99b8b6f, cfc1581d, 9d261b2d)"
+  ],
+  "reasoning_trace": "Read the witness monitor output first, blind: aml-compliance: DOWN, then RECOVERED. Traced five payments submitted across the window. All five show the identical pattern: gateway PAYMENT_SUBMITTED, audit AUDIT_CHAIN_APPENDED, validation-enrichment (PAYMENT_VALIDATED or, for one payment, a normal business PAYMENT_REJECTED -- not a stall, a legitimate validation outcome), audit AUDIT_CHAIN_APPENDED, fraud-scoring FRAUD_SCORE_COMPUTED (fires independently of the main sequential chain, as already established in an earlier gold case), audit AUDIT_CHAIN_APPENDED -- and then nothing further. None of the five show an AML_SCREENING_COMPLETE event, nor anything downstream of it (no RAIL_SELECTED, no SETTLEMENT_COMPLETE). The stall boundary is consistent and specific: everything up through validation and fraud-scoring completes, and the pipeline stops exactly at the stage that should be aml-compliance. This matches the independent witness's finding precisely. Conclusion reached from evidence alone, before reading the injector's own log: aml-compliance.",
+  "blind_conclusion": "aml-compliance",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (aml-compliance) matches the injector's own ground-truth log exactly. Independently corroborated by two separate evidence sources (external health-check witness + a consistent payment-funnel stall boundary across 5 traced payments), neither requiring foreknowledge of the answer."
+}

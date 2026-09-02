@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@oracle:1521/CLEARFLOW
+    username: system
+    password: ${ORACLE_PASSWORD:clearflow123}
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017/clearflow
+validation:
+  supported-currencies: EUR,USD,GBP,CHF,JPY,SGD

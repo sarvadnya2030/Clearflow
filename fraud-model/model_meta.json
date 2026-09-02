@@ -1,0 +1,20 @@
+{
+  "model_version": "lgbm-v1",
+  "auc": 1.0,
+  "n_estimators": 252,
+  "feature_names": [
+    "amountNormalized",
+    "hourOfDay",
+    "dayOfWeek",
+    "isWeekend",
+    "debtorCountryRisk",
+    "creditorCountryRisk",
+    "crossBorder",
+    "highRiskCurrencyPair",
+    "velocityLast1h",
+    "velocityLast24h",
+    "isNewCreditorPair"
+  ],
+  "fraud_rate_train": 0.08,
+  "threshold": 0.5
+}

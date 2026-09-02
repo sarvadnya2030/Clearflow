@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clearflow-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clearflow-gateway
+  template:
+    metadata:
+      labels:
+        app: clearflow-gateway
+    spec:
+      containers:
+        - name: gateway
+          image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}/gateway:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.services.gateway.port }}
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: {{ .Values.services.gateway.port }}
+            initialDelaySeconds: 30
+            periodSeconds: 15

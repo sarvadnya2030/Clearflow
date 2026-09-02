@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: fraud-scoring
+  cloud:
+    vault:
+      uri: ${VAULT_ADDR:http://localhost:8200}
+      authentication: TOKEN
+      token: ${VAULT_TOKEN:dev-root-token}
+      kv:
+        enabled: true
+        backend: clearflow
+        default-context: fraud-scoring
+      fail-fast: false
+    config:
+      import-check:
+        location-not-found: allow

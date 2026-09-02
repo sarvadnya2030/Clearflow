@@ -1,0 +1,27 @@
+ClearFlow — Suspicious Activity Report Filing Summary
+=====================================================
+Report ID        : SAR-CLEARFLOW-20260416_041247
+Filing Date      : 2026-04-16
+Reporting Period : 2026-01-16 to 2026-04-16
+Institution      : ClearFlow Payment Network (TIN: XX-CLEARFLOW)
+
+STATISTICS
+----------
+Total SARs filed        : 50
+Total suspicious amount : $53,645,585.00
+Activity breakdown:
+  SANCTIONS                     : 27
+  FRAUD_CRITICAL                : 23
+
+REGULATORY BASIS
+----------------
+- Bank Secrecy Act (BSA) 31 U.S.C. § 5318(g)
+- FinCEN SAR Filing Requirement: transactions ≥ $5,000 with suspicious indicators
+- Automated filing triggered by: OFAC sanctions match, FATF high-risk, fraud score > 0.90
+
+OUTPUT FILES
+------------
+XML filing : SAR_20260416_041247.xml
+This summary : SAR_20260416_041247_summary.txt
+
+STATUS: FILED (auto) — Pending compliance officer review within 30 days

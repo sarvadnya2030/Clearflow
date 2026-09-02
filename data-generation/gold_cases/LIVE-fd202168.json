@@ -1,0 +1,17 @@
+{
+  "incident_id": "LIVE-fd202168",
+  "fault_type": "IDEMPOTENCY_COLLISION_STORM",
+  "injector_claimed_root": "gateway",
+  "injection_time": "2026-09-01T23:58:10.226237+00:00",
+  "duration_seconds": 5,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "health_witness_monitor output: no event fired (correctly -- gateway never crashes for this fault type)",
+    "NEW this time: directly consumed the clearflow.payment.blocked Kafka topic (a third, previously-unchecked evidence tier) to look for any duplicate-rejection message -- found it is a fraud-scoring block topic (high fraudScore -> blocked), structurally unrelated to idempotency collisions, and confirmed no dedicated Kafka topic for idempotency events exists in this system's topic list at all",
+    "All gateway-service events in the exact injection window, checked individually"
+  ],
+  "reasoning_trace": "Third independent injection of this fault type. Witness monitor: no event fired, correct given gateway's process never crashes here. This time went further than the previous two attempts and checked a genuinely new evidence tier: consumed clearflow.payment.blocked directly from Kafka, since it appeared in the topic list and had not been checked before. It turned out to be a fraud-scoring block topic (payments blocked for a high fraud score), structurally unrelated to idempotency -- and reviewing the full topic list confirms there is no dedicated Kafka topic for idempotency/duplicate events in this system at all. All gateway events in the exact injection window are PAYMENT_SUBMITTED for distinct payment IDs from ongoing background traffic, processing normally -- nothing resembling the 14 duplicate submissions. This is now the third independent confirmation, across three separate evidence tiers (ES logs, the raw application log file, and now Kafka topics directly), that this fault type leaves genuinely zero forensic trace at any layer available to an investigator using this system's real observability tooling.",
+  "blind_conclusion": "insufficient evidence to determine a root cause from any evidence tier checked (ES, raw log file, or Kafka topics)",
+  "confirmed": false,
+  "confirmation_basis": "Ground truth is gateway, which this evidence-based investigation could not and did not reach -- honestly reported as correctly recognized insufficient evidence, not a guess. Third independent confirmation of the same finding, now spanning three separate evidence tiers (ES, raw log, Kafka), the most thoroughly checked fault type in this dataset. This is a stable, structural property of the fault type, not an artifact of any single evidence source being incomplete."
+}

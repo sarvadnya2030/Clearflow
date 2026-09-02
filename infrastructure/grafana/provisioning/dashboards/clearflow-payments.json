@@ -1,0 +1,255 @@
+{
+  "__inputs": [{ "name": "DS_PROMETHEUS", "label": "Prometheus", "type": "datasource", "pluginId": "prometheus" }],
+  "title": "ClearFlow — Payment Pipeline",
+  "uid": "clearflow-payments",
+  "version": 1,
+  "schemaVersion": 38,
+  "refresh": "10s",
+  "time": { "from": "now-1h", "to": "now" },
+  "tags": ["clearflow", "payments", "iso20022"],
+  "templating": {
+    "list": [
+      {
+        "name": "service",
+        "type": "query",
+        "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+        "query": "label_values(up{job=~'clearflow-.*'}, application)",
+        "multi": true,
+        "includeAll": true,
+        "current": { "text": "All", "value": "$__all" }
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Payment Throughput (TPS)",
+      "type": "stat",
+      "gridPos": { "x": 0, "y": 0, "w": 4, "h": 4 },
+      "options": { "colorMode": "background", "graphMode": "area", "reduceOptions": { "calcs": ["lastNotNull"] } },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "reqps",
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "red",   "value": 0   },
+            { "color": "yellow","value": 50  },
+            { "color": "green", "value": 100 }
+          ]}
+        }
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+        "expr": "sum(rate(http_server_requests_seconds_count{application='gateway',uri='/api/v1/payments',status='202'}[1m]))",
+        "legendFormat": "Accepted TPS"
+      }]
+    },
+    {
+      "id": 2,
+      "title": "Payment Error Rate",
+      "type": "stat",
+      "gridPos": { "x": 4, "y": 0, "w": 4, "h": 4 },
+      "options": { "colorMode": "background", "reduceOptions": { "calcs": ["lastNotNull"] } },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit",
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "green",  "value": 0    },
+            { "color": "yellow", "value": 0.01 },
+            { "color": "red",    "value": 0.05 }
+          ]}
+        }
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+        "expr": "sum(rate(http_server_requests_seconds_count{application='gateway',status=~'5..'}[5m])) / sum(rate(http_server_requests_seconds_count{application='gateway',uri='/api/v1/payments'}[5m]))",
+        "legendFormat": "Error Rate"
+      }]
+    },
+    {
+      "id": 3,
+      "title": "Gateway P99 Latency",
+      "type": "stat",
+      "gridPos": { "x": 8, "y": 0, "w": 4, "h": 4 },
+      "options": { "colorMode": "background", "reduceOptions": { "calcs": ["lastNotNull"] } },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "green",  "value": 0   },
+            { "color": "yellow", "value": 0.5 },
+            { "color": "red",    "value": 2.0 }
+          ]}
+        }
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+        "expr": "histogram_quantile(0.99, sum(rate(http_server_requests_seconds_bucket{application='gateway',uri='/api/v1/payments'}[5m])) by (le))",
+        "legendFormat": "P99"
+      }]
+    },
+    {
+      "id": 4,
+      "title": "Fraud Block Rate",
+      "type": "stat",
+      "gridPos": { "x": 12, "y": 0, "w": 4, "h": 4 },
+      "options": { "colorMode": "background", "reduceOptions": { "calcs": ["lastNotNull"] } },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit",
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "green",  "value": 0    },
+            { "color": "yellow", "value": 0.05 },
+            { "color": "red",    "value": 0.15 }
+          ]}
+        }
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+        "expr": "rate(clearflow_fraud_blocked_total[5m]) / rate(clearflow_payments_evaluated_total[5m])",
+        "legendFormat": "Fraud Block %"
+      }]
+    },
+    {
+      "id": 5,
+      "title": "Active Circuit Breakers",
+      "type": "stat",
+      "gridPos": { "x": 16, "y": 0, "w": 4, "h": 4 },
+      "options": { "colorMode": "background", "reduceOptions": { "calcs": ["lastNotNull"] } },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "green", "value": 0 },
+            { "color": "red",   "value": 1 }
+          ]}
+        }
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+        "expr": "count(resilience4j_circuitbreaker_state{state='open'} == 1) or vector(0)",
+        "legendFormat": "Open CBs"
+      }]
+    },
+    {
+      "id": 6,
+      "title": "Kafka Consumer Lag (Max)",
+      "type": "stat",
+      "gridPos": { "x": 20, "y": 0, "w": 4, "h": 4 },
+      "options": { "colorMode": "background", "reduceOptions": { "calcs": ["lastNotNull"] } },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "green",  "value": 0    },
+            { "color": "yellow", "value": 500  },
+            { "color": "red",    "value": 2000 }
+          ]}
+        }
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+        "expr": "max(kafka_consumer_group_lag{group=~'clearflow-.*'})",
+        "legendFormat": "Max Lag"
+      }]
+    },
+    {
+      "id": 10,
+      "title": "Payment Throughput Over Time",
+      "type": "timeseries",
+      "gridPos": { "x": 0, "y": 4, "w": 12, "h": 8 },
+      "fieldConfig": {
+        "defaults": { "unit": "reqps", "custom": { "lineWidth": 2, "fillOpacity": 10 } }
+      },
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+          "expr": "sum(rate(http_server_requests_seconds_count{application='gateway',uri='/api/v1/payments',status='202'}[1m]))",
+          "legendFormat": "Accepted"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+          "expr": "sum(rate(http_server_requests_seconds_count{application='gateway',uri='/api/v1/payments',status=~'4..'}[1m]))",
+          "legendFormat": "Rejected (4xx)"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+          "expr": "sum(rate(http_server_requests_seconds_count{application='gateway',uri='/api/v1/payments',status=~'5..'}[1m]))",
+          "legendFormat": "Error (5xx)"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "End-to-End Latency Percentiles",
+      "type": "timeseries",
+      "gridPos": { "x": 12, "y": 4, "w": 12, "h": 8 },
+      "fieldConfig": {
+        "defaults": { "unit": "ms", "custom": { "lineWidth": 2 } }
+      },
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+          "expr": "histogram_quantile(0.50, sum(rate(http_server_requests_seconds_bucket{application='gateway',uri='/api/v1/payments'}[5m])) by (le)) * 1000",
+          "legendFormat": "P50"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+          "expr": "histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket{application='gateway',uri='/api/v1/payments'}[5m])) by (le)) * 1000",
+          "legendFormat": "P95"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+          "expr": "histogram_quantile(0.99, sum(rate(http_server_requests_seconds_bucket{application='gateway',uri='/api/v1/payments'}[5m])) by (le)) * 1000",
+          "legendFormat": "P99"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Service Health Matrix",
+      "type": "table",
+      "gridPos": { "x": 0, "y": 12, "w": 12, "h": 6 },
+      "fieldConfig": {
+        "defaults": {
+          "custom": { "displayMode": "color-background" },
+          "mappings": [
+            { "options": { "0": { "text": "DOWN", "color": "red" }, "1": { "text": "UP", "color": "green" } }, "type": "value" }
+          ]
+        }
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+        "expr": "up{job=~'clearflow-.*'}",
+        "legendFormat": "{{ application }}",
+        "instant": true
+      }]
+    },
+    {
+      "id": 21,
+      "title": "JVM Heap Usage by Service",
+      "type": "timeseries",
+      "gridPos": { "x": 12, "y": 12, "w": 12, "h": 6 },
+      "fieldConfig": {
+        "defaults": { "unit": "bytes", "custom": { "lineWidth": 1 } }
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+        "expr": "jvm_memory_used_bytes{area='heap', application=~'$service'}",
+        "legendFormat": "{{ application }}"
+      }]
+    },
+    {
+      "id": 30,
+      "title": "Kafka Topic Message Rate",
+      "type": "timeseries",
+      "gridPos": { "x": 0, "y": 18, "w": 24, "h": 7 },
+      "fieldConfig": {
+        "defaults": { "unit": "msgps", "custom": { "lineWidth": 1, "fillOpacity": 5 } }
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+        "expr": "rate(kafka_topic_partition_current_offset{topic=~'CLEARFLOW\\..*'}[1m])",
+        "legendFormat": "{{ topic }}"
+      }]
+    }
+  ]
+}

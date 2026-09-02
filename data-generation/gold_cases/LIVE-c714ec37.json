@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-c714ec37",
+  "fault_type": "NETWORK_LATENCY",
+  "injector_claimed_root": "validation-enrichment",
+  "injection_time": "2026-09-01T21:27:27.293170+00:00",
+  "duration_seconds": 20,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: validation-enrichment: DOWN (consecutive=1) at 21:27:29.010, RECOVERED shortly after",
+    "Traced 3 payments submitted immediately after the witness event (bb380773, 02e9dd58, 38737b4c)"
+  ],
+  "reasoning_trace": "Read the witness monitor output first, blind: validation-enrichment: DOWN, then RECOVERED. Traced the three payments submitted right after that event. All three show an unusual but consistent pattern: gateway PAYMENT_SUBMITTED, audit AUDIT_CHAIN_APPENDED, then fraud-scoring FRAUD_SCORE_COMPUTED, then audit AUDIT_CHAIN_APPENDED -- and then nothing further. Notably, fraud-scoring fired successfully for all three, which tells me fraud-scoring runs independently of the main sequential pipeline (it's not gated behind validation-enrichment). But none of the three payments show a PAYMENT_VALIDATED event, and consequently nothing downstream of it either (no AML_SCREENING_COMPLETE, no RAIL_SELECTED, no SETTLEMENT_COMPLETE) -- the specific stage missing is exactly validation-enrichment's own completion event, with everything sequentially downstream of it also absent as a direct consequence. This is consistent with validation-enrichment being unavailable: the payment enters the pipeline, gets audited and independently fraud-scored, but never reaches or completes validation, so it never proceeds further. Combined with the independent witness explicitly naming validation-enrichment as down at almost the same timestamp, both signals converge. Conclusion reached from evidence alone, before reading the injector's own log: validation-enrichment.",
+  "blind_conclusion": "validation-enrichment",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (validation-enrichment) matches the injector's own ground-truth log exactly. Independently corroborated by two separate evidence sources (external health-check witness + payment-funnel stall pattern with fraud-scoring's independence as a useful negative control), neither requiring foreknowledge of the answer."
+}

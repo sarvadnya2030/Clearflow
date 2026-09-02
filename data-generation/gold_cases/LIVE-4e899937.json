@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-4e899937",
+  "fault_type": "AML_HOLD",
+  "injector_claimed_root": "aml-compliance",
+  "injection_time": "2026-09-02T00:10:04.632455+00:00",
+  "duration_seconds": null,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "health_witness_monitor output: no event fired (correctly -- aml-compliance's process never crashes for this fault type)",
+    "Searched all events for HOLD/ESCALATED/HIT keywords in the window"
+  ],
+  "reasoning_trace": "Second independent injection of this fault type. Witness monitor: no event, correct given no crash occurs. Searched for AML-domain keywords as established in the first AML_HOLD case. Found the same direct, unambiguous self-reported signal: aml-compliance logged AML_SANCTIONS_HIT for payment 4da13f8c (matchedEntity='HAMAS', matchScore=1.0, durationMs=5) immediately followed by AML_HOLD amlState=ESCALATED for the same payment, both 0.04s after the injection time. This replicates the exact evidentiary shape of the first AML_HOLD gold case (LIVE-549afd1b) -- a real, direct self-report from the service itself, the strongest evidence class in this dataset. Conclusion reached from evidence alone, before reading the injector's own log: aml-compliance.",
+  "blind_conclusion": "aml-compliance",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (aml-compliance) matches the injector's own ground-truth log exactly. Second independent replication of this fault type -- same direct self-reported evidence class as the first case."
+}

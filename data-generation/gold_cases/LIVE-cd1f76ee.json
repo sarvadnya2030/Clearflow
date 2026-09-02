@@ -1,0 +1,15 @@
+{
+  "incident_id": "LIVE-cd1f76ee",
+  "fault_type": "DB_TIMEOUT",
+  "injector_claimed_root": "settlement",
+  "injection_time": "2026-09-01T20:40:04.696358+00:00",
+  "duration_seconds": 20,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range 2026-09-01T20:39:50 to 2026-09-01T20:40:35, sorted by @timestamp",
+    "Health witness log: settlement: DOWN (consecutive=1) at ~20:40:06, settlement: RECOVERED shortly after"
+  ],
+  "reasoning_trace": "Read the full event stream in the injection window before checking the injector's own log. Payment 5c16d2fd completed the entire pipeline normally at 20:40:05.592, including a real SETTLEMENT_COMPLETE event from the settlement service -- so the system was healthy at the start of the window. One second later, an independent external witness (health_witness_monitor.py, which has zero knowledge of what was injected -- it only polls /actuator/health on a fixed schedule) logged HEALTH_CHECK_FAILED service=settlement consecutiveFailures=1 at 20:40:06.739. From that point forward, every subsequent payment (b7b91298, 01eb2807, 942821c0, 66b026c1, and others) shows the full upstream pipeline completing normally -- PAYMENT_SUBMITTED, PAYMENT_VALIDATED, AML_SCREENING_COMPLETE, RAIL_SELECTED, LIQUIDITY_RESERVED, PAYMENT_ROUTED -- and then simply stops. No SETTLEMENT_COMPLETE, no SETTLEMENT_FAILED, no settlement-service log line of any kind for these payments in the window. Two independent signals point the same direction: (1) the external witness explicitly names settlement as down, generated with no knowledge of the fault type or root service, and (2) the payment funnel itself shows a consistent stall exactly at the pipeline stage immediately after routing-execution, which is where settlement sits. No other service shows any anomaly in this window -- gateway, validation-enrichment, aml-compliance, routing-execution, fraud-scoring, and audit all continue logging normal completions for every payment throughout. Conclusion reached from evidence alone, before reading the injector's own log: settlement is the root cause.",
+  "blind_conclusion": "settlement",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (settlement) matches the injector's own ground-truth log exactly. Independently corroborated by two separate evidence sources (external health-check witness + payment-funnel stall pattern), neither of which required foreknowledge of the answer."
+}

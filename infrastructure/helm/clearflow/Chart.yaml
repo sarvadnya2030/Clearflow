@@ -1,0 +1,6 @@
+apiVersion: v2
+name: clearflow
+description: ClearFlow ISO 20022 payment orchestration platform
+version: 0.1.0
+appVersion: "1.0.0"
+type: application

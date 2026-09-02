@@ -1,0 +1,69 @@
+{
+  "index_patterns": ["clearflow-*"],
+  "template": {
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0,
+      "index.refresh_interval": "5s",
+      "index.codec": "best_compression"
+    },
+    "mappings": {
+      "dynamic_templates": [
+        {
+          "strings_as_keyword": {
+            "match_mapping_type": "string",
+            "mapping": { "type": "keyword", "ignore_above": 512 }
+          }
+        }
+      ],
+      "properties": {
+        "@timestamp":      { "type": "date" },
+        "paymentId":       { "type": "keyword" },
+        "correlationId":   { "type": "keyword" },
+        "traceId":         { "type": "keyword" },
+        "spanId":          { "type": "keyword" },
+        "service":         { "type": "keyword" },
+        "environment":     { "type": "keyword" },
+        "level":           { "type": "keyword" },
+        "eventType":       { "type": "keyword" },
+        "alertLevel":      { "type": "keyword" },
+        "riskBand":        { "type": "keyword" },
+        "screeningResult": { "type": "keyword" },
+        "rail":            { "type": "keyword" },
+        "railName":        { "type": "keyword" },
+        "currency":        { "type": "keyword" },
+        "debtorCountry":   { "type": "keyword" },
+        "creditorCountry": { "type": "keyword" },
+        "logger_name":     { "type": "keyword" },
+        "thread_name":     { "type": "keyword" },
+        "amount": {
+          "type": "double"
+        },
+        "fraudScore": {
+          "type": "integer"
+        },
+        "matchScore": {
+          "type": "double"
+        },
+        "durationMs": {
+          "type": "long"
+        },
+        "velocityCount": {
+          "type": "integer"
+        },
+        "chainLength": {
+          "type": "integer"
+        },
+        "message": {
+          "type": "text",
+          "fields": {
+            "keyword": { "type": "keyword", "ignore_above": 1024 }
+          }
+        },
+        "stack_trace": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,134 @@
+@inproceedings{soldani2021,
+  title     = {What Went Wrong? Explaining Cascading Failures in Microservice-Based Applications},
+  author    = {Soldani, Jacopo and others},
+  booktitle = {Proceedings of the International Conference on Service-Oriented Computing},
+  year      = {2021},
+  publisher = {Springer},
+  note      = {Verify full citation details (pages, exact author list) before submission}
+}
+
+@article{rcaeval2024,
+  title   = {RCAEval: A Benchmark for Root Cause Analysis of Microservice Systems},
+  author  = {Pham, Quiluan and others},
+  journal = {arXiv preprint arXiv:2412.17015},
+  year    = {2024},
+  note    = {735 failure cases, 3 systems, 11 fault types; AC@k/Avg@k metrics -- adopt this evaluation protocol}
+}
+
+@article{fpa2025,
+  title   = {Rethinking the Evaluation of Microservice RCA with a Fault Propagation-Aware Benchmark},
+  author  = {Fang, Aoyang and Zhang, Songhan and Yang, Yifan and Wu, Haotong and
+             Xu, Junjielong and Wang, Xuyang and Wang, Rui and Wang, Manyi and
+             Lu, Qisheng and He, Pinjia},
+  journal = {arXiv preprint arXiv:2510.04711},
+  year    = {2025},
+  note    = {1430 validated failures, 25 fault types; hierarchical/impact-driven
+             ground truth. Directly relevant finding: simple rule-based methods
+             match or beat SOTA models on 4 widely-used public RCA benchmarks --
+             cite alongside this paper's own llm\_rca\_baseline result
+             (Section~\ref{sec:eval}), where a general-purpose LLM given the
+             same evidence as a formulaic heuristic scores WORSE than the
+             heuristic. Same underlying caution: benchmark/evaluation design
+             can make sophistication look like it's winning when it isn't.}
+}
+
+@article{paysim2016,
+  title     = {PaySim: A Financial Mobile Money Simulator for Fraud Detection},
+  author    = {Lopez-Rojas, Edgar and Elmir, Ahmad and Axelsson, Stefan},
+  journal   = {European Modeling and Simulation Symposium (EMSS)},
+  year      = {2016}
+}
+
+@article{amlworld2023,
+  title   = {Realistic Synthetic Financial Transactions for Anti-Money Laundering Models},
+  author  = {Altman, Erik and others},
+  journal = {NeurIPS Datasets and Benchmarks Track / arXiv:2306.16424},
+  year    = {2023},
+  note    = {IBM AMLworld; explicit ethical-use/anonymization statement -- cite this as the anonymization precedent in Section IV}
+}
+
+@techreport{bis2001cpss,
+  title       = {Core Principles for Systemically Important Payment Systems},
+  author      = {{Committee on Payment and Settlement Systems (CPSS), Bank
+                  for International Settlements}},
+  institution = {Bank for International Settlements},
+  number      = {CPMI Papers No.\ 43},
+  year        = {2001},
+  url         = {https://www.bis.org/cpmi/publ/d43.pdf}
+}
+
+@techreport{imf2021resilience,
+  title       = {Operational Resilience in Digital Payments: Experiences and
+                 Issues},
+  author      = {Khiaonarong, Tanai and Leinonen, Harry and Rizaldy, Ryan},
+  institution = {International Monetary Fund},
+  number      = {WP/21/288},
+  year        = {2021}
+}
+
+@misc{amlsim,
+  title = {AMLSim: Multi-Agent Anti-Money-Laundering Simulator},
+  author = {{IBM}},
+  howpublished = {\url{https://github.com/IBM/AMLSim}},
+  note = {Verify current URL/status before submission}
+}
+
+@article{servicegraphfm2026,
+  title   = {ServiceGraph-FM: A Graph-Based Model with Temporal Relational
+             Diffusion for Root-Cause Analysis in Large-Scale Payment
+             Service Systems},
+  author  = {Zeng, Z. and Zhou, M.},
+  journal = {Mathematics},
+  volume  = {14},
+  number  = {2},
+  pages   = {236},
+  year    = {2026},
+  doi     = {10.3390/math14020236},
+  note    = {Closest verified prior art: payment-system RCA via a
+             pretrained graph model (masked graph autoencoding +
+             temporal relational diffusion + causal attention over
+             multi-hop paths). Distinguish explicitly in
+             Section~\ref{sec:related}: they model payment-SERVICE
+             topology/anomaly propagation structurally, not
+             payment-STATE semantics (AML holds, liquidity locks,
+             idempotency, settlement finality) as causal factors --
+             the gap this paper's contribution fills.}
+}
+
+@article{dynacausal2025,
+  title   = {DynaCausal: Dynamic Causality-Aware Root Cause Analysis for
+             Distributed Microservices},
+  author  = {Zhang, Songhan and Fang, Aoyang and Yang, Yifan and
+             Cheng, Ruiyi and Tang, Xiaoying and He, Pinjia},
+  journal = {arXiv preprint arXiv:2510.22613},
+  year    = {2025},
+  note    = {Average AC@1 0.63 on RCAEval-RE2-OB and a new large-scale
+             benchmark; generic microservice signals (logs/traces/metrics),
+             no domain-state modeling.}
+}
+
+@article{krca2026,
+  title     = {KRCA: An Efficient Root Cause Analysis System in Hyper-Scale
+               Microservice Systems via Agentic AI},
+  author    = {Jiang, Jiamin and Feng, Jingfei and Luo, Yu and
+               Zhang, Qingliang and Sun, Yongqian and Gu, Wenwei and
+               Zhang, Shenglin and Cui, Tianyu and Wu, Yao and
+               Huang, Jielong and Qi, Nan and Pei, Dan},
+  journal   = {arXiv preprint arXiv:2607.01788},
+  year      = {2026},
+  note      = {AC@1 0.88 (root-cause service) / 0.79 (failure-type
+               classification); deployed at Kuaishou, 77.3\% diagnosis-time
+               reduction. Agentic multi-stage pipeline over generic
+               metrics/causal-graph priors, not payment-domain state.}
+}
+
+% -------------------------------------------------------------------
+% CHECKED, NOT FOUND -- do not cite:
+%   "Han, Latency-Aware Root Cause Inference for Cloud-Native Payment
+%   Platforms Using Heterogeneous Graph Attention Mechanisms",
+%   Computer Science Bulletin, 2026. Web search (2026-08-27) found no
+%   matching paper, venue, or author trail -- likely a hallucinated
+%   citation from an earlier pass. Superseded as "closest prior art" by
+%   servicegraphfm2026 above, which IS verified (real DOI, resolves on
+%   MDPI). Do not resurrect the Han citation.
+% -------------------------------------------------------------------

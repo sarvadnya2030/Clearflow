@@ -1,0 +1,4409 @@
+<?xml version="1.0" ?>
+<FinCEN_SAR xmlns="http://www.fincen.gov/base" GeneratedDate="2026-04-16" ReportId="SAR-CLEARFLOW-20260416_042246" FilingInstitution="ClearFlow Payment Network" FilingInstitutionTIN="XX-CLEARFLOW">
+  <FilingSummary>
+    <TotalSARs>500</TotalSARs>
+    <ReportingPeriodStart>2026-01-16</ReportingPeriodStart>
+    <ReportingPeriodEnd>2026-04-16</ReportingPeriodEnd>
+    <TotalSuspiciousAmount>8548261.26</TotalSuspiciousAmount>
+  </FilingSummary>
+  <SuspiciousActivityReport sequence="1">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0001</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>9e193950-f367-454c-976f-2e5a378ce5de</PaymentId>
+    <SuspiciousAmount>
+      <Amount>403.7</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=9e193950-f367-454c-976f-2e5a378ce5de Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="2">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0002</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>1f5a190d-7294-4077-9572-cef85ba2df6f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>12747.53</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=1f5a190d-7294-4077-9572-cef85ba2df6f Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="3">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0003</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>47c68088-6819-4d82-9d8b-14c59a0b9430</PaymentId>
+    <SuspiciousAmount>
+      <Amount>233.74</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=47c68088-6819-4d82-9d8b-14c59a0b9430 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="4">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0004</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>1141aa59-6d0a-45d6-8101-dd61665223d2</PaymentId>
+    <SuspiciousAmount>
+      <Amount>844826.68</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=1141aa59-6d0a-45d6-8101-dd61665223d2 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="5">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0005</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>23b56cf8-fce7-43ed-ba9b-a693ce52787b</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1519.69</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=23b56cf8-fce7-43ed-ba9b-a693ce52787b Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="6">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0006</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>496b3c76-c485-48a8-b488-17ac9792fad6</PaymentId>
+    <SuspiciousAmount>
+      <Amount>340.2</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=496b3c76-c485-48a8-b488-17ac9792fad6 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="7">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0007</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>9f99e114-14cf-4fc1-8780-9119a14e455b</PaymentId>
+    <SuspiciousAmount>
+      <Amount>8493.36</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=9f99e114-14cf-4fc1-8780-9119a14e455b Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="8">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0008</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>28324ae9-fe4e-40b3-9751-911d4df17d8c</PaymentId>
+    <SuspiciousAmount>
+      <Amount>13017.03</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=28324ae9-fe4e-40b3-9751-911d4df17d8c Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="9">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0009</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>1f2d637b-0d83-43b7-ab82-2d14e0f9feb7</PaymentId>
+    <SuspiciousAmount>
+      <Amount>4372.22</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=1f2d637b-0d83-43b7-ab82-2d14e0f9feb7 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="10">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0010</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>81d8f6b9-7c74-422b-bfe2-c5eb728dfa58</PaymentId>
+    <SuspiciousAmount>
+      <Amount>67206.95</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=81d8f6b9-7c74-422b-bfe2-c5eb728dfa58 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="11">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0011</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>9f3cc14d-657d-436e-a0b6-47196593efe1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>91839.16</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=9f3cc14d-657d-436e-a0b6-47196593efe1 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="12">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0012</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>46523ef0-fd13-4b85-8c3c-ab5c12c5379d</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1100.61</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=46523ef0-fd13-4b85-8c3c-ab5c12c5379d Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="13">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0013</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>88c94eea-3eff-485d-96ac-b54ca8ab6b15</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2479.17</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=88c94eea-3eff-485d-96ac-b54ca8ab6b15 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="14">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0014</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-17</ActivityDate>
+    <PaymentId>73925e98-97e6-4c9c-a30d-504158e745a7</PaymentId>
+    <SuspiciousAmount>
+      <Amount>60992.4</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=73925e98-97e6-4c9c-a30d-504158e745a7 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="15">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0015</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>bd799fe1-8ee2-47d7-a5e9-85c19319a297</PaymentId>
+    <SuspiciousAmount>
+      <Amount>6845.07</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=bd799fe1-8ee2-47d7-a5e9-85c19319a297 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="16">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0016</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>23d2812b-f013-4f65-8149-a0ec5087711b</PaymentId>
+    <SuspiciousAmount>
+      <Amount>33698.48</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=23d2812b-f013-4f65-8149-a0ec5087711b Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="17">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0017</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>d4feb3be-bae1-4f2c-aefe-fd32c3aa536e</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3353.87</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=d4feb3be-bae1-4f2c-aefe-fd32c3aa536e Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="18">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0018</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>a19d3339-cc2c-4060-8aad-b427da16e004</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5712.25</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=a19d3339-cc2c-4060-8aad-b427da16e004 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="19">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0019</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>fba77a99-42ee-4de3-94a1-cae0c1c842a5</PaymentId>
+    <SuspiciousAmount>
+      <Amount>33878.4</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=fba77a99-42ee-4de3-94a1-cae0c1c842a5 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="20">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0020</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>ba18802d-cadb-4394-be54-b93d298dcac7</PaymentId>
+    <SuspiciousAmount>
+      <Amount>17542.55</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=ba18802d-cadb-4394-be54-b93d298dcac7 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="21">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0021</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>9e04f276-d32d-4291-a62d-1867f78fa6da</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2263.32</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=9e04f276-d32d-4291-a62d-1867f78fa6da Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="22">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0022</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>8f9dd9b6-1463-4895-89aa-1a6403c47e3c</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1788.27</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=8f9dd9b6-1463-4895-89aa-1a6403c47e3c Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="23">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0023</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>e65f16e0-d8ff-40c1-8c25-a0a0425d0bbf</PaymentId>
+    <SuspiciousAmount>
+      <Amount>16147.88</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=e65f16e0-d8ff-40c1-8c25-a0a0425d0bbf Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="24">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0024</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>c4be6974-51d8-4ad6-b94f-52a0f3cf6749</PaymentId>
+    <SuspiciousAmount>
+      <Amount>266.7</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=c4be6974-51d8-4ad6-b94f-52a0f3cf6749 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="25">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0025</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>d4cdb33a-bc78-446c-920c-e8aff843f80f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>159.81</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=d4cdb33a-bc78-446c-920c-e8aff843f80f Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="26">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0026</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>3ee6cb2c-61e5-4c43-97d9-ffaadc792ff6</PaymentId>
+    <SuspiciousAmount>
+      <Amount>516361.63</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=3ee6cb2c-61e5-4c43-97d9-ffaadc792ff6 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="27">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0027</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>38b0c0f9-9d04-48a0-81d3-ec5e8ad5c2df</PaymentId>
+    <SuspiciousAmount>
+      <Amount>30239.85</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=38b0c0f9-9d04-48a0-81d3-ec5e8ad5c2df Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="28">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0028</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-27</ActivityDate>
+    <PaymentId>6a92b3cd-0611-4c2b-b141-f87715459b61</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2310.59</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=6a92b3cd-0611-4c2b-b141-f87715459b61 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="29">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0029</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>c9800cb7-d116-4e22-99c6-000c5b8cf2f8</PaymentId>
+    <SuspiciousAmount>
+      <Amount>4462.02</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=c9800cb7-d116-4e22-99c6-000c5b8cf2f8 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="30">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0030</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>55f38b6d-4f6b-4318-a823-7aa6dbfd1de4</PaymentId>
+    <SuspiciousAmount>
+      <Amount>390.21</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=55f38b6d-4f6b-4318-a823-7aa6dbfd1de4 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="31">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0031</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>389920d9-f743-4549-9c9f-c9e813f81ccf</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3313.34</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=389920d9-f743-4549-9c9f-c9e813f81ccf Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="32">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0032</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>0b6b8a68-75aa-4249-bef1-389eb55211f7</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1443.16</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=0b6b8a68-75aa-4249-bef1-389eb55211f7 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="33">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0033</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>22fe62ed-4a6f-4449-8ccb-524ed451d137</PaymentId>
+    <SuspiciousAmount>
+      <Amount>8057.45</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=22fe62ed-4a6f-4449-8ccb-524ed451d137 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="34">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0034</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>c681edbd-c0ab-4fcf-be48-6ac0cf98bb99</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1063.57</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=c681edbd-c0ab-4fcf-be48-6ac0cf98bb99 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="35">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0035</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>a599a790-e7bf-4a7b-9e74-2dd2d99ee90f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>267166.11</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=a599a790-e7bf-4a7b-9e74-2dd2d99ee90f Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="36">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0036</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>7fc7c7ca-179c-4d35-a1da-94c057e2eb4e</PaymentId>
+    <SuspiciousAmount>
+      <Amount>757.92</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=7fc7c7ca-179c-4d35-a1da-94c057e2eb4e Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="37">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0037</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>8dfcd0b9-cd3f-4e31-a473-40c48585215e</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1154.24</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=8dfcd0b9-cd3f-4e31-a473-40c48585215e Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="38">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0038</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>8d650d1b-faa0-4d73-8947-2d952e4fbb03</PaymentId>
+    <SuspiciousAmount>
+      <Amount>6599.71</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=8d650d1b-faa0-4d73-8947-2d952e4fbb03 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="39">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0039</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>2f630220-2b88-4e3a-bae0-239954486122</PaymentId>
+    <SuspiciousAmount>
+      <Amount>12639.22</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=2f630220-2b88-4e3a-bae0-239954486122 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="40">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0040</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>9bfd14f9-6024-4964-8ef0-dec3c583da42</PaymentId>
+    <SuspiciousAmount>
+      <Amount>22887.06</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=9bfd14f9-6024-4964-8ef0-dec3c583da42 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="41">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0041</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>4c011755-a47a-432f-b19c-fdde0a0b9b99</PaymentId>
+    <SuspiciousAmount>
+      <Amount>259.74</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=4c011755-a47a-432f-b19c-fdde0a0b9b99 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="42">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0042</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>46cc36c1-d75c-4d47-8d3d-1d3e35ac3113</PaymentId>
+    <SuspiciousAmount>
+      <Amount>641.49</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=46cc36c1-d75c-4d47-8d3d-1d3e35ac3113 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="43">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0043</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-31</ActivityDate>
+    <PaymentId>4aa0c401-9c38-4fb8-a70f-6d1eee5d5f2b</PaymentId>
+    <SuspiciousAmount>
+      <Amount>75811.79</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=4aa0c401-9c38-4fb8-a70f-6d1eee5d5f2b Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="44">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0044</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>083a3218-ec28-476e-b67b-d64434c39f0e</PaymentId>
+    <SuspiciousAmount>
+      <Amount>172.71</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=083a3218-ec28-476e-b67b-d64434c39f0e Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="45">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0045</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>c2980a02-5a0a-439d-8c77-27c18bb7323f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>15521.4</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=c2980a02-5a0a-439d-8c77-27c18bb7323f Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="46">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0046</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>0cd988a7-dc23-4119-beb7-7c561394569e</PaymentId>
+    <SuspiciousAmount>
+      <Amount>9051.96</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=0cd988a7-dc23-4119-beb7-7c561394569e Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="47">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0047</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>71cfc475-2dd0-4483-9fe1-f5ef52e7ebbf</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3228.06</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=71cfc475-2dd0-4483-9fe1-f5ef52e7ebbf Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="48">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0048</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>52b2129a-9ac1-43cb-81be-573723d43b96</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2451.58</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=52b2129a-9ac1-43cb-81be-573723d43b96 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="49">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0049</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>456dfdb5-e190-4230-b96e-9971c76cee19</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2978.12</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=456dfdb5-e190-4230-b96e-9971c76cee19 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="50">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0050</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>cc80e30d-077d-4ff3-af5b-de4687f53bf6</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2883.08</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=cc80e30d-077d-4ff3-af5b-de4687f53bf6 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="51">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0051</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>8445a338-38fa-4504-9bb3-6518223391d3</PaymentId>
+    <SuspiciousAmount>
+      <Amount>15257.72</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=8445a338-38fa-4504-9bb3-6518223391d3 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="52">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0052</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>610e67e3-ec31-4b8d-a048-0cfa514eea69</PaymentId>
+    <SuspiciousAmount>
+      <Amount>6322.99</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=610e67e3-ec31-4b8d-a048-0cfa514eea69 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="53">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0053</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>b913e034-0dd1-4734-bc1c-ef0f9f1614c2</PaymentId>
+    <SuspiciousAmount>
+      <Amount>23.45</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=b913e034-0dd1-4734-bc1c-ef0f9f1614c2 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="54">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0054</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>4205968b-4f7f-4dc1-b5b8-e57006c5a223</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3757.15</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=4205968b-4f7f-4dc1-b5b8-e57006c5a223 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="55">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0055</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>d44cba2d-8cb4-4d43-912a-e9d1a29779dc</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1391.13</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=d44cba2d-8cb4-4d43-912a-e9d1a29779dc Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="56">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0056</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>4dd9b964-d10c-43cc-8000-c1d6fc3e262e</PaymentId>
+    <SuspiciousAmount>
+      <Amount>9582.66</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=4dd9b964-d10c-43cc-8000-c1d6fc3e262e Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="57">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0057</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>c5520394-0c6f-4db7-a9f3-76a141e51e51</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3450.59</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=c5520394-0c6f-4db7-a9f3-76a141e51e51 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="58">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0058</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>cdd54681-b909-4aaf-bc98-841918e03f82</PaymentId>
+    <SuspiciousAmount>
+      <Amount>163.98</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=cdd54681-b909-4aaf-bc98-841918e03f82 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="59">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0059</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-28</ActivityDate>
+    <PaymentId>8eddb39f-e3c8-403a-80e9-e9bc86fc0549</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3887.45</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=8eddb39f-e3c8-403a-80e9-e9bc86fc0549 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="60">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0060</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>7c50933f-58e9-4d20-aa4c-661cbefedff3</PaymentId>
+    <SuspiciousAmount>
+      <Amount>263.99</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=7c50933f-58e9-4d20-aa4c-661cbefedff3 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="61">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0061</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>8f883233-f9b8-434d-8abb-0fee6b6b1cc6</PaymentId>
+    <SuspiciousAmount>
+      <Amount>12133.31</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=8f883233-f9b8-434d-8abb-0fee6b6b1cc6 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="62">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0062</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>1f65697f-a9f7-4039-b565-1824af1fd669</PaymentId>
+    <SuspiciousAmount>
+      <Amount>119.31</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=1f65697f-a9f7-4039-b565-1824af1fd669 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="63">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0063</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>b8827452-c023-49d5-9e5f-50e25af14d11</PaymentId>
+    <SuspiciousAmount>
+      <Amount>620.6</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=b8827452-c023-49d5-9e5f-50e25af14d11 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="64">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0064</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>77c79078-1267-4957-bb28-b4720509efea</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3282.96</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=77c79078-1267-4957-bb28-b4720509efea Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="65">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0065</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>26db0da8-4be0-45da-8a02-5fd3783530a9</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1962.28</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=26db0da8-4be0-45da-8a02-5fd3783530a9 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="66">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0066</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>06cc79aa-dc59-48aa-a582-4999efe85cc6</PaymentId>
+    <SuspiciousAmount>
+      <Amount>15553.95</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=06cc79aa-dc59-48aa-a582-4999efe85cc6 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="67">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0067</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>d3ca63b1-ed63-4629-8598-f1456c199ffe</PaymentId>
+    <SuspiciousAmount>
+      <Amount>8596.42</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=d3ca63b1-ed63-4629-8598-f1456c199ffe Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="68">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0068</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>2d4e83bb-8eba-425c-9c3d-acf4db6eca65</PaymentId>
+    <SuspiciousAmount>
+      <Amount>430.22</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=2d4e83bb-8eba-425c-9c3d-acf4db6eca65 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="69">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0069</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>d6b79731-9545-41b4-b6ac-5b9ef8c16d5a</PaymentId>
+    <SuspiciousAmount>
+      <Amount>465.94</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=d6b79731-9545-41b4-b6ac-5b9ef8c16d5a Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="70">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0070</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>d9f8250a-94fb-46de-be35-c24d95d88ac1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>101.2</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=d9f8250a-94fb-46de-be35-c24d95d88ac1 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="71">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0071</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>321d31b7-c3fe-4b02-ad72-51175f6d8cde</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5328.7</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=321d31b7-c3fe-4b02-ad72-51175f6d8cde Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="72">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0072</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>ab3b7edf-a255-412c-a5b6-491b1deadec1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>21163.46</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=ab3b7edf-a255-412c-a5b6-491b1deadec1 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="73">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0073</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>cc42b933-f1fc-4070-96ea-90cf47c04b29</PaymentId>
+    <SuspiciousAmount>
+      <Amount>24757.66</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=cc42b933-f1fc-4070-96ea-90cf47c04b29 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="74">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0074</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>3c21b342-7f8e-47df-9398-c3c6aa4abbdc</PaymentId>
+    <SuspiciousAmount>
+      <Amount>13301.39</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=3c21b342-7f8e-47df-9398-c3c6aa4abbdc Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="75">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0075</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-23</ActivityDate>
+    <PaymentId>969a9076-1a2a-45ce-b902-fa633ed6f008</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1447.5</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=969a9076-1a2a-45ce-b902-fa633ed6f008 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="76">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0076</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>83231eba-2d4a-4436-ac48-105f48a5aba1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>19401.94</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=83231eba-2d4a-4436-ac48-105f48a5aba1 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="77">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0077</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>b1defa1d-9e34-466e-8d01-d7ef509847a7</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2226.7</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=b1defa1d-9e34-466e-8d01-d7ef509847a7 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="78">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0078</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>151da5a9-39dc-4128-86a4-dcb32c0e1f43</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5341.85</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=151da5a9-39dc-4128-86a4-dcb32c0e1f43 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="79">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0079</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>55129db5-d5a3-4720-875c-94104aa514d1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>24235.6</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=55129db5-d5a3-4720-875c-94104aa514d1 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="80">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0080</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>29e317db-47b8-4d3f-b8d7-e4f019428dda</PaymentId>
+    <SuspiciousAmount>
+      <Amount>640.92</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=29e317db-47b8-4d3f-b8d7-e4f019428dda Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="81">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0081</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>15e0e250-557b-4507-8f48-f867bfe0adb1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>13406.33</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=15e0e250-557b-4507-8f48-f867bfe0adb1 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="82">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0082</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>0b69bdcd-742c-4a85-a7b0-c1544c9e1bfc</PaymentId>
+    <SuspiciousAmount>
+      <Amount>6613.67</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=0b69bdcd-742c-4a85-a7b0-c1544c9e1bfc Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="83">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0083</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>39ca6832-9a74-4e71-ad5c-10c246498cf1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>13223.81</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=39ca6832-9a74-4e71-ad5c-10c246498cf1 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="84">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0084</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>c365a94d-b252-4caf-a24d-0fcecdea7d2f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1556.82</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=c365a94d-b252-4caf-a24d-0fcecdea7d2f Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="85">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0085</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>337fc758-da33-42c4-8ad5-81bbff3ab275</PaymentId>
+    <SuspiciousAmount>
+      <Amount>34953.92</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=337fc758-da33-42c4-8ad5-81bbff3ab275 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="86">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0086</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>eae78853-97bc-4757-8b6b-5528f95ad505</PaymentId>
+    <SuspiciousAmount>
+      <Amount>523.56</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=eae78853-97bc-4757-8b6b-5528f95ad505 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="87">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0087</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>b2208ab5-55bf-447e-834b-1c65a8cb6f53</PaymentId>
+    <SuspiciousAmount>
+      <Amount>593.76</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=b2208ab5-55bf-447e-834b-1c65a8cb6f53 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="88">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0088</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>c33f4af3-afdd-49f1-8b41-d03d293af9ff</PaymentId>
+    <SuspiciousAmount>
+      <Amount>135722.29</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=c33f4af3-afdd-49f1-8b41-d03d293af9ff Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="89">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0089</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>d787b999-72a5-43f5-b9b2-192e049023ec</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3546.12</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=d787b999-72a5-43f5-b9b2-192e049023ec Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="90">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0090</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>80f895f2-0b7e-493d-8294-6f8130bbc48a</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3175.63</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=80f895f2-0b7e-493d-8294-6f8130bbc48a Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="91">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0091</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>87cbedaa-45ef-48f4-b0d4-f0e44cc880d4</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1516.57</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=87cbedaa-45ef-48f4-b0d4-f0e44cc880d4 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="92">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0092</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-04-05</ActivityDate>
+    <PaymentId>7de9669e-7333-426c-8485-3d0242fb7307</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3516.22</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=7de9669e-7333-426c-8485-3d0242fb7307 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="93">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0093</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>813cdd24-55b8-4d34-83b9-a3f2ae820b00</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1139.3</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=813cdd24-55b8-4d34-83b9-a3f2ae820b00 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="94">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0094</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>ef0cccb7-c662-4115-979e-1ccfe278aa38</PaymentId>
+    <SuspiciousAmount>
+      <Amount>7786.15</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=ef0cccb7-c662-4115-979e-1ccfe278aa38 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="95">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0095</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>9fd769d8-3c25-456c-965f-8699be9a1b63</PaymentId>
+    <SuspiciousAmount>
+      <Amount>391.59</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=9fd769d8-3c25-456c-965f-8699be9a1b63 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="96">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0096</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>179b4ebc-7b79-4f16-ab31-5791d54ee739</PaymentId>
+    <SuspiciousAmount>
+      <Amount>507.12</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=179b4ebc-7b79-4f16-ab31-5791d54ee739 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="97">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0097</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>426f8d65-80d0-4b8f-95b2-13c542af86e8</PaymentId>
+    <SuspiciousAmount>
+      <Amount>44316.84</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=426f8d65-80d0-4b8f-95b2-13c542af86e8 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="98">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0098</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>f5085790-2eaa-42e7-a293-2f6cb59dab98</PaymentId>
+    <SuspiciousAmount>
+      <Amount>28948.78</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=f5085790-2eaa-42e7-a293-2f6cb59dab98 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="99">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0099</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>29fcd5bb-9bdc-46bc-8d0a-73f5b24c2a6f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>675.48</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=29fcd5bb-9bdc-46bc-8d0a-73f5b24c2a6f Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="100">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0100</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>aa8c952a-96f3-4f4a-9cbf-ff2650c5899b</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5125.21</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=aa8c952a-96f3-4f4a-9cbf-ff2650c5899b Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="101">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0101</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>3970bfbf-8853-44d5-ab1b-4acc696ba783</PaymentId>
+    <SuspiciousAmount>
+      <Amount>10135.24</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=3970bfbf-8853-44d5-ab1b-4acc696ba783 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="102">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0102</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>b006095a-b1c7-4379-8ea3-273afc17d1e1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2763.52</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=b006095a-b1c7-4379-8ea3-273afc17d1e1 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="103">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0103</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>9aa4d84c-843c-491c-b8bd-20d238f660d5</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5688.15</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=9aa4d84c-843c-491c-b8bd-20d238f660d5 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="104">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0104</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>e9ff7769-a68b-4f31-b255-ebe145051f4a</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1869.52</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=e9ff7769-a68b-4f31-b255-ebe145051f4a Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="105">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0105</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>c4991b1f-39de-4a45-8f9f-f3b534e23ace</PaymentId>
+    <SuspiciousAmount>
+      <Amount>23717.73</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=c4991b1f-39de-4a45-8f9f-f3b534e23ace Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="106">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0106</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>7f614558-f079-455e-8bf0-11a6e5d2a2ea</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2091.57</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=7f614558-f079-455e-8bf0-11a6e5d2a2ea Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="107">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0107</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>a8e63087-6274-4697-87b2-a548382f6ebd</PaymentId>
+    <SuspiciousAmount>
+      <Amount>84073.1</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=a8e63087-6274-4697-87b2-a548382f6ebd Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="108">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0108</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>ab3173b4-52ce-4600-8989-e92ee2155f8b</PaymentId>
+    <SuspiciousAmount>
+      <Amount>24085.61</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=ab3173b4-52ce-4600-8989-e92ee2155f8b Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="109">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0109</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-03</ActivityDate>
+    <PaymentId>9f8d7c23-bfbe-43ba-a1a9-03dcd92b9247</PaymentId>
+    <SuspiciousAmount>
+      <Amount>83254.19</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=9f8d7c23-bfbe-43ba-a1a9-03dcd92b9247 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="110">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0110</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>d7caf93d-10c1-4177-9154-9a3f5c2b7446</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1382.31</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=d7caf93d-10c1-4177-9154-9a3f5c2b7446 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="111">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0111</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>f335728e-ceb8-408d-a115-4cebbdaad473</PaymentId>
+    <SuspiciousAmount>
+      <Amount>692.87</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=f335728e-ceb8-408d-a115-4cebbdaad473 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="112">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0112</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>93f884f2-0f1c-49ff-a053-36fe1fb69f64</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3589.8</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=93f884f2-0f1c-49ff-a053-36fe1fb69f64 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="113">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0113</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>003d2493-65ed-4839-a6b7-37fe715e2db1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>188.81</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=003d2493-65ed-4839-a6b7-37fe715e2db1 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="114">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0114</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>8d8c5c5b-280c-4ad1-bd0f-dae4b8af7b20</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2014.76</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=8d8c5c5b-280c-4ad1-bd0f-dae4b8af7b20 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="115">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0115</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>9c91d7a7-c96d-4bbb-af24-4cdaa5881988</PaymentId>
+    <SuspiciousAmount>
+      <Amount>737.24</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=9c91d7a7-c96d-4bbb-af24-4cdaa5881988 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="116">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0116</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>d544b2ad-a7de-4225-8a42-a7f77b765a7b</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2204.6</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=d544b2ad-a7de-4225-8a42-a7f77b765a7b Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="117">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0117</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>75d3fff2-6dd3-440a-9480-f03a0edb65b0</PaymentId>
+    <SuspiciousAmount>
+      <Amount>165.15</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=75d3fff2-6dd3-440a-9480-f03a0edb65b0 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="118">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0118</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>f702e2bb-61e1-4aa2-be34-9fc09823c087</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1265.47</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=f702e2bb-61e1-4aa2-be34-9fc09823c087 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="119">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0119</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>2d1a0a7f-88e4-4f18-b799-04aa1e603cbd</PaymentId>
+    <SuspiciousAmount>
+      <Amount>6935.87</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=2d1a0a7f-88e4-4f18-b799-04aa1e603cbd Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="120">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0120</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>e4ff23ed-799a-4c58-b69c-1c2fc7ec8bac</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1393.55</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=e4ff23ed-799a-4c58-b69c-1c2fc7ec8bac Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="121">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0121</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>715db5f9-8caf-4c3d-8b67-4cee440933ce</PaymentId>
+    <SuspiciousAmount>
+      <Amount>4203.62</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=715db5f9-8caf-4c3d-8b67-4cee440933ce Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="122">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0122</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>e255560b-96fe-4c06-bf1e-0d9f586292ab</PaymentId>
+    <SuspiciousAmount>
+      <Amount>6307.82</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=e255560b-96fe-4c06-bf1e-0d9f586292ab Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="123">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0123</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>9f5cf7cd-dd1a-4ce0-82c0-8ea4516cbc3f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>4602.62</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=9f5cf7cd-dd1a-4ce0-82c0-8ea4516cbc3f Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="124">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0124</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>3f394a36-b1ed-432d-bab9-d146f4bb3203</PaymentId>
+    <SuspiciousAmount>
+      <Amount>75.22</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=3f394a36-b1ed-432d-bab9-d146f4bb3203 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="125">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0125</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>4849aa1b-ad36-4b1e-bf20-95131e0dc88e</PaymentId>
+    <SuspiciousAmount>
+      <Amount>103.68</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=4849aa1b-ad36-4b1e-bf20-95131e0dc88e Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="126">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0126</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-15</ActivityDate>
+    <PaymentId>516c959f-2ca8-4efc-b216-59e698a05b81</PaymentId>
+    <SuspiciousAmount>
+      <Amount>634.34</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=516c959f-2ca8-4efc-b216-59e698a05b81 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="127">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0127</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>1c8848a1-f13c-459c-b110-0595a1f911bb</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2193.71</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=1c8848a1-f13c-459c-b110-0595a1f911bb Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="128">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0128</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>3c1f4a8e-3c42-499d-bdca-933e8ab24f01</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5232.72</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=3c1f4a8e-3c42-499d-bdca-933e8ab24f01 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="129">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0129</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>2c4fce3b-db61-4f54-9e58-e4bdd8a79bbd</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3374.87</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=2c4fce3b-db61-4f54-9e58-e4bdd8a79bbd Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="130">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0130</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>8e2e4892-6f54-4bf5-809b-0ea0aa3e7eb2</PaymentId>
+    <SuspiciousAmount>
+      <Amount>128454.2</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=8e2e4892-6f54-4bf5-809b-0ea0aa3e7eb2 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="131">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0131</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>611b9aae-9240-49c9-b421-611783d7783d</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1809.7</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=611b9aae-9240-49c9-b421-611783d7783d Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="132">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0132</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>f19ff3a8-cb45-4658-bdbb-681498454d85</PaymentId>
+    <SuspiciousAmount>
+      <Amount>14776.33</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=f19ff3a8-cb45-4658-bdbb-681498454d85 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="133">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0133</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>ad927adb-9743-43a8-878b-84e6968f46e1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>162203.39</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=ad927adb-9743-43a8-878b-84e6968f46e1 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="134">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0134</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>c675c042-39b6-4adb-ac7d-c69219d4662a</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5195.63</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=c675c042-39b6-4adb-ac7d-c69219d4662a Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="135">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0135</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>fd6a4dad-af0a-41c5-bd05-0b09d1b6e48c</PaymentId>
+    <SuspiciousAmount>
+      <Amount>8585.89</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=fd6a4dad-af0a-41c5-bd05-0b09d1b6e48c Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="136">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0136</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>7e623c37-8516-4bd8-ba38-8b90f2c3c700</PaymentId>
+    <SuspiciousAmount>
+      <Amount>28694.12</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=7e623c37-8516-4bd8-ba38-8b90f2c3c700 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="137">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0137</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>c38b099b-f9e1-4ce4-90d8-aec0082ba59d</PaymentId>
+    <SuspiciousAmount>
+      <Amount>175.56</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=c38b099b-f9e1-4ce4-90d8-aec0082ba59d Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="138">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0138</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>db574748-947f-4ea4-9b92-81dafae2a6d5</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5681.49</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=db574748-947f-4ea4-9b92-81dafae2a6d5 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="139">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0139</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>ae4d4d6a-e482-42aa-872a-ce16f4c5f2da</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2367.5</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=ae4d4d6a-e482-42aa-872a-ce16f4c5f2da Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="140">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0140</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>4a4173c5-d0c3-45b4-af16-19c2786d3b4d</PaymentId>
+    <SuspiciousAmount>
+      <Amount>342038.81</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=4a4173c5-d0c3-45b4-af16-19c2786d3b4d Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="141">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0141</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>3c4ed924-a3fa-4a3a-ae83-79bdc5a7f298</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5820.01</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=3c4ed924-a3fa-4a3a-ae83-79bdc5a7f298 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="142">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0142</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>66a897f0-a128-494b-a561-2e184871f732</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3117.19</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=66a897f0-a128-494b-a561-2e184871f732 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="143">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0143</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-23</ActivityDate>
+    <PaymentId>1117618f-e005-407f-9659-7a4b47cdbfc7</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3574.73</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=1117618f-e005-407f-9659-7a4b47cdbfc7 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="144">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0144</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>6b954c01-3739-4382-a40f-fc6bae8344b3</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3416.79</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=6b954c01-3739-4382-a40f-fc6bae8344b3 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="145">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0145</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>0ea037d5-bd38-4571-a80c-fd7425838498</PaymentId>
+    <SuspiciousAmount>
+      <Amount>9781.0</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=0ea037d5-bd38-4571-a80c-fd7425838498 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="146">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0146</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>b0cdaaaa-441a-4800-96a2-d82dc751195a</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1053.68</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=b0cdaaaa-441a-4800-96a2-d82dc751195a Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="147">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0147</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>618a6089-578e-4a74-aad0-ad9d4b915cf6</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5315.88</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=618a6089-578e-4a74-aad0-ad9d4b915cf6 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="148">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0148</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>add718b7-9df0-4900-9cbd-c55480decc9f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>106204.73</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=add718b7-9df0-4900-9cbd-c55480decc9f Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="149">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0149</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>d33c6638-204f-41ae-a08d-55176cf35b35</PaymentId>
+    <SuspiciousAmount>
+      <Amount>466.52</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=d33c6638-204f-41ae-a08d-55176cf35b35 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="150">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0150</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>45ab9c6a-c31a-4cfd-9412-bce042381527</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3103.72</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=45ab9c6a-c31a-4cfd-9412-bce042381527 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="151">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0151</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>24b2b73e-96c7-4cbb-98c2-a18e9ce5e95b</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5097.1</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=24b2b73e-96c7-4cbb-98c2-a18e9ce5e95b Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="152">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0152</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>4a99a88b-6b7e-47c0-8851-7efa9828a542</PaymentId>
+    <SuspiciousAmount>
+      <Amount>732.61</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=4a99a88b-6b7e-47c0-8851-7efa9828a542 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="153">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0153</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>8b0afb51-0cbb-4c49-a9c8-3cc63953419a</PaymentId>
+    <SuspiciousAmount>
+      <Amount>23209.21</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=8b0afb51-0cbb-4c49-a9c8-3cc63953419a Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="154">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0154</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>cad0517c-9b97-46c0-8a49-68f0d1f7ff13</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2416.48</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=cad0517c-9b97-46c0-8a49-68f0d1f7ff13 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="155">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0155</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>3e3b56d3-0b18-4b20-a2b4-c2b0d3dacd05</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5984.77</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=3e3b56d3-0b18-4b20-a2b4-c2b0d3dacd05 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="156">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0156</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>872c191f-eeb6-4117-a416-9be567cbc224</PaymentId>
+    <SuspiciousAmount>
+      <Amount>997.47</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=872c191f-eeb6-4117-a416-9be567cbc224 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="157">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0157</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-15</ActivityDate>
+    <PaymentId>e3aad46c-9370-45a0-8e06-e401d990a6c1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>4248.87</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=e3aad46c-9370-45a0-8e06-e401d990a6c1 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="158">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0158</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>afb686ad-4deb-4afb-a8cc-aefabf0bf1be</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5303.75</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=afb686ad-4deb-4afb-a8cc-aefabf0bf1be Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="159">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0159</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>25ef8f83-33ab-4181-9f78-deda18b53f81</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1697.65</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=25ef8f83-33ab-4181-9f78-deda18b53f81 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="160">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0160</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>9d58769e-9b50-4964-89ab-0f24a4bf98a3</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3707.17</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=9d58769e-9b50-4964-89ab-0f24a4bf98a3 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="161">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0161</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>0310512f-e630-4ab3-94dc-3408534a2c1f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>12144.68</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=0310512f-e630-4ab3-94dc-3408534a2c1f Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="162">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0162</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>48376bce-c508-402f-a05b-a3d2574a41b4</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5494.66</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=48376bce-c508-402f-a05b-a3d2574a41b4 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="163">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0163</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>1a9b6d22-7046-4dda-8549-c28ff207af7a</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2506.52</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=1a9b6d22-7046-4dda-8549-c28ff207af7a Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="164">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0164</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>f5c6122d-fcfd-4a4d-ada9-b1c00ecb0787</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1037.14</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=f5c6122d-fcfd-4a4d-ada9-b1c00ecb0787 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="165">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0165</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>11af925b-0938-4b1f-a49b-2d9c3349875e</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1718.27</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=11af925b-0938-4b1f-a49b-2d9c3349875e Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="166">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0166</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>feaff769-19cc-4dff-afe8-3b95e98b42ee</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2209.96</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=feaff769-19cc-4dff-afe8-3b95e98b42ee Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="167">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0167</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>fedd69e2-a559-4e06-ae8a-b181d1c85699</PaymentId>
+    <SuspiciousAmount>
+      <Amount>101131.34</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=fedd69e2-a559-4e06-ae8a-b181d1c85699 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="168">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0168</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>26fc77b5-f18d-4a2b-9d9c-b2e31712280a</PaymentId>
+    <SuspiciousAmount>
+      <Amount>541.67</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=26fc77b5-f18d-4a2b-9d9c-b2e31712280a Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="169">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0169</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>dcdfd66c-8eb2-448f-b350-aefe3d6e2fdc</PaymentId>
+    <SuspiciousAmount>
+      <Amount>848.9</Amount>
+      <Currency>GBP</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=dcdfd66c-8eb2-448f-b350-aefe3d6e2fdc Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="170">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0170</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>e2b25085-3037-4d24-a971-b1f4075441d7</PaymentId>
+    <SuspiciousAmount>
+      <Amount>7566.99</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=e2b25085-3037-4d24-a971-b1f4075441d7 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="171">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0171</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>db137c90-338c-4e03-8c64-ffdaced173ab</PaymentId>
+    <SuspiciousAmount>
+      <Amount>15197.35</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=db137c90-338c-4e03-8c64-ffdaced173ab Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="172">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0172</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>9c6dffda-b236-4a94-845f-9622f89f3b0d</PaymentId>
+    <SuspiciousAmount>
+      <Amount>115.88</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=9c6dffda-b236-4a94-845f-9622f89f3b0d Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="173">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0173</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>9bf04740-57d8-4e20-b6a4-b06fdbfbb441</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1473.35</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=9bf04740-57d8-4e20-b6a4-b06fdbfbb441 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="174">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0174</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>1642dc31-25ed-47bb-8046-a685214e70fd</PaymentId>
+    <SuspiciousAmount>
+      <Amount>548.68</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=1642dc31-25ed-47bb-8046-a685214e70fd Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="175">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0175</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>161a79af-0245-40ea-89cd-17f38cd9e552</PaymentId>
+    <SuspiciousAmount>
+      <Amount>384.75</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=161a79af-0245-40ea-89cd-17f38cd9e552 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="176">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0176</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-03-14</ActivityDate>
+    <PaymentId>0c1d6dd3-1067-43ae-8517-0837bfc714af</PaymentId>
+    <SuspiciousAmount>
+      <Amount>15191.41</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=0c1d6dd3-1067-43ae-8517-0837bfc714af Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="177">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0177</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>bd60b8e8-deb9-45bb-a565-607085e0ca75</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5747.73</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=bd60b8e8-deb9-45bb-a565-607085e0ca75 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="178">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0178</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>0128440f-4ddd-4409-af7d-9214794b00e6</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5942.08</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=0128440f-4ddd-4409-af7d-9214794b00e6 Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="179">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0179</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>fe4057c2-520d-4b6e-8c2e-6def352810df</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1532.3</Amount>
+      <Currency>JPY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=fe4057c2-520d-4b6e-8c2e-6def352810df Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="180">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0180</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>be800888-6e36-4b18-a2a5-30bf92c00591</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2664.83</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=be800888-6e36-4b18-a2a5-30bf92c00591 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="181">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0181</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>d69d01e1-8fda-4df6-9a5e-8a1049510e6a</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5658.23</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=d69d01e1-8fda-4df6-9a5e-8a1049510e6a Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="182">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0182</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>2e53823b-e49e-4340-b941-d1dfb1c42b6a</PaymentId>
+    <SuspiciousAmount>
+      <Amount>107467.58</Amount>
+      <Currency>NZD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=2e53823b-e49e-4340-b941-d1dfb1c42b6a Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="183">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0183</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>16a61f71-b909-4587-8854-704666a23270</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1548.37</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=16a61f71-b909-4587-8854-704666a23270 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="184">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0184</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>070722f7-00bd-4487-9d44-d4d8621792e9</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1633.21</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=070722f7-00bd-4487-9d44-d4d8621792e9 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="185">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0185</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>cf15f779-6fdc-426a-a3b8-df000d7fbd70</PaymentId>
+    <SuspiciousAmount>
+      <Amount>7048.78</Amount>
+      <Currency>AUD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=cf15f779-6fdc-426a-a3b8-df000d7fbd70 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="186">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0186</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>f997b78e-d84f-49f0-a0be-c937f6c1edc6</PaymentId>
+    <SuspiciousAmount>
+      <Amount>8883.17</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=f997b78e-d84f-49f0-a0be-c937f6c1edc6 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="187">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0187</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>a1f9b028-0bbc-4cc0-9556-b8c43bf6583d</PaymentId>
+    <SuspiciousAmount>
+      <Amount>20232.05</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=a1f9b028-0bbc-4cc0-9556-b8c43bf6583d Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="188">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0188</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>f3ab6763-0018-41e8-bc39-46f03d6cfe6e</PaymentId>
+    <SuspiciousAmount>
+      <Amount>4602.09</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=f3ab6763-0018-41e8-bc39-46f03d6cfe6e Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="189">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0189</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>60da69e8-f29e-41db-82ac-7a6c9edcd6e1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1097.96</Amount>
+      <Currency>USD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>GAZPROMBANK</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=60da69e8-f29e-41db-82ac-7a6c9edcd6e1 Sanctions match: GAZPROMBANK</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="190">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0190</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>42dddcb0-6c8d-4646-896b-a2c87c067c3e</PaymentId>
+    <SuspiciousAmount>
+      <Amount>5938.62</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=42dddcb0-6c8d-4646-896b-a2c87c067c3e Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="191">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0191</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>224fdeb7-bc4f-4419-80bb-645324938760</PaymentId>
+    <SuspiciousAmount>
+      <Amount>4816.52</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=224fdeb7-bc4f-4419-80bb-645324938760 Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="192">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0192</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>d9573fc8-5dac-4276-84bf-c244b2439ade</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2709.58</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=d9573fc8-5dac-4276-84bf-c244b2439ade Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="193">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0193</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>444a0dd2-6e20-40c8-8833-d313574ba5ea</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1167.61</Amount>
+      <Currency>SEK</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>HUSSAIN AL-QAEDA</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=444a0dd2-6e20-40c8-8833-d313574ba5ea Sanctions match: HUSSAIN AL-QAEDA</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="194">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0194</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-02-14</ActivityDate>
+    <PaymentId>1f1fd3e5-3963-4872-b635-fa1af0866c6f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>6930.33</Amount>
+      <Currency>CAD</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>KIM JONG UN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=1f1fd3e5-3963-4872-b635-fa1af0866c6f Sanctions match: KIM JONG UN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="195">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0195</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-29</ActivityDate>
+    <PaymentId>05522b3f-2a77-44a9-a0df-c7c89ee79b12</PaymentId>
+    <SuspiciousAmount>
+      <Amount>2455.36</Amount>
+      <Currency>EUR</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=05522b3f-2a77-44a9-a0df-c7c89ee79b12 Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="196">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0196</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-29</ActivityDate>
+    <PaymentId>acff2a4c-487d-473b-b10b-8ad2b733d4cc</PaymentId>
+    <SuspiciousAmount>
+      <Amount>3999.81</Amount>
+      <Currency>CNY</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>AL RAHMAN TARIQ</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=acff2a4c-487d-473b-b10b-8ad2b733d4cc Sanctions match: AL RAHMAN TARIQ</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="197">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0197</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-29</ActivityDate>
+    <PaymentId>a0025db2-5fe7-42d9-8781-7eac9b70eee0</PaymentId>
+    <SuspiciousAmount>
+      <Amount>668.62</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=a0025db2-5fe7-42d9-8781-7eac9b70eee0 Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="198">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0198</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-29</ActivityDate>
+    <PaymentId>e69ec9a3-6b5d-44f4-907b-0e7d6b8ea8d1</PaymentId>
+    <SuspiciousAmount>
+      <Amount>10425.13</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>PYONGYANG TRADING CO</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=e69ec9a3-6b5d-44f4-907b-0e7d6b8ea8d1 Sanctions match: PYONGYANG TRADING CO</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="199">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0199</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-29</ActivityDate>
+    <PaymentId>ac4bad25-1a7b-47f6-91c7-f7c8ac6c303b</PaymentId>
+    <SuspiciousAmount>
+      <Amount>4018.19</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=ac4bad25-1a7b-47f6-91c7-f7c8ac6c303b Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+  <SuspiciousActivityReport sequence="200">
+    <SARId>SAR-SAR-CLEARFLOW-20260416_042246-0200</SARId>
+    <FilingDate>2026-04-16</FilingDate>
+    <ActivityDate>2026-01-29</ActivityDate>
+    <PaymentId>45b37552-cffa-4b0f-8400-ee8e55b7ed4f</PaymentId>
+    <SuspiciousAmount>
+      <Amount>1734.48</Amount>
+      <Currency>CHF</Currency>
+    </SuspiciousAmount>
+    <Subject>
+      <Name>OSAMA BIN LADEN</Name>
+      <Country>XX</Country>
+      <IBAN/>
+    </Subject>
+    <SuspiciousActivity>
+      <ActivityType>SANCTIONS_MATCH</ActivityType>
+      <Description>AML_SANCTIONS_HIT paymentId=45b37552-cffa-4b0f-8400-ee8e55b7ed4f Sanctions match: OSAMA BIN LADEN</Description>
+      <AlertLevel>HIGH</AlertLevel>
+    </SuspiciousActivity>
+    <AutoFiled>true</AutoFiled>
+    <ReviewStatus>PENDING_COMPLIANCE_OFFICER</ReviewStatus>
+  </SuspiciousActivityReport>
+</FinCEN_SAR>

@@ -1,0 +1,37 @@
+<!-- Shared rolling file appender — include in every service's logback-spring.xml -->
+<!-- Caps each log file at 100 MB, keeps 14 days, total cap 5 GB               -->
+<included>
+  <!-- GDPR: mask IBAN, card PAN, and email addresses in all log output -->
+  <conversionRule conversionWord="maskedMsg"
+                  converterClass="com.clearflow.common.security.PiiMaskingConverter"/>
+  <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${LOG_PATH:-dev-logs}/${SERVICE_NAME}.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_PATH:-dev-logs}/${SERVICE_NAME}.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+      <maxFileSize>100MB</maxFileSize>
+      <maxHistory>14</maxHistory>
+      <totalSizeCap>5GB</totalSizeCap>
+      <cleanHistoryOnStart>true</cleanHistoryOnStart>
+    </rollingPolicy>
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+      <customFields>{"service":"${SERVICE_NAME}","environment":"clearflow"}</customFields>
+      <includeMdcKeyName>paymentId</includeMdcKeyName>
+      <includeMdcKeyName>correlationId</includeMdcKeyName>
+      <includeMdcKeyName>traceId</includeMdcKeyName>
+      <includeMdcKeyName>fraudScore</includeMdcKeyName>
+      <includeMdcKeyName>riskBand</includeMdcKeyName>
+      <includeMdcKeyName>screeningResult</includeMdcKeyName>
+      <includeMdcKeyName>matchScore</includeMdcKeyName>
+      <includeMdcKeyName>listHit</includeMdcKeyName>
+      <includeMdcKeyName>rail</includeMdcKeyName>
+      <includeMdcKeyName>durationMs</includeMdcKeyName>
+    </encoder>
+  </appender>
+
+  <appender name="ASYNC_ROLLING" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="ROLLING_FILE"/>
+    <queueSize>2048</queueSize>
+    <discardingThreshold>0</discardingThreshold>
+    <neverBlock>true</neverBlock>
+  </appender>
+</included>

@@ -1,0 +1,154 @@
+{
+  "__inputs": [],
+  "__requires": [
+    { "type": "grafana", "id": "grafana", "name": "Grafana", "version": "10.0.0" },
+    { "type": "datasource", "id": "elasticsearch", "name": "Elasticsearch", "version": "1.0.0" }
+  ],
+  "annotations": { "list": [] },
+  "description": "ClearFlow fraud scoring and AML compliance monitoring",
+  "editable": true,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [
+    { "title": "Operations Dashboard", "url": "/d/clearflow-main", "type": "link" }
+  ],
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "CRITICAL/HIGH Alerts (1h)",
+      "gridPos": { "h": 4, "w": 6, "x": 0, "y": 0 },
+      "targets": [
+        {
+          "datasource": "Elasticsearch",
+          "query": "alertLevel:HIGH AND @timestamp:[now-1h TO now]",
+          "metrics": [{ "type": "count", "id": "1" }],
+          "timeField": "@timestamp",
+          "bucketAggs": []
+        }
+      ],
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] }, "colorMode": "background" },
+      "fieldConfig": { "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "steps": [
+        { "color": "green", "value": null }, { "color": "orange", "value": 5 }, { "color": "red", "value": 20 }
+      ]}}}
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "AML Sanctions Hits (24h)",
+      "gridPos": { "h": 4, "w": 6, "x": 6, "y": 0 },
+      "targets": [
+        {
+          "datasource": "Elasticsearch",
+          "query": "eventType:AML_SANCTIONS_HIT AND @timestamp:[now-24h TO now]",
+          "metrics": [{ "type": "count", "id": "1" }],
+          "timeField": "@timestamp",
+          "bucketAggs": []
+        }
+      ],
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] }, "colorMode": "background" },
+      "fieldConfig": { "defaults": { "color": { "mode": "fixed", "fixedColor": "red" } } }
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Avg Fraud Score (1h)",
+      "gridPos": { "h": 4, "w": 6, "x": 12, "y": 0 },
+      "targets": [
+        {
+          "datasource": "Elasticsearch",
+          "query": "eventType:FRAUD_SCORE_COMPUTED AND @timestamp:[now-1h TO now]",
+          "metrics": [{ "type": "avg", "id": "1", "field": "fraudScore" }],
+          "timeField": "@timestamp",
+          "bucketAggs": []
+        }
+      ],
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] }, "colorMode": "background" },
+      "fieldConfig": { "defaults": { "unit": "short",
+        "color": { "mode": "thresholds" }, "thresholds": { "steps": [
+          { "color": "green", "value": null }, { "color": "yellow", "value": 40 }, { "color": "red", "value": 70 }
+        ]}
+      }}
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "Blocked Payments (1h)",
+      "gridPos": { "h": 4, "w": 6, "x": 18, "y": 0 },
+      "targets": [
+        {
+          "datasource": "Elasticsearch",
+          "query": "riskBand:CRITICAL AND @timestamp:[now-1h TO now]",
+          "metrics": [{ "type": "count", "id": "1" }],
+          "timeField": "@timestamp",
+          "bucketAggs": []
+        }
+      ],
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] }, "colorMode": "background" },
+      "fieldConfig": { "defaults": { "color": { "mode": "fixed", "fixedColor": "dark-red" } } }
+    },
+    {
+      "id": 5,
+      "type": "timeseries",
+      "title": "Fraud Score Distribution Over Time",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 4 },
+      "targets": [
+        {
+          "datasource": "Elasticsearch",
+          "query": "eventType:FRAUD_SCORE_COMPUTED",
+          "metrics": [
+            { "type": "avg", "id": "1", "field": "fraudScore", "meta": {}, "settings": {} },
+            { "type": "percentiles", "id": "2", "field": "fraudScore", "settings": { "percents": ["95", "99"] } }
+          ],
+          "timeField": "@timestamp",
+          "bucketAggs": [{ "type": "date_histogram", "id": "3", "field": "@timestamp", "settings": { "interval": "auto", "min_doc_count": "0" } }]
+        }
+      ],
+      "fieldConfig": { "defaults": { "unit": "short", "custom": { "lineWidth": 2 } } }
+    },
+    {
+      "id": 6,
+      "type": "piechart",
+      "title": "Risk Band Distribution (24h)",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 4 },
+      "targets": [
+        {
+          "datasource": "Elasticsearch",
+          "query": "eventType:FRAUD_SCORE_COMPUTED AND @timestamp:[now-24h TO now]",
+          "metrics": [{ "type": "count", "id": "1" }],
+          "timeField": "@timestamp",
+          "bucketAggs": [{ "type": "terms", "id": "2", "field": "riskBand", "settings": { "size": "10", "order": "desc", "orderBy": "1" } }]
+        }
+      ],
+      "options": { "pieType": "donut", "legend": { "displayMode": "table", "placement": "right" } }
+    },
+    {
+      "id": 7,
+      "type": "table",
+      "title": "Recent HIGH/CRITICAL Alerts",
+      "gridPos": { "h": 10, "w": 24, "x": 0, "y": 12 },
+      "targets": [
+        {
+          "datasource": "Elasticsearch",
+          "query": "alertLevel:HIGH",
+          "metrics": [{ "type": "logs", "id": "1" }],
+          "timeField": "@timestamp",
+          "bucketAggs": []
+        }
+      ],
+      "options": { "showHeader": true },
+      "transformations": [
+        { "id": "organize", "options": { "includeByName": { "@timestamp": true, "paymentId": true, "eventType": true, "riskBand": true, "fraudScore": true, "screeningResult": true, "message": true } } }
+      ]
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 38,
+  "tags": ["clearflow", "fraud", "aml", "compliance"],
+  "time": { "from": "now-6h", "to": "now" },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "ClearFlow — Fraud & AML Monitoring",
+  "uid": "clearflow-fraud",
+  "version": 1
+}

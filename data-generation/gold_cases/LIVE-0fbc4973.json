@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-0fbc4973",
+  "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+  "injector_claimed_root": "settlement",
+  "injection_time": "2026-09-01T22:46:09.709584+00:00",
+  "duration_seconds": 30,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the full 30s injection window, sorted by @timestamp",
+    "Health witness log: settlement: DOWN (consecutive=1) at 22:46:11.888, RECOVERED shortly after",
+    "Traced 14 payments submitted across the full window, specifically watching for the known Kafka-lag backpressure confound documented in this project's earlier history"
+  ],
+  "reasoning_trace": "This fault type is explicitly named for a known confound: this project's own prior history documents that the Kafka-lag component of this exact fault type can produce a louder, misleading stuck-at-validation/routing signal that outshines the real settlement-side failure. Went in specifically looking for that -- traced 14 payments across the full 30s window, watching validation-enrichment and routing-execution closely for any elevated latency, stall, or backpressure symptom. Found none in this particular run: every payment reaches RAIL_SELECTED and PAYMENT_ROUTED promptly (all within roughly 5-15ms of AML screening completing), with no unusual delay or dropped stage at validation or routing. Every single traced payment stops cleanly right after PAYMENT_ROUTED -- none show SETTLEMENT_COMPLETE. The independent health witness corroborates: settlement DOWN, then RECOVERED. Unlike what the fault type's own documented history suggested might happen, the evidence in this specific run is clean and unambiguous, not confounded -- the known misleading-symptom risk is real for this fault type in general (per prior project findings) but did not materialize this time. Conclusion reached from evidence alone, before reading the injector's own log: settlement.",
+  "blind_conclusion": "settlement",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (settlement) matches the injector's own ground-truth log exactly. Corroborated by both the independent health witness and a clean payment-funnel stall boundary across 14 traced payments -- deliberately checked for the documented Kafka-lag confound and found it did not manifest in this particular run, worth noting since this fault type is not guaranteed to be this clean every time."
+}

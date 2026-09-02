@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-fc3f6e2a",
+  "fault_type": "KAFKA_CONSUMER_LAG",
+  "injector_claimed_root": "routing-execution",
+  "injection_time": "2026-09-01T23:22:09.820437+00:00",
+  "duration_seconds": 20,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: routing-execution: DOWN (consecutive=1) at 23:22:12.011, RECOVERED shortly after",
+    "Traced 6 payments submitted across the window"
+  ],
+  "reasoning_trace": "Second independent injection of this fault type. Read the witness monitor output first, blind: routing-execution DOWN, then RECOVERED. Traced 6 payments in the window. All show the same pattern already established for this fault type: gateway PAYMENT_SUBMITTED, audit, validation-enrichment PAYMENT_VALIDATED (or a normal business PAYMENT_REJECTED for one payment, cb58fab5 -- not a stall), aml-compliance AML_SCREENING_COMPLETE, fraud-scoring FRAUD_SCORE_COMPUTED -- and then nothing further. None show RAIL_SELECTED or PAYMENT_ROUTED. Clean, consistent stall specific to routing-execution, replicating the exact evidentiary shape of the first KAFKA_CONSUMER_LAG gold case (LIVE-158ce68e). Conclusion reached from evidence alone, before reading the injector's own log: routing-execution.",
+  "blind_conclusion": "routing-execution",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (routing-execution) matches the injector's own ground-truth log exactly. Second independent replication of this fault type -- same evidentiary shape as the first case."
+}

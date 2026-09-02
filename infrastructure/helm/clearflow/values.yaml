@@ -1,0 +1,22 @@
+image:
+  registry: ghcr.io
+  repository: clearflow
+  tag: latest
+
+services:
+  gateway:
+    port: 8080
+  fraudScoring:
+    port: 8081
+  validationEnrichment:
+    port: 8082
+  amlCompliance:
+    port: 8083
+  routingExecution:
+    port: 8084
+  settlement:
+    port: 8085
+  audit:
+    port: 8086
+  mcpReadonlyGateway:
+    port: 8087

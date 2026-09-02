@@ -1,0 +1,21 @@
+{
+  "namespace": "com.clearflow.common.avro",
+  "type": "record",
+  "name": "EnrichedPaymentEvent",
+  "doc": "Validation + enrichment result — published to CLEARFLOW.PAYMENT.ENRICHED",
+  "fields": [
+    { "name": "paymentId",        "type": "string" },
+    { "name": "correlationId",    "type": "string" },
+    { "name": "ibanValid",        "type": "boolean" },
+    { "name": "bicValid",         "type": "boolean" },
+    { "name": "embargoBlocked",   "type": "boolean" },
+    { "name": "embargoMatchedCountry", "type": ["null", "string"], "default": null },
+    { "name": "debtorBankName",   "type": ["null", "string"], "default": null },
+    { "name": "creditorBankName", "type": ["null", "string"], "default": null },
+    { "name": "exchangeRate",     "type": ["null", "float"],  "default": null },
+    { "name": "localAmount",      "type": ["null", { "type": "bytes", "logicalType": "decimal",
+                                            "precision": 18, "scale": 2 }], "default": null },
+    { "name": "validatedAt",      "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "sourceService",    "type": "string", "default": "validation-enrichment" }
+  ]
+}

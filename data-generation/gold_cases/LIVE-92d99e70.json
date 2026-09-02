@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-92d99e70",
+  "fault_type": "AML_SERVICE_DEGRADATION_RETRY_CASCADE",
+  "injector_claimed_root": "aml-compliance",
+  "injection_time": "2026-09-01T22:34:08.341168+00:00",
+  "duration_seconds": 30,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the full 30s injection window, sorted by @timestamp",
+    "Health witness log: aml-compliance: DOWN (consecutive=1) at 22:34:10.486, RECOVERED shortly after",
+    "Traced 13 payments submitted across the full window"
+  ],
+  "reasoning_trace": "Cross_domain/cascade family fault type again, so deliberately traced a large number of payments (13) across the full 30s window looking for a confounding secondary symptom, same discipline as the previous SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE case. Witness monitor: aml-compliance DOWN then RECOVERED, generated independently. All 13 traced payments show the identical pattern: gateway PAYMENT_SUBMITTED, audit AUDIT_CHAIN_APPENDED, validation-enrichment PAYMENT_VALIDATED, audit AUDIT_CHAIN_APPENDED, fraud-scoring FRAUD_SCORE_COMPUTED (independent of the sequential chain), audit AUDIT_CHAIN_APPENDED -- and then nothing further. None show AML_SCREENING_COMPLETE, and consequently nothing downstream of it either (no RAIL_SELECTED, no SETTLEMENT_COMPLETE). No other service shows any anomaly across the full window -- validation-enrichment and fraud-scoring complete promptly and normally for every single payment traced, with no elevated latency or retry-related symptom visible anywhere despite the fault type's 'RETRY_CASCADE' label. The stall is clean and specific to aml-compliance, matching the earlier CPU_SATURATION case's evidentiary shape exactly (same root service). Conclusion reached from evidence alone, before reading the injector's own log: aml-compliance.",
+  "blind_conclusion": "aml-compliance",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (aml-compliance) matches the injector's own ground-truth log exactly. Corroborated by both the independent health witness and a consistent payment-funnel stall boundary across 13 traced payments spanning the full window -- deliberately checked more payments than usual given this fault type's cascade label, and found no misleading secondary symptom despite the 'RETRY_CASCADE' naming."
+}

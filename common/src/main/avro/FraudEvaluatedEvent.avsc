@@ -1,0 +1,20 @@
+{
+  "namespace": "com.clearflow.common.avro",
+  "type": "record",
+  "name": "FraudEvaluatedEvent",
+  "doc": "Fraud scoring result — published to CLEARFLOW.FRAUD.EVALUATED",
+  "fields": [
+    { "name": "paymentId",      "type": "string" },
+    { "name": "correlationId",  "type": "string" },
+    { "name": "fraudScore",     "type": "float",  "doc": "0.0–100.0 from LightGBM model" },
+    { "name": "riskBand",       "type": { "type": "enum", "name": "RiskBand",
+      "symbols": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] }
+    },
+    { "name": "blocked",        "type": "boolean" },
+    { "name": "blockReason",    "type": ["null", "string"], "default": null },
+    { "name": "velocityBreached","type": "boolean" },
+    { "name": "countryRiskFlag","type": "boolean" },
+    { "name": "evaluatedAt",    "type": { "type": "long", "logicalType": "timestamp-millis" } },
+    { "name": "modelVersion",   "type": "string", "default": "heuristic-v1" }
+  ]
+}

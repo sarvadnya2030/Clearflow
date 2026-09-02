@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <springProperty scope="context" name="SERVICE_NAME" source="spring.application.name" defaultValue="clearflow-service"/>
+  <include resource="logback-rolling-include.xml"/>
+
+  <!-- JSON console appender -->
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+      <customFields>{"service":"${SERVICE_NAME}","environment":"clearflow"}</customFields>
+      <includeMdcKeyName>paymentId</includeMdcKeyName>
+      <includeMdcKeyName>rail</includeMdcKeyName>
+      <includeMdcKeyName>liquidity.reserved</includeMdcKeyName>
+      <includeMdcKeyName>durationMs</includeMdcKeyName>
+    </encoder>
+  </appender>
+
+  <!-- Logstash TCP appender -->
+  <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+    <destination>localhost:5000</destination>
+    <reconnectionDelay>5 seconds</reconnectionDelay>
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+      <customFields>{"service":"${SERVICE_NAME}","environment":"clearflow"}</customFields>
+      <includeMdcKeyName>paymentId</includeMdcKeyName>
+      <includeMdcKeyName>correlationId</includeMdcKeyName>
+      <includeMdcKeyName>rail</includeMdcKeyName>
+      <includeMdcKeyName>liquidity.reserved</includeMdcKeyName>
+      <includeMdcKeyName>durationMs</includeMdcKeyName>
+    </encoder>
+    <keepAliveDuration>5 minutes</keepAliveDuration>
+  </appender>
+
+  <appender name="ASYNC_LOGSTASH" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="LOGSTASH"/>
+    <queueSize>1024</queueSize>
+    <discardingThreshold>0</discardingThreshold>
+    <neverBlock>true</neverBlock>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="CONSOLE"/>
+    <appender-ref ref="ASYNC_LOGSTASH"/>
+      <appender-ref ref="ASYNC_ROLLING"/>
+  </root>
+
+  <logger name="org.springframework" level="WARN"/>
+  <logger name="org.apache.kafka" level="WARN"/>
+</configuration>

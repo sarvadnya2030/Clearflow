@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-9608ddd3",
+  "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+  "injector_claimed_root": "settlement",
+  "injection_time": "2026-09-02T00:46:09.629256+00:00",
+  "duration_seconds": 30,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the full 30s injection window, sorted by @timestamp",
+    "Health witness log: settlement: DOWN (consecutive=1) at 00:46:11.876, RECOVERED shortly after",
+    "Traced 14 payments submitted across the full window, again watching specifically for the documented Kafka-lag backpressure confound"
+  ],
+  "reasoning_trace": "Second independent injection of this fault type, again explicitly checking for the Kafka-lag confound documented in this project's earlier history. Traced 14 payments across the full 30s window. All show routing-execution completing promptly (RAIL_SELECTED and PAYMENT_ROUTED both fire within roughly 5-15ms of AML screening completing) for every payment that reaches that stage, with a handful of normal business PAYMENT_REJECTED outcomes at validation -- not stalls. Every traced payment stops cleanly right after PAYMENT_ROUTED; none show SETTLEMENT_COMPLETE. The independent health witness corroborates: settlement DOWN, then RECOVERED. As with the first case of this fault type (LIVE-0fbc4973), the documented confound risk did not manifest here either -- clean, unambiguous evidence. Conclusion reached from evidence alone, before reading the injector's own log: settlement.",
+  "blind_conclusion": "settlement",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (settlement) matches the injector's own ground-truth log exactly. Second independent replication of this fault type -- same clean evidentiary shape as the first case, the documented Kafka-lag confound has now not manifested in either of the two runs checked so far."
+}

@@ -1,0 +1,164 @@
+OFFICE OF FOREIGN ASSETS CONTROL (OFAC) — SANCTIONS COMPLIANCE POLICY REFERENCE
+U.S. Department of the Treasury — Office of Foreign Assets Control
+ClearFlow Payment Platform — Sanctions Compliance Reference Document
+Incorporating OFAC Guidance through March 2024
+
+================================================================================
+SPECIALLY DESIGNATED NATIONALS (SDN) LIST SCREENING OBLIGATIONS
+================================================================================
+
+[OFAC-SDN-001]
+U.S. financial institutions, including banks, broker-dealers, money services businesses, and payment processors, are prohibited from conducting transactions with, or providing services to, any person or entity listed on the Specially Designated Nationals and Blocked Persons (SDN) List maintained by OFAC. The SDN List is a publicly available, continuously updated database of individuals, entities, vessels, and aircraft that are subject to asset-blocking and transaction-prohibition requirements under U.S. sanctions programs. Institutions must screen all customers, beneficial owners, transaction counterparties, and other relevant parties against the current SDN List before initiating any transaction or establishing any business relationship.
+
+[OFAC-SDN-002]
+SDN List screening must be conducted using software or manual procedures capable of matching names with the degree of specificity required to avoid both over-blocking of innocent parties and under-blocking of designated persons. Effective screening algorithms must account for name variations including spelling alternatives, transliterations from non-Latin scripts, aliases, maiden names, and name-order inversions. OFAC guidance acknowledges that screening tools will generate false positives and that institutions must have documented procedures for investigating and clearing potential matches, but the existence of a false positive process does not relieve institutions of the obligation to screen accurately.
+
+[OFAC-SDN-003]
+Financial institutions must screen not only the names of parties to transactions but also all identifying information that may reveal a connection to a sanctions target, including physical addresses, IP addresses, phone numbers, email addresses, and vessel or aircraft identifiers. The SDN List includes non-name identifying information (e.g., passport numbers, national registration numbers, vessel IMO numbers, aircraft tail numbers) that can be used to identify designated parties who may attempt to transact using different names. Institutions' screening systems must be configured to check all available identifying fields, not merely the name fields, against the SDN List.
+
+[OFAC-SDN-004]
+The SDN List is updated continuously; OFAC may add, remove, or amend designations at any time without advance notice. Financial institutions must have procedures to update their screening databases promptly upon publication of SDN List changes, including intra-day updates where technically feasible. Institutions that update their screening databases only on a batch basis (e.g., daily or weekly) must document the residual risk of the update lag and must implement compensating controls, such as enhanced scrutiny of transactions in high-risk geographic corridors or with high-risk customer segments, during the period before the update takes effect.
+
+[OFAC-SDN-005]
+Financial institutions must screen all customers and transaction parties against not only the SDN List but also the following OFAC-maintained lists: the Sectoral Sanctions Identifications (SSI) List, applicable to restrictions on financing of entities in designated sectors of the Russian economy; the Foreign Sanctions Evaders (FSE) List; the Non-SDN Menu-Based Sanctions (NS-MBS) List; the Palestinian Legislative Council (PLC) List; and any country-specific lists applicable to the institution's business (e.g., Consolidated Iranian Government SDN List, Specially Designated Global Terrorist (SDGT) List). Failure to screen against applicable subsidiary lists is treated by OFAC as equivalent to a failure to screen against the SDN List.
+
+[OFAC-SDN-006]
+Financial institutions must retain records of all OFAC screening determinations, including records of potential matches investigated and the basis for clearing or confirming each match. For confirmed SDN hits requiring asset blocking, records must include: the date and nature of the blocking action; a description of the blocked property; the account or transaction identifiers; the identity of the party screened; and the SDN List entry that triggered the hit. These records must be retained for a minimum of five years from the date of the blocking action and must be made available to OFAC upon request within a timeframe specified in any OFAC administrative subpoena or request letter.
+
+================================================================================
+FIFTY PERCENT RULE — ENTITIES OWNED BY DESIGNATED PERSONS
+================================================================================
+
+[OFAC-50PCT-001]
+OFAC's 50 Percent Rule provides that property and interests in property of entities that are owned, directly or indirectly, 50 percent or more in the aggregate by one or more blocked persons are considered blocked, regardless of whether the entity itself is named on the SDN List. This rule applies even if the entity is not independently designated on the SDN List and has never been publicly identified by OFAC as a blocked entity. Financial institutions must therefore conduct beneficial ownership analysis of any entity with which they transact to determine whether it falls within the 50 Percent Rule, and must apply blocking measures to any such entity identified.
+
+[OFAC-50PCT-002]
+The 50 Percent Rule applies to ownership interests calculated on an aggregate basis across all blocking sanctions programs; if an entity is 30% owned by one SDN and 25% owned by another SDN in a different sanctions program, the entity's ownership by blocked persons in the aggregate exceeds 50% and the entity is therefore blocked. Institutions must not calculate the 50% threshold on a per-program basis; the rule requires an aggregate assessment across all OFAC sanctions programs. Practical application of the 50 Percent Rule requires institutions to have access to beneficial ownership data and to conduct analysis that goes beyond the face value of corporate ownership structures.
+
+[OFAC-50PCT-003]
+The ownership threshold under the 50 Percent Rule is assessed based on the actual economic interest in the entity, not merely the registered or nominal ownership interest. Institutions should be alert to arrangements in which a blocked person has economic rights (e.g., profit participation, control rights, guaranteed returns) disproportionate to their registered ownership stake, which may indicate that the entity is in substance controlled by the blocked person even if the nominal ownership is below 50%. Institutions that have reason to believe an entity is effectively controlled by a blocked person must escalate the matter to their sanctions compliance team regardless of whether the nominal ownership threshold is met.
+
+[OFAC-50PCT-004]
+For complex corporate structures involving chains of intermediate holding companies, the 50 Percent Rule requires a "look-through" analysis that traces ownership through each layer of the structure to determine whether a blocked person's aggregate ownership of the ultimate entity meets or exceeds 50%. Institutions are not required to apply a definitive look-through analysis for every counterparty in every transaction, but must apply risk-based procedures to identify entities where there is a material risk that the 50% threshold may be met through an indirect ownership chain. Higher-risk indicators include: counterparties in jurisdictions with significant SDN designations, complex or opaque corporate structures, and industries or sectors where SDN-listed persons are known to operate.
+
+================================================================================
+GENERAL LICENSES AND SPECIFIC LICENSE APPLICATIONS
+================================================================================
+
+[OFAC-LICENSE-001]
+A general license is a regulatory authorisation published by OFAC in the Code of Federal Regulations (CFR) or on OFAC's website that permits specified categories of transactions that would otherwise be prohibited under a sanctions program. General licenses are self-executing, meaning that transactions within the scope of a general license do not require individual approval by OFAC; however, institutions must ensure that a transaction actually falls within the scope of the applicable general license before relying on it. Institutions must document the basis for their reliance on a general license for any transaction that might otherwise appear prohibited, including a description of how the transaction meets each element of the general license's terms and conditions.
+
+[OFAC-LICENSE-002]
+Common categories of OFAC general licenses include: personal communications (permitting non-commercial communications between individuals in sanctioned countries); official U.S. government business; emergency medical remittances to blocked persons; travel-related transactions to certain sanctioned destinations; journalistic and academic activities; and humanitarian transactions relating to food, medicine, and medical devices. Financial institutions processing transactions that may fall within a general license must review the specific terms of the license carefully; general licenses are narrowly drafted and may contain carve-outs, conditions, or limitations that restrict their applicability.
+
+[OFAC-LICENSE-003]
+A specific license is an individual authorisation granted by OFAC to a particular applicant for a transaction or category of transactions that would otherwise be prohibited. Specific license applications must be submitted to OFAC in writing and must include sufficient detail to enable OFAC to assess the request, including: identification of the parties, a description of the proposed transaction, the legal basis for the request, and documentation supporting the stated purpose. OFAC's processing time for specific license applications varies but may take several months; institutions should not initiate a transaction pending a specific license application unless a general license or other authorisation explicitly permits transactions while an application is pending.
+
+[OFAC-LICENSE-004]
+Financial institutions that receive a specific license permitting a transaction must comply strictly with the terms and conditions of the license, including any reporting requirements, transaction value limits, counterparty restrictions, or expiration dates. Any transaction that exceeds the scope of the specific license, involves an unlicensed party, or occurs after the expiration of the license is prohibited notwithstanding the license. Institutions must retain copies of all specific licenses on which they rely, together with documentation demonstrating that each transaction was within the license's scope, for a minimum of five years from the date of the licensed transaction.
+
+================================================================================
+BLOCKING VERSUS REJECTING TRANSACTIONS
+================================================================================
+
+[OFAC-BLOCK-001]
+OFAC sanctions programs impose two distinct types of prohibitions: blocking requirements and rejection requirements. Blocking (also called "freezing") applies to transactions involving property in which a blocked person has an interest; funds or property subject to blocking must be frozen in a blocked account and held until OFAC authorises their release. Rejection applies to transactions that are prohibited but do not involve the property of a blocked person; rejected transactions must be returned to the originating institution or party without being processed, but funds are not held in a blocked account.
+
+[OFAC-BLOCK-002]
+Funds that are blocked pursuant to OFAC sanctions must be placed in a segregated, interest-bearing account clearly identified as a blocked account. Blocked funds must not be commingled with the institution's own funds or with the funds of non-blocked customers. Institutions must not release blocked funds for any purpose — including the payment of the institution's own fees, service charges, or expenses — without an OFAC licence, a court order, or other express legal authorisation. Any earnings generated by blocked funds (interest, dividends, realised gains) are also blocked and must be retained in the blocked account.
+
+[OFAC-BLOCK-003]
+The distinction between a blocking action and a rejection action has practical implications for OFAC reporting obligations: blocked transactions must be reported to OFAC within 10 business days, while rejected transactions must be reported annually in the Annual Report of Rejected Transactions. An institution that incorrectly rejects (returns) funds that should have been blocked has committed a violation of OFAC's regulations; similarly, an institution that blocks funds when the correct action is rejection may unnecessarily deprive a non-blocked party of their funds. Institutions must have documented decision trees to determine whether a given transaction requires blocking or rejection.
+
+[OFAC-BLOCK-004]
+Wire transfers that are blocked mid-chain — e.g., by an intermediary correspondent bank acting on an OFAC hit — must be held in a blocked account at the institution that identified the hit, not passed to the next institution in the payment chain. The institution that identifies the OFAC hit must notify both the originating institution and OFAC of the blocking action and must not release the funds without OFAC authorisation. Where a wire transfer is blocked by an intermediary that does not have a direct relationship with the originator or beneficiary, the blocking institution must still file the required OFAC Blocked Property Report and must retain the blocked funds pending OFAC instruction.
+
+================================================================================
+REPORTING OBLIGATIONS — BLOCKED AND REJECTED TRANSACTIONS
+================================================================================
+
+[OFAC-REPORT-001]
+Financial institutions must report blocked transactions to OFAC within 10 business days of the date on which property is blocked. The Blocked Property Report must be filed with OFAC and must include: the date of blocking; a description of the blocked property (including account numbers and transaction identifiers); the identity of the blocked party; the identity of the SDN List entry that triggered the blocking; and the current status and location of the blocked funds. Reports must be filed even if the institution subsequently determines that a blocking action was taken in error; in such cases, the institution must seek a specific licence from OFAC for the release of the erroneously blocked funds.
+
+[OFAC-REPORT-002]
+In addition to the 10-business-day Blocked Property Report, institutions must file an Annual Report of Blocked Property with OFAC by September 30 of each year, reporting all blocked property held as of June 30 of that year. The Annual Report must include a consolidated accounting of all blocked accounts, blocked funds, and other blocked property held by the institution, including the current value of each blocked account as of June 30 and the date on which each blocking action was first taken. Institutions must reconcile their annual reporting with their records of blocked property reports to ensure consistency.
+
+[OFAC-REPORT-003]
+Rejected transactions — those that are returned to the sender because they involve a prohibited transaction not requiring blocking — must be reported in the institution's Annual Report of Rejected Transactions, filed by January 31 of each year for transactions rejected during the prior calendar year. The Annual Report of Rejected Transactions must identify each rejected transaction, including the date of rejection, the nature and value of the transaction, the basis for rejection (i.e., the applicable sanctions program and regulatory provision), and the parties involved. Institutions must maintain records of all rejected transactions throughout the calendar year in a format that facilitates preparation of the annual report.
+
+[OFAC-REPORT-004]
+OFAC may request additional information from financial institutions regarding specific blocked or rejected transactions through administrative subpoenas, voluntary information requests, or formal investigations. Institutions must respond to OFAC's requests promptly and completely; failure to respond within the timeframe specified in an OFAC request, or provision of inaccurate or incomplete information, may constitute a separate violation of OFAC's regulations. Institutions must designate a senior compliance officer responsible for coordinating OFAC-related information requests and ensuring that responses are reviewed for accuracy and completeness before submission.
+
+================================================================================
+CIVIL MONETARY PENALTY FRAMEWORK
+================================================================================
+
+[OFAC-PENALTY-001]
+OFAC has authority to impose civil monetary penalties (CMPs) for violations of the sanctions programs it administers. Under the International Emergency Economic Powers Act (IEEPA), the maximum civil penalty per violation is the greater of USD 307,922 (adjusted for inflation) or twice the value of the underlying transaction. Under the Trading with the Enemy Act (TWEA), the maximum civil penalty is USD 95,817 per violation. OFAC calculates the penalty using a base penalty matrix that considers the transaction value, the violation type (egregious vs. non-egregious), and whether voluntary self-disclosure was made.
+
+[OFAC-PENALTY-002]
+OFAC's Economic Sanctions Enforcement Guidelines (31 C.F.R. Part 501, Appendix A) establish the framework for determining civil monetary penalties. The base penalty for non-egregious violations where voluntary self-disclosure was made is calculated as one-half of the applicable transaction value. For non-egregious violations without voluntary self-disclosure, the base penalty equals the applicable transaction value up to the statutory maximum. For egregious violations with voluntary self-disclosure, the base penalty is one-half the applicable statutory maximum. For egregious violations without voluntary self-disclosure, the base penalty equals the applicable statutory maximum.
+
+[OFAC-PENALTY-003]
+Aggravating factors under OFAC's Enforcement Guidelines that increase the penalty above the base amount include: wilful or reckless conduct; senior management involvement or awareness; concealment of the violation; significant harm to sanctions program objectives; recidivism (prior OFAC violations within the preceding five years); and failure to take remedial action after becoming aware of the violation. Each aggravating factor may increase the base penalty by a defined percentage; the cumulative effect of multiple aggravating factors may result in a penalty significantly above the base amount.
+
+[OFAC-PENALTY-004]
+Mitigating factors under OFAC's Enforcement Guidelines that may reduce the penalty below the base amount include: voluntary self-disclosure of violations; substantial cooperation with OFAC's investigation; implementation of a robust sanctions compliance program; limited harm to sanctions program objectives; the institution's status as a first-time violator; and prompt remediation of the underlying compliance failures. The most significant mitigating factor is voluntary self-disclosure, which typically reduces the base penalty by 50%. Institutions that self-disclose and demonstrate a strong compliance posture may receive a finding of no action, a cautionary letter, or a substantially reduced penalty.
+
+[OFAC-PENALTY-005]
+OFAC's "egregious" designation is reserved for cases that present the most serious violations, including those involving wilful conduct, conduct that directly undermines U.S. foreign policy or national security objectives, transactions with SDN-listed persons in programs targeting weapons of mass destruction or state sponsors of terrorism, and cases involving senior management complicity. Egregious cases are subject to the highest penalty tiers and are typically resolved through a public settlement with detailed public statements identifying the specific violations and the remedial measures required. Financial institutions with egregious violations on their record face heightened scrutiny from U.S. and foreign regulators.
+
+[OFAC-PENALTY-006]
+In addition to civil monetary penalties, OFAC may refer cases involving wilful violations to the Department of Justice for criminal prosecution. Under 18 U.S.C. § 1705, wilful violations of OFAC sanctions may result in criminal fines of up to USD 1 million per transaction and imprisonment of up to 20 years. Institutions must ensure that their sanctions compliance training programmes clearly communicate the potential for criminal prosecution to employees involved in compliance decision-making, transaction processing, and customer relationship management. The criminal referral risk is particularly acute in cases involving deliberate manipulation of transaction records to conceal sanctions violations.
+
+================================================================================
+CORRESPONDENT BANKING DUE DILIGENCE
+================================================================================
+
+[OFAC-CORR-001]
+U.S. financial institutions maintaining correspondent banking relationships with foreign financial institutions must conduct due diligence on their foreign correspondent banks to assess the foreign institution's sanctions compliance program and its exposure to sanctions risk. This due diligence obligation arises under OFAC's interpretation of the overall sanctions compliance obligation and is reinforced by Section 312 of the USA PATRIOT Act, which requires financial institutions to apply enhanced due diligence to foreign correspondent accounts for foreign banks that present a higher risk of money laundering or sanctions violations. Institutions must periodically reassess the adequacy of their correspondent banks' sanctions compliance programs.
+
+[OFAC-CORR-002]
+Due diligence on correspondent banks must encompass: a review of the foreign institution's jurisdictional exposure to OFAC-sanctioned countries; an assessment of the foreign institution's own sanctions screening capabilities, including the lists it screens against and the frequency of its screening updates; a review of the foreign institution's AML/CFT program, including its customer due diligence standards for customers in high-risk jurisdictions; and an assessment of the regulatory environment of the foreign institution's home jurisdiction. Institutions must document the due diligence conducted on each correspondent and must update the assessment at intervals commensurate with the risk presented.
+
+[OFAC-CORR-003]
+U-turn transactions — transactions that originate in a third country, pass through a U.S. correspondent bank, and terminate in another third country, with a sanctioned country or sanctioned party as an intermediate point — are generally prohibited unless authorised by a specific OFAC general license applicable to the relevant sanctions program. Financial institutions processing U-turn transactions through their U.S. correspondent accounts must have systems capable of identifying the ultimate origin and destination of funds and must screen not only the immediate counterparties but also the underlying transaction parties. Failure to identify and block prohibited U-turn transactions is a recurring source of OFAC enforcement actions.
+
+[OFAC-CORR-004]
+Financial institutions must include OFAC compliance representations in their correspondent banking agreements, requiring foreign correspondents to: represent that they have and maintain a sanctions compliance program; agree to screen transactions against OFAC's SDN List and other applicable lists; agree to notify the U.S. institution of any OFAC-related blocking or rejection actions involving funds transiting the correspondent account; and agree to cooperate with OFAC investigations as required by U.S. law. Institutions must have contractual termination rights where a correspondent is found to have violated its OFAC compliance representations.
+
+================================================================================
+VOLUNTARY SELF-DISCLOSURE AND PENALTY MITIGATION
+================================================================================
+
+[OFAC-VSD-001]
+OFAC's voluntary self-disclosure (VSD) program permits financial institutions that have discovered apparent violations of OFAC regulations to self-report those violations to OFAC before OFAC independently identifies them. A VSD is defined as a good faith communication to OFAC that discloses the existence of an apparent violation and provides information that OFAC did not previously possess. A VSD must be made promptly after the institution discovers the apparent violation; delays in self-disclosure may reduce or eliminate the mitigating benefit of the disclosure.
+
+[OFAC-VSD-002]
+An initial VSD notification must be submitted to OFAC within a reasonable time after the apparent violation is discovered — in practice, within 60 days — and must contain a general description of the apparent violation and an identification of the affected transactions. A full VSD report must follow within 180 days of the initial notification (or such extension as OFAC may grant) and must include: a complete description of the apparent violations; the total value of the affected transactions; a description of the institution's compliance program at the time of the violations; a description of the internal investigation conducted; remedial measures implemented or planned; and a summary of any prior OFAC violations.
+
+[OFAC-VSD-003]
+Following submission of a VSD, financial institutions must cooperate fully with OFAC's investigation, including responding to requests for additional information within the timeframes OFAC specifies, making available employees with relevant knowledge, and providing access to relevant records and systems. Institutions that are found to have provided inaccurate or incomplete information in a VSD, or that have failed to cooperate with the subsequent investigation, may have the mitigating benefit of the VSD revoked and may be treated as egregious violators. Institutions must ensure that their VSD submissions are reviewed by experienced sanctions counsel before submission to OFAC.
+
+[OFAC-VSD-004]
+The mitigating benefit of a VSD is contingent upon the institution demonstrating genuine commitment to remediation. OFAC expects institutions that self-disclose to implement meaningful compliance enhancements following the disclosure, not merely to make cosmetic adjustments. Required remedial measures typically include: enhanced sanctions screening procedures; additional staff training; system upgrades to address the technical gaps that permitted the violation; increased testing and quality assurance of the sanctions compliance program; and, in severe cases, engagement of an independent compliance monitor or consultant to assess and recommend improvements to the program.
+
+================================================================================
+SPECIFIC SANCTIONS PROGRAMS — OPERATIONAL GUIDANCE
+================================================================================
+
+[OFAC-PROG-001]
+The Iran Sanctions Program, administered under the Iranian Transactions and Sanctions Regulations (31 C.F.R. Part 560) and the Iran Freedom and Counter-Proliferation Act, prohibits U.S. persons and entities from engaging in virtually all transactions with Iran, with limited exceptions for informational materials, personal communications, and certain humanitarian transactions. Non-U.S. financial institutions risk exposure to secondary sanctions under the Iran sanctions framework for engaging in significant financial transactions with Iran, even if those transactions do not involve U.S. persons or U.S. dollars. Financial institutions must include Iran-related secondary sanctions risk in their correspondent banking due diligence assessments.
+
+[OFAC-PROG-002]
+The Russia-Related Sanctions Programs, administered primarily under Executive Orders 13661, 13662, 13685, and 14024, impose a combination of full blocking sanctions on designated SDNs and sectoral sanctions on specific sectors of the Russian economy, including the financial services, energy, defense and related materiel, and technology sectors. Sectoral sanctions do not impose full blocking requirements but restrict specific categories of transactions (e.g., providing new financing with a maturity exceeding a specified number of days) with entities on the Sectoral Sanctions Identifications (SSI) List. Financial institutions must distinguish between full blocking requirements applicable to SDN-designated Russian entities and the more targeted sectoral restrictions applicable to SSI-listed entities.
+
+[OFAC-PROG-003]
+The North Korea Sanctions Program, administered under the North Korea Sanctions Regulations (31 C.F.R. Part 510), implements the UNSCR 1718 sanctions regime discussed above and imposes comprehensive blocking sanctions on the Government of North Korea, Korean Workers' Party, and all entities owned or controlled by, or acting on behalf of, these bodies. North Korean sanctions are notable for the inclusion of shipping and maritime provisions that target vessel-to-vessel transfers, deceptive shipping practices (such as AIS transponder manipulation), and the concealment of vessel ownership through flag-of-convenience registrations. Financial institutions with trade finance or shipping finance activities must apply specific screening and monitoring procedures for North Korea-related shipping evasion typologies.
+
+================================================================================
+END OF OFAC POLICY COMPLIANCE REFERENCE
+Document Version: 2024.1 | Review Cycle: Semi-Annual | Owner: Group Sanctions Compliance
+Classification: Internal — Restricted | Not for external distribution
+Incorporating OFAC guidance, enforcement actions, and FAQ updates through March 2024
+================================================================================

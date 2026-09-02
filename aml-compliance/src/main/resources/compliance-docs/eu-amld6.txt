@@ -1,0 +1,140 @@
+EU SIXTH ANTI-MONEY LAUNDERING DIRECTIVE (6AMLD / AMLD6)
+Directive (EU) 2018/1673 of the European Parliament and of the Council of 23 October 2018
+on combating money laundering by criminal law
+In force from 3 December 2020 (transposition deadline); replaces provisions of Framework Decision 2001/500/JHA
+ClearFlow Payment Platform — EU Regulatory Compliance Reference Document
+
+================================================================================
+ARTICLE 3 — MONEY LAUNDERING OFFENCES AND PREDICATE OFFENCES
+================================================================================
+
+[AMLD6-Art3-001]
+Article 3 of Directive (EU) 2018/1673 (6AMLD) defines the money laundering offence by reference to 22 categories of predicate offences, representing a significant expansion from the list contained in the Third and Fourth Anti-Money Laundering Directives. The 22 predicate offence categories are: (1) participation in an organised criminal group and racketeering; (2) terrorism, including terrorist financing; (3) trafficking in human beings and migrant smuggling; (4) sexual exploitation, including exploitation of children; (5) illicit trafficking in narcotic drugs and psychotropic substances; (6) illicit arms trafficking; (7) illicit trafficking in stolen and other goods; (8) corruption; (9) fraud, including fraud affecting the financial interests of the EU; (10) counterfeiting currency; (11) counterfeiting and piracy of products; (12) environmental crime; (13) murder, grievous bodily injury; (14) kidnapping, illegal restraint and hostage taking; (15) robbery or theft; (16) smuggling; (17) extortion; (18) forgery; (19) piracy; (20) insider trading and market manipulation; (21) cybercrime; and (22) tax crimes relating to direct and indirect taxes.
+
+[AMLD6-Art3-002]
+The inclusion of cybercrime as a predicate offence under 6AMLD category (21) is a significant development that requires payment service providers and financial institutions to consider the proceeds of ransomware attacks, phishing schemes, business email compromise (BEC) fraud, and other cyber-enabled financial crimes as potential money laundering predicate offences. Institutions that process transactions which may represent the proceeds of cybercrime must apply the same STR filing obligations and CDD scrutiny as they would for other predicate offence categories. Specifically, unusual transfers of cryptocurrency or rapid conversion of virtual assets to fiat currency following a known cyber incident pattern must be treated as potential ML activity under the cybercrime predicate.
+
+[AMLD6-Art3-003]
+The inclusion of environmental crime as predicate offence category (12) under Article 3 extends the scope of ML prosecutable offences to include the proceeds of illegal logging, illegal waste disposal, illegal trade in endangered species (CITES violations), illegal fishing, and pollution offences. Financial institutions with trade finance, shipping finance, or commodity finance business lines must apply specific transaction monitoring typologies for environmental crime proceeds, including unusual payment patterns in the forestry, mining, fishing, or waste management sectors, particularly involving jurisdictions with high rates of environmental crime. The EU Taxonomy Regulation and related ESG due diligence frameworks reinforce these obligations by requiring institutions to assess environmental risk in their financing activities.
+
+[AMLD6-Art3-004]
+The explicit inclusion of tax crimes relating to direct and indirect taxes as predicate offence category (22) under 6AMLD aligns EU law with the FATF standard, which has required tax offences to be treated as predicate offences since the 2012 revision of the FATF Recommendations. For financial institutions, this means that transactions suspected of representing the proceeds of tax evasion — including the use of offshore accounts, nominee structures, false invoicing, or artificial transfer pricing — must be treated as potentially money laundering and subject to STR filing obligations. Institutions must ensure that their transaction monitoring systems include typologies for tax crime ML, and must not rely on arguments that tax compliance is the exclusive domain of tax authorities rather than AML compliance obligations.
+
+[AMLD6-Art3-005]
+The money laundering offences defined in Article 3 of 6AMLD cover the following conduct: the conversion or transfer of property, knowing that such property is derived from criminal activity, for the purpose of concealing or disguising the illicit origin of the property; the concealment or disguise of the true nature, source, location, disposition, movement, rights with respect to, or ownership of, property, knowing that such property is derived from criminal activity; and the acquisition, possession, or use of property, knowing at the time of receipt that such property was derived from criminal activity. Member States are required to ensure that each of these three forms of the money laundering offence is criminalised in their domestic law.
+
+[AMLD6-Art3-006]
+Article 3(2) of 6AMLD provides that the ML offence applies even where the person committing the laundering offence is also the person who committed the predicate offence — the concept of "self-laundering." Prior to 6AMLD, some EU Member States did not criminalise self-laundering, which created a gap in the AML framework by permitting predicate offenders to avoid ML prosecution for their own laundering activities. The introduction of self-laundering liability under 6AMLD means that payment institutions and banks processing transactions for customers who are themselves the originators of illicit funds may be facilitating a self-laundering offence in addition to the underlying predicate offence. Institutions must ensure that their STR reporting captures scenarios where the customer appears to be both the predicate offender and the launderer.
+
+[AMLD6-Art3-007]
+Article 3(3) of 6AMLD requires Member States to ensure that incitement, aiding and abetting, and attempt are also punishable as criminal offences. Financial institutions and their employees who knowingly assist a customer to structure transactions to avoid ML detection may be exposed to criminal liability for aiding and abetting money laundering, in addition to any civil penalties that may be imposed on the institution under the AML supervisory framework. Institutions must ensure that their training programmes clearly communicate the personal criminal liability risk to staff involved in compliance decision-making, customer relationship management, and transaction processing.
+
+================================================================================
+ARTICLE 6 — CRIMINAL LIABILITY OF LEGAL PERSONS
+================================================================================
+
+[AMLD6-Art6-001]
+Article 6 of Directive (EU) 2018/1673 requires Member States to ensure that legal persons can be held liable for money laundering offences where such offences are committed for their benefit by any person, acting either individually or as part of an organ of the legal person, who has a leading position within the legal person. A "leading position" is defined as: the power to represent the legal person; an authority to take decisions on behalf of the legal person; or an authority to exercise control within the legal person. The corporate criminal liability framework under 6AMLD applies regardless of whether an individual prosecution has been commenced against the natural person who committed the offence.
+
+[AMLD6-Art6-002]
+Article 6(2) extends corporate criminal liability to situations where a lack of supervision or control by a person in a leading position within the legal person has made it possible for a person under the legal person's authority to commit a money laundering offence for the benefit of the legal person. This provision creates a direct obligation for senior management and boards of directors of financial institutions to exercise effective oversight over their AML/CFT programs; a failure of oversight that enables a subordinate to commit a laundering offence for the institution's benefit can result in corporate criminal liability for the institution itself. Board-level accountability for AML compliance is reinforced by this provision.
+
+[AMLD6-Art6-003]
+The concept of "benefit" in Article 6 is interpreted broadly to include not only direct financial benefit obtained by the legal person from the money laundering activity but also reputational benefit, competitive advantage, or the avoidance of costs. A financial institution that derives fee income from processing transactions that constitute money laundering may be held to have benefited from the offence for the purposes of corporate criminal liability, even if the institution was not itself the author of the predicate offence. Institutions must therefore ensure that their AML compliance programmes are genuinely designed to prevent the facilitation of laundering, not merely to create paper compliance that does not actually deter offending.
+
+[AMLD6-Art6-004]
+Corporate criminal liability under Article 6 does not exclude the personal criminal liability of natural persons who are perpetrators, inciters, or accessories to the money laundering offence. The principle of dual liability — under which both the individual and the legal person may be prosecuted and sanctioned — applies across all EU Member States that have implemented 6AMLD. Financial institutions must be aware that prosecution of an institution for corporate money laundering may be accompanied by parallel criminal proceedings against the directors, compliance officers, or other senior individuals whose conduct or failure to act enabled the offence.
+
+================================================================================
+ARTICLE 7 — SANCTIONS FOR LEGAL PERSONS
+================================================================================
+
+[AMLD6-Art7-001]
+Article 7 of Directive (EU) 2018/1673 requires Member States to ensure that legal persons held liable for money laundering offences under Article 6 are subject to effective, proportionate, and dissuasive sanctions. The sanctions available to Member States under Article 7 must include criminal or non-criminal fines; and may include: exclusion from entitlement to public benefits or aid; temporary or permanent disqualification from the practice of commercial activities; placement under judicial supervision; judicial winding-up; temporary or permanent closure of establishments used for committing the offence. The non-exhaustive nature of the Article 7 list means that Member States may impose additional sanctions not listed in the Directive.
+
+[AMLD6-Art7-002]
+The sanction of exclusion from public benefits, including EU structural and cohesion funds, public procurement contracts, and state guarantees, is particularly significant for financial institutions that are direct or indirect recipients of public support, including capital injections, guarantees, or access to central bank liquidity facilities. A finding of corporate criminal liability for money laundering under Article 6 could therefore have consequences extending beyond fines and licensing restrictions to the institution's access to public funding and its ability to participate in government-sponsored programmes. Boards must consider this exposure in their governance of AML compliance.
+
+[AMLD6-Art7-003]
+Temporary or permanent disqualification from commercial activities — i.e., the suspension or revocation of a financial institution's authorisation or licence — is the most severe sanction available under Article 7 and is reserved for the most serious cases of corporate money laundering liability. Competent supervisory authorities in each Member State have the power to withdraw or restrict an institution's authorisation in response to serious AML/CFT failures, independently of and in addition to any criminal sanctions imposed by a court of competent jurisdiction. The possibility of licence revocation underscores the existential nature of the AML compliance risk for financial institutions.
+
+[AMLD6-Art7-004]
+Judicial winding-up as a sanction under Article 7 means that a court may order the dissolution and liquidation of a legal person found guilty of money laundering for its benefit. While judicial winding-up is likely to be reserved for the most extreme cases — particularly those involving systematic or deliberate use of the legal person as a vehicle for laundering — its availability as a sanction underscores the seriousness with which the EU treats the corporate facilitation of money laundering. Financial institutions subject to EU regulation must understand that the legal framework permits their dissolution as a corporate entity in cases of sufficiently serious AML compliance failure.
+
+================================================================================
+CORRESPONDENT BANKING ENHANCED DUE DILIGENCE
+================================================================================
+
+[AMLD6-EDD-001]
+The 6AMLD framework, read together with the requirements of the Fourth Anti-Money Laundering Directive (4AMLD, Directive 2015/849/EU) as amended by the Fifth Anti-Money Laundering Directive (5AMLD, Directive 2018/843/EU), imposes enhanced due diligence (EDD) obligations on EU credit institutions and financial institutions that enter into cross-border correspondent banking relationships with respondent institutions in third countries. EDD for correspondent banking requires the EU institution to: gather sufficient information about the respondent institution to understand fully the nature of its business; determine from publicly available information its reputation and the quality of its supervision; assess the respondent's AML/CFT controls.
+
+[AMLD6-EDD-002]
+Enhanced due diligence for correspondent banking under the EU framework requires the EU correspondent institution to obtain senior management approval before establishing new correspondent banking relationships with third-country respondents. "Senior management" for this purpose must be a named individual of sufficient seniority and authority to exercise genuine oversight of the compliance risk being accepted; approval by a junior compliance officer or mid-level management does not satisfy this requirement. The obligation to obtain senior management approval applies at the outset of the relationship and must be renewed upon material changes in the nature of the relationship or the risk profile of the respondent.
+
+[AMLD6-EDD-003]
+EU financial institutions are expressly prohibited from establishing or continuing correspondent banking relationships with shell banks, and must take measures to ensure that they do not maintain correspondent accounts used by shell banks. A "shell bank" for EU AML purposes means a credit institution, or an institution engaged in equivalent activities, incorporated in a jurisdiction in which it has no physical presence involving meaningful decision-making, and which is unaffiliated with a regulated financial group subject to effective consolidated supervision. EU institutions must contractually require their correspondent banking counterparts to represent that they do not maintain correspondent relationships with shell banks, and must include a right to terminate the correspondent relationship if this representation proves false.
+
+[AMLD6-EDD-004]
+Payable-through accounts — accounts maintained by a foreign financial institution at an EU correspondent bank through which the foreign institution's own customers have direct access to conduct transactions — present heightened AML/CFT risks because the EU correspondent bank does not have direct knowledge of the foreign institution's underlying customers. EU institutions maintaining payable-through accounts for foreign financial institution respondents must satisfy themselves that the respondent has conducted CDD on its own customers that access the payable-through account and is capable of providing information about those customers upon request. EU institutions must not maintain payable-through accounts for respondent institutions whose CDD standards are materially inferior to those required under EU law.
+
+================================================================================
+BENEFICIAL OWNERSHIP REGISTER — TRANSPARENCY AND PUBLIC ACCESS
+================================================================================
+
+[AMLD6-BO-001]
+The requirement for Member States to establish and maintain central registers of beneficial ownership information for companies and other legal entities incorporated within their territory was first introduced under 4AMLD and enhanced under 5AMLD to require public access to certain beneficial ownership data. As implemented following 6AMLD's entrance into force, EU Member States must maintain interconnected national beneficial ownership registers accessible through the Business Registers Interconnection System (BRIS) and the forthcoming interconnection of anti-money laundering registers (BORIS). Financial institutions must consult beneficial ownership registers as part of their CDD process and must document the information retrieved.
+
+[AMLD6-BO-002]
+The minimum information to be held in national beneficial ownership registers includes: the name, month and year of birth, nationality, and country of residence of the beneficial owner; and the nature and extent of the beneficial interest held. EU law requires this information to be available publicly, subject to Member States' ability to restrict access in exceptional circumstances where public access would expose the beneficial owner to a disproportionate risk of fraud, kidnapping, blackmail, violence, or intimidation. Financial institutions seeking information from beneficial ownership registers that has been restricted under these exceptions must contact the competent authority to obtain access for legitimate AML/CFT purposes.
+
+[AMLD6-BO-003]
+The beneficial ownership registers maintained under the EU AML framework must also include information about trusts and similar legal arrangements where the trustee is established or resident in a Member State, or where the trust acquires real estate or enters into a business relationship with an obliged entity in a Member State. The trust beneficial ownership register must contain information about the settlor, the trustee(s), the protector (if any), the beneficiaries or classes of beneficiaries, and any other natural person exercising ultimate control over the trust. Financial institutions establishing relationships with trusts or receiving funds from or on behalf of trusts must verify beneficial ownership against the trust register.
+
+[AMLD6-BO-004]
+Obliged entities are required to report discrepancies between the beneficial ownership information they hold about a legal person and the information appearing in the beneficial ownership register. Where an obliged entity identifies such a discrepancy, it must notify the entity responsible for maintaining the register and must assess whether the discrepancy is material and indicative of a potential attempt to conceal beneficial ownership. Discrepancy reporting is a mechanism for the private sector to contribute to the accuracy and integrity of beneficial ownership registers and is distinct from — but potentially complementary to — the institution's STR filing obligations.
+
+================================================================================
+HIGH-RISK THIRD COUNTRIES — ENHANCED MEASURES REQUIRED
+================================================================================
+
+[AMLD6-HRC-001]
+Article 18a of Directive 2015/849/EU (4AMLD), as inserted by Article 1(12) of Directive 2018/843/EU (5AMLD), requires credit institutions and financial institutions to apply enhanced due diligence measures in relation to business relationships and transactions involving high-risk third countries identified by the European Commission. The EU list of high-risk third countries is distinct from the FATF high-risk and other monitored jurisdictions list, although there is significant overlap in the countries identified. EU obliged entities must apply the enhanced measures required under EU law even in respect of jurisdictions that appear only on the FATF list and not (yet) on the EU list, and vice versa.
+
+[AMLD6-HRC-002]
+Enhanced due diligence measures required for transactions and relationships involving EU high-risk third countries include, as a minimum: obtaining additional information on the customer and the beneficial owner(s); obtaining additional information on the intended nature of the business relationship; obtaining information on the source of funds and source of wealth of the customer and the beneficial owner(s); obtaining information on the reasons for any intended or performed transactions; obtaining the approval of senior management for establishing or continuing a business relationship; and conducting enhanced monitoring of the business relationship by increasing the number and timing of controls applied.
+
+[AMLD6-HRC-003]
+Member States may require additional EDD measures beyond the minimum set prescribed in Article 18a in respect of high-risk third countries, and may also require obliged entities to apply EDD measures to countries not on the EU list where Member State authorities have identified a higher level of ML/TF risk. Financial institutions operating across multiple EU Member States must ensure that their compliance programs address both the EU-wide minimum EDD requirements for high-risk third countries and any more stringent national-level requirements imposed by Member State competent authorities. Divergence between Member State implementations of the EDD regime creates operational complexity for cross-border institutions.
+
+[AMLD6-HRC-004]
+The EU high-risk third country list is reviewed and updated by the European Commission on the basis of information provided by the FATF, assessments by the European Supervisory Authorities (EBA, ESMA, EIOPA), and the Commission's own evaluation. Financial institutions must monitor updates to the EU high-risk third country list and must promptly reassess and, where necessary, upgrade their CDD measures in respect of affected customers, counterparties, and correspondent relationships. The obligation to apply EDD to high-risk third countries applies from the date of the Commission's implementing decision; institutions must have monitoring systems capable of identifying customers with connections to newly listed countries within the institution's existing customer base.
+
+[AMLD6-HRC-005]
+Countermeasures may be applied by Member States in respect of countries presenting a particularly high ML/TF risk; these countermeasures may include restricting or prohibiting financial institutions from establishing correspondent banking relationships with institutions in those countries, or requiring specific notification or authorisation for transactions involving those countries. Financial institutions must monitor the application of countermeasures by the EU and Member State competent authorities and must comply with any countermeasures imposed. Where countermeasures effectively prohibit a category of transaction or relationship, institutions must have systems to identify and block such transactions and must update their correspondent banking policies accordingly.
+
+================================================================================
+SUPERVISORY CONVERGENCE AND THE ROLE OF THE EBA
+================================================================================
+
+[AMLD6-EBA-001]
+The European Banking Authority (EBA) has been given a central coordinating role in AML/CFT supervision within the EU under the amendments introduced by Directive (EU) 2019/2177 and Regulation (EU) 2019/2175. The EBA's mandate includes: leading, coordinating, and monitoring the EU's fight against money laundering and terrorist financing in the financial sector; issuing guidelines and recommendations on AML/CFT supervision; conducting peer reviews of national supervisory authorities' AML/CFT supervision practices; and acting as a central point of information exchange between national supervisors. Financial institutions must monitor EBA guidelines and recommendations as they represent authoritative guidance on supervisory expectations across the EU.
+
+[AMLD6-EBA-002]
+EBA guidelines issued under the AML/CFT framework include, as of 2024: Guidelines on Customer Due Diligence and the Factors Credit and Financial Institutions Should Consider When Assessing the Money Laundering and Terrorist Financing Risk Associated With Individual Business Relationships and Occasional Transactions; Guidelines on Risk-Based Supervision; Guidelines on Internal Governance; and Guidelines on the Role of Compliance Officers. These guidelines are addressed to competent authorities (supervisors) and to financial institutions and represent the EBA's statement of what constitutes sound AML/CFT practice for supervisory and institutional compliance purposes. Financial institutions must demonstrate awareness of and adherence to applicable EBA guidelines.
+
+================================================================================
+TRANSPOSITION AND NATIONAL IMPLEMENTATION
+================================================================================
+
+[AMLD6-TRANS-001]
+Directive (EU) 2018/1673 (6AMLD) required transposition into the national law of all EU Member States by 3 December 2020. As of the date of this document, all 27 EU Member States have notified the European Commission of their transposing measures; however, the quality and completeness of transposition varies between Member States, and the European Commission has initiated infringement proceedings against certain Member States for incomplete or incorrect transposition. Financial institutions operating across multiple EU Member States must ensure that their compliance programs address the requirements of each Member State's implementing legislation rather than relying solely on the text of the EU Directive.
+
+[AMLD6-TRANS-002]
+The forthcoming EU AML/CFT package — comprising the proposed EU AML Regulation (AMLR), the Recast AML Directive (AMLD), and the Regulation establishing the Anti-Money Laundering Authority (AMLAR) — will fundamentally reorganise the EU AML framework by establishing directly applicable, harmonised rules through the AMLR (which will not require transposition) and creating a new EU-level supervisory authority (AMLA) with direct supervisory powers over high-risk obliged entities. Financial institutions should begin assessing the impact of the proposed AMLR on their compliance frameworks, noting that the AMLR as proposed will significantly expand and harmonise the obligations currently set out across 4AMLD, 5AMLD, and 6AMLD.
+
+================================================================================
+END OF EU AMLD6 COMPLIANCE REFERENCE
+Document Version: 2024.1 | Review Cycle: Annual | Owner: EU Regulatory Affairs
+Classification: Internal — Restricted | Not for external distribution
+Reflects Directives 2018/1673 (6AMLD), 2015/849 (4AMLD), and 2018/843 (5AMLD)
+================================================================================

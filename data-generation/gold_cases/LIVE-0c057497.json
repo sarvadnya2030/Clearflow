@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-0c057497",
+  "fault_type": "SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE",
+  "injector_claimed_root": "settlement",
+  "injection_time": "2026-09-02T02:22:10.049065+00:00",
+  "duration_seconds": 30,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the full 30s injection window, sorted by @timestamp",
+    "Health witness log: settlement: DOWN (consecutive=1) at 02:22:12.232, RECOVERED shortly after",
+    "Traced 20 payments submitted across the full window"
+  ],
+  "reasoning_trace": "Third independent injection of this cascade-labeled fault type. Traced 20 payments across the full 30s window, again watching for a confounding secondary symptom. Witness monitor: settlement DOWN then RECOVERED, generated independently. All 20 payments show the same pattern: gateway, audit, validation-enrichment (or a normal PAYMENT_REJECTED for one), aml-compliance (including a real AML_SANCTIONS_HIT for one payment -- a genuine business event, not a stall, since it still proceeded to fraud-scoring), routing-execution (RAIL_SELECTED and PAYMENT_ROUTED both fire promptly for every payment), fraud-scoring -- and then nothing further. None show SETTLEMENT_COMPLETE. Third consecutive clean replication of the same evidentiary shape (LIVE-d29470d5, LIVE-c9126bf2, now this one) -- no confound has manifested in any of the three runs. Conclusion reached from evidence alone, before reading the injector's own log: settlement.",
+  "blind_conclusion": "settlement",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (settlement) matches the injector's own ground-truth log exactly. Third independent replication of this fault type -- same clean evidentiary shape as both prior cases."
+}

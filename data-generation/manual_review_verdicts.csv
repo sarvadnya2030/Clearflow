@@ -1,0 +1,102 @@
+id,fault,truth,pred,algo_hit,human_solvable,reason,n
+LIVE-6605a5f6,SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE,settlement,validation-enrichment,False,False,no distinguishing signal for truth,29
+LIVE-dafd2922,SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE,settlement,validation-enrichment,False,False,no distinguishing signal for truth,24
+LIVE-13aabdf1,SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE,settlement,gateway,False,False,no distinguishing signal for truth,21
+LIVE-c71169ec,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,gateway,False,False,no distinguishing signal for truth,25
+LIVE-aea4bd28,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,gateway,False,False,no distinguishing signal for truth,30
+LIVE-ac9d4f99,SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND,settlement,aml-compliance,False,False,no distinguishing signal for truth,33
+LIVE-16440e52,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,validation-enrichment,True,True,stall:validation-enrichment=0.16,19
+LIVE-375146f9,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,gateway,False,False,no distinguishing signal for truth,30
+LIVE-cf9fd926,SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND,settlement,validation-enrichment,False,False,no distinguishing signal for truth,28
+LIVE-46c46f73,SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND,settlement,validation-enrichment,False,False,no distinguishing signal for truth,19
+LIVE-b5bd99ca,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,validation-enrichment,True,True,z:validation-enrichment=0.71,27
+LIVE-445b3604,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,validation-enrichment,True,True,stall:validation-enrichment=0.19,32
+LIVE-dd95ea8e,DB_TIMEOUT,settlement,validation-enrichment,False,False,no distinguishing signal for truth,15
+LIVE-a3dc5365,DB_TIMEOUT,settlement,validation-enrichment,False,False,no distinguishing signal for truth,16
+LIVE-0679abe9,KAFKA_CONSUMER_LAG,routing-execution,validation-enrichment,False,False,no distinguishing signal for truth,24
+LIVE-7e41ca1f,KAFKA_CONSUMER_LAG,routing-execution,validation-enrichment,False,True,z:routing-execution=0.56,15
+LIVE-3ac304e5,KAFKA_CONSUMER_LAG,routing-execution,gateway,False,False,no distinguishing signal for truth,9
+LIVE-4e92e4d8,NETWORK_LATENCY,validation-enrichment,gateway,False,False,no distinguishing signal for truth,18
+LIVE-322172ef,NETWORK_LATENCY,validation-enrichment,gateway,False,False,no distinguishing signal for truth,19
+LIVE-0db6ac08,CPU_SATURATION,aml-compliance,gateway,False,False,no distinguishing signal for truth,13
+LIVE-c893fc55,CPU_SATURATION,aml-compliance,gateway,False,False,no distinguishing signal for truth,12
+LIVE-5082610f,IDEMPOTENCY_COLLISION_STORM,gateway,gateway,True,True,frac:gateway=0.20,5
+LIVE-aa7a31d5,IDEMPOTENCY_COLLISION_STORM,gateway,gateway,True,True,frac:gateway=0.25,4
+LIVE-442d22f5,IDEMPOTENCY_COLLISION_STORM,gateway,gateway,True,True,frac:gateway=0.17,6
+LIVE-e703a1e5,AML_HOLD,aml-compliance,validation-enrichment,False,False,no distinguishing signal for truth,5
+LIVE-f0f0f55f,AML_HOLD,aml-compliance,validation-enrichment,False,False,no distinguishing signal for truth,4
+LIVE-9b916e1f,AML_HOLD,aml-compliance,aml-compliance,True,True,frac:aml-compliance=0.25,4
+LIVE-89f4b295,DB_TIMEOUT,settlement,gateway,False,False,no distinguishing signal for truth,33
+LIVE-0029cef4,DB_TIMEOUT,settlement,validation-enrichment,False,False,no distinguishing signal for truth,14
+LIVE-a1cf8ab7,KAFKA_CONSUMER_LAG,routing-execution,routing-execution,True,True,z:routing-execution=0.69,11
+LIVE-529974c3,KAFKA_CONSUMER_LAG,routing-execution,routing-execution,True,True,z:routing-execution=0.64,16
+LIVE-7eddac91,NETWORK_LATENCY,validation-enrichment,validation-enrichment,True,True,stall:validation-enrichment=0.31,16
+LIVE-c43696aa,NETWORK_LATENCY,validation-enrichment,validation-enrichment,True,True,stall:validation-enrichment=0.17,18
+LIVE-4093814a,CPU_SATURATION,aml-compliance,gateway,False,False,no distinguishing signal for truth,18
+LIVE-f122cc2c,CPU_SATURATION,aml-compliance,gateway,False,False,no distinguishing signal for truth,20
+LIVE-51d6740b,IDEMPOTENCY_COLLISION_STORM,gateway,validation-enrichment,False,True,frac:gateway=0.50,2
+LIVE-e1d7984a,IDEMPOTENCY_COLLISION_STORM,gateway,gateway,True,True,frac:gateway=0.20,5
+LIVE-010f5584,AML_HOLD,aml-compliance,validation-enrichment,False,False,no distinguishing signal for truth,7
+LIVE-04c75e5e,AML_HOLD,aml-compliance,validation-enrichment,False,False,no distinguishing signal for truth,8
+LIVE-5292e78d,SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE,settlement,validation-enrichment,False,False,no distinguishing signal for truth,26
+LIVE-36504166,SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE,settlement,gateway,False,False,no distinguishing signal for truth,26
+LIVE-d7c17b54,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,validation-enrichment,False,False,no distinguishing signal for truth,23
+LIVE-d3886b6a,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,aml-compliance,True,True,z:aml-compliance=3.03,20
+LIVE-23f96ab7,SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND,settlement,validation-enrichment,False,False,no distinguishing signal for truth,20
+LIVE-bbca1b76,SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND,settlement,gateway,False,False,no distinguishing signal for truth,19
+LIVE-e5e5b525,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,validation-enrichment,True,True,z:validation-enrichment=4.45,27
+LIVE-02b2695f,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,gateway,False,False,no distinguishing signal for truth,21
+LIVE-9b2cc5f4,SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE,settlement,gateway,False,False,no distinguishing signal for truth,23
+LIVE-c106dc64,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,routing-execution,False,False,no distinguishing signal for truth,27
+LIVE-4f25470d,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,gateway,False,True,z:aml-compliance=1.05,21
+LIVE-a731aed7,IDEMPOTENCY_COLLISION_STORM,gateway,aml-compliance,False,False,no distinguishing signal for truth,6
+LIVE-1975c960,IDEMPOTENCY_COLLISION_STORM,gateway,gateway,True,True,frac:gateway=0.25,4
+LIVE-1e801edd,IDEMPOTENCY_COLLISION_STORM,gateway,gateway,True,True,frac:gateway=0.50,2
+LIVE-50244b10,AML_HOLD,aml-compliance,gateway,False,False,no distinguishing signal for truth,7
+LIVE-7e49d55f,AML_HOLD,aml-compliance,validation-enrichment,False,True,z:aml-compliance=4.02,5
+LIVE-ad1e058b,AML_HOLD,aml-compliance,validation-enrichment,False,False,no distinguishing signal for truth,5
+LIVE-e02375c2,SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND,settlement,gateway,False,False,no distinguishing signal for truth,33
+LIVE-eadd4565,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,validation-enrichment,True,True,stall:validation-enrichment=0.15,26
+LIVE-1d02a5a8,SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND,settlement,validation-enrichment,False,False,no distinguishing signal for truth,21
+LIVE-cc885896,SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND,settlement,validation-enrichment,False,False,no distinguishing signal for truth,23
+LIVE-f04d432b,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,gateway,False,False,no distinguishing signal for truth,27
+LIVE-4cea9f14,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,validation-enrichment,True,True,stall:validation-enrichment=0.19,27
+LIVE-ddf47161,DB_TIMEOUT,settlement,gateway,False,False,no distinguishing signal for truth,37
+LIVE-049c8d86,DB_TIMEOUT,settlement,validation-enrichment,False,False,no distinguishing signal for truth,14
+LIVE-9a48b999,SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE,settlement,gateway,False,False,no distinguishing signal for truth,27
+LIVE-a055b72a,SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE,settlement,gateway,False,False,no distinguishing signal for truth,21
+LIVE-2ae40f2d,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,gateway,False,False,no distinguishing signal for truth,24
+LIVE-41ace2f8,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,validation-enrichment,False,False,no distinguishing signal for truth,24
+LIVE-a2ceeaba,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,gateway,False,False,no distinguishing signal for truth,21
+LIVE-d343e12f,IDEMPOTENCY_COLLISION_STORM,gateway,gateway,True,True,frac:gateway=0.20,5
+LIVE-b82de1ed,IDEMPOTENCY_COLLISION_STORM,gateway,validation-enrichment,False,False,no distinguishing signal for truth,7
+LIVE-69ce4d43,IDEMPOTENCY_COLLISION_STORM,gateway,gateway,True,False,no distinguishing signal for truth,7
+LIVE-08da5024,AML_HOLD,aml-compliance,aml-compliance,True,True,frac:aml-compliance=0.33,3
+LIVE-ec6deaec,AML_HOLD,aml-compliance,aml-compliance,True,True,frac:aml-compliance=0.20,5
+LIVE-16eb5fd5,AML_HOLD,aml-compliance,validation-enrichment,False,False,no distinguishing signal for truth,5
+LIVE-bffd36ab,DB_TIMEOUT,settlement,gateway,False,False,no distinguishing signal for truth,22
+LIVE-5e306f3d,DB_TIMEOUT,settlement,gateway,False,False,no distinguishing signal for truth,18
+LIVE-f2204653,KAFKA_CONSUMER_LAG,routing-execution,validation-enrichment,False,False,no distinguishing signal for truth,22
+LIVE-3b7ad3f2,KAFKA_CONSUMER_LAG,routing-execution,validation-enrichment,False,False,no distinguishing signal for truth,14
+LIVE-11a8bf36,KAFKA_CONSUMER_LAG,routing-execution,validation-enrichment,False,False,no distinguishing signal for truth,16
+LIVE-6f4f4391,NETWORK_LATENCY,validation-enrichment,validation-enrichment,True,True,stall:validation-enrichment=0.24,17
+LIVE-95c7b3c0,NETWORK_LATENCY,validation-enrichment,gateway,False,False,no distinguishing signal for truth,16
+LIVE-90316572,NETWORK_LATENCY,validation-enrichment,gateway,False,False,no distinguishing signal for truth,16
+LIVE-e4b28eee,CPU_SATURATION,aml-compliance,aml-compliance,True,True,z:aml-compliance=2.50,15
+LIVE-4745d75e,CPU_SATURATION,aml-compliance,gateway,False,False,no distinguishing signal for truth,16
+LIVE-5961ed7b,SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE,settlement,validation-enrichment,False,False,no distinguishing signal for truth,26
+LIVE-b3972f3a,SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE,settlement,gateway,False,False,no distinguishing signal for truth,24
+LIVE-2681f3d8,SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE,settlement,gateway,False,False,no distinguishing signal for truth,14
+LIVE-508fa2a6,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,validation-enrichment,False,False,no distinguishing signal for truth,32
+LIVE-02346c6a,SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND,settlement,validation-enrichment,False,False,no distinguishing signal for truth,29
+LIVE-61417db7,SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND,settlement,validation-enrichment,False,False,no distinguishing signal for truth,34
+LIVE-742fa9b9,SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND,settlement,validation-enrichment,False,False,no distinguishing signal for truth,30
+LIVE-7db3364a,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,validation-enrichment,True,True,stall:validation-enrichment=0.17,24
+LIVE-62540cb5,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,validation-enrichment,True,True,stall:validation-enrichment=0.38,8
+LIVE-1dc2c80e,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,gateway,False,False,no distinguishing signal for truth,25
+LIVE-1f884cbc,IDEMPOTENCY_COLLISION_STORM,gateway,gateway,True,True,frac:gateway=0.25,4
+LIVE-0f30ca31,IDEMPOTENCY_COLLISION_STORM,gateway,gateway,True,True,frac:gateway=0.20,5
+LIVE-34fc48b1,IDEMPOTENCY_COLLISION_STORM,gateway,validation-enrichment,False,False,no distinguishing signal for truth,4
+LIVE-ccb77cdb,AML_HOLD,aml-compliance,gateway,False,False,no distinguishing signal for truth,2
+LIVE-3207937e,AML_HOLD,aml-compliance,aml-compliance,True,True,frac:aml-compliance=0.25,4
+LIVE-f832240f,AML_HOLD,aml-compliance,aml-compliance,True,True,frac:aml-compliance=1.00,1

@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-6e7fe0ef",
+  "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+  "injector_claimed_root": "validation-enrichment",
+  "injection_time": "2026-09-02T00:58:09.640858+00:00",
+  "duration_seconds": 30,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the full 30s injection window, sorted by @timestamp",
+    "Health witness log: validation-enrichment: DOWN (consecutive=1) at 00:58:11.812, RECOVERED shortly after",
+    "Traced 18 payments submitted across the full window, again watching gateway closely given the fault type's name"
+  ],
+  "reasoning_trace": "Second independent injection of this fault type, again watching gateway closely for the confound its name suggests. Traced 18 payments across the full window. Gateway shows no anomaly at all -- every payment gets a prompt PAYMENT_SUBMITTED with normal spacing, no delay or error. All 18 then show audit and fraud-scoring completing quickly and normally -- and then nothing further. None show PAYMENT_VALIDATED, and consequently nothing downstream of it. Clean, consistent stall specific to validation-enrichment, replicating the exact evidentiary shape of the first VALIDATION_SLOWDOWN_GATEWAY_CONFOUND gold case (LIVE-8ed9457d) -- gateway, despite being named in the fault type, shows no real anomaly in either run checked so far. Conclusion reached from evidence alone, before reading the injector's own log: validation-enrichment.",
+  "blind_conclusion": "validation-enrichment",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (validation-enrichment) matches the injector's own ground-truth log exactly. Second independent replication of this fault type -- same clean evidentiary shape as the first case, gateway confound has not manifested in either run."
+}

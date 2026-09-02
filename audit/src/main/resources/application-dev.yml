@@ -1,0 +1,18 @@
+spring:
+  data:
+    cassandra:
+      contact-points: localhost
+      port: 9042
+      keyspace-name: clearflow_dev
+      local-datacenter: datacenter1
+      schema-action: create_if_not_exists
+    redis:
+      host: localhost
+      port: 6379
+      password: ${REDIS_PASSWORD:clearflow123}
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      enable-auto-commit: false
+    listener:
+      ack-mode: MANUAL_IMMEDIATE

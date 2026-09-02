@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <springProperty scope="context" name="SERVICE_NAME" source="spring.application.name" defaultValue="clearflow-service"/>
+  <include resource="logback-rolling-include.xml"/>
+
+  <!-- JSON console appender -->
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+      <customFields>{"service":"${SERVICE_NAME}","environment":"clearflow"}</customFields>
+      <includeMdcKeyName>paymentId</includeMdcKeyName>
+      <includeMdcKeyName>correlationId</includeMdcKeyName>
+      <includeMdcKeyName>traceId</includeMdcKeyName>
+      <includeMdcKeyName>spanId</includeMdcKeyName>
+      <includeMdcKeyName>debtorCountry</includeMdcKeyName>
+      <includeMdcKeyName>creditorCountry</includeMdcKeyName>
+      <includeMdcKeyName>amount</includeMdcKeyName>
+      <includeMdcKeyName>currency</includeMdcKeyName>
+      <includeMdcKeyName>fraudScore</includeMdcKeyName>
+      <includeMdcKeyName>riskBand</includeMdcKeyName>
+      <includeMdcKeyName>velocityCount</includeMdcKeyName>
+      <includeMdcKeyName>screeningResult</includeMdcKeyName>
+      <includeMdcKeyName>matchScore</includeMdcKeyName>
+      <includeMdcKeyName>listHit</includeMdcKeyName>
+      <includeMdcKeyName>rail</includeMdcKeyName>
+      <includeMdcKeyName>settlementRef</includeMdcKeyName>
+      <includeMdcKeyName>durationMs</includeMdcKeyName>
+    </encoder>
+  </appender>
+
+  <!-- Logstash TCP appender for direct log shipping -->
+  <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+    <destination>localhost:5000</destination>
+    <reconnectionDelay>5 seconds</reconnectionDelay>
+    <connectionTimeout>5 seconds</connectionTimeout>
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+      <customFields>{"service":"${SERVICE_NAME}","environment":"clearflow"}</customFields>
+      <includeMdcKeyName>paymentId</includeMdcKeyName>
+      <includeMdcKeyName>correlationId</includeMdcKeyName>
+      <includeMdcKeyName>traceId</includeMdcKeyName>
+      <includeMdcKeyName>spanId</includeMdcKeyName>
+      <includeMdcKeyName>debtorCountry</includeMdcKeyName>
+      <includeMdcKeyName>creditorCountry</includeMdcKeyName>
+      <includeMdcKeyName>amount</includeMdcKeyName>
+      <includeMdcKeyName>currency</includeMdcKeyName>
+      <includeMdcKeyName>fraudScore</includeMdcKeyName>
+      <includeMdcKeyName>riskBand</includeMdcKeyName>
+      <includeMdcKeyName>velocityCount</includeMdcKeyName>
+      <includeMdcKeyName>screeningResult</includeMdcKeyName>
+      <includeMdcKeyName>matchScore</includeMdcKeyName>
+      <includeMdcKeyName>listHit</includeMdcKeyName>
+      <includeMdcKeyName>rail</includeMdcKeyName>
+      <includeMdcKeyName>settlementRef</includeMdcKeyName>
+      <includeMdcKeyName>durationMs</includeMdcKeyName>
+    </encoder>
+    <!-- Non-blocking so a dead Logstash never slows the service -->
+    <keepAliveDuration>5 minutes</keepAliveDuration>
+  </appender>
+
+  <!-- Async wrapper for Logstash — prevents slow network from blocking threads -->
+  <appender name="ASYNC_LOGSTASH" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="LOGSTASH"/>
+    <queueSize>1024</queueSize>
+    <discardingThreshold>0</discardingThreshold>
+    <neverBlock>true</neverBlock>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="CONSOLE"/>
+    <appender-ref ref="ASYNC_LOGSTASH"/>
+      <appender-ref ref="ASYNC_ROLLING"/>
+  </root>
+
+  <!-- Reduce noise from framework -->
+  <logger name="org.springframework" level="WARN"/>
+  <logger name="org.apache.kafka" level="WARN"/>
+  <logger name="org.hibernate" level="WARN"/>
+</configuration>

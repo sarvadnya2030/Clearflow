@@ -1,0 +1,5 @@
+fraud:
+  model-server-url: ${LGBM_MODEL_SERVER_URL:http://lightgbm:8091}
+  velocity-threshold-1h: 5
+  velocity-threshold-24h: 50
+  country-risk-default: 5

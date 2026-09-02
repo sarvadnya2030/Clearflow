@@ -1,0 +1,88 @@
+# Phase 4 Alerting Configuration
+# Multi-channel notifications for cascade failures
+
+alerts:
+  # Slack integration
+  slack:
+    # Set your Slack webhook URL here
+    # Get from: https://api.slack.com/messaging/webhooks
+    webhook-url: "${SLACK_WEBHOOK_URL:}"
+    enabled: true
+    channel: "#payment-incidents"
+    mention-on-critical: "@here"
+
+  # PagerDuty integration
+  pagerduty:
+    # Set your PagerDuty integration key here
+    # Get from: https://www.pagerduty.com/developers/api
+    integration-key: "${PAGERDUTY_INTEGRATION_KEY:}"
+    enabled: true
+    severity-threshold: "CRITICAL"  # Only alert on CRITICAL cascades
+
+  # Email alerts
+  email:
+    enabled: false
+    smtp-server: "smtp.gmail.com"
+    smtp-port: 587
+    from-address: "clearflow-alerts@example.com"
+    to-addresses:
+      - "ops-team@example.com"
+      - "engineering@example.com"
+    subject-template: "🚨 Cascade Failure: {cascade_type} in {service}"
+
+  # Rate limiting
+  cooldown-seconds: 60  # Don't alert same cascade twice in 60s
+  batch-alerts: true    # Batch multiple cascades in single notification if within 5s
+
+# Elasticsearch configuration
+elasticsearch:
+  host: "${ES_HOST:http://localhost:9200}"
+  username: "${ES_USER:}"
+  password: "${ES_PASS:}"
+  connection-timeout: 5s
+  socket-timeout: 30s
+
+# Cascade detection tuning
+cascade-detection:
+  # Time window for detecting cascades
+  detection-window-minutes: 5
+
+  # Minimum services for cascade (2+ means "cascade")
+  min-services-threshold: 2
+
+  # Max propagation time (ms) - beyond this, failures are unrelated
+  propagation-threshold-ms: 10000
+
+  # Cache settings
+  cache:
+    max-cascades: 1000
+    ttl-minutes: 5
+
+  # Storage (future: MongoDB)
+  persistence:
+    enabled: false
+    mongodb-uri: "${MONGO_URI:mongodb://localhost:27017}"
+    database: "clearflow_cascades"
+    collection: "cascade_patterns"
+    ttl-days: 30
+
+# Monitoring intervals
+monitoring:
+  cascade-detection-interval-seconds: 10
+  alert-broadcast-interval-seconds: 5
+
+# Feature flags (Phase 4)
+features:
+  cascade-detection: true         # Real-time detection
+  predictive-simulation: true     # "What if" analysis
+  alerting: true                  # Multi-channel alerts
+  persistent-storage: false       # MongoDB persistence (coming soon)
+  ml-classification: false        # LightGBM cascade type (coming soon)
+
+# Logging
+logging:
+  level:
+    root: INFO
+    com.clearflow.mcp: DEBUG
+    com.clearflow.mcp.service.CascadeFailureDetector: INFO
+    com.clearflow.mcp.service.CascadeAlertingService: INFO

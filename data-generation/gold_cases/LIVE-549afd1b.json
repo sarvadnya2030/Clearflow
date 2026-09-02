@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-549afd1b",
+  "fault_type": "AML_HOLD",
+  "injector_claimed_root": "aml-compliance",
+  "injection_time": "2026-09-01T22:10:07.857067+00:00",
+  "duration_seconds": null,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "health_witness_monitor output: no event fired (correctly -- aml-compliance's process never crashes for this fault type)",
+    "Searched all events for HOLD/ESCALATED/SANCTIONS/HIT keywords in the window"
+  ],
+  "reasoning_trace": "Read the witness monitor output first, blind: no event at all. Since this fault type didn't produce an infra-level signal, searched more broadly for AML-domain keywords instead of assuming another crash-shaped pattern. Found a direct, unambiguous, self-reported event: aml-compliance logged AML_SANCTIONS_HIT for payment 450eefbc (matchedEntity='TREN DE ARAGUA', matchScore=1.0, durationMs=7) immediately followed by AML_HOLD amlState=ESCALATED for the same payment, both timestamped 0.17s after the injection time. A second, separate real match fired later in the same window (payment f085c800, matchedEntity='Arian Bank Afghanistan', matchScore=0.93, amlState=HOLD). This is qualitatively different evidence from every crash-fault case investigated so far: the service directly announces its own decisive action in its own log stream, rather than requiring an external witness or a funnel-stall inference. No other service shows any anomaly in the window. Conclusion reached from evidence alone, before reading the injector's own log: aml-compliance.",
+  "blind_conclusion": "aml-compliance",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (aml-compliance) matches the injector's own ground-truth log exactly. Directly self-reported by the service in its own real log stream (AML_SANCTIONS_HIT + AML_HOLD events), the strongest and most direct evidence class seen in this dataset so far -- no external witness or inference needed, unlike every crash-fault case."
+}

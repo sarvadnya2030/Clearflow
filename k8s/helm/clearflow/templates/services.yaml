@@ -1,0 +1,121 @@
+{{/*
+Downstream services: fraud-scoring, validation-enrichment, aml-compliance,
+routing-execution, settlement, audit, mcp-readonly-gateway.
+Each gets a Deployment + Service + HPA using values from values.yaml.
+*/}}
+
+{{- $services := list
+  (dict "name" "fraud-scoring"         "key" "fraudScoring"         "port" 8081)
+  (dict "name" "validation-enrichment" "key" "validationEnrichment" "port" 8082)
+  (dict "name" "aml-compliance"        "key" "amlCompliance"        "port" 8083)
+  (dict "name" "routing-execution"     "key" "routingExecution"     "port" 8084)
+  (dict "name" "settlement"            "key" "settlement"           "port" 8085)
+  (dict "name" "audit"                 "key" "audit"                "port" 8086)
+  (dict "name" "mcp-readonly-gateway"  "key" "mcpGateway"           "port" 8087)
+-}}
+
+{{- range $svc := $services }}
+{{- $cfg := index $.Values $svc.key }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $.Release.Name }}-{{ $svc.name }}
+  namespace: {{ $.Release.Namespace }}
+  labels:
+    {{- include "clearflow.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: {{ $svc.name }}
+spec:
+  replicas: {{ $cfg.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: clearflow-{{ $svc.name }}
+      app.kubernetes.io/instance: {{ $.Release.Name }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: clearflow-{{ $svc.name }}
+        app.kubernetes.io/instance: {{ $.Release.Name }}
+        {{- include "clearflow.labels" $ | nindent 8 }}
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/actuator/prometheus"
+        prometheus.io/port: {{ $svc.port | quote }}
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: {{ $svc.name }}
+          image: {{ include "clearflow.image" (dict "root" $ "service" $svc.name) }}
+          imagePullPolicy: {{ $.Values.global.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ $svc.port }}
+              protocol: TCP
+          env:
+            {{- include "clearflow.commonEnv" $ | nindent 12 }}
+            {{- if $cfg.env }}
+            {{- range $k, $v := $cfg.env }}
+            - name: {{ $k }}
+              value: {{ $v | quote }}
+            {{- end }}
+            {{- end }}
+          resources:
+            {{- toYaml $cfg.resources | nindent 12 }}
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+            initialDelaySeconds: 45
+            periodSeconds: 15
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $.Release.Name }}-{{ $svc.name }}
+  namespace: {{ $.Release.Namespace }}
+  labels:
+    {{- include "clearflow.labels" $ | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ $svc.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: clearflow-{{ $svc.name }}
+    app.kubernetes.io/instance: {{ $.Release.Name }}
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ $.Release.Name }}-{{ $svc.name }}
+  namespace: {{ $.Release.Namespace }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ $.Release.Name }}-{{ $svc.name }}
+  minReplicas: {{ $cfg.hpa.minReplicas }}
+  maxReplicas: {{ $cfg.hpa.maxReplicas }}
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ $cfg.hpa.targetCPUUtilizationPercentage }}
+{{- end }}

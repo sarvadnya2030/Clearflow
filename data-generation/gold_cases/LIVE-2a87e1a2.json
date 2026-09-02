@@ -1,0 +1,16 @@
+{
+  "incident_id": "LIVE-2a87e1a2",
+  "fault_type": "IDEMPOTENCY_COLLISION_STORM",
+  "injector_claimed_root": "gateway",
+  "injection_time": "2026-09-02T01:58:09.642113+00:00",
+  "duration_seconds": 5,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "health_witness_monitor output: no event fired (correctly -- gateway never crashes for this fault type)",
+    "Searched all events for duplicate/conflict/409 keywords -- one hit, verified it was an unrelated real event (a fraud/embargo rejection, not idempotency)"
+  ],
+  "reasoning_trace": "Fourth independent injection of this fault type. Witness monitor: no event, correct. Broad keyword search for duplicate/conflict/409 found one hit, but tracing that payment's full history (3592e944) showed it was a real, unrelated business rejection: FRAUD_SCORE_COMPUTED riskBand=CRITICAL followed by PAYMENT_REJECTED reason=EMBARGOED_COUNTRY (a GB->North Korea payment correctly blocked), which happened to get logged with eventType=clearflow.payment.blocked -- a fraud-blocking event type, not an idempotency one, already established as structurally unrelated in an earlier gold case (LIVE-fd202168). No genuine trace of the 14 duplicate submissions found anywhere. Fourth consecutive confirmation of the same evidentiary gap for this fault type.",
+  "blind_conclusion": "insufficient evidence to determine a root cause from any evidence tier checked",
+  "confirmed": false,
+  "confirmation_basis": "Ground truth is gateway, which this evidence-based investigation could not and did not reach -- honestly reported as correctly recognized insufficient evidence. Fourth independent confirmation of the same finding: this fault type structurally leaves no forensic trace at any evidence tier available in this system."
+}

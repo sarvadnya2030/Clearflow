@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:zeebe="http://camunda.org/schema/zeebe/1.0"
+                  id="AMLScreeningDefinitions"
+                  targetNamespace="http://clearflow.com/aml-screening">
+  <bpmn:process id="aml-screening-process" name="AML Screening Process" isExecutable="true">
+    <bpmn:startEvent id="start" name="Start"/>
+    <bpmn:serviceTask id="loadSanctionLists" name="Load Sanction Lists">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="load-sanction-lists"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="screenDebtor" name="Screen Debtor">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="screen-debtor-name"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="screenCreditor" name="Screen Creditor">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="screen-creditor-name"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="screenCountries" name="Screen Countries">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="screen-countries"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="evaluateResult" name="Match Found?" default="flowClear"/>
+    <bpmn:serviceTask id="recordHit" name="Record Sanctions Hit">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="record-sanctions-hit"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="notifyCompliance" name="Notify Compliance Team">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="notify-compliance"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="sanctionsHit" name="Sanctions Hit"/>
+    <bpmn:serviceTask id="recordClear" name="Record Sanctions Clear">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="record-sanctions-clear"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="sanctionsClear" name="Sanctions Clear"/>
+
+    <bpmn:sequenceFlow id="flow1" sourceRef="start" targetRef="loadSanctionLists"/>
+    <bpmn:sequenceFlow id="flow2" sourceRef="loadSanctionLists" targetRef="screenDebtor"/>
+    <bpmn:sequenceFlow id="flow3" sourceRef="screenDebtor" targetRef="screenCreditor"/>
+    <bpmn:sequenceFlow id="flow4" sourceRef="screenCreditor" targetRef="screenCountries"/>
+    <bpmn:sequenceFlow id="flow5" sourceRef="screenCountries" targetRef="evaluateResult"/>
+    <bpmn:sequenceFlow id="flowHit" sourceRef="evaluateResult" targetRef="recordHit">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">=matchScore &gt;= threshold</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="flow6" sourceRef="recordHit" targetRef="notifyCompliance"/>
+    <bpmn:sequenceFlow id="flow7" sourceRef="notifyCompliance" targetRef="sanctionsHit"/>
+    <bpmn:sequenceFlow id="flowClear" sourceRef="evaluateResult" targetRef="recordClear"/>
+    <bpmn:sequenceFlow id="flow8" sourceRef="recordClear" targetRef="sanctionsClear"/>
+  </bpmn:process>
+</bpmn:definitions>

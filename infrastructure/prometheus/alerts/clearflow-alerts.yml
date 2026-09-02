@@ -1,0 +1,236 @@
+groups:
+  # ── Payment Pipeline SLA ──────────────────────────────────
+  - name: clearflow.payment.sla
+    interval: 30s
+    rules:
+
+      - alert: PaymentThroughputDropped
+        expr: |
+          rate(http_server_requests_seconds_count{
+            application="gateway",
+            uri="/api/v1/payments",
+            status="202"
+          }[5m]) < 10
+        for: 3m
+        labels:
+          severity: warning
+          team: payments
+        annotations:
+          summary: "Payment throughput below 10 TPS"
+          description: "Gateway accepted payment rate is {{ $value | humanize }} TPS (threshold: 10 TPS)"
+          runbook: "https://wiki.internal/clearflow/runbooks/low-throughput"
+
+      - alert: PaymentGatewayErrorRateHigh
+        expr: |
+          rate(http_server_requests_seconds_count{
+            application="gateway",
+            uri="/api/v1/payments",
+            status=~"5.."
+          }[5m])
+          /
+          rate(http_server_requests_seconds_count{
+            application="gateway",
+            uri="/api/v1/payments"
+          }[5m]) > 0.01
+        for: 2m
+        labels:
+          severity: critical
+          team: payments
+        annotations:
+          summary: "Payment gateway error rate > 1%"
+          description: "Error rate is {{ $value | humanizePercentage }} over last 5 minutes"
+
+      - alert: PaymentLatencyP99High
+        expr: |
+          histogram_quantile(0.99,
+            rate(http_server_requests_seconds_bucket{
+              application="gateway",
+              uri="/api/v1/payments"
+            }[5m])
+          ) > 2.0
+        for: 5m
+        labels:
+          severity: warning
+          team: payments
+        annotations:
+          summary: "Payment P99 latency > 2s"
+          description: "P99 latency is {{ $value | humanizeDuration }}"
+
+  # ── Fraud Detection ────────────────────────────────────────
+  - name: clearflow.fraud
+    interval: 60s
+    rules:
+
+      - alert: FraudDetectionRateSpiked
+        expr: |
+          rate(clearflow_fraud_blocked_total[10m])
+          /
+          rate(clearflow_payments_evaluated_total[10m]) > 0.15
+        for: 5m
+        labels:
+          severity: warning
+          team: fraud
+        annotations:
+          summary: "Fraud block rate > 15% — possible attack pattern"
+          description: "Block rate: {{ $value | humanizePercentage }}"
+
+      - alert: FraudServiceDown
+        expr: up{application="fraud-scoring"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          team: fraud
+        annotations:
+          summary: "Fraud scoring service is DOWN"
+          description: "All payments will be blocked or pass without fraud scoring"
+
+  # ── AML Compliance ─────────────────────────────────────────
+  - name: clearflow.aml
+    interval: 60s
+    rules:
+
+      - alert: AMLScreeningBacklogHigh
+        expr: |
+          kafka_consumer_group_lag{
+            group="aml-compliance-group",
+            topic="CLEARFLOW.PAYMENT.VALIDATED"
+          } > 500
+        for: 5m
+        labels:
+          severity: warning
+          team: compliance
+        annotations:
+          summary: "AML screening Kafka lag > 500 messages"
+          description: "Consumer lag: {{ $value }} messages — regulatory SLA at risk"
+
+      - alert: SARGenerationFailed
+        expr: increase(clearflow_sar_generation_errors_total[1h]) > 0
+        for: 0m
+        labels:
+          severity: critical
+          team: compliance
+        annotations:
+          summary: "SAR generation failure — immediate regulatory risk"
+
+  # ── Broker Health ──────────────────────────────────────────
+  - name: clearflow.brokers
+    interval: 30s
+    rules:
+
+      - alert: KafkaConsumerLagCritical
+        expr: |
+          kafka_consumer_group_lag{group=~"clearflow-.*"} > 2000
+        for: 3m
+        labels:
+          severity: critical
+          team: platform
+        annotations:
+          summary: "Kafka consumer lag critical: {{ $labels.group }}/{{ $labels.topic }}"
+          description: "Lag: {{ $value }} messages"
+
+      - alert: DeadLetterQueueGrowing
+        expr: |
+          increase(kafka_topic_partition_current_offset{
+            topic=~".*\\.DLQ"
+          }[10m]) > 10
+        for: 2m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "DLQ {{ $labels.topic }} receiving messages"
+          description: "{{ $value }} new messages in DLQ over last 10 minutes"
+
+      - alert: CircuitBreakerOpen
+        expr: |
+          resilience4j_circuitbreaker_state{state="open"} == 1
+        for: 1m
+        labels:
+          severity: critical
+          team: platform
+        annotations:
+          summary: "Circuit breaker OPEN: {{ $labels.name }}"
+          description: "Service {{ $labels.application }} circuit breaker is OPEN — cascade failure risk"
+
+      - alert: ActiveMQQueueDepthHigh
+        expr: activemq_queue_queue_size > 1000
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "ActiveMQ queue {{ $labels.destinationName }} depth > 1000"
+
+  # ── Settlement ─────────────────────────────────────────────
+  - name: clearflow.settlement
+    interval: 60s
+    rules:
+
+      - alert: SettlementImbalanceDetected
+        expr: increase(clearflow_settlement_imbalance_total[5m]) > 0
+        for: 0m
+        labels:
+          severity: critical
+          team: settlement
+        annotations:
+          summary: "Double-entry accounting imbalance detected"
+          description: "Immediate investigation required — regulatory breach risk"
+
+      - alert: SettlementServiceDown
+        expr: up{application="settlement"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          team: settlement
+        annotations:
+          summary: "Settlement service DOWN — payments cannot be settled"
+
+  # ── Audit Trail ────────────────────────────────────────────
+  - name: clearflow.audit
+    interval: 120s
+    rules:
+
+      - alert: HashChainIntegrityFailed
+        expr: increase(clearflow_audit_chain_integrity_failures_total[5m]) > 0
+        for: 0m
+        labels:
+          severity: critical
+          team: compliance
+        annotations:
+          summary: "Audit hash chain integrity failure — tamper attempt detected"
+
+      - alert: AuditServiceDown
+        expr: up{application="audit"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          team: compliance
+        annotations:
+          summary: "Audit service DOWN — no audit trail being written"
+
+  # ── Infrastructure ─────────────────────────────────────────
+  - name: clearflow.infrastructure
+    interval: 30s
+    rules:
+
+      - alert: ServiceMemoryHigh
+        expr: |
+          jvm_memory_used_bytes{area="heap"}
+          /
+          jvm_memory_max_bytes{area="heap"} > 0.85
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "High JVM heap: {{ $labels.application }}"
+          description: "Heap usage: {{ $value | humanizePercentage }}"
+
+      - alert: ServiceDown
+        expr: up{job=~"clearflow-.*"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          team: platform
+        annotations:
+          summary: "ClearFlow service DOWN: {{ $labels.application }}"

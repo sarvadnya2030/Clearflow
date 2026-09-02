@@ -1,0 +1,1930 @@
+<?xml version="1.0" ?>
+<FinCEN_CTR xmlns="http://www.fincen.gov/base" GeneratedDate="2026-04-16" ReportId="CTR-CLEARFLOW-20260416_041247" FilingInstitution="ClearFlow Payment Network">
+  <FilingSummary>
+    <TotalCTRs>120</TotalCTRs>
+    <TotalCashAmount>30758810.04</TotalCashAmount>
+    <ReportingDate>2026-04-16</ReportingDate>
+    <ThresholdAmount>10000</ThresholdAmount>
+    <Currency>USD</Currency>
+  </FilingSummary>
+  <CurrencyTransaction sequence="1">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00001</CTRId>
+    <TransactionDate>2026-02-08</TransactionDate>
+    <PaymentId>ad09e8f9-23d7-42fe-821a-e4217c5e401e</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>172001.57</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 193 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US502353161996074504</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="2">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00002</CTRId>
+    <TransactionDate>2026-04-09</TransactionDate>
+    <PaymentId>0f327d46-4084-4628-bbb8-7884f7b4f27e</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>458952.57</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 762 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US504333138254272977</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="3">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00003</CTRId>
+    <TransactionDate>2026-04-12</TransactionDate>
+    <PaymentId>f3c764b0-4002-4238-86aa-bf7a5f2829de</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>338286.69</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 872 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US339504781097799543</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="4">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00004</CTRId>
+    <TransactionDate>2026-01-25</TransactionDate>
+    <PaymentId>2eafb24a-0479-457a-bba6-5db7c47304a7</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>298751.18</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 887 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US292556192660358480</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="5">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00005</CTRId>
+    <TransactionDate>2026-04-02</TransactionDate>
+    <PaymentId>6087438e-e675-412e-990d-09c984b43aad</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>340265.88</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 354 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US264537768173855541</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="6">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00006</CTRId>
+    <TransactionDate>2026-03-28</TransactionDate>
+    <PaymentId>712f10c3-0b74-46da-99a2-8b9f899d27a6</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>232527.7</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 490 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US396604762307937076</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="7">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00007</CTRId>
+    <TransactionDate>2026-03-11</TransactionDate>
+    <PaymentId>fee311fb-86da-4b93-ae89-be0d1cf667f7</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>197247.72</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 631 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US189188160311810461</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="8">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00008</CTRId>
+    <TransactionDate>2026-02-26</TransactionDate>
+    <PaymentId>e157142c-e800-47d9-b334-9faa10310051</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>407349.99</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 843 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US643610007331766765</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="9">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00009</CTRId>
+    <TransactionDate>2026-02-18</TransactionDate>
+    <PaymentId>c809228c-4630-4979-a042-454da2e3e150</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>10815.88</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 170 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US562634891513551353</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="10">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00010</CTRId>
+    <TransactionDate>2026-01-20</TransactionDate>
+    <PaymentId>cd10362c-d66a-4576-800e-a9a11c6888b6</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>420979.58</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 138 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US179453504330572339</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="11">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00011</CTRId>
+    <TransactionDate>2026-01-16</TransactionDate>
+    <PaymentId>0f9a4221-d0c8-4ddb-a1af-1a607e9a6108</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>221519.29</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 930 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US481581958976399759</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="12">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00012</CTRId>
+    <TransactionDate>2026-02-14</TransactionDate>
+    <PaymentId>58a20044-27e6-473c-aa4d-547ef93c965e</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>443542.76</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 562 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US571327441425323938</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="13">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00013</CTRId>
+    <TransactionDate>2026-01-22</TransactionDate>
+    <PaymentId>5beea024-5221-4aae-9a8d-ef6b3441c935</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>230129.36</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 160 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US512492600442068949</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="14">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00014</CTRId>
+    <TransactionDate>2026-03-12</TransactionDate>
+    <PaymentId>358ca343-d416-4d47-acec-7e59d581319f</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>257612.38</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 958 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US386237484415341388</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="15">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00015</CTRId>
+    <TransactionDate>2026-04-07</TransactionDate>
+    <PaymentId>44791690-2376-4db2-b173-9e50d47773c7</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>149479.84</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 579 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US147412534358600721</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="16">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00016</CTRId>
+    <TransactionDate>2026-03-17</TransactionDate>
+    <PaymentId>d3c8aa57-85f3-4781-ac3e-c5c55ba0cb3d</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>385778.9</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 753 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US643617851928970122</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="17">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00017</CTRId>
+    <TransactionDate>2026-04-07</TransactionDate>
+    <PaymentId>5e0c72a1-95be-4592-99f3-3e7cf4a1ee8a</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>194214.25</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 475 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US730266097437849056</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="18">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00018</CTRId>
+    <TransactionDate>2026-02-24</TransactionDate>
+    <PaymentId>84689716-4ecc-46b2-a967-36de2dff6e1a</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>47360.46</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 734 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US155912290599585359</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="19">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00019</CTRId>
+    <TransactionDate>2026-03-13</TransactionDate>
+    <PaymentId>3c700ffb-9643-4b08-ae5b-48e3ea6be6fc</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>197244.81</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 586 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US330356890576447539</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="20">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00020</CTRId>
+    <TransactionDate>2026-01-27</TransactionDate>
+    <PaymentId>4f512efa-e74e-4c30-a952-63496fabd3b2</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>281661.73</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 809 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US999305816249325223</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="21">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00021</CTRId>
+    <TransactionDate>2026-02-26</TransactionDate>
+    <PaymentId>feecb291-3561-461e-9a97-fe1329c81e51</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>27681.9</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 855 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US952160266150313982</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="22">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00022</CTRId>
+    <TransactionDate>2026-02-11</TransactionDate>
+    <PaymentId>1ccc49b8-2cdc-4c3f-afda-3b6f4975f739</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>446125.33</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 470 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US804606478556724864</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="23">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00023</CTRId>
+    <TransactionDate>2026-04-14</TransactionDate>
+    <PaymentId>f507a307-0e6e-4f6c-805a-8a6d2aea8368</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>316396.34</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 152 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US108794377189911956</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="24">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00024</CTRId>
+    <TransactionDate>2026-01-27</TransactionDate>
+    <PaymentId>fde8e52b-fadd-4b90-81c4-e230a9005809</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>137017.13</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 598 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US212116017933106307</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="25">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00025</CTRId>
+    <TransactionDate>2026-03-07</TransactionDate>
+    <PaymentId>19026122-27af-456a-b833-980645dca4d3</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>36076.32</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 674 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US570299497241336483</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="26">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00026</CTRId>
+    <TransactionDate>2026-01-21</TransactionDate>
+    <PaymentId>4b875819-8306-4ac8-b13e-698d733ae530</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>421168.5</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 678 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US744413337304073639</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="27">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00027</CTRId>
+    <TransactionDate>2026-02-27</TransactionDate>
+    <PaymentId>deb6dba9-0505-491b-b391-2d9dfaf7274a</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>193022.66</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 514 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US622690993148646801</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="28">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00028</CTRId>
+    <TransactionDate>2026-01-19</TransactionDate>
+    <PaymentId>51be3841-732f-4b97-8197-9a9c50f289cf</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>143775.34</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 517 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US584976937762063631</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="29">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00029</CTRId>
+    <TransactionDate>2026-02-18</TransactionDate>
+    <PaymentId>57bb2756-10f5-4eb2-95fc-22cda6e3fc76</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>246636.76</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 317 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US601532406357540772</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="30">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00030</CTRId>
+    <TransactionDate>2026-01-16</TransactionDate>
+    <PaymentId>0968c0ae-5b48-4918-8f5d-df3e1ed52fd4</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>122141.35</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 392 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US492880324986427163</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="31">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00031</CTRId>
+    <TransactionDate>2026-01-26</TransactionDate>
+    <PaymentId>a9fa0314-724d-4816-9818-b7bc566396b8</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>482167.42</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 196 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US299004899106944863</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="32">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00032</CTRId>
+    <TransactionDate>2026-03-07</TransactionDate>
+    <PaymentId>09c205ba-84ac-4da6-879f-173e0b8f8d2e</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>389987.95</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 559 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US760091532617558057</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="33">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00033</CTRId>
+    <TransactionDate>2026-02-27</TransactionDate>
+    <PaymentId>48317086-f686-4cb6-9e76-a23f1f2ad812</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>380062.8</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 982 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US355029072675349277</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="34">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00034</CTRId>
+    <TransactionDate>2026-03-16</TransactionDate>
+    <PaymentId>03cda5a4-c969-4c9b-a8c7-05626a7dda20</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>38309.42</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 939 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US941102040629482763</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="35">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00035</CTRId>
+    <TransactionDate>2026-04-01</TransactionDate>
+    <PaymentId>31149268-0e30-4a23-a214-9fe7d2516309</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>315692.88</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 330 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US250062605750313925</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="36">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00036</CTRId>
+    <TransactionDate>2026-03-29</TransactionDate>
+    <PaymentId>21479d58-e38b-4007-be22-834e9bccdba9</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>260851.51</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 169 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US702707916556814405</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="37">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00037</CTRId>
+    <TransactionDate>2026-02-13</TransactionDate>
+    <PaymentId>b733650a-04f2-4a26-bb4a-38891417cb2d</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>19138.52</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 186 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US827366075931632411</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="38">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00038</CTRId>
+    <TransactionDate>2026-02-25</TransactionDate>
+    <PaymentId>0a2c4dab-e0da-4570-af90-614215561a72</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>419794.51</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 145 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US963298633610903552</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="39">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00039</CTRId>
+    <TransactionDate>2026-03-03</TransactionDate>
+    <PaymentId>07ca7365-9fbb-46e6-99d0-34691749b5a4</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>114219.03</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 608 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US484188377522287754</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="40">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00040</CTRId>
+    <TransactionDate>2026-02-10</TransactionDate>
+    <PaymentId>bb3f350d-d019-4686-bfc9-4c00ac38816b</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>412004.64</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 979 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US949941199130785434</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="41">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00041</CTRId>
+    <TransactionDate>2026-03-24</TransactionDate>
+    <PaymentId>ec664df2-a69e-491f-8b7f-54976038d330</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>410349.96</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 452 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US587419151779573598</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="42">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00042</CTRId>
+    <TransactionDate>2026-03-22</TransactionDate>
+    <PaymentId>3a2a08f9-8cf4-4a49-be20-38e9abe8b5fc</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>340517.64</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 565 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US987044094599425689</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="43">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00043</CTRId>
+    <TransactionDate>2026-02-17</TransactionDate>
+    <PaymentId>c5552005-ed6d-4ab1-92cf-f7273a754d12</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>390815.32</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 522 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US655971198966185615</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="44">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00044</CTRId>
+    <TransactionDate>2026-04-10</TransactionDate>
+    <PaymentId>b108d72a-6673-4c06-8143-e500d64bb387</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>131504.39</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 252 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US144554360151299921</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="45">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00045</CTRId>
+    <TransactionDate>2026-03-31</TransactionDate>
+    <PaymentId>489e3647-b48a-4383-a33e-ad6b00b5a82b</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>271503.73</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 602 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US558629375320197269</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="46">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00046</CTRId>
+    <TransactionDate>2026-04-11</TransactionDate>
+    <PaymentId>bb0c478c-963c-4889-af79-a2a56cd056c2</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>399774.64</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 611 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US686030605336217468</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="47">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00047</CTRId>
+    <TransactionDate>2026-03-19</TransactionDate>
+    <PaymentId>4c5cd87c-e034-4502-91d2-7d52c0dc3a1c</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>152726.91</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 668 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US529779703570198374</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="48">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00048</CTRId>
+    <TransactionDate>2026-01-17</TransactionDate>
+    <PaymentId>28a69be3-a421-4231-8215-d1ae77a7c671</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>75662.39</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 904 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US349296976858316282</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="49">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00049</CTRId>
+    <TransactionDate>2026-03-26</TransactionDate>
+    <PaymentId>797f264c-0c51-469d-8408-55257a4947a0</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>87382.62</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 457 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US536919646890177089</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="50">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00050</CTRId>
+    <TransactionDate>2026-04-12</TransactionDate>
+    <PaymentId>782c67da-b2e7-4f93-9c54-9e22d575edb5</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>43464.21</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 570 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US780090078193591220</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="51">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00051</CTRId>
+    <TransactionDate>2026-02-02</TransactionDate>
+    <PaymentId>aef24f44-9bf6-41c8-8524-3b8c62eb00c6</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>422812.7</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 351 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US893640629972949368</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="52">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00052</CTRId>
+    <TransactionDate>2026-02-26</TransactionDate>
+    <PaymentId>32ee896a-5422-4bbe-8a10-d365eebf9bd3</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>478309.46</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 933 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US805210278368381692</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="53">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00053</CTRId>
+    <TransactionDate>2026-03-24</TransactionDate>
+    <PaymentId>926553c0-3f98-438b-8993-1e9c1a239c9f</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>348761.12</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 892 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US568175409991083117</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="54">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00054</CTRId>
+    <TransactionDate>2026-04-12</TransactionDate>
+    <PaymentId>2b366091-68df-494f-a478-a20f4cf56283</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>13391.06</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 947 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US428380305630040741</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="55">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00055</CTRId>
+    <TransactionDate>2026-02-14</TransactionDate>
+    <PaymentId>8fcd6eee-9f19-421e-8256-9a4d8bee9776</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>388374.63</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 746 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US554909451158093734</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="56">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00056</CTRId>
+    <TransactionDate>2026-02-12</TransactionDate>
+    <PaymentId>7b2c206e-92a6-4b0e-8109-699f1637d9b4</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>200905.15</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 702 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US909911564419766317</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="57">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00057</CTRId>
+    <TransactionDate>2026-02-23</TransactionDate>
+    <PaymentId>44e16608-130b-4b82-a5e1-7c3ce9a08be3</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>244239.34</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 117 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US308947070854597868</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="58">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00058</CTRId>
+    <TransactionDate>2026-01-24</TransactionDate>
+    <PaymentId>5d023163-647e-4fdc-a255-316c41f14e72</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>175552.77</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 211 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US635857078886375010</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="59">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00059</CTRId>
+    <TransactionDate>2026-01-27</TransactionDate>
+    <PaymentId>1510c485-e205-4e68-bb9e-79f1ca808210</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>71153.08</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 599 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US946399887021847629</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="60">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00060</CTRId>
+    <TransactionDate>2026-04-08</TransactionDate>
+    <PaymentId>8c9820de-bf5e-44a0-9445-921b25be33e8</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>401937.14</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 333 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US826049277993327974</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="61">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00061</CTRId>
+    <TransactionDate>2026-03-19</TransactionDate>
+    <PaymentId>eda6e2eb-a80a-44ed-bab2-5f091616346b</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>350856.0</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 900 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US424242441303019352</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="62">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00062</CTRId>
+    <TransactionDate>2026-04-06</TransactionDate>
+    <PaymentId>7c1468cf-dbb0-4940-8c14-ec05c218ac2b</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>133291.24</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 443 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US782225332993884944</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="63">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00063</CTRId>
+    <TransactionDate>2026-02-14</TransactionDate>
+    <PaymentId>f9d9bc66-57bc-450c-b196-aed0e7b52b67</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>193945.53</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 564 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US473572609933190339</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="64">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00064</CTRId>
+    <TransactionDate>2026-03-17</TransactionDate>
+    <PaymentId>9a2bf1cf-a3d0-4b2c-8cb3-02f464effeac</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>144017.64</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 828 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US298769684514363177</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="65">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00065</CTRId>
+    <TransactionDate>2026-03-11</TransactionDate>
+    <PaymentId>937b5820-9ed4-4adf-b0b8-eafff4d8ee84</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>137056.41</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 437 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US929981288901068467</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="66">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00066</CTRId>
+    <TransactionDate>2026-02-01</TransactionDate>
+    <PaymentId>6529630d-cd90-4df7-89d6-a73c19381e7b</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>22616.05</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 502 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US930532028343608416</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="67">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00067</CTRId>
+    <TransactionDate>2026-03-31</TransactionDate>
+    <PaymentId>78378162-1a71-4101-891d-96dbf0441920</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>440194.1</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 455 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US979539093824968169</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="68">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00068</CTRId>
+    <TransactionDate>2026-03-08</TransactionDate>
+    <PaymentId>2e7a59ed-4764-4cb3-bbc2-3a8560eef64f</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>395964.96</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 825 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US204367308887817199</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="69">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00069</CTRId>
+    <TransactionDate>2026-04-13</TransactionDate>
+    <PaymentId>0f81ad4d-3d2e-4a29-981d-48da4baeda03</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>99959.3</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 141 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US208999043482543263</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="70">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00070</CTRId>
+    <TransactionDate>2026-01-23</TransactionDate>
+    <PaymentId>04091474-9949-4dac-9191-1ab9ca13708d</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>275416.89</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 719 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US473191253572321003</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="71">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00071</CTRId>
+    <TransactionDate>2026-04-02</TransactionDate>
+    <PaymentId>9a831a08-d596-4d51-ad05-613479d46829</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>491938.29</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 793 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US535341223822285412</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="72">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00072</CTRId>
+    <TransactionDate>2026-03-01</TransactionDate>
+    <PaymentId>04b134f0-b0e1-4e1f-80a5-1e83ce3d28c0</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>220293.88</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 769 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US101918913246518665</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="73">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00073</CTRId>
+    <TransactionDate>2026-01-29</TransactionDate>
+    <PaymentId>4fa1d9af-2be9-4b87-b403-1f2f1e022fef</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>413302.35</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 595 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US915230729416646798</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="74">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00074</CTRId>
+    <TransactionDate>2026-02-05</TransactionDate>
+    <PaymentId>85967076-281d-4390-b7aa-1b7e665a9d47</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>134513.38</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 827 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US577507182333093217</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="75">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00075</CTRId>
+    <TransactionDate>2026-04-07</TransactionDate>
+    <PaymentId>9ef3a5c9-b374-42d6-a56e-16a226055938</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>360061.87</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 974 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US389996858311813321</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="76">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00076</CTRId>
+    <TransactionDate>2026-03-25</TransactionDate>
+    <PaymentId>4ac8bd15-088e-4393-8f66-7c87a96e4dde</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>221627.33</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 535 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US306801324144223599</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="77">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00077</CTRId>
+    <TransactionDate>2026-02-01</TransactionDate>
+    <PaymentId>09c8f1c5-363d-46e2-835f-60335f91f5c1</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>382445.66</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 833 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US508006594876590215</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="78">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00078</CTRId>
+    <TransactionDate>2026-04-06</TransactionDate>
+    <PaymentId>c34d94cf-9d1c-45d1-a85b-5e2dacd80a4c</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>171545.87</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 913 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US342400053257969390</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="79">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00079</CTRId>
+    <TransactionDate>2026-02-25</TransactionDate>
+    <PaymentId>ad9b4f1b-63e5-45be-a4c6-8a2c6bca5b11</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>179243.13</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 247 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US984268170914796290</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="80">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00080</CTRId>
+    <TransactionDate>2026-01-26</TransactionDate>
+    <PaymentId>3594d4c1-b7d2-4a60-b6b4-2ef473b838c0</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>463138.24</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 884 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US167332116348337964</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="81">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00081</CTRId>
+    <TransactionDate>2026-02-11</TransactionDate>
+    <PaymentId>86deaabf-5290-4cc6-9021-1930347cb813</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>431791.88</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 323 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US631300304746958335</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="82">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00082</CTRId>
+    <TransactionDate>2026-04-16</TransactionDate>
+    <PaymentId>ddc0abd5-74b2-4034-a2ad-f0e1f73cb63b</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>100503.2</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 408 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US446699539166276038</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="83">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00083</CTRId>
+    <TransactionDate>2026-03-28</TransactionDate>
+    <PaymentId>1456c778-9b6a-469f-9e96-41c12320b621</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>196747.61</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 636 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US716869546211345409</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="84">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00084</CTRId>
+    <TransactionDate>2026-02-15</TransactionDate>
+    <PaymentId>db25c943-5134-4ab9-80bd-c36983eb90e6</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>136564.86</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 656 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US565771696929473988</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="85">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00085</CTRId>
+    <TransactionDate>2026-02-24</TransactionDate>
+    <PaymentId>b3dc5cef-429e-40b7-b502-45166eaa747b</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>437720.23</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 543 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US991900725886654422</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="86">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00086</CTRId>
+    <TransactionDate>2026-03-17</TransactionDate>
+    <PaymentId>96f73f74-051f-4f75-83bb-514c0d2b615e</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>329064.46</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 810 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US945389270313321913</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="87">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00087</CTRId>
+    <TransactionDate>2026-02-22</TransactionDate>
+    <PaymentId>3496510b-34a6-4ec5-9e24-30394c03043a</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>344134.53</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 963 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US899186246099166854</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="88">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00088</CTRId>
+    <TransactionDate>2026-02-12</TransactionDate>
+    <PaymentId>31a9b2f7-e9b2-4e4f-b90f-8401bf124615</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>144774.52</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 118 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US472971614002105955</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="89">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00089</CTRId>
+    <TransactionDate>2026-02-05</TransactionDate>
+    <PaymentId>41edfbba-0060-4a2e-931b-d5814fd80b60</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>468462.42</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 907 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US609112425501144085</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="90">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00090</CTRId>
+    <TransactionDate>2026-03-21</TransactionDate>
+    <PaymentId>a3617623-9199-47b8-9edb-2ffbf656cf1e</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>63252.57</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 871 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US961927817652929307</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="91">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00091</CTRId>
+    <TransactionDate>2026-01-16</TransactionDate>
+    <PaymentId>37b7eba1-b3d1-4528-89e8-9446eda23901</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>62798.4</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 939 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US459565084971468218</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="92">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00092</CTRId>
+    <TransactionDate>2026-02-13</TransactionDate>
+    <PaymentId>7fe0345c-c1e5-4af6-848f-ab4b8f9a6220</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>197511.43</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 779 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US608067020573692625</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="93">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00093</CTRId>
+    <TransactionDate>2026-02-04</TransactionDate>
+    <PaymentId>8767d639-b9bf-4189-a841-4784138414e4</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>321213.58</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 790 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US632133898444858266</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="94">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00094</CTRId>
+    <TransactionDate>2026-03-21</TransactionDate>
+    <PaymentId>9417c309-a912-4af7-b14f-95db75723920</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>370133.12</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 645 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US865107567045214569</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="95">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00095</CTRId>
+    <TransactionDate>2026-02-04</TransactionDate>
+    <PaymentId>f5a474bf-6026-4bd0-bd55-392d354b0d68</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>430959.94</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 375 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US943416215200043624</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="96">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00096</CTRId>
+    <TransactionDate>2026-04-15</TransactionDate>
+    <PaymentId>f08951e2-17c9-4195-a5f6-df6885edac17</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>128309.7</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 224 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US697579725835272067</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="97">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00097</CTRId>
+    <TransactionDate>2026-04-12</TransactionDate>
+    <PaymentId>daeb55e4-c374-4e14-a26e-901f43d8c1ca</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>33091.39</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 266 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US350550620966024940</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="98">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00098</CTRId>
+    <TransactionDate>2026-03-13</TransactionDate>
+    <PaymentId>183cd78c-4c0a-4c36-9fd7-75abb96f69c9</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>438707.91</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 512 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US604100250067976268</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="99">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00099</CTRId>
+    <TransactionDate>2026-04-08</TransactionDate>
+    <PaymentId>4582a8f1-8124-456b-98a4-768352f002ee</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>440043.57</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 636 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US764050313229603063</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="100">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00100</CTRId>
+    <TransactionDate>2026-02-14</TransactionDate>
+    <PaymentId>ee2c3e42-09a6-4b64-ad46-0f284a7fdb08</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>379585.24</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 232 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US453719021476279667</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="101">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00101</CTRId>
+    <TransactionDate>2026-02-27</TransactionDate>
+    <PaymentId>ce260b88-b579-403c-8da1-2ec09ed67dea</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>333946.22</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 665 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US256666689316047244</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="102">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00102</CTRId>
+    <TransactionDate>2026-01-23</TransactionDate>
+    <PaymentId>feaeeb35-3963-44a7-882b-d7bd8acbf17f</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>101729.64</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 709 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US640594302872879554</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="103">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00103</CTRId>
+    <TransactionDate>2026-02-06</TransactionDate>
+    <PaymentId>01fdb7a7-58a4-48ac-a11b-24f102145fc6</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>23407.74</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 835 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US637051281118558745</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="104">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00104</CTRId>
+    <TransactionDate>2026-03-26</TransactionDate>
+    <PaymentId>2caf8648-1459-4eca-99ef-3f2d8ac558a2</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>201115.27</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 299 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US228606061263209710</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="105">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00105</CTRId>
+    <TransactionDate>2026-03-29</TransactionDate>
+    <PaymentId>04cc23ba-f3f5-4645-8101-e1af415b4607</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>188446.44</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 527 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US542292007171418528</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="106">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00106</CTRId>
+    <TransactionDate>2026-02-20</TransactionDate>
+    <PaymentId>73a025bd-8cf4-484b-9e3c-3552a9e67561</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>482184.18</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 826 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US982120398276575708</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="107">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00107</CTRId>
+    <TransactionDate>2026-02-01</TransactionDate>
+    <PaymentId>d7571444-6022-45b3-b81c-828028056a39</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>96860.48</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 384 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US639482096624658659</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="108">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00108</CTRId>
+    <TransactionDate>2026-04-08</TransactionDate>
+    <PaymentId>65b31f7c-cc09-4464-82af-8bd27a239fa2</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>456576.84</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 299 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US252583685850776765</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="109">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00109</CTRId>
+    <TransactionDate>2026-02-08</TransactionDate>
+    <PaymentId>f8d81225-2153-4fad-bb9c-f441fd2cc83f</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>61317.39</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 425 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US145377667968835612</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="110">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00110</CTRId>
+    <TransactionDate>2026-01-18</TransactionDate>
+    <PaymentId>488d3205-2f2e-44ef-aae8-129be892c3d5</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>377647.68</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 661 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US702745874073606396</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="111">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00111</CTRId>
+    <TransactionDate>2026-04-12</TransactionDate>
+    <PaymentId>c35cfc63-6e89-4234-9252-0fa40bbed339</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>110405.62</Amount>
+    <Currency>EUR</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 729 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US788247601940591799</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="112">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00112</CTRId>
+    <TransactionDate>2026-03-12</TransactionDate>
+    <PaymentId>5af68717-f6d4-4d6f-a980-6c7f68453e0c</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>175587.74</Amount>
+    <Currency>USD</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 533 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US210245223154232991</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="113">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00113</CTRId>
+    <TransactionDate>2026-02-07</TransactionDate>
+    <PaymentId>eae2a635-ffce-4434-a011-92ff6f8f0d5f</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>53264.41</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 689 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US642198348902202454</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="114">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00114</CTRId>
+    <TransactionDate>2026-01-21</TransactionDate>
+    <PaymentId>f168158e-cb16-480a-a1e6-9958ed52fef7</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>145581.36</Amount>
+    <Currency>USD</Currency>
+    <Channel>BRANCH</Channel>
+    <Person>
+      <Name>CORP 236 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US154942971305253257</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="115">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00115</CTRId>
+    <TransactionDate>2026-01-16</TransactionDate>
+    <PaymentId>38a8a2f2-5680-4f76-b8ed-dcafceb4dc76</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>479692.49</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 866 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US559189445767754262</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="116">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00116</CTRId>
+    <TransactionDate>2026-03-30</TransactionDate>
+    <PaymentId>e56eac9a-f920-4c37-adb1-c94b0bb6e77a</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>86174.14</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 776 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US123270641657006529</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="117">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00117</CTRId>
+    <TransactionDate>2026-03-19</TransactionDate>
+    <PaymentId>8e442487-be26-402e-9305-bfb10f9bc2db</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>434584.61</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 395 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US297229565146979815</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="118">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00118</CTRId>
+    <TransactionDate>2026-04-10</TransactionDate>
+    <PaymentId>c5baabda-cc8a-44bc-af96-d68f2b50b514</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>355728.37</Amount>
+    <Currency>EUR</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 208 LLC</Name>
+      <Country>US</Country>
+      <IBAN>US527092530755897889</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="119">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00119</CTRId>
+    <TransactionDate>2026-03-29</TransactionDate>
+    <PaymentId>9fef5845-0a2c-4fc7-9e8f-0b4e5e393742</PaymentId>
+    <TransactionType>CASH_IN</TransactionType>
+    <Amount>163360.49</Amount>
+    <Currency>EUR</Currency>
+    <Channel>API</Channel>
+    <Person>
+      <Name>CORP 954 LLC</Name>
+      <Country>GB</Country>
+      <IBAN>US469681545081928681</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+  <CurrencyTransaction sequence="120">
+    <CTRId>CTR-CTR-CLEARFLOW-20260416_041247-00120</CTRId>
+    <TransactionDate>2026-03-21</TransactionDate>
+    <PaymentId>90a21eff-f15a-4c13-907b-cfde255b0bab</PaymentId>
+    <TransactionType>CASH_OUT</TransactionType>
+    <Amount>487269.14</Amount>
+    <Currency>USD</Currency>
+    <Channel>MOBILE</Channel>
+    <Person>
+      <Name>CORP 464 LLC</Name>
+      <Country>DE</Country>
+      <IBAN>US963493721680952805</IBAN>
+    </Person>
+    <AutoFiled>true</AutoFiled>
+    <Structuring>false</Structuring>
+  </CurrencyTransaction>
+</FinCEN_CTR>

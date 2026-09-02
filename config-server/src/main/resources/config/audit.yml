@@ -1,0 +1,4 @@
+audit:
+  kafka-group-id: audit-service
+  cassandra-keyspace: clearflow
+  retention-years: 7

@@ -1,0 +1,116 @@
+name: CD — Deploy to Staging / Production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        default: staging
+        type: choice
+        options: [staging, production]
+
+env:
+  HELM_VERSION: "3.14.0"
+  KUBECTL_VERSION: "1.29.0"
+
+jobs:
+  deploy-staging:
+    name: Deploy → Staging
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://clearflow-staging.internal
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: ${{ env.HELM_VERSION }}
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v4
+        with:
+          version: ${{ env.KUBECTL_VERSION }}
+
+      - name: Configure kubeconfig
+        run: echo "${{ secrets.KUBE_CONFIG_STAGING }}" | base64 -d > $HOME/.kube/config
+
+      - name: Lint Helm chart
+        run: helm lint k8s/helm/clearflow
+
+      - name: Deploy to staging
+        run: |
+          helm upgrade --install clearflow k8s/helm/clearflow \
+            --namespace clearflow-staging \
+            --create-namespace \
+            --values k8s/helm/clearflow/values.yaml \
+            --values k8s/helm/clearflow/values-staging.yaml \
+            --set global.image.tag=${{ github.sha }} \
+            --set global.image.registry=ghcr.io/${{ github.repository }} \
+            --atomic \
+            --timeout 10m \
+            --wait
+
+      - name: Verify rollout
+        run: |
+          kubectl rollout status deployment/clearflow-gateway -n clearflow-staging --timeout=5m
+          kubectl rollout status deployment/clearflow-fraud-scoring -n clearflow-staging --timeout=5m
+
+      - name: Smoke test
+        run: |
+          GW_URL="https://clearflow-staging.internal"
+          status=$(curl -s -o /dev/null -w "%{http_code}" "$GW_URL/actuator/health")
+          if [ "$status" != "200" ]; then
+            echo "Gateway health check failed: HTTP $status"
+            exit 1
+          fi
+          echo "Smoke test passed — gateway is UP"
+
+  deploy-production:
+    name: Deploy → Production
+    runs-on: ubuntu-latest
+    needs: deploy-staging
+    if: github.event.inputs.environment == 'production' || github.ref == 'refs/heads/main'
+    environment:
+      name: production
+      url: https://clearflow.internal
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: ${{ env.HELM_VERSION }}
+
+      - name: Configure kubeconfig (production)
+        run: echo "${{ secrets.KUBE_CONFIG_PRODUCTION }}" | base64 -d > $HOME/.kube/config
+
+      - name: Deploy to production (canary 20%)
+        run: |
+          helm upgrade --install clearflow k8s/helm/clearflow \
+            --namespace clearflow-prod \
+            --create-namespace \
+            --values k8s/helm/clearflow/values.yaml \
+            --values k8s/helm/clearflow/values-production.yaml \
+            --set global.image.tag=${{ github.sha }} \
+            --set global.image.registry=ghcr.io/${{ github.repository }} \
+            --set gateway.replicaCount=3 \
+            --set gateway.strategy.canary.weight=20 \
+            --atomic \
+            --timeout 15m
+
+      - name: Notify Slack
+        uses: slackapi/slack-github-action@v1
+        with:
+          payload: |
+            {
+              "text": "ClearFlow deployed to production — commit ${{ github.sha }} by ${{ github.actor }}"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
