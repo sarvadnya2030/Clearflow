@@ -1,7 +1,0 @@
-Background traffic started at 3.0/s
-
-=== DB_TIMEOUT (root=settlement, family=infra, mechanism=crash) rep=0 ===
-  OK: {"injection_time": "2026-09-02T03:10:06.689021+00:00", "duration_seconds": 20, "recovered": true, "kafka_lag_before": 24670, "kafka_lag_after_recovery": 24697}
-  [1 done, persisted]
-
-Background traffic stopped. 1 incidents persisted, 221 background payments sent total (each already persisted as sent).

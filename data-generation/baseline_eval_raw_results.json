@@ -1,0 +1,1437 @@
+[
+  {
+    "incident_id": "LIVE-cd1f76ee",
+    "fault_type": "DB_TIMEOUT",
+    "confirmed": true,
+    "root_service": "settlement",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9285714285714286, 'settlement'), (0.5333333333333333, 'routing-execution'), (0.11764705882352944, 'validation-enrichment'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": null,
+        "reasoning": "{\"top3\": [\"settlement\", \"fraud-scoring\", \"validation-enrichment\"], \"reasoning\": \"Settlement is the direct root cause as it failed its health check due to a ClickHouse connection refusal, which caused the funnel to stall at the final settlement stage; fraud-scoring and validation-enrichment are secondary candidates due to correlated delays in payment progress but lack the definitive health-check failure evidence.}"
+      },
+      "large": {
+        "top3": [
+          "settlement",
+          "gateway",
+          "routing-execution"
+        ],
+        "reasoning": "The settlement service is the only one with a health\u2011check failure and a reported DOWN state in the witness log, indicating it was the root cause of the incident."
+      },
+      "nemotron": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "gateway"
+        ],
+        "reasoning": "The settlement service logged a health\u2011check failure and a ClickHouse connection\u2011refused error right after a successful payment, causing it to go down briefly; no other service showed stalls or failures, making settlement the clear root cause."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-158ce68e",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "confirmed": true,
+    "root_service": "routing-execution",
+    "n_events": 297,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "routing-execution",
+          "validation-enrichment",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9772727272727273, 'routing-execution'), (0.0, 'validation-enrichment'), (0.0, 'settlement'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "routing-execution",
+          "settlement",
+          "validation-enrichment"
+        ],
+        "reasoning": "The funnel shows a complete stall at routing-execution after the first payment (only 1 Routed vs 23 Submitted), concurrent with explicit health-check failures and service restarts, confirming it as the primary root cause; settlement is secondarily impacted due to dependency on routing, while validation-enrichment shows normal throughput despite being part of the same pipeline failure cluster."
+      },
+      "large": {
+        "top3": [
+          "routing-execution",
+          "settlement",
+          "audit"
+        ],
+        "reasoning": "Health-check failure and restart of routing-execution coincide with a sharp drop in downstream events; settlement errors are downstream and audit processed many events."
+      },
+      "nemotron": {
+        "top3": [
+          "routing-execution",
+          "settlement",
+          "gateway"
+        ],
+        "reasoning": "Routing-execution showed a health-check failure and subsequent restart, and the funnel indicates payments stopped progressing after its outage, making it the primary root cause, with settlement errors and upstream gateway activity as contributing factors."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-c714ec37",
+    "fault_type": "NETWORK_LATENCY",
+    "confirmed": true,
+    "root_service": "validation-enrichment",
+    "n_events": 229,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "validation-enrichment",
+          "routing-execution",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.962962962962963, 'validation-enrichment'), (0.5, 'routing-execution'), (0.0, 'settlement'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "validation-enrichment",
+          "settlement",
+          "gateway"
+        ],
+        "reasoning": "The incident is clearly caused by validation-enrichment going DOWN at 21:27:29, which directly blocked downstream progress until its restart at 21:27:51; this caused a funnel stall where only 1 payment reached validation while 27 started at the gateway, and the resulting settlement failures were a secondary symptom triggered by the upstream blockage."
+      },
+      "large": {
+        "top3": [
+          "validation-enrichment",
+          "fraud-scoring",
+          "settlement"
+        ],
+        "reasoning": "Health witness shows validation\u2011enrichment went DOWN at 21:27:29 and restarted at 21:27:51, causing a stall in the payment flow; fraud\u2011scoring and settlement had no failures, so they are less likely to be the root cause."
+      },
+      "nemotron": {
+        "top3": [
+          "validation-enrichment",
+          "settlement",
+          "gateway"
+        ],
+        "reasoning": "The validation-enrichment service crashed (health_check_failed) and restarted, causing a stall after only one payment was validated, which likely halted further progress and impacted downstream services such as settlement."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-75f80ed7",
+    "fault_type": "CPU_SATURATION",
+    "confirmed": true,
+    "root_service": "aml-compliance",
+    "n_events": 248,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "gateway"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(1.0, 'aml-compliance'), (0.052631578947368474, 'validation-enrichment')]"
+      },
+      "slm": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "fraud-scoring"
+        ],
+        "reasoning": "The health witness explicitly logs aml-compliance as DOWN with a failed health check, causing payments to stall downstream; validation-enrichment and fraud-scoring likely contributed as they failed to process a significant number of transactions before the bottleneck at aml-compliance became apparent."
+      },
+      "large": {
+        "top3": [
+          "aml-compliance",
+          "gateway",
+          "audit"
+        ],
+        "reasoning": "The only service with a health\u2011check failure and a restart in the window is aml\u2011compliance, indicating it was the root cause; gateway and audit are the next most active services in the funnel and likely impacted by the failure."
+      },
+      "nemotron": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "gateway"
+        ],
+        "reasoning": "The aml-compliance service experienced a health-check failure and restart, indicating it was down and likely caused the processing stall; the other services continued operating normally."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-fb98b217",
+    "fault_type": "IDEMPOTENCY_COLLISION_STORM",
+    "confirmed": false,
+    "root_service": "gateway",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "routing-execution",
+          "validation-enrichment",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.5, 'routing-execution'), (0.1428571428571429, 'validation-enrichment'), (0.0, 'settlement'), (-0.8333333333333333, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": null,
+        "reasoning": "ERROR: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=60)"
+      },
+      "large": {
+        "top3": null,
+        "reasoning": "(empty response)"
+      },
+      "nemotron": {
+        "top3": "ABSTAIN",
+        "reasoning": "The telemetry shows no clear funnel stall or health\u2011check failures and only a single self\u2011reported error in the settlement service, which is not enough to pinpoint a root cause."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-374da004",
+    "fault_type": "IDEMPOTENCY_COLLISION_STORM",
+    "confirmed": false,
+    "root_service": "gateway",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "routing-execution",
+          "validation-enrichment",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.5, 'routing-execution'), (0.1428571428571429, 'validation-enrichment'), (0.0, 'settlement'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "validation-enrichment",
+          "routing-execution"
+        ],
+        "reasoning": "Settlement is the root cause because it is the only service generating explicit error logs (APACHE_HTTP_CLIENT failures) that correlate with the immediate funnel stall (12 successes followed by 0 further completions in the window), while the subsequent funnel collapse from gateway to audit shows no signs of rejection or retry behavior that would indicate a downstream failure."
+      },
+      "large": {
+        "top3": "ABSTAIN",
+        "reasoning": "No service shows a clear stall, error, or self\u2011reported failure in the provided logs."
+      },
+      "nemotron": {
+        "top3": [
+          "settlement",
+          "validation-enrichment",
+          "gateway"
+        ],
+        "reasoning": "The settlement service logged explicit errors ('Error when creating APACHE_HTTP_CLIENT') while processing a payment, indicating an internal failure that directly impacted the payment flow."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-549afd1b",
+    "fault_type": "AML_HOLD",
+    "confirmed": true,
+    "root_service": "aml-compliance",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "routing-execution",
+          "validation-enrichment",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.5, 'routing-execution'), (0.19999999999999996, 'validation-enrichment'), (0.0, 'settlement'), (-0.6666666666666667, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": "ABSTAIN",
+        "reasoning": "The provided logs show successful completion at various stages (e.g., SEPA_INSTANT settlement, audit chain appending) but lack any explicit health-check failures, service restarts, direct error self-reports, or a consistent funnel stall across the entire 8-service pipeline that isolates a single root cause."
+      },
+      "large": {
+        "top3": null,
+        "reasoning": "(empty response)"
+      },
+      "nemotron": {
+        "top3": "ABSTAIN",
+        "reasoning": "The telemetry contains self\u2011reported events from several services (settlement errors, AML holds, validation rejections) and no clear funnel stall or health\u2011check failure that isolates a single service as the root cause."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-d29470d5",
+    "fault_type": "SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE",
+    "confirmed": true,
+    "root_service": "settlement",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(1.0, 'settlement'), (0.5, 'routing-execution'), (0.05882352941176472, 'validation-enrichment'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": null,
+        "reasoning": "{\"top3\": [\"settlement\", \"mcp-readonly-gateway\", \"routing-execution\"], \"reasoning\": \"The only explicit fault indicator is settlement's health check failure, but the absence of any downstream traffic (zero payments reaching settlement after the event) and the high volume of upstream events (audit, validation, routing) suggests a blockage further upstream rather than isolated settlement downtime. In distributed systems where one component stops entirely while others appear healthy, the blockage is usually at the first point where requests are dropped or retried locally; however, given the complete lack of post-22:22 events and the specific nature of payment initiation pipelines, a failure in the final processing stage (settlement) that halts the entire chain is the most direct correlation, but without observing a single failed attempt to cross the boundary, the evidence is ambiguous enough to suspect the 'mcp-readonly-gateway' or a misconfiguration in 'routing-execution' that silently drops traffic before it can be marked as a failure in settlement. Wait, re-evaluating the strict evidence: settlement is DOWN but RECOVERED, yet NO PAYMENTS reached it after the event time (22:22:14), whereas VALIDATION and ROUTING processed many. This implies the fault is NOT settlement (which was up when traffic passed) but rather a silent drop OR the 'settlement' log is a false positive indicating it crashed before actually processing. However, looking at the funnel counts: 16 routed to settlement vs 0 settled. The incident started at 22:22:13 with settlement down. Traffic flowed through routing (16 events) and was rejected/failed at validation (1 event). This suggests the fault might be a network partition or a configuration change that broke the 'settlement' consumer side. Since the prompt asks for the root cause based on funnel stalls: the stall is at settlement. Even if it recovered quickly, the fact that no transactions flowed into it after the health check failure suggests the health check might have been triggered by a dependency failure or the service was down long enough to block the whole window. Therefore, settlement is the root cause because it was DOWN exactly when the funnel broke, despite the lack of failed attempts, which often indicates the system went silent immediately upon failure.\"}\n\nCORRECTION: Let me look closer. The health check failed at 22:22:13. Then at 22:22:14, a payment was SUBMITTED and processed all the way to VALIDATION, RAIL_SELECTION, LIQUIDITY_CHECK, FRAUD_SCORE, AML, Audit. It never reached Settlement. Why?\n1. Settlement was DOWN at 22:22:13.\n2. Traffic passed through Settlement's *upstream* services (Validation, Routing) but stopped before entering Settlement.\n3. This implies either Settlement is blocked (if it was still down) or there is a network failure.\n4. If Settlement recovered \"shortly after\", and NO traffic hit it, then either Settlement went back up instantly after the event window (unlikely to block instantly then recover) OR the \"Health Check\" is the root cause of the \"Down\" status which blocked traffic.\n5. Alternative: The fault is upstream causing a loop/retry that keeps it out of sync.\n6. But the most obvious signal is the SERVICE DOWN log matching the exact time the funnel broke (no settlement events). Even though one payment was submitted, it didn't flow into settlement.\n7. The \"16\" routed events vs \"0\" settlement events confirms the block is at the boundary before settlement.\n8. Since settlement is the only one logged as DOWN, and all other upstream services logged normal activity (and in fact, 83 audit events means the chain started), the root cause is likely the **settlement** service itself being down and blocking the pipeline, or a dependency to it.\n9. Wait, the prompt asks for root cause of the *incident*. The incident is defined by the fault. The fault is explicitly in settlement.\n10. Why did validation accept traffic? Because validation is upstream. The payment went: Gateway -> ... -> Validation -> ... -> Routed -> ... -> (Stuck/Failing) -> Settlement.\n11. Actually, look at the last log: `validation-enrichment PAYMENT_REJECTED`. This is a single event. The others (15) validated successfully.\n12. If Settlement is down, why did the gateway not retry or fail? Perhaps the retry logic is broken.\n13. But without external data, the service explicitly logged DOWN is the strongest candidate. The lack of downstream traffic confirms it was a blocking condition at that stage.\n14. Let's reconsider the \"mcp-readonly-gateway\". It's never seen in logs except as a name in the prompt. It's likely just an API consumer.\n15. Let's reconsider \"routing-execution\". It logged 16 events. All of them. If routing failed, why did it log 16? Unless the failure is in the consumer (settlement).\n16. Conclusion: Settlement is the root cause. It was down. It blocked the flow. The recovery happened after the window, hence no events after the failure.\n\n{\"top3\": [\"settlement\", \"mcp-readonly-gateway\", \"routing-execution\"], \"reasoning\": \"The settlement service explicitly logged a health check failure and was down during the incident window, which coincides with the complete absence of settlement events in the funnel counts despite successful upstream processing. This indicates settlement was the blocking point that halted the payment pipeline.\"}\n</think>\n\n{\"top3\": [\"settlement\", \"mcp-readonly-gateway\", \"routing-execution\"], \"reasoning\": \"The settlement service explicitly logged a health check failure and was down during the incident window, which coincides with the complete absence of settlement events in the funnel counts despite successful upstream processing, indicating settlement was the blocking point. The lack of downstream traffic (zero successful settlements vs 16 routed) and the single rejected event suggest a pipeline break at the settlement stage.\"}"
+      },
+      "large": {
+        "top3": [
+          "settlement",
+          "gateway",
+          "routing-execution"
+        ],
+        "reasoning": "The only health\u2011check failure recorded was for settlement at 22:22:13, before any payment was submitted, indicating settlement was down and caused the payment to stall. Gateway and routing\u2011execution are the next services in the pipeline that would have been affected by settlement\u2019s unavailability."
+      },
+      "nemotron": {
+        "top3": [
+          "settlement",
+          "gateway",
+          "validation-enrichment"
+        ],
+        "reasoning": "The only health\u2011check failure recorded was in settlement, and the funnel shows a payment stalling at that point, indicating settlement as the root cause."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-92d99e70",
+    "fault_type": "AML_SERVICE_DEGRADATION_RETRY_CASCADE",
+    "confirmed": true,
+    "root_service": "aml-compliance",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "gateway"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(1.0, 'aml-compliance'), (0.1875, 'validation-enrichment')]"
+      },
+      "slm": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "gateway"
+        ],
+        "reasoning": "The incident is primarily caused by aml-compliance which went DOWN and failed its health check, leading to a funnel stall where payments rejected there (count=2) while others continued; validation-enrichment followed as a secondary bottleneck due to its high rejection count of 5, and gateway is third as the initial entry point showing reduced throughput."
+      },
+      "large": {
+        "top3": [
+          "aml-compliance",
+          "gateway",
+          "fraud-scoring"
+        ],
+        "reasoning": "The only explicit failure recorded is the aml-compliance health-check failure at 22:34:10.486, followed by a restart shortly after, indicating it was the root cause. Gateway and fraud-scoring continued to process payments normally, so they are secondary suspects."
+      },
+      "nemotron": {
+        "top3": [
+          "aml-compliance",
+          "gateway",
+          "validation-enrichment"
+        ],
+        "reasoning": "The aml-compliance service experienced a health-check failure and restarted at the incident start, causing a stall in payment processing, while the gateway and validation-enrichment services showed normal activity but were affected by the bottleneck."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-0fbc4973",
+    "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+    "confirmed": true,
+    "root_service": "settlement",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9333333333333333, 'settlement'), (0.5, 'routing-execution'), (0.05882352941176472, 'validation-enrichment'), (-0.875, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "gateway",
+          "routing-execution"
+        ],
+        "reasoning": "The settlement service explicitly reports a health check failure and logs 'DOWN', while funnel counts show a complete bottleneck where 30 transactions enter the pipeline but only 1 completes, indicating the downstream bottleneck is the primary failure point. The gateway shows a consistent drop in throughput as events transition from submission to validation, suggesting it is likely compensating or queuing, while routing-execution shows normal processing counts implying it successfully routed payments before the block occurred."
+      },
+      "large": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "gateway"
+        ],
+        "reasoning": "The only service with a health\u2011check failure and explicit error logs (APACHE_HTTP_CLIENT creation failures) is settlement, and the health witness confirms it went down at the same timestamp, making it the most likely root cause."
+      },
+      "nemotron": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "The settlement service reported a health-check failure and errors creating an HTTP client, causing payments to stall at the settlement stage, which is the primary root cause."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-8ed9457d",
+    "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+    "confirmed": true,
+    "root_service": "validation-enrichment",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "validation-enrichment",
+          "routing-execution",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9722222222222222, 'validation-enrichment'), (0.5, 'routing-execution'), (0.0, 'settlement'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "validation-enrichment",
+          "settlement",
+          "fraud-scoring"
+        ],
+        "reasoning": "The health witness confirms validation-enrichment went down and failed a health check before restarting, which corresponds to the funnel stall at the 10 processed events, while subsequent events show recovery without upstream dependency issues; settlement errors appear only after the initial success and likely stem from client library instability rather than the service shutdown itself, and fraud-scoring continues normally indicating it is not the primary root cause."
+      },
+      "large": {
+        "top3": [
+          "validation-enrichment",
+          "fraud-scoring",
+          "settlement"
+        ],
+        "reasoning": "Health-check failure and restart of validation-enrichment caused a dramatic drop in events after fraud-scoring, stalling the funnel; fraud-scoring had normal activity, and settlement was the next downstream bottleneck."
+      },
+      "nemotron": {
+        "top3": [
+          "validation-enrichment",
+          "gateway",
+          "settlement"
+        ],
+        "reasoning": "Validation-enrichment crashed (health-check failure) and restarted, halting payment validation and causing a backlog that impacted gateway processing and triggered settlement errors."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-e5f57fc7",
+    "fault_type": "DB_TIMEOUT",
+    "confirmed": true,
+    "root_service": "settlement",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9285714285714286, 'settlement'), (0.5333333333333333, 'routing-execution'), (0.16666666666666663, 'validation-enrichment'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "The incident is confirmed by the witness log and funnel data showing settlement stopped at 180% (13 events) with a specific HEALTH_CHECK_FAILED error and Apache HTTP client fallback warnings, while subsequent transactions stalled in the funnel at validation-enrichment and routing-execution due to the lack of successful settlement completion. The root cause is the settlement service's internal HTTP client failure, which cascaded into downstream routing and validation stalls as the system could not process completions without a working settlement state."
+      },
+      "large": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "audit"
+        ],
+        "reasoning": "Settlement service failed its health check, causing the payment pipeline to stall; routing\u2011execution had a lower routing completion rate, indicating a secondary bottleneck; audit had many events but no stall, so it is the least likely cause."
+      },
+      "nemotron": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "Settlement logged HTTP client creation errors and a health\u2011check failure, showing it was the service that went down, while the other services exhibited normal operation with no error signatures."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-fc3f6e2a",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "confirmed": true,
+    "root_service": "routing-execution",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "routing-execution",
+          "validation-enrichment",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9722222222222222, 'routing-execution'), (0.17391304347826086, 'validation-enrichment'), (0.0, 'settlement'), (-0.894736842105263, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "routing-execution",
+          "settlement",
+          "gateway"
+        ],
+        "reasoning": "The incident is definitively caused by routing-execution going DOWN (consecutive=1) followed by a restart sequence, which blocked all subsequent payments from reaching the settlement and other downstream services. While settlement showed transient HTTP client errors and gateway counts decreased, they recovered or degraded downstream from the upstream outage of the critical orchestrator."
+      },
+      "large": {
+        "top3": [
+          "routing-execution",
+          "settlement",
+          "fraud-scoring"
+        ],
+        "reasoning": "Health witness shows routing\u2011execution went DOWN at 23:22:12, with a HEALTH_CHECK_FAILED and a restart at 23:22:34, causing a stall in the payment funnel (only 1 RAIL_SELECTED/ PAYMENT_ROUTED). Settlement had client errors but still completed, and fraud\u2011scoring had no errors, so routing\u2011execution is the most likely root cause."
+      },
+      "nemotron": {
+        "top3": [
+          "routing-execution",
+          "settlement",
+          "validation-enrichment"
+        ],
+        "reasoning": "The routing-execution service experienced a health-check failure and restart, halting payment routing and causing downstream settlement errors."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-50580610",
+    "fault_type": "NETWORK_LATENCY",
+    "confirmed": true,
+    "root_service": "validation-enrichment",
+    "n_events": 237,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "validation-enrichment",
+          "routing-execution",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.88, 'validation-enrichment'), (0.5, 'routing-execution'), (0.0, 'settlement'), (-0.33333333333333326, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "validation-enrichment",
+          "aml-compliance"
+        ],
+        "reasoning": "The incident is primarily caused by a `settlement` error where HTTP client creation fails and fallbacks are attempted, causing the funnel to stall at that stage; this was likely triggered by an upstream issue in `validation-enrichment` which failed its health check shortly before the window, potentially propagating a shared network dependency failure to `aml-compliance` as well."
+      },
+      "large": {
+        "top3": [
+          "validation-enrichment",
+          "gateway",
+          "fraud-scoring"
+        ],
+        "reasoning": "Health witness and logs show validation\u2011enrichment failed at 23:34:08.990, restarted at 23:34:31, and no downstream events after that point, indicating it caused the funnel stall. Gateway and fraud\u2011scoring are next most likely as they were the last services to process before the stall."
+      },
+      "nemotron": {
+        "top3": [
+          "validation-enrichment",
+          "settlement",
+          "gateway"
+        ],
+        "reasoning": "The validation-enrichment service crashed (health-check failure) and restarted, halting payment validation and causing downstream settlement errors and low throughput."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-084a3a65",
+    "fault_type": "CPU_SATURATION",
+    "confirmed": true,
+    "root_service": "aml-compliance",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "gateway"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(1.0, 'aml-compliance'), (0.12, 'validation-enrichment')]"
+      },
+      "slm": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "gateway"
+        ],
+        "reasoning": "The root cause is aml-compliance, which failed a health check at 23:46:11 and was missing from processing subsequent transactions until a restart occurred at 23:46:34; it is secondary blamed for validation-enrichment due to likely cascading upstream dependency failures, and gateway as the final point of failure for submitted transactions before the pipeline recovered."
+      },
+      "large": {
+        "top3": [
+          "aml-compliance",
+          "gateway",
+          "validation-enrichment"
+        ],
+        "reasoning": "Health witness shows aml-compliance went DOWN at 23:46:11 and restarted at 23:46:34, with a health\u2011check failure logged. The funnel stalls after gateway submissions, and no other service shows failures or restarts, making aml\u2011compliance the root cause."
+      },
+      "nemotron": {
+        "top3": [
+          "aml-compliance",
+          "gateway",
+          "fraud-scoring"
+        ],
+        "reasoning": "The aml-compliance service showed a health-check failure and restart, and its high event volume indicates it was the bottleneck causing the incident."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-fd202168",
+    "fault_type": "IDEMPOTENCY_COLLISION_STORM",
+    "confirmed": false,
+    "root_service": "gateway",
+    "n_events": 273,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "routing-execution",
+          "validation-enrichment",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.5, 'routing-execution'), (0.08333333333333337, 'validation-enrichment'), (0.0, 'settlement'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "validation-enrichment",
+          "routing-execution"
+        ],
+        "reasoning": "Settlement shows a direct self-reported error about HTTP client creation and a subsequent funnel stall where the 33 submitted payments fail to reach settlement completion. While validation-enrichment and routing-execution show minor anomalies (one rejection, a switch in rail selection), they are not the primary point of failure as most payments pass through them successfully."
+      },
+      "large": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "audit"
+        ],
+        "reasoning": "The only direct self\u2011reported fault is the settlement service\u2019s repeated \"Error when creating APACHE_HTTP_CLIENT\" messages, indicating a likely root cause. No other service shows a stall, health\u2011check failure, or explicit error in the provided logs."
+      },
+      "nemotron": {
+        "top3": "ABSTAIN",
+        "reasoning": "The logs contain a validation-enrichment rejection and settlement HTTP client errors, but no clear funnel stall, health\u2011check failure, or restart signature to single out one service as the root cause."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-4e899937",
+    "fault_type": "AML_HOLD",
+    "confirmed": true,
+    "root_service": "aml-compliance",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "routing-execution",
+          "validation-enrichment",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.5, 'routing-execution'), (0.1428571428571429, 'validation-enrichment'), (0.09090909090909094, 'settlement'), (-0.8333333333333333, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": "ABSTAIN",
+        "reasoning": "There is no evidence of a system-wide stall, health-check failure, or restart signal; the observed delays and rejections (e.g., HAMAS sanction hit) are consistent with normal operational processing or legitimate transaction declines rather than an incident caused by a specific service fault."
+      },
+      "large": {
+        "top3": "ABSTAIN",
+        "reasoning": "No service shows a clear stall, health\u2011check failure, or self\u2011reported error that would pinpoint a root cause."
+      },
+      "nemotron": {
+        "top3": "ABSTAIN",
+        "reasoning": "The logs show direct self\u2011reports (settlement HTTP client error, validation reject, AML hold) but no clear funnel stall or health\u2011check failure that isolates a single service as the root cause."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-c9126bf2",
+    "fault_type": "SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE",
+    "confirmed": true,
+    "root_service": "settlement",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9333333333333333, 'settlement'), (0.5, 'routing-execution'), (0.05882352941176472, 'validation-enrichment'), (-0.875, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "The root cause is settlement, evidenced by its direct HEALTH_CHECK_FAILED event and complete funnel stall where payments stop at the settlement stage while upstream services (fraud, validation, routing) continue processing new requests normally. Routing and validation were also impacted likely due to dependency on the failing settlement service or shared infrastructure degradation."
+      },
+      "large": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "fraud-scoring"
+        ],
+        "reasoning": "The only service with a health\u2011check failure and unlabeled events (3) and a single SETTLEMENT_COMPLETE indicates it was down or misbehaving, causing the observed stall. Other services logged normal traffic with no stalls."
+      },
+      "nemotron": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "The settlement service recorded a health-check failure and repeated HTTP client errors, indicating a brief outage that stopped payment finalization, while routing and validation continued but could not complete payments."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-86e563f1",
+    "fault_type": "AML_SERVICE_DEGRADATION_RETRY_CASCADE",
+    "confirmed": true,
+    "root_service": "aml-compliance",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "gateway"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(1.0, 'aml-compliance'), (0.1923076923076923, 'validation-enrichment')]"
+      },
+      "slm": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "fraud-scoring"
+        ],
+        "reasoning": "The incident is caused by aml-compliance failing its health check at 00:34:09, which led to 45 payments stalling because the funnel drops significantly at this service (82 events vs 45), and no other health failures or restarts are evident in the logs. Second, validation-enrichment shows a distinct drop in valid vs rejected flow and an early rejection reason (EMBARGOED_COUNTRY) that correlates with the aml failure window, suggesting downstream blocking. Third, fraud-scoring is the next logical bottleneck as it appears early in the pipeline with a lower event count (60 vs 82), indicating a potential performance degradation or resource contention immediately following the initial aml failure."
+      },
+      "large": {
+        "top3": [
+          "aml-compliance",
+          "gateway"
+        ],
+        "reasoning": "The only explicit failure recorded is a HEALTH_CHECK_FAILED for aml-compliance, followed by a restart, indicating it was down during the incident. No other service shows a similar failure or stall, and the gateway, while first, continues to emit events normally."
+      },
+      "nemotron": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "fraud-scoring"
+        ],
+        "reasoning": "The aml-compliance service logged a health-check failure and restart at the incident start, and a payment was rejected with an embargo reason, indicating that a downstream AML processing outage halted and corrupted the payment flow."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-9608ddd3",
+    "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+    "confirmed": true,
+    "root_service": "settlement",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.8571428571428572, 'settlement'), (0.5, 'routing-execution'), (0.2222222222222222, 'validation-enrichment'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "gateway"
+        ],
+        "reasoning": "Settlement is the root cause due to the explicit HEALTH_CHECK_FAILED log and a sudden stop in funnel counts for settlement-dependent services; routing-execution and gateway are secondary because funnel data indicates only a single payment stalled at the routing step, suggesting a local or transient issue rather than a systemic pipeline blockage."
+      },
+      "large": {
+        "top3": [
+          "settlement",
+          "gateway",
+          "routing-execution"
+        ],
+        "reasoning": "The only service with a health\u2011check failure and repeated client\u2011creation errors is settlement, which the witness log marks as DOWN; this explains the stall in the payment pipeline."
+      },
+      "nemotron": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "The settlement service logged a health-check failure and HTTP client errors, causing it to be down and creating a bottleneck that halted payment completion, while routing-execution and validation-enrichment precede settlement and their funnel counts show limited flow, indicating they may contribute to the backlog."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-6e7fe0ef",
+    "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+    "confirmed": true,
+    "root_service": "validation-enrichment",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "validation-enrichment",
+          "routing-execution",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9444444444444444, 'validation-enrichment'), (0.5, 'routing-execution'), (0.0, 'settlement'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "validation-enrichment",
+          "fraud-scoring"
+        ],
+        "reasoning": "The incident trace shows a clear funnel stall at the settlement service, evidenced by HTTP client fallback errors and the stoppage of completion events after initial successful processing, while the validation-enrichment restart and subsequent health check failure indicate it is a contributor rather than the primary root cause."
+      },
+      "large": {
+        "top3": [
+          "validation-enrichment",
+          "settlement",
+          "routing-execution"
+        ],
+        "reasoning": "Health\u2011check failure and restart of validation\u2011enrichment coincided with a funnel stall after its events; settlement shows repeated HTTP client errors, and routing\u2011execution only received a few events, indicating downstream impact."
+      },
+      "nemotron": {
+        "top3": [
+          "validation-enrichment",
+          "settlement",
+          "gateway"
+        ],
+        "reasoning": "The validation-enrichment service logged a health-check failure and subsequent restart, and the funnel shows a major drop in validated payments, indicating it stalled the pipeline and caused the incident."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-f8458870",
+    "fault_type": "DB_TIMEOUT",
+    "confirmed": true,
+    "root_service": "settlement",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9333333333333333, 'settlement'), (0.5, 'routing-execution'), (0.11764705882352944, 'validation-enrichment'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "fraud-scoring"
+        ],
+        "reasoning": "The settlement service shows a clear failure pattern with explicit health check failures and HTTP client creation errors that prevented completions for multiple payments, while upstream services successfully processed requests indicating the fault was isolated to settlement's downstream dependency."
+      },
+      "large": {
+        "top3": [
+          "settlement",
+          "gateway",
+          "routing-execution"
+        ],
+        "reasoning": "The settlement service\u2019s health\u2011check failure at 01:10:10.976 and subsequent restart (01:10:33) coincide with a drastic drop in funnel counts for settlement (only 6 events) while upstream services (gateway, routing\u2011execution) continue to emit many events, indicating the settlement service was the bottleneck and root cause."
+      },
+      "nemotron": {
+        "top3": [
+          "settlement",
+          "gateway",
+          "fraud-scoring"
+        ],
+        "reasoning": "The settlement service logged a health\u2011check failure and repeated Apache HTTP client errors, causing a stall and restart, while the funnel shows only one successful settlement despite six pending events, indicating it as the primary root cause."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-98435f36",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "confirmed": true,
+    "root_service": "routing-execution",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "routing-execution",
+          "validation-enrichment",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9722222222222222, 'routing-execution'), (0.13043478260869568, 'validation-enrichment'), (0.0, 'settlement'), (-0.8, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "fraud-scoring"
+        ],
+        "reasoning": "Settlement is the root cause because it fails to create an Apache HTTP client (likely a network or JVM startup issue), causing downstream funnel stalls (only 1 payment fully settles) while upstream services like routing still attempt to process payments. Routing execution is the second most likely culprit as it shows consecutive health check failures and attempted restarts, potentially contributing to the settlement dependency failure. Fraud scoring is third as it shows degraded performance (high latency and lower risk scores) during the incident window, indicating resource contention but not a direct functional outage."
+      },
+      "large": {
+        "top3": [
+          "routing-execution",
+          "settlement",
+          "fraud-scoring"
+        ],
+        "reasoning": "Health witness shows routing\u2011execution went DOWN at 01:22:10 and recovered, and its funnel counts are far lower than upstream services, indicating it was the bottleneck that stalled payments. Settlement had downstream errors but only a few events, and fraud\u2011scoring processed normal traffic, so they are less likely to be the root cause."
+      },
+      "nemotron": {
+        "top3": [
+          "routing-execution",
+          "settlement",
+          "validation-enrichment"
+        ],
+        "reasoning": "Routing-execution experienced a health-check failure and restart, causing a bottleneck that halted payment progression; settlement errors likely triggered the routing-execution issue, while validation-enrichment contributed minor stalls."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-2e6706a0",
+    "fault_type": "NETWORK_LATENCY",
+    "confirmed": true,
+    "root_service": "validation-enrichment",
+    "n_events": 206,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "validation-enrichment",
+          "routing-execution",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9583333333333334, 'validation-enrichment'), (0.5, 'routing-execution'), (0.0, 'settlement'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "validation-enrichment",
+          "settlement",
+          "gateway"
+        ],
+        "reasoning": "The health witness explicitly identifies validation-enrichment as DOWN causing the immediate funnel stall, while settlement errors (HTTP fallback) and gateway submission drops are secondary effects of this upstream failure and broader traffic reduction."
+      },
+      "large": {
+        "top3": [
+          "validation-enrichment",
+          "gateway",
+          "fraud-scoring"
+        ],
+        "reasoning": "Health\u2011check failure and restart of validation\u2011enrichment coincided with a funnel stall: only 13 of 24 submitted payments reached it, and no downstream events followed, indicating it is the root cause."
+      },
+      "nemotron": {
+        "top3": [
+          "validation-enrichment",
+          "gateway",
+          "fraud-scoring"
+        ],
+        "reasoning": "A health\u2011check failure and restart of validation\u2011enrichment, plus the funnel showing only two payments processed by that service, point to it as the primary cause of the incident."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-4d00a0c8",
+    "fault_type": "CPU_SATURATION",
+    "confirmed": true,
+    "root_service": "aml-compliance",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "gateway"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(1.0, 'aml-compliance'), (0.16000000000000003, 'validation-enrichment')]"
+      },
+      "slm": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "gateway"
+        ],
+        "reasoning": "The incident root cause is the aml-compliance service, which failed its health check and subsequently restarted, directly causing the observed 59 events to stall in that stage before recovery. The funnel data shows a clear bottleneck at aml-compliance, while validation-enrichment and gateway also exhibit partial processing delays likely due to downstream blocking or cascading retry behavior triggered by the compliance failure."
+      },
+      "large": {
+        "top3": [
+          "aml-compliance",
+          "routing-execution",
+          "settlement"
+        ],
+        "reasoning": "The health witness shows aml-compliance went DOWN at 01:46:12.048 and restarted 22\u202fs later, and the funnel counts reveal a large number of aml\u2011compliance events with a single health\u2011check failure, indicating a stall. Downstream services (routing\u2011execution, settlement) have no corresponding events, implying they were blocked by the aml\u2011compliance outage."
+      },
+      "nemotron": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "fraud-scoring"
+        ],
+        "reasoning": "The aml-compliance service failed its health check and restarted, and its rejection of a payment (embargoed country) caused a stall in the payment flow, indicating it as the root cause."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-2a87e1a2",
+    "fault_type": "IDEMPOTENCY_COLLISION_STORM",
+    "confirmed": false,
+    "root_service": "gateway",
+    "n_events": 278,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "routing-execution",
+          "validation-enrichment",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.5, 'routing-execution'), (0.08333333333333337, 'validation-enrichment'), (0.0, 'settlement'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": "ABSTAIN",
+        "reasoning": "The provided log excerpts and funnel counts show a single successful payment completing end-to-end with no visible funnel stalls, health-check failures, or self-reported error messages indicating a specific service failure. While settlement logs contain error messages about HTTP client fallbacks, these appear as side effects rather than the primary cause of a systemic incident affecting the other services."
+      },
+      "large": {
+        "top3": "ABSTAIN",
+        "reasoning": "No service shows a stall, health\u2011check failure, or explicit error that would explain the incident."
+      },
+      "nemotron": {
+        "top3": [
+          "settlement",
+          "gateway",
+          "routing-execution"
+        ],
+        "reasoning": "The settlement service logged explicit errors ('Error when creating APACHE_HTTP_CLIENT') which directly indicate a fault, while all other services showed normal progression without errors or stalls."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-2b3c53da",
+    "fault_type": "AML_HOLD",
+    "confirmed": true,
+    "root_service": "aml-compliance",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "routing-execution",
+          "validation-enrichment",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.5, 'routing-execution'), (0.1428571428571429, 'validation-enrichment'), (0.0, 'settlement'), (-0.8333333333333333, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": "ABSTAIN",
+        "reasoning": "The provided logs contain no explicit self-reported error, health-check failure, or restart event from any service, and the funnel counts do not show a clear, sustained block across all services that isolates a single component as the root cause. The specific anomaly of a high-risk fraud score (0.67) followed by an immediate 'EMBARGOED' rejection suggests a data consistency issue, but the service responsible for propagating or generating that specific failure state is not identified in the logs."
+      },
+      "large": {
+        "top3": null,
+        "reasoning": "(empty response)"
+      },
+      "nemotron": {
+        "top3": "ABSTAIN",
+        "reasoning": "The telemetry shows issues in several services (payment rejection, AML sanctions, settlement errors) but no clear single service failure or health\u2011check anomaly, so the root cause cannot be pinpointed."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-0c057497",
+    "fault_type": "SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE",
+    "confirmed": true,
+    "root_service": "settlement",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9285714285714286, 'settlement'), (0.5333333333333333, 'routing-execution'), (0.05882352941176472, 'validation-enrichment'), (-0.875, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "gateway",
+          "fraud-scoring"
+        ],
+        "reasoning": "Settlement was the first service to report a health-check failure and is the only service with completed logs immediately preceding the witness's observation of the service being DOWN, indicating it was the active failure point. The funnel counts show a progressive drop-off starting at settlement (1 complete vs 84 total), confirming it as the primary bottleneck, while gateway and fraud-scoring show signs of being affected or impacted as secondary symptoms."
+      },
+      "large": {
+        "top3": [
+          "settlement",
+          "gateway",
+          "fraud-scoring"
+        ],
+        "reasoning": "The settlement service is the only one with a health\u2011check failure and client\u2011creation errors, causing a stall in the payment flow; gateway and fraud\u2011scoring had no failures and continued processing."
+      },
+      "nemotron": {
+        "top3": [
+          "settlement",
+          "gateway",
+          "routing-execution"
+        ],
+        "reasoning": "The settlement service showed a health-check failure and error messages, causing the payment to stall and the only settlement to fail, indicating it as the root cause."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-a41428fd",
+    "fault_type": "AML_SERVICE_DEGRADATION_RETRY_CASCADE",
+    "confirmed": true,
+    "root_service": "aml-compliance",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "aml-compliance",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.76, 'aml-compliance'), (0.5, 'routing-execution'), (0.07407407407407407, 'validation-enrichment'), (0.0, 'settlement')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "aml-compliance",
+          "fraud-scoring"
+        ],
+        "reasoning": "The funnel stalls at the settlement service where 9 payments reach routing-execution but only 3 complete, indicating the root cause is within the settlement microservice itself. While aml-compliance is reported DOWN and fraud-scoring shows high latency, both appear to have been recovering or operating independently in parallel before the full incident, whereas the settlement blockage prevents the majority of subsequent payments from progressing."
+      },
+      "large": {
+        "top3": [
+          "aml-compliance",
+          "settlement",
+          "routing-execution"
+        ],
+        "reasoning": "Health witness logs show aml-compliance went down at 02:34:11.955, and the funnel shows a sharp drop after AML_SCREENING_COMPLETE (only 6 events vs 25 validated). Settlement also shows errors and only 3 completions out of 9, indicating it was affected. Routing\u2011execution is the next most impacted service with only 3 completions out of 9."
+      },
+      "nemotron": {
+        "top3": [
+          "aml-compliance",
+          "settlement",
+          "routing-execution"
+        ],
+        "reasoning": "The aml-compliance service reported a health-check failure and its downstream funnel stall (only 6 screenings vs 25 validations) indicates it was the primary bottleneck, while settlement errors and routing execution low counts suggest secondary contributing factors."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-d45c0b73",
+    "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+    "confirmed": true,
+    "root_service": "settlement",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9285714285714286, 'settlement'), (0.5, 'routing-execution'), (0.2222222222222222, 'validation-enrichment'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "validation-enrichment",
+          "aml-compliance"
+        ],
+        "reasoning": "The incident is confirmed by the settlement service's consecutive health check failure and a specific error log indicating HTTP client creation failures, suggesting the root cause is within settlement; the subsequent drop in funnel counts at earlier stages (validation and AML) is a cascading effect of payments failing before reaching the stuck settlement.}"
+      },
+      "large": {
+        "top3": [
+          "settlement",
+          "gateway"
+        ],
+        "reasoning": "The settlement service logged a health\u2011check failure and repeated HTTP client errors, indicating it was down and causing the payment pipeline to stall. Unknown events likely stem from the same health\u2011check or internal failure. No other service shows failures or stalls."
+      },
+      "nemotron": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "The settlement service logged a health\u2011check failure and only one successful settlement despite many routed payments, showing it was down and caused the pipeline to stall."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-724753fd",
+    "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+    "confirmed": true,
+    "root_service": "validation-enrichment",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "validation-enrichment",
+          "routing-execution",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.967741935483871, 'validation-enrichment'), (0.5, 'routing-execution'), (0.0, 'settlement'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "validation-enrichment",
+          "settlement",
+          "fraud-scoring"
+        ],
+        "reasoning": "The incident is primarily caused by validation-enrichment going DOWN at 02:59:33, creating a bottleneck that stalled most payments; however, the funnel data shows settlement and fraud-scoring eventually processed some traffic, indicating they are secondary victims or experienced transient degradation rather than being the primary root cause."
+      },
+      "large": {
+        "top3": [
+          "validation-enrichment",
+          "settlement",
+          "fraud-scoring"
+        ],
+        "reasoning": "Health\u2011check failure and restart of validation\u2011enrichment caused a stall after only 1 payment validated; settlement also lagged (only 1 complete) but the failure trace points to validation\u2011enrichment as the root."
+      },
+      "nemotron": {
+        "top3": [
+          "validation-enrichment",
+          "settlement",
+          "gateway"
+        ],
+        "reasoning": "The validation-enrichment service experienced a health-check failure and restart, creating a bottleneck that stopped most payments; settlement errors and gateway submission volume are secondary contributors."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-a1018952",
+    "fault_type": "DB_TIMEOUT",
+    "confirmed": true,
+    "root_service": "settlement",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9230769230769231, 'settlement'), (0.5357142857142857, 'routing-execution'), (0.2222222222222222, 'validation-enrichment'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "The settlement service crashed as the independent witness confirms it went DOWN and failed its health check, causing a complete stall in the funnel at that stage; routing-execution stalled prior to settlement due to liquidity reservation issues, and validation-enrichment shows a sharp decline in success rates indicating downstream congestion or upstream resource contention."
+      },
+      "large": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "gateway"
+        ],
+        "reasoning": "Settlement service failed a health check and only processed 3 payments, causing a downstream stall. Routing\u2011execution shows a large gap between unlabeled events and routed payments, indicating a stall before settlement. Gateway appears to be operating normally."
+      },
+      "nemotron": {
+        "top3": [
+          "settlement",
+          "validation-enrichment",
+          "gateway"
+        ],
+        "reasoning": "The settlement service logged a health-check failure and only one payment completed, causing the pipeline to stall; validation-enrichment and gateway precede it and show reduced flow, indicating settlement as the root cause."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-1dd87cec",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "confirmed": true,
+    "root_service": "routing-execution",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "routing-execution",
+          "validation-enrichment",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9523809523809523, 'routing-execution'), (0.08695652173913049, 'validation-enrichment'), (0.0, 'settlement'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "routing-execution",
+          "settlement",
+          "validation-enrichment"
+        ],
+        "reasoning": "Routing-execution is the definitive root cause due to its explicit HEALTH_CHECK_FAILED status which triggered the incident window, causing a funnel stall where no RAIL_SELECTED or Routed events were generated. Settlement and validation-enrichment are downstream consequences as their event counts are severely depleted and the telemetry shows a dependency chain break immediately following the routing failure."
+      },
+      "large": {
+        "top3": [
+          "routing-execution",
+          "settlement",
+          "audit"
+        ],
+        "reasoning": "Health\u2011check failure and restart of routing\u2011execution caused a clear stall in the payment flow; the settlement service logged an exception that further limited downstream events; audit remains high but is not the source of the stall."
+      },
+      "nemotron": {
+        "top3": [
+          "routing-execution",
+          "settlement",
+          "validation-enrichment"
+        ],
+        "reasoning": "Routing-execution experienced a health-check failure and restart, creating a funnel stall; settlement showed an async exception and low completion count, indicating secondary impact."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-b39b1e5f",
+    "fault_type": "NETWORK_LATENCY",
+    "confirmed": true,
+    "root_service": "validation-enrichment",
+    "n_events": 293,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "validation-enrichment",
+          "routing-execution",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9411764705882353, 'validation-enrichment'), (0.5, 'routing-execution'), (0.0, 'settlement'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "validation-enrichment",
+          "gateway",
+          "settlement"
+        ],
+        "reasoning": "The independent witness and funnel data confirm validation-enrichment went DOWN and then RECOVERED, coinciding with a HEALTH_CHECK_FAILED event; this outage caused a severe funnel stall where only 12 of 68 gateway-submitted payments reached validation. The restart at 06:18:05 and successful startup indicate this was the primary cause, with gateway contributing a single point of failure due to delayed message processing during the incident, and settlement showing minor unrelated anomalies."
+      },
+      "large": {
+        "top3": [
+          "validation-enrichment",
+          "gateway",
+          "fraud-scoring"
+        ],
+        "reasoning": "Validation\u2011enrichment shows a health\u2011check failure and only 12 events after 34 payments were submitted, indicating a stall; gateway and fraud\u2011scoring still processed many events, so they are less likely root causes."
+      },
+      "nemotron": {
+        "top3": [
+          "validation-enrichment",
+          "settlement",
+          "gateway"
+        ],
+        "reasoning": "Validation-enrichment had a health-check failure and restart, and its low event count relative to upstream services shows a pipeline stall, indicating it as the root cause."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-8b01e57d",
+    "fault_type": "CPU_SATURATION",
+    "confirmed": true,
+    "root_service": "aml-compliance",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "aml-compliance",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.8095238095238095, 'aml-compliance'), (0.5, 'routing-execution'), (0.16000000000000003, 'validation-enrichment'), (0.0, 'settlement')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "aml-compliance",
+          "validation-enrichment"
+        ],
+        "reasoning": "The settlement service logged an explicit Java exception in ClickHouse during async analytics execution, suggesting the fault originated there, while the aml-compliance service independently reported DOWN/RECOVERED and the validation-enrichment service began rejecting payments due to currency issues, likely caused by downstream connectivity or state issues. However, funnel analysis shows the primary bottleneck is at settlement where payments stop completing before the aml-compliance health check failure and validation enrichment rejections are observed."
+      },
+      "large": {
+        "top3": [
+          "aml-compliance",
+          "settlement",
+          "gateway"
+        ],
+        "reasoning": "Health witness and logs show aml-compliance went DOWN and failed a health check, causing downstream stalls (routing, settlement, unknown events). The restart of aml-compliance at 06:28:20 confirms it as the root cause; settlement and gateway are next most impacted services."
+      },
+      "nemotron": {
+        "top3": [
+          "aml-compliance",
+          "validation-enrichment",
+          "routing-execution"
+        ],
+        "reasoning": "The aml-compliance service experienced a health-check failure and restart, causing a stall in the payment pipeline where only a few transactions progressed beyond validation, indicating it as the primary root cause."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-b12684e5",
+    "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+    "confirmed": true,
+    "root_service": "settlement",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(1.0, 'settlement'), (0.5, 'routing-execution'), (0.3157894736842105, 'validation-enrichment'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "validation-enrichment"
+        ],
+        "reasoning": "Settlement went DOWN independently and had a HEALTH_CHECK_FAILED, while funnel counts drop to zero downstream of routing (0 payments Routed vs 39 initiated), indicating settlement's down state caused the pipeline to stall after routing completed but before any further processing. Validation enrichment also shows a significant funnel drop (13 validated vs 19 submitted) suggesting a secondary bottleneck or independent failure in that stage."
+      },
+      "large": {
+        "top3": null,
+        "reasoning": "(empty response)"
+      },
+      "nemotron": {
+        "top3": [
+          "settlement",
+          "routing-execution",
+          "gateway"
+        ],
+        "reasoning": "The settlement service reported a health-check failure and brief downtime, halting payment finalisation and causing the observed pipeline stall."
+      }
+    }
+  },
+  {
+    "incident_id": "LIVE-7e974bac",
+    "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+    "confirmed": true,
+    "root_service": "validation-enrichment",
+    "n_events": 300,
+    "methods": {
+      "heuristic": {
+        "top3": [
+          "validation-enrichment",
+          "routing-execution",
+          "settlement"
+        ],
+        "reasoning": "funnel drop-offs (desc): [(0.9117647058823529, 'validation-enrichment'), (0.5, 'routing-execution'), (0.0, 'settlement'), (-1.0, 'aml-compliance')]"
+      },
+      "slm": {
+        "top3": null,
+        "reasoning": "ERROR: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=60)"
+      },
+      "large": {
+        "top3": [
+          "validation-enrichment",
+          "gateway",
+          "settlement"
+        ],
+        "reasoning": "Health witness and logs show validation\u2011enrichment went DOWN, failed a health check, and restarted, causing a stall in the payment pipeline (only 3 validated payments). Gateway continued to receive and publish messages, and settlement only logged client\u2011creation errors after the restart, so it is not the root cause."
+      },
+      "nemotron": {
+        "top3": [
+          "validation-enrichment",
+          "settlement",
+          "gateway"
+        ],
+        "reasoning": "The validation-enrichment service failed its health check, restarted, and processed only a few payments, creating a funnel stall that halted progress for downstream services."
+      }
+    }
+  }
+]

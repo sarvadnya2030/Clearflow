@@ -1,0 +1,18 @@
+{
+  "incident_id": "LIVE-7e974bac",
+  "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+  "injector_claimed_root": "validation-enrichment",
+  "injection_time": "2026-09-02T06:46:20.961800+00:00",
+  "duration_seconds": 30,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: validation-enrichment: DOWN (consecutive=1), then RECOVERED, generated independently",
+    "validation-enrichment's own log stream: 3 payments PAYMENT_VALIDATED at 06:46:21-22, then HEALTH_CHECK_FAILED consecutiveFailures=1 at 06:46:23, then a full JVM restart at 06:46:55 -- a ~32s gap",
+    "Direct event-type funnel count: 34 PAYMENT_SUBMITTED vs only 3 PAYMENT_VALIDATED",
+    "Searched gateway's own events for the misleading confound symptom this fault type is named for (error/fail/timeout/reject messages) -- zero matches"
+  ],
+  "reasoning_trace": "Witness monitor independently flagged validation-enrichment DOWN then RECOVERED. Funnel count shows 34 submitted but only 3 validated -- a clean stall at validation-enrichment. Explicitly checked gateway's own log stream for any misleading secondary symptom (the confound this fault type is named for) and found none. No competing hypothesis was suggested by the evidence. Conclusion reached from evidence alone, before reading the injector's own log: validation-enrichment.",
+  "blind_conclusion": "validation-enrichment",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (validation-enrichment) matches the injector's own ground-truth log exactly. Consistent with prior VALIDATION_SLOWDOWN_GATEWAY_CONFOUND replications, no misleading symptom observed this run either."
+}

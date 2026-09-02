@@ -1,7 +1,0 @@
-Background traffic started at 3.0/s
-
-=== KAFKA_CONSUMER_LAG (root=routing-execution, family=infra, mechanism=crash) rep=0 ===
-  OK: {"injection_time": "2026-09-02T06:03:40.456170+00:00", "duration_seconds": 20, "recovered": true, "kafka_lag_before": 24855, "kafka_lag_after_recovery": 24883}
-  [1 done, persisted]
-
-Background traffic stopped. 1 incidents persisted, 209 background payments sent total (each already persisted as sent).

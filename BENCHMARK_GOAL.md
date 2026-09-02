@@ -27,19 +27,22 @@ performance, published on GitHub. Three parts, in order:
    root-cause labels, real evidence (ES logs, payment state, telemetry)
    extracted per incident (`live_evidence.py`) — see
    `data-generation/output_live/`.
-3. **RCA methods + eval**: baselines (`eval_harness.py`) scored against
-   the real incidents. **Not started yet this phase — do not run models.**
+3. **RCA methods + eval**: baselines scored against the real incidents.
+   **Phase 1 (does the gold-case set discriminate between methods?) ran
+   2026-09-02 by direct instruction, overriding the "not started yet"
+   note below — see the dated log at the end of this file. Full-scale
+   method scoring against every incident is still future work.**
 
-## Current phase: INFRA + DATASET CORRECTNESS ONLY
+## Current phase: moved past INFRA + DATASET CORRECTNESS ONLY on 2026-09-02
 
-Per direct instruction: fix and verify the dataset and infrastructure
-first. No model runs, no RCA method changes beyond what's needed to
-verify data flow, until this phase is explicitly closed out. Every
-iteration should either (a) verify a real, previously-unverified piece of
-the infra/dataset pipeline actually works and actually produces real
-data, or (b) fix something just found broken, or (c) write down a real,
-honest finding — never spin, never mark something verified without
-directly checking it this session.
+Originally: fix and verify the dataset and infrastructure first, no model
+runs. Per direct instruction on 2026-09-02, a real Phase 1 validation
+experiment (4 baseline RCA methods run against all 37 gold cases) was
+authorized and executed to answer a more fundamental question first: does
+the gold-case set even contain enough causal signal to discriminate
+between methods, before investing further in scale? Findings below. The
+non-trust protocol and "verify, don't assume" discipline still apply in
+full — this is a phase change, not a discipline change.
 
 ## Non-trust protocol (standing rule, from `.claude/CLAUDE.md`, applies
 double here)
@@ -240,7 +243,107 @@ double here)
 
 ## Explicitly out of scope for this phase
 
-- Running any LLM/SLM RCA method
 - Tuning `payment_aware_rca`'s thresholds/logic (beyond the one flagged
   bug above, which needs a decision, not a silent fix)
 - Publishing anything to GitHub yet
+- Full-scale RCA method scoring against every incident (Phase 1 below was
+  a 37-case discrimination test, not a comprehensive eval)
+
+## Phase 1 — baseline RCA discrimination test (2026-09-02, by direct instruction)
+
+Goal: before investing further in scale, does the current 37-case gold set
+actually contain enough causal signal to discriminate between RCA methods
+at all? Full harness in `data-generation/eval_baseline_rca.py` +
+`rebuild_reports.py`, results in `data-generation/BASELINE_EVAL_RESULTS.md`
+and `ENSEMBLE_EVAL_RESULTS.md`. Ground truth never modified.
+
+**4 methods, same evidence given to all LLM methods** (heuristic funnel-
+drop detector / `qwen3.5:4b` SLM via local Ollama / `openai/gpt-oss-20b`
+via NVIDIA NIM / `nvidia/nemotron-3-nano-omni-30b-a3b-reasoning` via NVIDIA
+NIM). Evidence = live ES re-query (injection_time/duration from each gold
+case, not the deleted `_pending_` bundles) + funnel counts + witness quote.
+
+**Headline finding — the dataset does NOT yet discriminate on reasoning
+difficulty, only on model capability**: AC@1 was heuristic 90.9%, SLM
+66.7-69.7%, large 87.9%, nemotron 90.9%. The zero-reasoning rule-based
+heuristic ties or beats every LLM on 8 of 9 fault types — because those
+fault types are all single-service full crashes producing a funnel-count
+cliff a threshold catches trivially. SLM genuinely underperforms on
+cascade/confound types (real, replicated capability gap) — that part of
+the discrimination is real. The rest is not: no case in the dataset has
+ever required weighing genuinely conflicting evidence, because the two
+`confounded` fault types were found to be **not actually engineered as
+confounds** — `SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND` and
+`VALIDATION_SLOWDOWN_GATEWAY_CONFOUND` both called the exact same generic
+`trigger_crash()` as every non-confound fault. The misleading secondary
+symptom was never engineered, only hoped for, and never once manifested
+across 8 reps this session.
+
+**Hallucination vs abstention (evidence-free cases)**: originally all 4
+methods hallucinated a confident wrong answer on all 4 evidence-free
+cases, zero correct abstentions. Added an explicit `insufficient_evidence`
+field to the task schema + gave the heuristic the same option (abstain
+when no funnel stage shows >30% drop). After the fix: SLM 1/4, large 2/4,
+nemotron 2/4 correct abstentions — real improvement, at a real cost (SLM's
+overall AC@1 dropped 69.7%→66.7% since it now sometimes abstains on
+confirmed cases it previously got right by guessing — an honest trade-off,
+not a regression to hide).
+
+**`AML_HOLD` — 0% AC@1 across all 4 methods, investigated, not just
+flagged**: first hypothesis (retrieval failure — the real signal,
+`AML_SANCTIONS_HIT`, was being crowded out of the compact evidence by a
+per-service sample cap tuned for crash faults) was real and fixed
+(added the AML event keywords to the signal filter, verified the evidence
+now genuinely contains `AML_SANCTIONS_HIT`/`AML_HOLD` lines). Did not fix
+the 0% score. Second finding: this is a **task-framing mismatch, not a
+retrieval bug** — `AML_HOLD` isn't a failure to localize, it's the system
+working correctly (a real sanctions match), so "find the root cause of
+this incident" is the wrong question for this fault type. Needs its own
+question framing in any future version, not a data fix.
+
+**Confound engineering — implemented and being verified live**: added
+`trigger_crash_with_gateway_decoy()` to `live_fault_injector.py`
+(`VALIDATION_SLOWDOWN_GATEWAY_CONFOUND` only, mechanism
+`crash_with_gateway_decoy`) — fires a real burst of invalid-currency
+payments at gateway during the real validation-enrichment outage.
+Gateway's `GlobalExceptionHandler` was silently swallowing all validation
+failures (no structured log at all); added a real `PAYMENT_REJECTED`
+log line reusing Logstash's existing grok-whitelisted eventType token (no
+pipeline changes needed) — confirmed real 400 + real ES-visible
+`eventType: PAYMENT_REJECTED` end-to-end.
+
+First live test found the decoy signal was real but drowned 78-to-13 by
+an unrelated, previously-invisible bug the new logging happened to expose:
+**13 of 27 `CLEAN_ENTITIES` (48%) had invalid IBAN checksums** — real
+`iban4j` failures, not a minority as an old code comment claimed. Fixed
+all 13 (+ 3 in `SDN_ENTITIES`, 1 in `HIGH_RISK_CREDITORS`) by recomputing
+correct check digits, verified 0/53 IBANs invalid. Second bug found while
+re-verifying: the traffic generator's `CHANNELS` list included
+`CHAPS`/`TARGET2`, which don't exist in gateway's `PaymentChannel` enum
+(only `SWIFT/SEPA/FEDWIRE/FASTER_PAYMENTS/INTERNAL`) — 10% of traffic was
+silently failing Jackson enum deserialization before validation even ran.
+Removed both from `batch_realistic_v4.py`'s `CHANNELS`. Verified: 40/40
+payments accepted post-fix (was 0/40 fully clean before either fix, worst
+case 6/40 rejected mid-fix). **This means every gold case collected this
+entire session had a large, silently-reduced real payment volume — not
+just noisier evidence, less actual traffic than intended, the whole time.**
+Confound decoy retested with clean traffic (`LIVE-3cf078b4`): gateway
+`PAYMENT_REJECTED` dropped 91→3, and all 3 verified `fields=[currency]` --
+100% genuine decoy, zero IBAN noise left. Ran the full blind-investigation
+gold-case methodology on it (38th gold case). **Honest result: still
+correctly resolved.** gateway's decoy rejections were real but never
+accompanied by a `HEALTH_CHECK_FAILED` or restart -- it stayed healthy and
+kept serving 24/27 requests throughout, which is a clean, real
+distinguishing signal from validation-enrichment's independently-witnessed
+outage. The confound mechanism genuinely works now (produces real,
+attributable, clean decoy evidence -- verified, not assumed) but has not
+yet produced a rep that actually misleads a careful investigation. Open
+question, not yet answered: would a stronger/longer decoy burst (more than
+3 landed sends -- `decoy_sent` was being computed but silently dropped
+before the CSV write, same bug class as the earlier `confirmed`/
+`kafka_lag` fields; now fixed and persisted going forward) change that.
+Not chased further this session -- flagging as the natural next
+experiment rather than continuing to iterate blind.
+
+**Session total: 38 gold cases** (34 confirmed matching ground truth via
+blind investigation, 4 confirmed genuinely evidence-free).

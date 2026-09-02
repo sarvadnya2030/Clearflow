@@ -1,0 +1,19 @@
+{
+  "incident_id": "LIVE-3cf078b4",
+  "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+  "injector_claimed_root": "validation-enrichment",
+  "injection_time": "2026-09-02T09:15:08.585116+00:00",
+  "duration_seconds": 30,
+  "mechanism_note": "First rep using the newly-engineered crash_with_gateway_decoy mechanism (real invalid-currency payment burst at gateway, concurrent with the real validation-enrichment outage), and the first rep run after fixing the IBAN-checksum and CHAPS/TARGET2 background-traffic bugs that had drowned out the decoy signal in the mechanism's initial test.",
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: validation-enrichment: DOWN (consecutive=1), then RECOVERED, generated independently",
+    "validation-enrichment's own log stream: HEALTH_CHECK_FAILED consecutiveFailures=1, and a funnel stall (27 gateway PAYMENT_SUBMITTED vs only 6 validation-enrichment PAYMENT_VALIDATED)",
+    "gateway's own log stream: 3 PAYMENT_REJECTED events, all with fields=[currency] (the engineered decoy) -- confirmed genuinely currency-caused, not the previously-drowning IBAN-checksum background noise",
+    "Checked explicitly: gateway itself never logged a HEALTH_CHECK_FAILED anywhere in the window -- it stayed healthy throughout, only rejecting a small number of malformed payloads, distinct from a service that is actually down"
+  ],
+  "reasoning_trace": "Witness monitor independently flagged validation-enrichment DOWN then RECOVERED, with zero foreknowledge. validation-enrichment's own logs show a real funnel stall and a health-check failure. gateway shows a real, engineered decoy signal (3 currency-caused PAYMENT_REJECTED events) but never itself fails a health check or restarts -- it stays up and serving traffic (24/27 succeeded) throughout. This distinction (validation-enrichment genuinely down + independently witnessed vs. gateway merely showing elevated-but-explained rejects while remaining healthy) resolves the case correctly despite the decoy being present. Conclusion reached from evidence alone, before reading the injector's own log: validation-enrichment.",
+  "blind_conclusion": "validation-enrichment",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (validation-enrichment) matches the injector's own ground-truth log exactly. Honest finding, not spin: even with a real, cleanly-engineered decoy signal present (verified currency-caused, not background noise), this rep was still resolvable by a careful investigator -- the decoy's magnitude (3 rejects out of 27 healthy requests) was real but not strong enough to outweigh validation-enrichment's independently-witnessed outage. The confound mechanism now genuinely works (produces real, attributable decoy evidence) but has not yet produced a rep that actually misleads a careful analysis. Whether a stronger/longer decoy burst would change that is an open question, not yet tested."
+}

@@ -1,0 +1,17 @@
+{
+  "incident_id": "LIVE-8b01e57d",
+  "fault_type": "CPU_SATURATION",
+  "injector_claimed_root": "aml-compliance",
+  "injection_time": "2026-09-02T06:27:56.051942+00:00",
+  "duration_seconds": 20,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: aml-compliance: DOWN (consecutive=1), then RECOVERED, generated independently",
+    "aml-compliance's own log stream: 2 payments AML_SCREENING_COMPLETE at 06:27:56.5-56.8, then HEALTH_CHECK_FAILED consecutiveFailures=1 at 06:27:58.2, then a full JVM restart (\"Starting AmlComplianceApplication...\") at 06:28:20.5 -- a ~22s gap with no screening activity",
+    "Direct event-type funnel count across the window: 25 PAYMENT_SUBMITTED / 21 PAYMENT_VALIDATED vs only 4 AML_SCREENING_COMPLETE, and only 2 PAYMENT_ROUTED / 2 SETTLEMENT_COMPLETE downstream"
+  ],
+  "reasoning_trace": "Witness monitor independently flagged aml-compliance DOWN then RECOVERED, with zero foreknowledge of the injected fault. aml-compliance's own logs show it was healthy and actively screening at the start of the window (2 payments cleanly cleared), then failed its health check, then came back up via a full application restart roughly 22 seconds later. In that gap, of 21 validated payments only 4 total reached AML_SCREENING_COMPLETE -- everything else stalled at or before AML screening. Same funnel-stall + independent-witness shape as prior rounds' CPU_SATURATION cases. Conclusion reached from evidence alone, before reading the injector's own log: aml-compliance.",
+  "blind_conclusion": "aml-compliance",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (aml-compliance) matches the injector's own ground-truth log exactly. Consistent with three prior CPU_SATURATION replications, all attributing the same root service via the same witness+funnel-stall evidentiary pattern."
+}

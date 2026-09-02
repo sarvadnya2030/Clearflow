@@ -1,0 +1,18 @@
+{
+  "incident_id": "LIVE-b12684e5",
+  "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+  "injector_claimed_root": "settlement",
+  "injection_time": "2026-09-02T06:37:11.822039+00:00",
+  "duration_seconds": 30,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: settlement: DOWN (consecutive=1), then RECOVERED, generated independently",
+    "settlement's own log stream: HEALTH_CHECK_FAILED consecutiveFailures=1 at 06:37:14, no SETTLEMENT_COMPLETE events anywhere in the 300-event window",
+    "Direct event-type funnel count: 13 PAYMENT_ROUTED but 0 SETTLEMENT_COMPLETE -- clean stall at the settlement stage",
+    "Searched full event set for any Kafka-related/lag messages (the confound this fault type is designed to test for) -- zero matches"
+  ],
+  "reasoning_trace": "Witness monitor independently flagged settlement DOWN then RECOVERED. Funnel count shows 13 payments reached PAYMENT_ROUTED but zero reached SETTLEMENT_COMPLETE -- a clean stall at settlement, the same shape as prior SETTLEMENT_DB_FAILURE_* rounds. Explicitly checked for the misleading Kafka-related secondary symptom this fault type is named for (the standing project thesis being tested: is the confound risk real or rare) -- found no Kafka/lag-related log lines anywhere in the evidence bundle. No competing hypothesis was suggested by the evidence. Conclusion reached from evidence alone, before reading the injector's own log: settlement.",
+  "blind_conclusion": "settlement",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (settlement) matches the injector's own ground-truth log exactly. Fourth clean replication of this confound type with no misleading symptom observed -- consistent with, and further statistical support for, the standing finding that the confound risk is real in principle but rare in practice on this infra."
+}

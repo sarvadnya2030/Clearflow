@@ -81,7 +81,15 @@ LIVE_FAULT_CATALOG = [
     ("SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE", "settlement", "cross_domain", "crash"),
     ("AML_SERVICE_DEGRADATION_RETRY_CASCADE", "aml-compliance", "cross_domain", "crash"),
     ("SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND", "settlement", "confounded", "crash"),
-    ("VALIDATION_SLOWDOWN_GATEWAY_CONFOUND", "validation-enrichment", "confounded", "crash"),
+    # Was plain "crash" identically to every non-confound fault -- found live
+    # (Phase-1 baseline eval, 2026-09-02) that this meant the "confound" was
+    # never actually engineered, just hoped for as a side effect, and it
+    # never once manifested across 8 reps. "crash_with_gateway_decoy" fires a
+    # real burst of gateway-side PAYMENT_REJECTED events (invalid-currency
+    # payloads, genuinely rejected by gateway's own @Valid validation)
+    # concurrent with the real validation-enrichment outage -- a real decoy
+    # signal on a service that is NOT the root cause, not a synthetic flag.
+    ("VALIDATION_SLOWDOWN_GATEWAY_CONFOUND", "validation-enrichment", "confounded", "crash_with_gateway_decoy"),
 ]
 
 CRASH_DURATION_S = {"infra": 20, "cross_domain": 30, "confounded": 30}
@@ -246,6 +254,52 @@ def trigger_crash(root_service, family, token, gen: TrafficGenerator):
     }, None
 
 
+def trigger_crash_with_gateway_decoy(root_service, family, token, gen: TrafficGenerator):
+    """Same real crash as trigger_crash, but fires a real burst of invalid-
+    currency payments at gateway during the outage window -- genuinely
+    rejected by gateway's own @Valid validation (GlobalExceptionHandler now
+    logs these as real PAYMENT_REJECTED events, the same eventType
+    validation-enrichment's real business rejections use). This is the
+    actual confound: two services showing rejection-shaped symptoms at the
+    same time, only one of which (root_service, via the real funnel stall)
+    is the true root cause. Not a synthetic flag -- gateway really does
+    reject these requests."""
+    duration = CRASH_DURATION_S[family]
+    injection_time = now_iso()
+    consumer_group = SERVICE_CONSUMER_GROUPS.get(root_service)
+    lag_before = sample_kafka_lag(consumer_group)
+    code, body = admin_call("stop", root_service, token)
+    if code != 200:
+        return None, f"stop failed: {code} {body}"
+
+    n_decoy = max(3, int(duration / 2))
+    decoy_sent = 0
+    interval = duration / n_decoy
+    for _ in range(n_decoy):
+        try:
+            bad = traffic.build("clean")
+            bad["currency"] = "XX1"  # violates @Pattern([A-Z]{3}) -- real 400
+            requests.post(f"{GATEWAY}/api/v1/payments", json=bad,
+                          headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+                          timeout=5)
+            decoy_sent += 1
+        except Exception:
+            pass  # gateway may be under real load from the outage; a failed decoy send isn't fatal
+        time.sleep(interval)
+
+    code, body = admin_call("start", root_service, token)
+    recovered = wait_for_service_up(root_service, SERVICE_PORTS[root_service])
+    lag_after = sample_kafka_lag(consumer_group)
+    return {
+        "injection_time": injection_time,
+        "duration_seconds": duration,
+        "recovered": recovered,
+        "kafka_lag_before": lag_before,
+        "kafka_lag_after_recovery": lag_after,
+        "decoy_sent": decoy_sent,
+    }, None
+
+
 def trigger_idempotency_collision(token, gen: TrafficGenerator):
     """Real duplicate submission -- same instructionId/amount/debtor within
     the gateway's idempotency TTL. Fires ~15 duplicates of one payload in
@@ -351,6 +405,8 @@ def run_incident(fault_type, root_service, family, mechanism, token, gen: Traffi
     print(f"\n=== {fault_type} (root={root_service}, family={family}, mechanism={mechanism}) rep={rep} ===")
     if mechanism == "crash":
         result, err = trigger_crash(root_service, family, token, gen)
+    elif mechanism == "crash_with_gateway_decoy":
+        result, err = trigger_crash_with_gateway_decoy(root_service, family, token, gen)
     elif mechanism == "idempotency":
         result, err = trigger_idempotency_collision(token, gen)
     elif mechanism == "aml_hold":
@@ -366,7 +422,7 @@ def run_incident(fault_type, root_service, family, mechanism, token, gen: Traffi
     # "aml_hold"/"idempotency" the trigger can genuinely fail to produce the
     # labeled effect (e.g. an SDN-name draw that doesn't actually match) --
     # confirmed_held/duplicate_confirmed says whether it really did.
-    if mechanism == "crash":
+    if mechanism in ("crash", "crash_with_gateway_decoy"):
         confirmed = result.get("recovered", True)
     else:
         confirmed = result.get("confirmed_held", result.get("duplicate_confirmed", ""))
@@ -385,6 +441,7 @@ def run_incident(fault_type, root_service, family, mechanism, token, gen: Traffi
         "confirmed": confirmed,
         "kafka_lag_before": result.get("kafka_lag_before", ""),
         "kafka_lag_after_recovery": result.get("kafka_lag_after_recovery", ""),
+        "decoy_sent": result.get("decoy_sent", ""),
     }
 
 
@@ -459,7 +516,15 @@ def main():
                         # current-state-only (Kafka has no historical lag query the way
                         # ES has historical logs), so only meaningful for incidents
                         # collected from here on, not retrofittable onto past ones.
-                        "kafka_lag_before", "kafka_lag_after_recovery"]
+                        "kafka_lag_before", "kafka_lag_after_recovery",
+                        # How many gateway-decoy payments actually got sent during
+                        # crash_with_gateway_decoy -- was being computed but silently
+                        # dropped before the CSV write, same class of bug as confirmed/
+                        # kafka_lag above. Lets a future rep check whether a low decoy
+                        # count (e.g. 3 of 15 intended) was send failures vs something
+                        # else, instead of only being visible in gold_cases_manifest.csv
+                        # prose notes.
+                        "decoy_sent"]
 
     def persist_incident(inc):
         file_exists = os.path.exists(LIVE_INCIDENTS_CSV)

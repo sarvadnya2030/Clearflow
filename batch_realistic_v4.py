@@ -72,13 +72,13 @@ PURPOSE_CODES = {
 CLEAN_ENTITIES = [
     # Germany
     {"name": "Siemens AG",               "iban": "DE89370400440532013000", "bic": "DEUTDEDBXXX", "country": "DE", "sector": "manufacturing"},
-    {"name": "Volkswagen Financial Svcs", "iban": "DE27200400600539456100", "bic": "COBADEFFXXX", "country": "DE", "sector": "automotive"},
+    {"name": "Volkswagen Financial Svcs", "iban": "DE34200400600539456100", "bic": "COBADEFFXXX", "country": "DE", "sector": "automotive"},
     {"name": "Alpine Logistics GmbH",    "iban": "DE02120300000000202051", "bic": "BYLADEM1001", "country": "DE", "sector": "logistics"},
-    {"name": "Munich Re AG",             "iban": "DE91500400600401234578", "bic": "HYVEDEMMXXX", "country": "DE", "sector": "insurance"},
+    {"name": "Munich Re AG",             "iban": "DE50500400600401234578", "bic": "HYVEDEMMXXX", "country": "DE", "sector": "insurance"},
     # France
     {"name": "BNP Paribas SA",           "iban": "FR7630006000011234567890189", "bic": "BNPAFRPPXXX", "country": "FR", "sector": "banking"},
-    {"name": "LVMH Moet Hennessy",       "iban": "FR7610278060000002408440109", "bic": "CMCIFRPPXXX", "country": "FR", "sector": "luxury"},
-    {"name": "Total Energies SE",        "iban": "FR7614508110000012345678902", "bic": "CCBPFRPPMTZ", "country": "FR", "sector": "energy"},
+    {"name": "LVMH Moet Hennessy",       "iban": "FR5110278060000002408440109", "bic": "CMCIFRPPXXX", "country": "FR", "sector": "luxury"},
+    {"name": "Total Energies SE",        "iban": "FR2914508110000012345678902", "bic": "CCBPFRPPMTZ", "country": "FR", "sector": "energy"},
     # Netherlands
     {"name": "ING Bank NV",              "iban": "NL91ABNA0417164300",    "bic": "INGBNL2AXXX", "country": "NL", "sector": "banking"},
     {"name": "Shell PLC",                "iban": "NL39RABO0300065264",    "bic": "RABONL2UXXX", "country": "NL", "sector": "energy"},
@@ -90,26 +90,26 @@ CLEAN_ENTITIES = [
     {"name": "Vodafone Group PLC",       "iban": "GB33BUKB20201555555555", "bic": "BUKBGB22XXX", "country": "GB", "sector": "telecom"},
     # Spain
     {"name": "Banco Santander SA",       "iban": "ES9121000418450200051332", "bic": "BSCHESMMXXX", "country": "ES", "sector": "banking"},
-    {"name": "Iberdrola SA",             "iban": "ES2114650100720002000160", "bic": "CAZRES2ZXXX", "country": "ES", "sector": "energy"},
+    {"name": "Iberdrola SA",             "iban": "ES9014650100720002000160", "bic": "CAZRES2ZXXX", "country": "ES", "sector": "energy"},
     # Switzerland
     {"name": "UBS Group AG",             "iban": "CH5604835012345678009",  "bic": "UBSWCHZH80A", "country": "CH", "sector": "banking"},
-    {"name": "Nestle SA",                "iban": "CH3608837000001234567",  "bic": "CRESCHZZ80A", "country": "CH", "sector": "consumer"},
-    {"name": "Novartis AG",              "iban": "CH5600790123456789012",  "bic": "POFICHBEXXX", "country": "CH", "sector": "pharma"},
+    {"name": "Nestle SA",                "iban": "CH8108837000001234567",  "bic": "CRESCHZZ80A", "country": "CH", "sector": "consumer"},
+    {"name": "Novartis AG",              "iban": "CH5000790123456789012",  "bic": "POFICHBEXXX", "country": "CH", "sector": "pharma"},
     # Austria
     {"name": "Raiffeisen Bank Intl",     "iban": "AT611904300234573201",   "bic": "RZOOAT2LXXX", "country": "AT", "sector": "banking"},
-    {"name": "OMV AG",                   "iban": "AT482011129012345678",   "bic": "GIBAATWWXXX", "country": "AT", "sector": "energy"},
+    {"name": "OMV AG",                   "iban": "AT352011129012345678",   "bic": "GIBAATWWXXX", "country": "AT", "sector": "energy"},
     # Italy
     {"name": "UniCredit SpA",            "iban": "IT60X0542811101000000123456", "bic": "UNCRITMM", "country": "IT", "sector": "banking"},
-    {"name": "ENI SpA",                  "iban": "IT11A0306901010000000012345", "bic": "BCITITMM", "country": "IT", "sector": "energy"},
+    {"name": "ENI SpA",                  "iban": "IT12A0306901010000000012345", "bic": "BCITITMM", "country": "IT", "sector": "energy"},
     # Sweden
-    {"name": "Nordea Bank AB",           "iban": "SE3550000000054400010552", "bic": "NDEASESS", "country": "SE", "sector": "banking"},
+    {"name": "Nordea Bank AB",           "iban": "SE9050000000054400010552", "bic": "NDEASESS", "country": "SE", "sector": "banking"},
     {"name": "Volvo Treasury AB",        "iban": "SE4550000000058398257466", "bic": "SWEDSESS", "country": "SE", "sector": "automotive"},
     # Singapore
-    {"name": "DBS Bank Ltd",             "iban": "GB29NWBK60161331926820", "bic": "DBSSSGSG", "country": "SG", "sector": "banking"},
+    {"name": "DBS Bank Ltd",             "iban": "GB02NWBK60161331926820", "bic": "DBSSSGSG", "country": "SG", "sector": "banking"},
     # Japan
-    {"name": "MUFG Bank Ltd",            "iban": "GB29NWBK60161331926821", "bic": "BOTKJPJT", "country": "JP", "sector": "banking"},
+    {"name": "MUFG Bank Ltd",            "iban": "GB72NWBK60161331926821", "bic": "BOTKJPJT", "country": "JP", "sector": "banking"},
     # Canada
-    {"name": "Royal Bank of Canada",     "iban": "GB29NWBK60161331926822", "bic": "ROYCCAT2", "country": "CA", "sector": "banking"},
+    {"name": "Royal Bank of Canada",     "iban": "GB45NWBK60161331926822", "bic": "ROYCCAT2", "country": "CA", "sector": "banking"},
 ]
 
 # ── SDN-flagged entities (names match expanded sdn_sample.csv) ────────────────
@@ -123,9 +123,9 @@ SDN_ENTITIES = [
     {"name": "Sinaloa Cartel",            "iban": "CH5604835012345678009",  "bic": "UBSWCHZH80A", "country": "MX"},
     {"name": "Guzman Loera Joaquin",      "iban": "NL39RABO0300065264",     "bic": "RABONL2UXXX", "country": "MX"},
     {"name": "Mahan Air",                 "iban": "GB29NWBK60161331926819", "bic": "HBUKGB4BXXX", "country": "IR"},
-    {"name": "Bank Saderat Iran",         "iban": "DE27200400600539456100", "bic": "COBADEFFXXX", "country": "IR"},
+    {"name": "Bank Saderat Iran",         "iban": "DE34200400600539456100", "bic": "COBADEFFXXX", "country": "IR"},
     {"name": "Promsvyazbank PJSC",        "iban": "DE02120300000000202051", "bic": "BYLADEM1001", "country": "RU"},
-    {"name": "CJNG Cartel",              "iban": "FR7610278060000002408440109","bic":"CMCIFRPPXXX","country":"MX"},
+    {"name": "CJNG Cartel",              "iban": "FR5110278060000002408440109","bic":"CMCIFRPPXXX","country":"MX"},
     {"name": "Tren de Aragua",            "iban": "NL02ABNA0123456789",     "bic": "ABNANL2AXXX", "country": "VE"},
     {"name": "Internet Research Agency",  "iban": "GB60BARC20000055779911", "bic": "BARCGB22XXX", "country": "RU"},
     {"name": "Boko Haram Group",          "iban": "GB82WEST12345698765432", "bic": "NWBKGB2LXXX", "country": "NG"},
@@ -142,14 +142,23 @@ HIGH_RISK_CREDITORS = [
     {"name": "Banco de Venezuela PDVSA", "iban": "CH5604835012345678009",  "bic": "UBSWCHZH80A", "country": "VE"},
     {"name": "Syria International Bank","iban": "NL39RABO0300065264",     "bic": "RABONL2UXXX", "country": "SY"},
     {"name": "Korea Trade Bank",         "iban": "GB82WEST12345698765432", "bic": "NWBKGB2LXXX", "country": "KP"},
-    {"name": "Cuba Metals Corp",         "iban": "DE27200400600539456100", "bic": "COBADEFFXXX", "country": "CU"},
+    {"name": "Cuba Metals Corp",         "iban": "DE34200400600539456100", "bic": "COBADEFFXXX", "country": "CU"},
 ]
 
 CURRENCIES = ["EUR", "USD", "GBP", "CHF", "SEK", "JPY", "CAD", "SGD"]
 CURRENCY_WEIGHTS = [35, 30, 15, 8, 3, 3, 3, 3]  # realistic FX distribution
 
-CHANNELS = ["SWIFT", "SEPA", "FEDWIRE", "FASTER_PAYMENTS", "CHAPS", "TARGET2"]
-CHANNEL_WEIGHTS = [25, 40, 15, 10, 5, 5]
+# Was ["SWIFT", "SEPA", "FEDWIRE", "FASTER_PAYMENTS", "CHAPS", "TARGET2"] --
+# CHAPS/TARGET2 don't exist in gateway's PaymentChannel enum (it only has
+# SWIFT/SEPA/FEDWIRE/FASTER_PAYMENTS/INTERNAL), so 10% of "clean" traffic
+# was silently failing Jackson enum deserialization before ever reaching
+# gateway's own validation layer -- found live, 2026-09-02, while debugging
+# a decoy fault mechanism whose real signal was drowned out by this.
+# routing-execution's own rail-selection logic derives the specific rail
+# (SEPA_INSTANT, CHAPS, TARGET2, etc.) from this coarser input already, so
+# CHAPS/TARGET2 never belonged in the gateway-facing channel vocabulary.
+CHANNELS = ["SWIFT", "SEPA", "FEDWIRE", "FASTER_PAYMENTS"]
+CHANNEL_WEIGHTS = [25, 45, 15, 15]
 
 # ── Remittance reference generators ──────────────────────────────────────────
 def make_remittance(purpose_code):
