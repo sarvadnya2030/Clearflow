@@ -47,3 +47,4 @@ LIVE-5bb250bb,MONGODB_OUTAGE,mongodb,true,witness-two-services-same-signature-re
 LIVE-125bb06d,AML_HOLD,aml-compliance,true,direct-self-reported-log-recovered-after-fixing-300-event-cap-bug
 LIVE-0e259052,CASSANDRA_OUTAGE,cassandra,true,witness-single-service-replicated
 LIVE-06e81ed2,SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE,settlement,true,witness+funnel-stall
+LIVE-166ba8bb,REDIS_OUTAGE,redis,false,no-evidence-third-consecutive-replication
