@@ -12,11 +12,15 @@ so any accuracy gap is attributable to model capability, not evidence access):
   large      - openai/gpt-oss-20b via NVIDIA NIM cloud API
   nemotron   - nvidia/nemotron-3-nano-omni-30b-a3b-reasoning via NVIDIA NIM
 
-Evidence given to LLM methods: raw ES events for the injection window
-(re-queried live, not from the deleted _pending_ bundles) + the witness
-monitor's DOWN/RECOVERED line, extracted from the gold case's own
-evidence_reviewed field (a verbatim-quoted excerpt, not a derived summary).
-The injector's claimed root is never in this evidence -- ES doesn't store it.
+Evidence given to LLM methods: raw ES events for the injection window,
+now embedded directly in each gold_cases/{id}.json's raw_events field
+(backfilled 2026-09-02, see backfill_raw_evidence.py and get_events() below)
+rather than re-queried live -- self-contained and immune to ES retention,
+which this project already lost a paper's headline result to once. Plus
+the witness monitor's DOWN/RECOVERED line, extracted from the gold case's
+own evidence_reviewed field (a verbatim-quoted excerpt, not a derived
+summary). The injector's claimed root is never in this evidence -- ES
+doesn't store it.
 
 Usage: python3 eval_baseline_rca.py
 """
@@ -71,6 +75,17 @@ def load_manifest():
         for row in csv.DictReader(f):
             rows.append(row)
     return rows
+
+
+def get_events(gold):
+    """Prefer the raw_events already embedded in the gold case file (backfilled
+    2026-09-02, see backfill_raw_evidence.py) over a live ES query. Self-contained
+    and immune to ES retention -- this project already lost a paper's headline
+    result once to exactly that failure mode (metrics.csv aging out silently).
+    Falls back to a live query only for a gold case that predates the backfill."""
+    if "raw_events" in gold:
+        return gold["raw_events"]
+    return fetch_es_events(gold["injection_time"], gold["duration_seconds"])
 
 
 def fetch_es_events(injection_time_iso, duration_seconds):
@@ -281,7 +296,7 @@ def main():
 
         print(f"[{i+1}/{len(rows)}] {incident_id} ({fault_type}, confirmed={confirmed})", flush=True)
 
-        events = fetch_es_events(gold["injection_time"], gold["duration_seconds"])
+        events = get_events(gold)
         witness_quote = extract_witness_quote(gold.get("evidence_reviewed", []))
 
         case_result = {"incident_id": incident_id, "fault_type": fault_type,

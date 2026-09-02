@@ -20,7 +20,7 @@ def main():
     for i, c in enumerate(targets):
         incident_id = c["incident_id"]
         gold = json.load(open(f"gold_cases/{incident_id}.json"))
-        events = e.fetch_es_events(gold["injection_time"], gold["duration_seconds"])
+        events = e.get_events(gold)
         witness = e.extract_witness_quote(gold.get("evidence_reviewed", []))
         prompt = e.build_prompt(c["fault_type"], events, witness)
 

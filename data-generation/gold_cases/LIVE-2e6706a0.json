@@ -12,5 +12,1566 @@
   "reasoning_trace": "Third independent injection of this fault type. Witness monitor: validation-enrichment DOWN then RECOVERED, generated independently. Traced 6 payments in the window. All show the well-established pattern for this fault type: gateway PAYMENT_SUBMITTED, audit, fraud-scoring (independent of the sequential chain), audit -- and then nothing further. None show PAYMENT_VALIDATED. Third consecutive clean replication of the same evidentiary shape (LIVE-c714ec37, LIVE-50580610, now this one). Conclusion reached from evidence alone, before reading the injector's own log: validation-enrichment.",
   "blind_conclusion": "validation-enrichment",
   "confirmed": true,
-  "confirmation_basis": "Blind conclusion (validation-enrichment) matches the injector's own ground-truth log exactly. Third independent replication of this fault type -- consistent, stable evidentiary pattern across all three runs."
+  "confirmation_basis": "Blind conclusion (validation-enrichment) matches the injector's own ground-truth log exactly. Third independent replication of this fault type -- consistent, stable evidentiary pattern across all three runs.",
+  "raw_events": [
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:09.222699465Z",
+      "message": "PAYMENT_SUBMITTED paymentId=1844b110-868e-45c1-975b-316cab4934ae debtorCountry=NL creditorCountry=SY amount=1423945.59 currency=USD channel=FEDWIRE",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:09.222631880Z",
+      "message": "Outbox enqueued paymentId=1844b110-868e-45c1-975b-316cab4934ae",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:09.222344073Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/USD/NL paymentId=1844b110-868e-45c1-975b-316cab4934ae correlationId=da478d4d-f69e-4ef3-9234-bf498452a5f0",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:09.353725869Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=1844b110-868e-45c1-975b-316cab4934ae blockHeight=1 eventType=clearflow.payment.initiated hash=1fb426e1752b030a",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "eventType": "PAYMENT_REJECTED",
+      "level": "INFO",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:09.356907500Z",
+      "message": "PAYMENT_REJECTED paymentId=1844b110-868e-45c1-975b-316cab4934ae reason=EMBARGOED_COUNTRY",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:09.359077851Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=1844b110-868e-45c1-975b-316cab4934ae blockHeight=2 eventType=clearflow.payment.rejected hash=76446d87e2e45940",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:09.560262696Z",
+      "message": "Outbox enqueued paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:09.560318193Z",
+      "message": "PAYMENT_SUBMITTED paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 debtorCountry=FR creditorCountry=CH amount=1348.86 currency=GBP channel=SWIFT",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:09.560002318Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/GBP/FR paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 correlationId=12ff4c19-31ba-4671-82ac-83da0511ac88",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:09.755700225Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 blockHeight=1 eventType=clearflow.payment.initiated hash=032654a50de4fc1d",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "WARN",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:09.756605663Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.8700 riskBand=CRITICAL paymentId=1844b110-868e-45c1-975b-316cab4934ae durationMs=403",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "WARN",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:09.756605663Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.8700 riskBand=CRITICAL paymentId=1844b110-868e-45c1-975b-316cab4934ae durationMs=403",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:09.757029033Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=1844b110-868e-45c1-975b-316cab4934ae riskBand=CRITICAL score=0.8700",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:09.757029033Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=1844b110-868e-45c1-975b-316cab4934ae riskBand=CRITICAL score=0.8700",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "service": "unknown",
+      "@timestamp": "2026-09-02T01:34:09.758459769Z",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "service": "unknown",
+      "@timestamp": "2026-09-02T01:34:09.758254263Z",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:09.759427104Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=1844b110-868e-45c1-975b-316cab4934ae blockHeight=3 eventType=clearflow.payment.blocked hash=d9eb01fdac68d183",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "eventType": "PAYMENT_VALIDATED",
+      "level": "INFO",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:09.759160880Z",
+      "message": "PAYMENT_VALIDATED paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 debtorCountry=FR creditorCountry=CH amount=1348.86 currency=GBP",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:09.761512950Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=1844b110-868e-45c1-975b-316cab4934ae blockHeight=4 eventType=clearflow.fraud.evaluated hash=92a424e80905bfa6",
+      "paymentId": "1844b110-868e-45c1-975b-316cab4934ae"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:09.761318703Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 blockHeight=2 eventType=clearflow.payment.validated hash=d04aca02190920ce",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "eventType": "AML_SCREENING_COMPLETE",
+      "level": "INFO",
+      "service": "aml-compliance",
+      "@timestamp": "2026-09-02T01:34:09.775706399Z",
+      "message": "AML_SCREENING_COMPLETE paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 amlState=CLEAR",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0",
+      "eventType": "AML_SCREENING_COMPLETE",
+      "level": "INFO",
+      "service": "aml-compliance",
+      "@timestamp": "2026-09-02T01:34:09.775485481Z",
+      "message": "AML_SCREENING_COMPLETE paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 result=CLEAR listsChecked=SDN+PEP durationMs=15"
+    },
+    {
+      "eventType": "RAIL_SELECTED",
+      "level": "INFO",
+      "service": "routing-execution",
+      "@timestamp": "2026-09-02T01:34:09.777825771Z",
+      "message": "RAIL_SELECTED rail=SWIFT_MT103 expectedSettlementTime=P3D",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "level": "INFO",
+      "service": "routing-execution",
+      "@timestamp": "2026-09-02T01:34:09.777881710Z",
+      "message": "LIQUIDITY_CHECK_START currency=GBP amount=1348.86 rail=SWIFT_MT103",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "level": "INFO",
+      "service": "routing-execution",
+      "@timestamp": "2026-09-02T01:34:09.777641055Z",
+      "message": "RAIL_SELECTION_START amount=1348.86 currency=GBP FR\u2192CH channel=SWIFT_MT103",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:09.778064522Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 blockHeight=3 eventType=clearflow.aml.sanctions.clear hash=fae538e98f0b94d2",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "level": "INFO",
+      "service": "routing-execution",
+      "@timestamp": "2026-09-02T01:34:09.778985844Z",
+      "message": "LIQUIDITY_RESERVED reservationId=6f9edbce-ea6d-4a52-8e65-08412247d96d accountId=NOSTRO-GBP-001 remainingBalance=499999998651.14",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "eventType": "PAYMENT_ROUTED",
+      "level": "INFO",
+      "service": "routing-execution",
+      "@timestamp": "2026-09-02T01:34:09.779469316Z",
+      "message": "PAYMENT_ROUTED paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 rail=SWIFT_MT103 currency=GBP amount=1348.86",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:09.781605050Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 blockHeight=4 eventType=clearflow.payment.routed hash=7da82e625b137ceb",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "eventType": "SETTLEMENT_COMPLETE",
+      "level": "INFO",
+      "service": "settlement",
+      "@timestamp": "2026-09-02T01:34:09.784454229Z",
+      "message": "SETTLEMENT_COMPLETE paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 rail=SWIFT_MT103 amount=1348.86 currency=GBP settlementRef=dd69fb86-0596-460d-a5b8-a199c1b8eb5b durationMs=3",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:09.787635414Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 blockHeight=5 eventType=clearflow.analytics.settlement hash=9f7c59d31da6aeed",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "level": "WARN",
+      "service": "settlement",
+      "@timestamp": "2026-09-02T01:34:09.787383661Z",
+      "message": "Error when creating APACHE_HTTP_CLIENT, fall back to HTTP_URL_CONNECTION"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:09.789948319Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 blockHeight=6 eventType=clearflow.payment.settled hash=6be9feaf59c4acf4",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "level": "WARN",
+      "service": "settlement",
+      "@timestamp": "2026-09-02T01:34:09.803431012Z",
+      "message": "Error when creating APACHE_HTTP_CLIENT, fall back to HTTP_URL_CONNECTION"
+    },
+    {
+      "level": "WARN",
+      "service": "settlement",
+      "@timestamp": "2026-09-02T01:34:09.807510654Z",
+      "message": "Error when creating APACHE_HTTP_CLIENT, fall back to HTTP_URL_CONNECTION"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:10.158709273Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 riskBand=LOW score=0.0000",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:10.158436997Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0000 riskBand=LOW paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 durationMs=403",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:10.161111190Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=9b1218b3-8586-4bfc-9d77-db0cf577dfd0 blockHeight=7 eventType=clearflow.fraud.evaluated hash=3a4233143e98196a",
+      "paymentId": "9b1218b3-8586-4bfc-9d77-db0cf577dfd0"
+    },
+    {
+      "@timestamp": "2026-09-02T01:34:11.397820+00:00",
+      "service": "validation-enrichment",
+      "eventType": "HEALTH_CHECK_FAILED",
+      "message": "HEALTH_CHECK_FAILED service=validation-enrichment consecutiveFailures=1",
+      "level": "WARN"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:12.253484501Z",
+      "message": "PAYMENT_SUBMITTED paymentId=00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471 debtorCountry=GB creditorCountry=DE amount=9426.63 currency=USD channel=SWIFT",
+      "paymentId": "00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:12.253442545Z",
+      "message": "Outbox enqueued paymentId=00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471",
+      "paymentId": "00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:12.253257437Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/USD/GB paymentId=00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471 correlationId=50d55fd6-beb0-472b-ab42-74cccc250994",
+      "paymentId": "00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:12.359282304Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471 blockHeight=1 eventType=clearflow.payment.initiated hash=0095e2a5ba2879b7",
+      "paymentId": "00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:12.760888643Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.1200 riskBand=LOW paymentId=00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471 durationMs=402",
+      "paymentId": "00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:12.761109054Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471 riskBand=LOW score=0.1200",
+      "paymentId": "00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:12.762328639Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471 blockHeight=2 eventType=clearflow.fraud.evaluated hash=22736d0414d447dd",
+      "paymentId": "00a1dbbc-6b3a-4b67-a0c2-bc4c5477e471"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:16.283804438Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/CAD/IT paymentId=fbded9aa-afa5-4dad-ba24-6bb2eeef936d correlationId=84f3a96b-4ccd-455d-8e88-4237ceab4470",
+      "paymentId": "fbded9aa-afa5-4dad-ba24-6bb2eeef936d"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:16.283966805Z",
+      "message": "Outbox enqueued paymentId=fbded9aa-afa5-4dad-ba24-6bb2eeef936d",
+      "paymentId": "fbded9aa-afa5-4dad-ba24-6bb2eeef936d"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:16.284030927Z",
+      "message": "PAYMENT_SUBMITTED paymentId=fbded9aa-afa5-4dad-ba24-6bb2eeef936d debtorCountry=IT creditorCountry=NL amount=10829.56 currency=CAD channel=SWIFT",
+      "paymentId": "fbded9aa-afa5-4dad-ba24-6bb2eeef936d"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:16.365193862Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=fbded9aa-afa5-4dad-ba24-6bb2eeef936d blockHeight=1 eventType=clearflow.payment.initiated hash=a1528c090b11dbec",
+      "paymentId": "fbded9aa-afa5-4dad-ba24-6bb2eeef936d"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:16.620353086Z",
+      "message": "PAYMENT_SUBMITTED paymentId=82ac5b28-7850-45e1-b4a9-dac48be3dca5 debtorCountry=NL creditorCountry=FR amount=11416.5 currency=EUR channel=SWIFT",
+      "paymentId": "82ac5b28-7850-45e1-b4a9-dac48be3dca5"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:16.620104486Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/EUR/NL paymentId=82ac5b28-7850-45e1-b4a9-dac48be3dca5 correlationId=115ee9b5-1d94-408c-9b85-1baa163f1930",
+      "paymentId": "82ac5b28-7850-45e1-b4a9-dac48be3dca5"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:16.620303516Z",
+      "message": "Outbox enqueued paymentId=82ac5b28-7850-45e1-b4a9-dac48be3dca5",
+      "paymentId": "82ac5b28-7850-45e1-b4a9-dac48be3dca5"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:16.765977700Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=82ac5b28-7850-45e1-b4a9-dac48be3dca5 blockHeight=1 eventType=clearflow.payment.initiated hash=c821b37a1be013ae",
+      "paymentId": "82ac5b28-7850-45e1-b4a9-dac48be3dca5"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:16.766765940Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=fbded9aa-afa5-4dad-ba24-6bb2eeef936d riskBand=LOW score=0.0700",
+      "paymentId": "fbded9aa-afa5-4dad-ba24-6bb2eeef936d"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:16.766537016Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0700 riskBand=LOW paymentId=fbded9aa-afa5-4dad-ba24-6bb2eeef936d durationMs=402",
+      "paymentId": "fbded9aa-afa5-4dad-ba24-6bb2eeef936d"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:16.767974509Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=fbded9aa-afa5-4dad-ba24-6bb2eeef936d blockHeight=2 eventType=clearflow.fraud.evaluated hash=d0a26ac0cfc818e9",
+      "paymentId": "fbded9aa-afa5-4dad-ba24-6bb2eeef936d"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:17.167845023Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0200 riskBand=LOW paymentId=82ac5b28-7850-45e1-b4a9-dac48be3dca5 durationMs=402",
+      "paymentId": "82ac5b28-7850-45e1-b4a9-dac48be3dca5"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:17.168118495Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=82ac5b28-7850-45e1-b4a9-dac48be3dca5 riskBand=LOW score=0.0200",
+      "paymentId": "82ac5b28-7850-45e1-b4a9-dac48be3dca5"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:17.169472757Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=82ac5b28-7850-45e1-b4a9-dac48be3dca5 blockHeight=2 eventType=clearflow.fraud.evaluated hash=3ec0a493e8621f1b",
+      "paymentId": "82ac5b28-7850-45e1-b4a9-dac48be3dca5"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:17.965488881Z",
+      "message": "PAYMENT_SUBMITTED paymentId=8694af9e-acf4-4d7e-aa6d-d37f47e9281b debtorCountry=GB creditorCountry=NL amount=15000 currency=EUR channel=SWIFT",
+      "paymentId": "8694af9e-acf4-4d7e-aa6d-d37f47e9281b"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:17.965400472Z",
+      "message": "Outbox enqueued paymentId=8694af9e-acf4-4d7e-aa6d-d37f47e9281b",
+      "paymentId": "8694af9e-acf4-4d7e-aa6d-d37f47e9281b"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:17.965124096Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/EUR/GB paymentId=8694af9e-acf4-4d7e-aa6d-d37f47e9281b correlationId=36c9ce40-51da-4bd3-babb-e56ca3daafaf",
+      "paymentId": "8694af9e-acf4-4d7e-aa6d-d37f47e9281b"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:17.969442623Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=8694af9e-acf4-4d7e-aa6d-d37f47e9281b blockHeight=1 eventType=clearflow.payment.initiated hash=01e40124284ffdc6",
+      "paymentId": "8694af9e-acf4-4d7e-aa6d-d37f47e9281b"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:18.302939951Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/USD/ES paymentId=5fb0d3f9-d867-4fe2-b1f5-ed9f17840205 correlationId=74e9d862-e5c3-48f0-acf6-bb24ab5594be",
+      "paymentId": "5fb0d3f9-d867-4fe2-b1f5-ed9f17840205"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:18.303328593Z",
+      "message": "PAYMENT_SUBMITTED paymentId=5fb0d3f9-d867-4fe2-b1f5-ed9f17840205 debtorCountry=ES creditorCountry=AT amount=443.89 currency=USD channel=SEPA",
+      "paymentId": "5fb0d3f9-d867-4fe2-b1f5-ed9f17840205"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:18.303261758Z",
+      "message": "Outbox enqueued paymentId=5fb0d3f9-d867-4fe2-b1f5-ed9f17840205",
+      "paymentId": "5fb0d3f9-d867-4fe2-b1f5-ed9f17840205"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:18.370169263Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=5fb0d3f9-d867-4fe2-b1f5-ed9f17840205 blockHeight=1 eventType=clearflow.payment.initiated hash=c26fbfe8504cebf8",
+      "paymentId": "5fb0d3f9-d867-4fe2-b1f5-ed9f17840205"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:18.371542183Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0200 riskBand=LOW paymentId=8694af9e-acf4-4d7e-aa6d-d37f47e9281b durationMs=403",
+      "paymentId": "8694af9e-acf4-4d7e-aa6d-d37f47e9281b"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:18.371775019Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=8694af9e-acf4-4d7e-aa6d-d37f47e9281b riskBand=LOW score=0.0200",
+      "paymentId": "8694af9e-acf4-4d7e-aa6d-d37f47e9281b"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:18.372933174Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=8694af9e-acf4-4d7e-aa6d-d37f47e9281b blockHeight=2 eventType=clearflow.fraud.evaluated hash=45eb74617a08d1b1",
+      "paymentId": "8694af9e-acf4-4d7e-aa6d-d37f47e9281b"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:18.772191979Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0500 riskBand=LOW paymentId=5fb0d3f9-d867-4fe2-b1f5-ed9f17840205 durationMs=402",
+      "paymentId": "5fb0d3f9-d867-4fe2-b1f5-ed9f17840205"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:18.772363245Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=5fb0d3f9-d867-4fe2-b1f5-ed9f17840205 riskBand=LOW score=0.0500",
+      "paymentId": "5fb0d3f9-d867-4fe2-b1f5-ed9f17840205"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:18.773561056Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=5fb0d3f9-d867-4fe2-b1f5-ed9f17840205 blockHeight=2 eventType=clearflow.fraud.evaluated hash=4e8f3e00e66a6413",
+      "paymentId": "5fb0d3f9-d867-4fe2-b1f5-ed9f17840205"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:22.335494809Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/EUR/ES paymentId=a16bd0e9-599b-4dac-8122-0d524925c787 correlationId=5d4571a1-c770-492d-9edb-bf3fcb1ffdf2",
+      "paymentId": "a16bd0e9-599b-4dac-8122-0d524925c787"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:22.335812877Z",
+      "message": "Outbox enqueued paymentId=a16bd0e9-599b-4dac-8122-0d524925c787",
+      "paymentId": "a16bd0e9-599b-4dac-8122-0d524925c787"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:22.335874500Z",
+      "message": "PAYMENT_SUBMITTED paymentId=a16bd0e9-599b-4dac-8122-0d524925c787 debtorCountry=ES creditorCountry=NL amount=6102.8 currency=EUR channel=SWIFT",
+      "paymentId": "a16bd0e9-599b-4dac-8122-0d524925c787"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:22.376325842Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=a16bd0e9-599b-4dac-8122-0d524925c787 blockHeight=1 eventType=clearflow.payment.initiated hash=c68a63c39c48e4a0",
+      "paymentId": "a16bd0e9-599b-4dac-8122-0d524925c787"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:22.778262901Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=a16bd0e9-599b-4dac-8122-0d524925c787 riskBand=LOW score=0.0500",
+      "paymentId": "a16bd0e9-599b-4dac-8122-0d524925c787"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:22.778087033Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0500 riskBand=LOW paymentId=a16bd0e9-599b-4dac-8122-0d524925c787 durationMs=403",
+      "paymentId": "a16bd0e9-599b-4dac-8122-0d524925c787"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:22.779646765Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=a16bd0e9-599b-4dac-8122-0d524925c787 blockHeight=2 eventType=clearflow.fraud.evaluated hash=f94fcc0c1844830f",
+      "paymentId": "a16bd0e9-599b-4dac-8122-0d524925c787"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:23.008331958Z",
+      "message": "Outbox enqueued paymentId=766956f3-b825-40c8-9f97-e5bba5e4642d",
+      "paymentId": "766956f3-b825-40c8-9f97-e5bba5e4642d"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:23.008121169Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/USD/ES paymentId=766956f3-b825-40c8-9f97-e5bba5e4642d correlationId=1d613c91-ed15-412d-a124-c6a9ddc59c2f",
+      "paymentId": "766956f3-b825-40c8-9f97-e5bba5e4642d"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:23.008379817Z",
+      "message": "PAYMENT_SUBMITTED paymentId=766956f3-b825-40c8-9f97-e5bba5e4642d debtorCountry=ES creditorCountry=DE amount=9221.09 currency=USD channel=FEDWIRE",
+      "paymentId": "766956f3-b825-40c8-9f97-e5bba5e4642d"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:23.177918405Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=766956f3-b825-40c8-9f97-e5bba5e4642d blockHeight=1 eventType=clearflow.payment.initiated hash=c0b26543ad3be236",
+      "paymentId": "766956f3-b825-40c8-9f97-e5bba5e4642d"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:23.580346209Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.2300 riskBand=MEDIUM paymentId=766956f3-b825-40c8-9f97-e5bba5e4642d durationMs=403",
+      "paymentId": "766956f3-b825-40c8-9f97-e5bba5e4642d"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:23.580508123Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=766956f3-b825-40c8-9f97-e5bba5e4642d riskBand=MEDIUM score=0.2300",
+      "paymentId": "766956f3-b825-40c8-9f97-e5bba5e4642d"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:23.581888635Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=766956f3-b825-40c8-9f97-e5bba5e4642d blockHeight=2 eventType=clearflow.fraud.evaluated hash=86f6956df22e6789",
+      "paymentId": "766956f3-b825-40c8-9f97-e5bba5e4642d"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:26.367725089Z",
+      "message": "PAYMENT_SUBMITTED paymentId=af36904f-a5c2-42aa-9479-2520d550a893 debtorCountry=NL creditorCountry=FR amount=1538.07 currency=EUR channel=SEPA",
+      "paymentId": "af36904f-a5c2-42aa-9479-2520d550a893"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:26.367389250Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/EUR/NL paymentId=af36904f-a5c2-42aa-9479-2520d550a893 correlationId=f9d22508-b729-4bc5-85be-763b1e480cad",
+      "paymentId": "af36904f-a5c2-42aa-9479-2520d550a893"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:26.367660872Z",
+      "message": "Outbox enqueued paymentId=af36904f-a5c2-42aa-9479-2520d550a893",
+      "paymentId": "af36904f-a5c2-42aa-9479-2520d550a893"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:26.382636124Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=af36904f-a5c2-42aa-9479-2520d550a893 blockHeight=1 eventType=clearflow.payment.initiated hash=f93bb6476d285eef",
+      "paymentId": "af36904f-a5c2-42aa-9479-2520d550a893"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:26.382935582Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=af36904f-a5c2-42aa-9479-2520d550a893 riskBand=LOW score=0.0000",
+      "paymentId": "af36904f-a5c2-42aa-9479-2520d550a893"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:26.382734177Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0000 riskBand=LOW paymentId=af36904f-a5c2-42aa-9479-2520d550a893 durationMs=0",
+      "paymentId": "af36904f-a5c2-42aa-9479-2520d550a893"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:26.383949343Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=af36904f-a5c2-42aa-9479-2520d550a893 blockHeight=2 eventType=clearflow.fraud.evaluated hash=daca3ac8c83d7957",
+      "paymentId": "af36904f-a5c2-42aa-9479-2520d550a893"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:26.703737451Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/EUR/GB paymentId=bda1bd75-9e23-4520-b026-1645e8297fee correlationId=82585f46-7dd9-4710-a0c4-9fba57e688a1",
+      "paymentId": "bda1bd75-9e23-4520-b026-1645e8297fee"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:26.703986893Z",
+      "message": "Outbox enqueued paymentId=bda1bd75-9e23-4520-b026-1645e8297fee",
+      "paymentId": "bda1bd75-9e23-4520-b026-1645e8297fee"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:26.704026782Z",
+      "message": "PAYMENT_SUBMITTED paymentId=bda1bd75-9e23-4520-b026-1645e8297fee debtorCountry=GB creditorCountry=GB amount=642.53 currency=EUR channel=FEDWIRE",
+      "paymentId": "bda1bd75-9e23-4520-b026-1645e8297fee"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:26.783592166Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=bda1bd75-9e23-4520-b026-1645e8297fee blockHeight=1 eventType=clearflow.payment.initiated hash=241d4f089371c72c",
+      "paymentId": "bda1bd75-9e23-4520-b026-1645e8297fee"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:26.783685855Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0000 riskBand=LOW paymentId=bda1bd75-9e23-4520-b026-1645e8297fee durationMs=0",
+      "paymentId": "bda1bd75-9e23-4520-b026-1645e8297fee"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:26.783884185Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=bda1bd75-9e23-4520-b026-1645e8297fee riskBand=LOW score=0.0000",
+      "paymentId": "bda1bd75-9e23-4520-b026-1645e8297fee"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:26.784984576Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=bda1bd75-9e23-4520-b026-1645e8297fee blockHeight=2 eventType=clearflow.fraud.evaluated hash=a328e9dd2425fec7",
+      "paymentId": "bda1bd75-9e23-4520-b026-1645e8297fee"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:27.040170157Z",
+      "message": "Outbox enqueued paymentId=d5e3049d-b32e-43fe-b716-c18466247c26",
+      "paymentId": "d5e3049d-b32e-43fe-b716-c18466247c26"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:27.040205083Z",
+      "message": "PAYMENT_SUBMITTED paymentId=d5e3049d-b32e-43fe-b716-c18466247c26 debtorCountry=GB creditorCountry=IT amount=9072.91 currency=USD channel=SWIFT",
+      "paymentId": "d5e3049d-b32e-43fe-b716-c18466247c26"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:27.040010096Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/USD/GB paymentId=d5e3049d-b32e-43fe-b716-c18466247c26 correlationId=8473dcc2-e92a-4c30-a02a-6eb7580637ac",
+      "paymentId": "d5e3049d-b32e-43fe-b716-c18466247c26"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:27.185007278Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=d5e3049d-b32e-43fe-b716-c18466247c26 blockHeight=1 eventType=clearflow.payment.initiated hash=2b7c993ffa2382c4",
+      "paymentId": "d5e3049d-b32e-43fe-b716-c18466247c26"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:27.185247629Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=d5e3049d-b32e-43fe-b716-c18466247c26 riskBand=LOW score=0.1700",
+      "paymentId": "d5e3049d-b32e-43fe-b716-c18466247c26"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:27.185045602Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.1700 riskBand=LOW paymentId=d5e3049d-b32e-43fe-b716-c18466247c26 durationMs=1",
+      "paymentId": "d5e3049d-b32e-43fe-b716-c18466247c26"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:27.186367190Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=d5e3049d-b32e-43fe-b716-c18466247c26 blockHeight=2 eventType=clearflow.fraud.evaluated hash=df277b624fa0558b",
+      "paymentId": "d5e3049d-b32e-43fe-b716-c18466247c26"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:28.385781340Z",
+      "message": "PAYMENT_SUBMITTED paymentId=a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0 debtorCountry=IT creditorCountry=NL amount=3106.88 currency=EUR channel=SEPA",
+      "paymentId": "a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:28.385729908Z",
+      "message": "Outbox enqueued paymentId=a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0",
+      "paymentId": "a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:28.385497988Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/EUR/IT paymentId=a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0 correlationId=bff0cf70-4228-4fac-ae06-941fc004faf1",
+      "paymentId": "a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:28.587239878Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0 blockHeight=1 eventType=clearflow.payment.initiated hash=7ad8998b8d3a0dc5",
+      "paymentId": "a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:28.587528022Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0 riskBand=LOW score=0.0500",
+      "paymentId": "a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:28.587336634Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0500 riskBand=LOW paymentId=a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0 durationMs=1",
+      "paymentId": "a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:28.588600625Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0 blockHeight=2 eventType=clearflow.fraud.evaluated hash=8024f12b4c6d192c",
+      "paymentId": "a0a95cbf-d1c6-42b5-82a5-8ce734a2c6a0"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:28.721606420Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/EUR/GB paymentId=54520ce7-9a5a-48ca-b157-bbf8df746c93 correlationId=f94da174-2fea-4c99-8513-21699df1e088",
+      "paymentId": "54520ce7-9a5a-48ca-b157-bbf8df746c93"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:28.721838399Z",
+      "message": "PAYMENT_SUBMITTED paymentId=54520ce7-9a5a-48ca-b157-bbf8df746c93 debtorCountry=GB creditorCountry=NL amount=7681.31 currency=EUR channel=SEPA",
+      "paymentId": "54520ce7-9a5a-48ca-b157-bbf8df746c93"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:28.721790346Z",
+      "message": "Outbox enqueued paymentId=54520ce7-9a5a-48ca-b157-bbf8df746c93",
+      "paymentId": "54520ce7-9a5a-48ca-b157-bbf8df746c93"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:28.788217331Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=54520ce7-9a5a-48ca-b157-bbf8df746c93 blockHeight=1 eventType=clearflow.payment.initiated hash=8b9878df4ced6207",
+      "paymentId": "54520ce7-9a5a-48ca-b157-bbf8df746c93"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:28.788461814Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=54520ce7-9a5a-48ca-b157-bbf8df746c93 riskBand=LOW score=0.0000",
+      "paymentId": "54520ce7-9a5a-48ca-b157-bbf8df746c93"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:28.788253582Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0000 riskBand=LOW paymentId=54520ce7-9a5a-48ca-b157-bbf8df746c93 durationMs=1",
+      "paymentId": "54520ce7-9a5a-48ca-b157-bbf8df746c93"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:28.789693529Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=54520ce7-9a5a-48ca-b157-bbf8df746c93 blockHeight=2 eventType=clearflow.fraud.evaluated hash=eca93f603f7cab7d",
+      "paymentId": "54520ce7-9a5a-48ca-b157-bbf8df746c93"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:30.068628826Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/USD/DE paymentId=7ee29d9f-019b-4466-8b3e-2354471ca898 correlationId=2c13de33-bed5-4840-b46d-0d231c7b56cc",
+      "paymentId": "7ee29d9f-019b-4466-8b3e-2354471ca898"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:30.068934803Z",
+      "message": "PAYMENT_SUBMITTED paymentId=7ee29d9f-019b-4466-8b3e-2354471ca898 debtorCountry=DE creditorCountry=DE amount=465.41 currency=USD channel=SWIFT",
+      "paymentId": "7ee29d9f-019b-4466-8b3e-2354471ca898"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:30.068881394Z",
+      "message": "Outbox enqueued paymentId=7ee29d9f-019b-4466-8b3e-2354471ca898",
+      "paymentId": "7ee29d9f-019b-4466-8b3e-2354471ca898"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:30.191179941Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=7ee29d9f-019b-4466-8b3e-2354471ca898 blockHeight=1 eventType=clearflow.payment.initiated hash=217dfdd25916f5a3",
+      "paymentId": "7ee29d9f-019b-4466-8b3e-2354471ca898"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:30.191874719Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=7ee29d9f-019b-4466-8b3e-2354471ca898 riskBand=LOW score=0.0000",
+      "paymentId": "7ee29d9f-019b-4466-8b3e-2354471ca898"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:30.191573780Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0000 riskBand=LOW paymentId=7ee29d9f-019b-4466-8b3e-2354471ca898 durationMs=1",
+      "paymentId": "7ee29d9f-019b-4466-8b3e-2354471ca898"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:30.193339889Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=7ee29d9f-019b-4466-8b3e-2354471ca898 blockHeight=2 eventType=clearflow.fraud.evaluated hash=8336cef2b067d612",
+      "paymentId": "7ee29d9f-019b-4466-8b3e-2354471ca898"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:32.758397789Z",
+      "message": "PAYMENT_SUBMITTED paymentId=ee36e267-7a7b-443d-8edf-62be09c7e779 debtorCountry=FR creditorCountry=SE amount=1756.35 currency=EUR channel=SEPA",
+      "paymentId": "ee36e267-7a7b-443d-8edf-62be09c7e779"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:32.758039159Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/EUR/FR paymentId=ee36e267-7a7b-443d-8edf-62be09c7e779 correlationId=81c37828-b827-481d-831c-9931e2f6892e",
+      "paymentId": "ee36e267-7a7b-443d-8edf-62be09c7e779"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:32.758320366Z",
+      "message": "Outbox enqueued paymentId=ee36e267-7a7b-443d-8edf-62be09c7e779",
+      "paymentId": "ee36e267-7a7b-443d-8edf-62be09c7e779"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:32.796125805Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=ee36e267-7a7b-443d-8edf-62be09c7e779 blockHeight=1 eventType=clearflow.payment.initiated hash=f1fd993aedf05f04",
+      "paymentId": "ee36e267-7a7b-443d-8edf-62be09c7e779"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:32.796900152Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=ee36e267-7a7b-443d-8edf-62be09c7e779 riskBand=LOW score=0.0000",
+      "paymentId": "ee36e267-7a7b-443d-8edf-62be09c7e779"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:32.796505472Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0000 riskBand=LOW paymentId=ee36e267-7a7b-443d-8edf-62be09c7e779 durationMs=1",
+      "paymentId": "ee36e267-7a7b-443d-8edf-62be09c7e779"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:32.798640310Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=ee36e267-7a7b-443d-8edf-62be09c7e779 blockHeight=2 eventType=clearflow.fraud.evaluated hash=2c7f496f45cd5987",
+      "paymentId": "ee36e267-7a7b-443d-8edf-62be09c7e779"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:33.431898592Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/GBP/CH paymentId=c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28 correlationId=39eecab1-d53a-4fd8-8392-751508d04d9d",
+      "paymentId": "c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:33.432138344Z",
+      "message": "Outbox enqueued paymentId=c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28",
+      "paymentId": "c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:33.432200875Z",
+      "message": "PAYMENT_SUBMITTED paymentId=c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28 debtorCountry=CH creditorCountry=AT amount=9260.62 currency=GBP channel=FEDWIRE",
+      "paymentId": "c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:33.598502644Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28 blockHeight=1 eventType=clearflow.payment.initiated hash=6683a9b9962bacf1",
+      "paymentId": "c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:33.598802766Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28 riskBand=LOW score=0.1800",
+      "paymentId": "c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:33.598507394Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.1800 riskBand=LOW paymentId=c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28 durationMs=1",
+      "paymentId": "c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:33.600721311Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28 blockHeight=2 eventType=clearflow.fraud.evaluated hash=fda31b76eb3c39df",
+      "paymentId": "c49e0c96-4c01-4ac4-84a3-6fe5f98ccf28"
+    },
+    {
+      "level": "INFO",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:33.684953035Z",
+      "message": "Starting ValidationEnrichmentApplication using Java 21.0.12 with PID 412360 (/home/admin-/Desktop/EDI6/clearflow/validation-enrichment/target/validation-enrichment-1.0.0.jar started by admin- in /home/admin-/Desktop/EDI6/clearflow)"
+    },
+    {
+      "level": "INFO",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:33.703242358Z",
+      "message": "The following 1 profile is active: \"dev\""
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:34.780179049Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/USD/IT paymentId=6b6b97c4-233c-4101-81fe-c0384004ffe9 correlationId=e5cf9bb5-cd36-4e60-aa0b-9dfe6e8169d4",
+      "paymentId": "6b6b97c4-233c-4101-81fe-c0384004ffe9"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:34.780417719Z",
+      "message": "Outbox enqueued paymentId=6b6b97c4-233c-4101-81fe-c0384004ffe9",
+      "paymentId": "6b6b97c4-233c-4101-81fe-c0384004ffe9"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:34.780477878Z",
+      "message": "PAYMENT_SUBMITTED paymentId=6b6b97c4-233c-4101-81fe-c0384004ffe9 debtorCountry=IT creditorCountry=FR amount=3785.03 currency=USD channel=SEPA",
+      "paymentId": "6b6b97c4-233c-4101-81fe-c0384004ffe9"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:34.801089226Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=6b6b97c4-233c-4101-81fe-c0384004ffe9 blockHeight=1 eventType=clearflow.payment.initiated hash=336d5367419817e7",
+      "paymentId": "6b6b97c4-233c-4101-81fe-c0384004ffe9"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:34.801708335Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=6b6b97c4-233c-4101-81fe-c0384004ffe9 riskBand=LOW score=0.0500",
+      "paymentId": "6b6b97c4-233c-4101-81fe-c0384004ffe9"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:34.801410681Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0500 riskBand=LOW paymentId=6b6b97c4-233c-4101-81fe-c0384004ffe9 durationMs=1",
+      "paymentId": "6b6b97c4-233c-4101-81fe-c0384004ffe9"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:34.803327067Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=6b6b97c4-233c-4101-81fe-c0384004ffe9 blockHeight=2 eventType=clearflow.fraud.evaluated hash=df83a84a08e59ca3",
+      "paymentId": "6b6b97c4-233c-4101-81fe-c0384004ffe9"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:35.455798609Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/EUR/DE paymentId=152dcf05-4846-4df5-b856-5046f2df5881 correlationId=13d75a3e-0319-4c4c-8592-19192b476e5a",
+      "paymentId": "152dcf05-4846-4df5-b856-5046f2df5881"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:35.456287287Z",
+      "message": "PAYMENT_SUBMITTED paymentId=152dcf05-4846-4df5-b856-5046f2df5881 debtorCountry=DE creditorCountry=IQ amount=1897528.35 currency=EUR channel=SEPA",
+      "paymentId": "152dcf05-4846-4df5-b856-5046f2df5881"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:35.456202450Z",
+      "message": "Outbox enqueued paymentId=152dcf05-4846-4df5-b856-5046f2df5881",
+      "paymentId": "152dcf05-4846-4df5-b856-5046f2df5881"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:35.604459316Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=152dcf05-4846-4df5-b856-5046f2df5881 blockHeight=1 eventType=clearflow.payment.initiated hash=a363b039f9f51ae6",
+      "paymentId": "152dcf05-4846-4df5-b856-5046f2df5881"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "WARN",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:35.604704309Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.4700 riskBand=HIGH paymentId=152dcf05-4846-4df5-b856-5046f2df5881 durationMs=0",
+      "paymentId": "152dcf05-4846-4df5-b856-5046f2df5881"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:35.605050189Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=152dcf05-4846-4df5-b856-5046f2df5881 riskBand=HIGH score=0.4700",
+      "paymentId": "152dcf05-4846-4df5-b856-5046f2df5881"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:35.607150156Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=152dcf05-4846-4df5-b856-5046f2df5881 blockHeight=2 eventType=clearflow.fraud.evaluated hash=e74b73f9d316ef02",
+      "paymentId": "152dcf05-4846-4df5-b856-5046f2df5881"
+    },
+    {
+      "level": "INFO",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:37.333110511Z",
+      "message": "Initializing ProtocolHandler [\"http-nio-8082\"]"
+    },
+    {
+      "level": "INFO",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:37.335199404Z",
+      "message": "Starting service [Tomcat]"
+    },
+    {
+      "level": "INFO",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:37.335515799Z",
+      "message": "Starting Servlet engine: [Apache Tomcat/10.1.26]"
+    },
+    {
+      "level": "INFO",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:37.386550773Z",
+      "message": "Initializing Spring embedded WebApplicationContext"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:38.158788293Z",
+      "message": "PAYMENT_SUBMITTED paymentId=5f1f659e-2553-4c84-8272-d2ea705fe3da debtorCountry=NL creditorCountry=IT amount=5095.35 currency=CHF channel=SEPA",
+      "paymentId": "5f1f659e-2553-4c84-8272-d2ea705fe3da"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:38.158674038Z",
+      "message": "Outbox enqueued paymentId=5f1f659e-2553-4c84-8272-d2ea705fe3da",
+      "paymentId": "5f1f659e-2553-4c84-8272-d2ea705fe3da"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:38.158267510Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/CHF/NL paymentId=5f1f659e-2553-4c84-8272-d2ea705fe3da correlationId=a2403e9a-303e-4e55-adba-fef9366dac65",
+      "paymentId": "5f1f659e-2553-4c84-8272-d2ea705fe3da"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:38.210194549Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=5f1f659e-2553-4c84-8272-d2ea705fe3da blockHeight=1 eventType=clearflow.payment.initiated hash=5c461a65d1aa976f",
+      "paymentId": "5f1f659e-2553-4c84-8272-d2ea705fe3da"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:38.210438837Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0500 riskBand=LOW paymentId=5f1f659e-2553-4c84-8272-d2ea705fe3da durationMs=1",
+      "paymentId": "5f1f659e-2553-4c84-8272-d2ea705fe3da"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:38.210710366Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=5f1f659e-2553-4c84-8272-d2ea705fe3da riskBand=LOW score=0.0500",
+      "paymentId": "5f1f659e-2553-4c84-8272-d2ea705fe3da"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:38.212317376Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=5f1f659e-2553-4c84-8272-d2ea705fe3da blockHeight=2 eventType=clearflow.fraud.evaluated hash=8186939bbdc4a806",
+      "paymentId": "5f1f659e-2553-4c84-8272-d2ea705fe3da"
+    },
+    {
+      "level": "INFO",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:38.562108524Z",
+      "message": "HikariPool-1 - Starting..."
+    },
+    {
+      "level": "INFO",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:38.939620266Z",
+      "message": "HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:validation user=SA"
+    },
+    {
+      "level": "INFO",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:38.941197001Z",
+      "message": "HikariPool-1 - Start completed."
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:39.172856416Z",
+      "message": "Outbox enqueued paymentId=11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a",
+      "paymentId": "11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:39.172468600Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/CHF/DE paymentId=11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a correlationId=e48b6467-ca24-4468-843f-558435bb0725",
+      "paymentId": "11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:39.172956484Z",
+      "message": "PAYMENT_SUBMITTED paymentId=11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a debtorCountry=DE creditorCountry=GB amount=2543.47 currency=CHF channel=FEDWIRE",
+      "paymentId": "11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:39.214155487Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a blockHeight=1 eventType=clearflow.payment.initiated hash=5c105fb0e135d253",
+      "paymentId": "11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:39.214209209Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0600 riskBand=LOW paymentId=11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a durationMs=1",
+      "paymentId": "11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:39.214836451Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a riskBand=LOW score=0.0600",
+      "paymentId": "11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:39.217401121Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a blockHeight=2 eventType=clearflow.fraud.evaluated hash=28cc01fee1c1e5ef",
+      "paymentId": "11bfe8f9-4d87-4393-a0d1-f4f0ff6c0d3a"
+    },
+    {
+      "level": "WARN",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:39.742718241Z",
+      "message": "HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:40.855294997Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/EUR/DE paymentId=f839ce76-8a52-4944-a0ff-00602e95aad5 correlationId=a9161cee-b899-47a2-a5dc-f6dde484d0cc",
+      "paymentId": "f839ce76-8a52-4944-a0ff-00602e95aad5"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:40.855746824Z",
+      "message": "PAYMENT_SUBMITTED paymentId=f839ce76-8a52-4944-a0ff-00602e95aad5 debtorCountry=DE creditorCountry=AT amount=5337.21 currency=EUR channel=SEPA",
+      "paymentId": "f839ce76-8a52-4944-a0ff-00602e95aad5"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:40.855652993Z",
+      "message": "Outbox enqueued paymentId=f839ce76-8a52-4944-a0ff-00602e95aad5",
+      "paymentId": "f839ce76-8a52-4944-a0ff-00602e95aad5"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:41.018082545Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=f839ce76-8a52-4944-a0ff-00602e95aad5 blockHeight=1 eventType=clearflow.payment.initiated hash=eecfb02a4ba79635",
+      "paymentId": "f839ce76-8a52-4944-a0ff-00602e95aad5"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:41.018919464Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=f839ce76-8a52-4944-a0ff-00602e95aad5 riskBand=LOW score=0.0000",
+      "paymentId": "f839ce76-8a52-4944-a0ff-00602e95aad5"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:41.018511640Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.0000 riskBand=LOW paymentId=f839ce76-8a52-4944-a0ff-00602e95aad5 durationMs=1",
+      "paymentId": "f839ce76-8a52-4944-a0ff-00602e95aad5"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:41.021664287Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=f839ce76-8a52-4944-a0ff-00602e95aad5 blockHeight=2 eventType=clearflow.fraud.evaluated hash=98dc54e136cbe820",
+      "paymentId": "f839ce76-8a52-4944-a0ff-00602e95aad5"
+    },
+    {
+      "level": "INFO",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:41.177685480Z",
+      "message": "Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=43603545}"
+    },
+    {
+      "level": "INFO",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:41.179750464Z",
+      "message": "MongoClient with metadata {\"driver\": {\"name\": \"mongo-java-driver|sync|spring-boot\", \"version\": \"5.0.1\"}, \"os\": {\"type\": \"Linux\", \"name\": \"Linux\", \"architecture\": \"amd64\", \"version\": \"6.8.0-138-generic\"}, \"platform\": \"Java/Ubuntu/21.0.12+8-1-22.04-Ubuntu\"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@12a065c5], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@735a3e0d, com.mongodb.Jep395RecordCodecProvider@17ed6578, com.mongodb.KotlinCodecProvider@351623d]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@3dabf112], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:41.870675295Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/CHF/SE paymentId=838d46ea-ee77-4cd8-bef6-daaafbbe6e24 correlationId=22a6a2e8-4252-48cd-9b30-c32e72b8a0f0",
+      "paymentId": "838d46ea-ee77-4cd8-bef6-daaafbbe6e24"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:41.871173170Z",
+      "message": "PAYMENT_SUBMITTED paymentId=838d46ea-ee77-4cd8-bef6-daaafbbe6e24 debtorCountry=SE creditorCountry=AF amount=1035238.45 currency=CHF channel=SEPA",
+      "paymentId": "838d46ea-ee77-4cd8-bef6-daaafbbe6e24"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:41.871070646Z",
+      "message": "Outbox enqueued paymentId=838d46ea-ee77-4cd8-bef6-daaafbbe6e24",
+      "paymentId": "838d46ea-ee77-4cd8-bef6-daaafbbe6e24"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:42.020713899Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=838d46ea-ee77-4cd8-bef6-daaafbbe6e24 blockHeight=1 eventType=clearflow.payment.initiated hash=c6f60f89d430e0b8",
+      "paymentId": "838d46ea-ee77-4cd8-bef6-daaafbbe6e24"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "WARN",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:42.021001907Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.4700 riskBand=HIGH paymentId=838d46ea-ee77-4cd8-bef6-daaafbbe6e24 durationMs=0",
+      "paymentId": "838d46ea-ee77-4cd8-bef6-daaafbbe6e24"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:42.021429109Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=838d46ea-ee77-4cd8-bef6-daaafbbe6e24 riskBand=HIGH score=0.4700",
+      "paymentId": "838d46ea-ee77-4cd8-bef6-daaafbbe6e24"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:42.023338374Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=838d46ea-ee77-4cd8-bef6-daaafbbe6e24 blockHeight=2 eventType=clearflow.fraud.evaluated hash=0ae522e931a12a0d",
+      "paymentId": "838d46ea-ee77-4cd8-bef6-daaafbbe6e24"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:42.547819567Z",
+      "message": "solacePublish topic=clearflow/payments/initiated/USD/DE paymentId=68c17ba3-d499-418c-9e06-6ee0758c059e correlationId=a5c48e53-fcbb-40c3-b122-dc94d09a871e",
+      "paymentId": "68c17ba3-d499-418c-9e06-6ee0758c059e"
+    },
+    {
+      "eventType": "PAYMENT_SUBMITTED",
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:42.548111176Z",
+      "message": "PAYMENT_SUBMITTED paymentId=68c17ba3-d499-418c-9e06-6ee0758c059e debtorCountry=DE creditorCountry=NL amount=9427.36 currency=USD channel=SEPA",
+      "paymentId": "68c17ba3-d499-418c-9e06-6ee0758c059e"
+    },
+    {
+      "level": "INFO",
+      "service": "gateway",
+      "@timestamp": "2026-09-02T01:34:42.548058159Z",
+      "message": "Outbox enqueued paymentId=68c17ba3-d499-418c-9e06-6ee0758c059e",
+      "paymentId": "68c17ba3-d499-418c-9e06-6ee0758c059e"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:42.622845323Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=68c17ba3-d499-418c-9e06-6ee0758c059e blockHeight=1 eventType=clearflow.payment.initiated hash=781371547b9dc2ab",
+      "paymentId": "68c17ba3-d499-418c-9e06-6ee0758c059e"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:42.623000493Z",
+      "message": "FRAUD_SCORE_COMPUTED score=0.1200 riskBand=LOW paymentId=68c17ba3-d499-418c-9e06-6ee0758c059e durationMs=0",
+      "paymentId": "68c17ba3-d499-418c-9e06-6ee0758c059e"
+    },
+    {
+      "eventType": "FRAUD_SCORE_COMPUTED",
+      "level": "INFO",
+      "service": "fraud-scoring",
+      "@timestamp": "2026-09-02T01:34:42.623324389Z",
+      "message": "FRAUD_SCORE_COMPUTED paymentId=68c17ba3-d499-418c-9e06-6ee0758c059e riskBand=LOW score=0.1200",
+      "paymentId": "68c17ba3-d499-418c-9e06-6ee0758c059e"
+    },
+    {
+      "eventType": "AUDIT_CHAIN_APPENDED",
+      "level": "INFO",
+      "service": "audit",
+      "@timestamp": "2026-09-02T01:34:42.625034148Z",
+      "message": "AUDIT_CHAIN_APPENDED paymentId=68c17ba3-d499-418c-9e06-6ee0758c059e blockHeight=2 eventType=clearflow.fraud.evaluated hash=978c5bb7ea09f51d",
+      "paymentId": "68c17ba3-d499-418c-9e06-6ee0758c059e"
+    },
+    {
+      "level": "WARN",
+      "service": "validation-enrichment",
+      "@timestamp": "2026-09-02T01:34:43.395441544Z",
+      "message": "spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning"
+    }
+  ],
+  "raw_events_backfilled_at": "2026-09-02T10:21:38.591293+00:00"
 }

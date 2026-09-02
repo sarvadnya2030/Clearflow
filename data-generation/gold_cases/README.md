@@ -44,11 +44,27 @@ One JSON file per case in this directory, `{incident_id}.json`:
   "reasoning_trace": "full prose: what I read, what I ruled out, why",
   "blind_conclusion": "...",
   "confirmed": true/false,
-  "confirmation_basis": "what independent evidence proved it, not just 'injector said so'"
+  "confirmation_basis": "what independent evidence proved it, not just 'injector said so'",
+  "raw_events": [ ... the full ES event list from _pending_{id}.json's
+                  "events" field, copied in verbatim ... ]
 }
 ```
+
+**`raw_events` is required, not optional, as of 2026-09-02.** Copy the
+`_pending_{incident_id}.json` evidence bundle's full `events` array
+into the finalized gold case before deleting the pending file. Reason:
+this project already lost a paper's headline empirical result once to
+exactly the failure mode this prevents -- `metrics.csv`'s underlying
+evidence aged out of Elasticsearch silently, and nobody found out until
+someone tried to reproduce the number weeks later (see `BENCHMARK_GOAL.md`,
+2026-09-02 "metrics.csv" entry). A gold case with only curated excerpts
+and no raw evidence is exactly as vulnerable. `eval_baseline_rca.py`'s
+`get_events()` already prefers `raw_events` when present and only falls
+back to a live ES query for older cases that predate this convention --
+run `backfill_raw_evidence.py` after adding new cases without it.
 
 ## Status
 
 Started 2026-09-02, in progress. See `../gold_cases_manifest.csv` for the
-running index (one row per case, confirmed/pending/rejected).
+running index (one row per case, confirmed/pending/rejected). 39 cases as
+of 2026-09-02 (35 confirmed, 4 evidence-free), all backfilled with raw_events.
