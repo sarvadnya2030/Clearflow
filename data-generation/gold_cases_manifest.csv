@@ -52,3 +52,4 @@ LIVE-8adba291,MONGODB_OUTAGE,mongodb,true,witness-two-services-third-replication
 LIVE-ee039e30,CASSANDRA_OUTAGE,cassandra,true,witness-single-service-third-replication
 LIVE-471a5319,AML_HOLD,aml-compliance,true,direct-self-reported-log-clean-with-fixed-cap
 LIVE-b6970a15,CASSANDRA_OUTAGE,cassandra,true,witness-single-service-fourth-replication
+LIVE-2d244bc5,MONGODB_OUTAGE,mongodb,true,witness-two-services-fourth-replication
