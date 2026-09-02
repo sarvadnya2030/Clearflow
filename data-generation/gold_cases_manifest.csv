@@ -41,3 +41,4 @@ LIVE-fc3e530b,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,true,wi
 LIVE-32fb18f2,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,true,witness+funnel-stall
 LIVE-0d5964c1,REDIS_OUTAGE,redis,false,no-evidence-found-at-20s-duration-system-resilient
 LIVE-56d4a244,REDIS_OUTAGE,redis,false,no-evidence-replicated-at-60s-duration-real-resilience-finding
+LIVE-c15c694b,MONGODB_OUTAGE,mongodb,true,witness-two-services-same-connection-failure-signature

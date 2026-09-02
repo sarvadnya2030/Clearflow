@@ -287,7 +287,13 @@ def trigger_container_stop(root_service, family, token, gen: TrafficGenerator):
     # health status (the container has a HEALTHCHECK in docker-compose.yml)
     # instead of assuming recovery the instant `docker start` returns.
     recovered = False
-    deadline = time.time() + (CASSANDRA_RECOVERY_S if root_service == "cassandra" else 30)
+    # LIVE-c15c694b (2026-09-02): MongoDB's own recovered flag came back False
+    # at the original 30s deadline even though docker ps -a confirmed it was
+    # genuinely healthy shortly after -- real oplog/recovery-check delay on
+    # restart, not a mechanism bug. Bumped mongodb's own window too, same fix
+    # class as cassandra's.
+    default_deadline = 45 if root_service == "mongodb" else 30
+    deadline = time.time() + (CASSANDRA_RECOVERY_S if root_service == "cassandra" else default_deadline)
     while time.time() < deadline:
         insp = subprocess.run(["docker", "inspect", "--format", "{{.State.Health.Status}}", container],
                                capture_output=True, text=True, timeout=10)
