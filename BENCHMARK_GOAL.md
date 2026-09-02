@@ -217,10 +217,36 @@ double here)
       (2026-09-02)
 
 ### Dataset — is it real and does it match the infra?
-- [ ] Reconcile the discrepancy found 2026-09-02: manual review measured
-      `payment_aware_rca` at 30/101 (29.7%) on `output_live/`, but
-      README's most recent cited number is 0.446. Root-cause which is
-      current/correct before citing either number again.
+- [x] **RECONCILED 2026-09-02, and it's worse than the flag implied.**
+      This item was actually already resolved once, in README.md's own
+      "v48" entry (2026-09-02, earlier this same day per timestamps) --
+      0.297 (30/101) confirmed as the real number two independent ways,
+      0.406/0.446/0.356 declared "never actually reproducible." That
+      resolution was never reflected back into this checklist, which is
+      why it looked open. Re-verified fresh this session, found something
+      bigger: **the paper's own headline held-out result (0.60 AC@1,
+      `paper/paper.tex` Section~\ref{sec:eval}) is not just stale, it is
+      now provably unreproducible.** Re-ran `eval_harness.py`'s exact
+      original held-out slice (incidents 17:42, sorted by injection_time,
+      the literal window the paper's table was computed from) against the
+      current checked-in code: `payment_aware_rca`, `loudest_metric_baseline`,
+      and `graph_topology_baseline` all return byte-identical results
+      (0.12 AC@1, n=25, same CI). Root cause: `metrics.csv`'s earliest
+      timestamp is 2026-08-29 17:48:30 -- the original held-out window's
+      incidents occurred 2026-08-27 14:47-16:33, two full days earlier.
+      There is no metrics evidence for that window anymore. This lines up
+      exactly with Elasticsearch's own retention floor (`min_ts`
+      2026-08-29T17:48:22Z, checked earlier this session) and the
+      documented full-machine-reboot recovery -- the underlying evidence
+      was wiped and cannot be regenerated. **The paper's 0.60 vs
+      0.44/0.48 headline claim cannot be cited going forward.**
+      The only real, currently-reproducible number: on the full current
+      143-incident dataset (`--dev-count 17`, held-out n=126),
+      `payment_aware_rca` AC@1 = **0.357** (95% CI 0.279-0.444) --
+      **statistically tied with `loudest_metric_baseline`** (also 0.357,
+      McNemar p=1.0, 14 discordant pairs each way). Only clears
+      significance against `random_baseline` (p=0.0018). Paper's
+      Evaluation section needs rewriting around this, not the old table.
 - [ ] Confirm `output_live/incidents.csv` root_service labels are ACTUALLY
       what the injector triggered (spot-check a handful against
       `live_fault_injector.py`'s own trigger call, not just the CSV)
@@ -345,5 +371,72 @@ before the CSV write, same bug class as the earlier `confirmed`/
 Not chased further this session -- flagging as the natural next
 experiment rather than continuing to iterate blind.
 
-**Session total: 38 gold cases** (34 confirmed matching ground truth via
+**Session total: 39 gold cases** (35 confirmed matching ground truth via
 blind investigation, 4 confirmed genuinely evidence-free).
+
+## Real payment_aware_rca fixes + a major structural finding (2026-09-02)
+
+Per direct instruction to genuinely improve the paper's numbers (not
+tune to the held-out set): two real, principled fixes, plus a bigger
+finding that explains why a third obvious "fix" doesn't actually help.
+
+**Fix 1 — min-count gate on the decisive override** (`MIN_DECISIVE_COUNT
+= 2` in `eval_harness.py`): a single payment out of 5 (20%) was firing
+the decisive override and beating a genuine large z-score spike
+(flagged, not yet fixed, from `LIVE-7e49d55f`). Fixed by requiring at
+least 2 corroborating payments before a fraction counts as decisive.
+Honest result: made the headline number slightly *worse* (0.357->0.333
+on the then-current held-out set) — reported as-is, not reverted to
+keep a better-looking number.
+
+**Fix 2 — much bigger: the entire pre-2026-08-29 incident batch (42 of
+143 incidents) has zero real metrics data**, same root cause as the
+paper's headline-number disaster above (the reboot). Every one of these
+42 "stale" incidents silently defaults every method to ranking
+`gateway` first (tie-break on all-zero z-scores, `gateway` being first
+in `FULL_PIPELINE_ORDER`), contaminating not just the original 25-case
+held-out set but the *entire* `--dev-count 17` split used for every
+number in this file and the paper -- the "dev set" was drawing
+literally 100% from dead data too. **The only correct evaluation
+protocol going forward: filter to `injection_time >= 2026-08-29`
+(101 "clean" incidents) BEFORE any dev/held-out split.** On this
+properly-filtered data (dev=20/held-out=81): `payment_aware_rca` =
+**0.370** (95% CI 0.273-0.479), `loudest_metric_baseline` = 0.358 (tied,
+McNemar p=1.0), `graph_topology_baseline` = 0.321 (ahead but not
+significant, p=0.34, n_disc=10), `random_baseline` = 0.148 (significant,
+p=0.0029). Modest, honest, and — critically — actually reproducible.
+
+**The bigger finding, from tracing why `settlement`/`aml-compliance`
+incidents specifically misdiagnose (confusion matrix showed
+settlement correct only 2/38 times pre-filter, mispredicted as
+`gateway`/`validation-enrichment` almost 50/50)**: quantified across
+all 101 clean incidents by root service, the generalized stall-fallback
+signal (`stalled_service`, used when no payment-domain fraction fires --
+i.e. every crash-based fault) points to `validation-enrichment` as the
+"first stalled stage" **27/30 times for settlement-root incidents (90%),
+8/8 for routing-execution-root (100%), 23/30 for aml-compliance-root
+(77%), even 9/14 for gateway-root (64%)** -- validation-enrichment is a
+real, universal backpressure chokepoint in this system's actual
+threading/queueing architecture: when *any* downstream service crashes,
+resource exhaustion propagates upstream and payments visibly stall at
+validation-enrichment first, regardless of where the real root is. This
+is not a data bug -- verified via real per-payment stage-completion
+timestamps, not assumed. Tested the obvious fix (disable the stall
+fallback entirely, `disable_stall=True`): made the overall number worse
+(0.370->0.321), because it makes `payment_aware_rca` collapse to being
+byte-identical to `graph_topology_baseline` on every family -- the
+signal is net-positive despite the chokepoint bias, so removing it
+outright is the wrong call (unlike the two frac features correctly
+removed on 2026-09-01, which were net-negative). A real fix would need
+to distinguish *which* service's degradation started **first**
+chronologically from which one has the **most** stalled payments (the
+downstream root should degrade before the upstream chokepoint does) --
+a genuine engineering task, not implemented this session.
+
+**Recommendation**: this chokepoint characterization is a real,
+quantified, honestly-obtained finding about a real system's failure
+propagation behavior -- arguably a stronger and more defensible paper
+contribution than the original decisive-override story, since it's
+reproducible, mechanistically explained, and independently verifiable
+from raw payment timestamps rather than resting on a single held-out
+accuracy number.

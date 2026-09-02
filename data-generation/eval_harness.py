@@ -242,6 +242,7 @@ PAYMENT_STATE_SERVICE_BIAS = {
     # -firing frac until this audit. See README v46.
 }
 MAX_NORMAL_VALIDATION_LATENCY_MS = 1000  # real observed normal latency ~100-300ms
+MIN_DECISIVE_COUNT = 2  # see decisive-override min-count gate in payment_aware_rca
 
 
 def _payment_aware_rca_impl(incident, metrics, payments, disable_fracs=False,
@@ -311,10 +312,23 @@ def _payment_aware_rca_impl(incident, metrics, payments, disable_fracs=False,
         # topology-adjusted telemetry ranking.
         # max(), not last-wins: two frac_names can map to the same service
         # (validation_retry_frac and validation_stall_frac both -> validation-enrichment)
+        # svc_count tracks the raw payment count backing each svc_frac entry
+        # (not just the ratio) -- flagged 2026-09-02 (LIVE-7e49d55f): a
+        # single payment out of 5 (20%) was firing the decisive override
+        # and beating a genuine large z-score spike (z=4.04). A fraction
+        # alone can't distinguish "1 real signal in a tiny window" from "1
+        # coincidental noise payment in a tiny window" -- both look like
+        # frac=0.2. Gated below by MIN_DECISIVE_COUNT so a single payment
+        # can never outrank real telemetry on its own; needs corroborating
+        # evidence from at least 2 payments before being trusted as decisive.
         svc_frac = {}
+        svc_count = {}
         if not disable_fracs:
             for frac_name, svc in PAYMENT_STATE_SERVICE_BIAS.items():
-                svc_frac[svc] = max(svc_frac.get(svc, 0.0), fracs[frac_name])
+                frac = fracs[frac_name]
+                if frac > svc_frac.get(svc, 0.0):
+                    svc_frac[svc] = frac
+                    svc_count[svc] = round(frac * n)
         # Generalized version of validation_stall_frac for all 5 stages: a
         # process-crash fault (infra/cross_domain/confounded, all
         # AdminController kill+restart) doesn't touch any payment's own
@@ -324,9 +338,12 @@ def _payment_aware_rca_impl(incident, metrics, payments, disable_fracs=False,
         if not disable_stall and "stalled_service" in window_payments.columns:
             stall_counts = window_payments["stalled_service"].value_counts()
             for svc, count in stall_counts.items():
-                if svc:
-                    svc_frac[svc] = max(svc_frac.get(svc, 0.0), count / n)
-        elevated = sorted((svc for svc, f in svc_frac.items() if f > 0.15), key=svc_frac.get, reverse=True)
+                if svc and count / n > svc_frac.get(svc, 0.0):
+                    svc_frac[svc] = count / n
+                    svc_count[svc] = count
+        elevated = sorted((svc for svc, f in svc_frac.items()
+                            if f > 0.15 and svc_count.get(svc, 0) >= MIN_DECISIVE_COUNT),
+                           key=svc_frac.get, reverse=True)
         if elevated:
             remaining_scores = {s: v for s, v in scores.items() if s not in elevated}
             return elevated + [s for s in _topology_adjusted_rank(remaining_scores) if s not in elevated]
