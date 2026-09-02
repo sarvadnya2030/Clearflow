@@ -40,3 +40,4 @@ LIVE-3cf078b4,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,true,wi
 LIVE-fc3e530b,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,true,witness+4x-decoy-still-resolvable-via-health-check-signal
 LIVE-32fb18f2,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,true,witness+funnel-stall
 LIVE-0d5964c1,REDIS_OUTAGE,redis,false,no-evidence-found-at-20s-duration-system-resilient
+LIVE-56d4a244,REDIS_OUTAGE,redis,false,no-evidence-replicated-at-60s-duration-real-resilience-finding
