@@ -77,9 +77,14 @@ def main():
     end = start + pd.Timedelta(seconds=dur + 15)
 
     # Pull the full real evidence bundle -- ES logs + witness events, same
-    # window a blind investigator would look at
+    # window a blind investigator would look at. size was 300 -- found live
+    # 2026-09-02 (LIVE-125bb06d) that a 20s window can genuinely contain
+    # 1300+ events under real background traffic (758 payments/run at 3/s),
+    # silently truncating exactly the evidence a point-in-time fault
+    # (AML_HOLD) needs since it's not necessarily in the earliest slice.
+    # Bumped to 3000 -- generous headroom, not a precisely-derived bound.
     resp = requests.get(f"{ES}/clearflow-*,clearflow-healthmonitor-*/_search", timeout=15, json={
-        "size": 300,
+        "size": 3000,
         "query": {"range": {"@timestamp": {"gte": (start - pd.Timedelta(seconds=5)).isoformat(),
                                             "lte": end.isoformat()}}},
         "sort": [{"@timestamp": "asc"}],

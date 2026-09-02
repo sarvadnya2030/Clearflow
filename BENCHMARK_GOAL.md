@@ -374,6 +374,52 @@ experiment rather than continuing to iterate blind.
 **Session total: 39 gold cases** (35 confirmed matching ground truth via
 blind investigation, 4 confirmed genuinely evidence-free).
 
+## Push toward 101 gold cases (2026-09-02, ongoing)
+
+Target set at 101 (10/fault-type) after discussion of realistic infra
+cost (~8-9 min/case, fixed 500s witness window regardless of fault
+duration). Added 3 new fault types from real infra dependency mapping
+(grep RedisTemplate/MongoRepository/CassandraRepository across every
+service): `REDIS_OUTAGE`, `MONGODB_OUTAGE`, `CASSANDRA_OUTAGE` --
+13 fault types total now. All 3 validated live:
+- **REDIS_OUTAGE**: real, replicated null result at two durations
+  (20s and 60s) -- system genuinely absorbs redis outages with zero
+  detectable evidence on any tested path (likely fail-open behavior).
+  Not a mechanism bug, a real resilience finding.
+- **MONGODB_OUTAGE**: real, replicated positive result (2/2 reps) --
+  both validation-enrichment AND aml-compliance independently fail
+  with the identical "connecting to server localhost:27017" signature.
+  Corrected the original code-grep dependency map: aml-compliance also
+  has a direct MongoDB connection, not just validation-enrichment.
+- **CASSANDRA_OUTAGE**: real, confirmed (1/1) -- clean single-dependency
+  case, only audit affected, direct port-9042 evidence, no funnel-wide
+  stall (audit consumes async via Kafka). Matched the original
+  dependency map exactly.
+
+**Real bug found and fixed via LIVE-125bb06d (AML_HOLD)**: the ES
+evidence query's `size` cap (300) can silently truncate evidence under
+real background traffic -- this specific case's 20s window actually
+contained **1379 events**, and the one AML_SANCTIONS_HIT/AML_HOLD pair
+that mattered was pushed past the first 300 by background traffic
+density (758 payments/run). Investigation initially found "zero
+evidence" despite the injector's own log claiming `confirmed_held=true`
+-- rather than accept a false evidence-free result, checked the named
+payment_id directly in ES and found the real evidence existed but was
+truncated. Fixed: `size` raised 300->3000 in both `inject_gold_case.py`
+and `eval_baseline_rca.py`. **Open item, not yet done**: spot-check
+whether any earlier-collected gold case (especially ones with sparse
+aml-compliance/validation-enrichment representation) was also silently
+truncated by this cap before the fix.
+
+**Operational note**: one injection (second CASSANDRA_OUTAGE rep) was
+killed mid-fault by the harness, leaving cassandra stopped and `audit`
+unhealthy until manually restarted -- recovered cleanly, no data loss,
+but confirms these live-injection loops need a live human/agent
+watching for exactly this failure mode, not just fire-and-forget.
+
+46 gold cases as of this entry (40 confirmed, 6 evidence-free), still
+running toward 101.
+
 ## Real payment_aware_rca fixes + a major structural finding (2026-09-02)
 
 Per direct instruction to genuinely improve the paper's numbers (not

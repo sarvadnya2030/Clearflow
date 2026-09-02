@@ -97,8 +97,12 @@ def fetch_es_events(injection_time_iso, duration_seconds):
     dur = int(duration_seconds) if duration_seconds not in (None, "") else 10
     start = pd.Timestamp(injection_time_iso)
     end = start + pd.Timedelta(seconds=dur + 15)
+    # size was 300 -- a 20s window can genuinely contain 1300+ events under
+    # real background traffic, silently truncating evidence (found live
+    # 2026-09-02, LIVE-125bb06d). This is only a fallback now (get_events()
+    # prefers embedded raw_events), but keep it consistent for regeneration.
     resp = requests.get(f"{ES}/clearflow-*,clearflow-healthmonitor-*/_search", timeout=15, json={
-        "size": 300,
+        "size": 3000,
         "query": {"range": {"@timestamp": {"gte": (start - pd.Timedelta(seconds=5)).isoformat(),
                                             "lte": end.isoformat()}}},
         "sort": [{"@timestamp": "asc"}],
