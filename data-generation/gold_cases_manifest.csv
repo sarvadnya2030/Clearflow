@@ -59,3 +59,4 @@ LIVE-930f1eb1,CASSANDRA_OUTAGE,cassandra,true,witness-single-service-fifth-repli
 LIVE-91a7a4e1,CPU_SATURATION,aml-compliance,true,witness+funnel-stall
 LIVE-1a15e740,DB_TIMEOUT,settlement,true,witness+funnel-stall
 LIVE-ae2180ff,IDEMPOTENCY_COLLISION_STORM,gateway,false,no-evidence-fifth-consecutive-replication
+LIVE-945a2566,KAFKA_CONSUMER_LAG,routing-execution,true,witness+funnel-stall
