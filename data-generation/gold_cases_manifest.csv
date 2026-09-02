@@ -56,3 +56,4 @@ LIVE-2d244bc5,MONGODB_OUTAGE,mongodb,true,witness-two-services-fourth-replicatio
 LIVE-df78118d,REDIS_OUTAGE,redis,false,no-evidence-fourth-consecutive-replication
 LIVE-e0bb5818,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,true,witness+funnel-stall
 LIVE-930f1eb1,CASSANDRA_OUTAGE,cassandra,true,witness-single-service-fifth-replication
+LIVE-91a7a4e1,CPU_SATURATION,aml-compliance,true,witness+funnel-stall
