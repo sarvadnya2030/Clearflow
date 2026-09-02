@@ -56,14 +56,25 @@ def main():
 
     witness.wait(timeout=520)
 
-    # Find the real incident just recorded
+    # Find the real incident just recorded. Filter out any row with a null
+    # incident_id/injection_time first -- a stray corrupt/partial row earlier
+    # in the file (found live 2026-09-02: a leftover artifact from a manual
+    # CSV-repair script) otherwise sorts to the top or bottom and silently
+    # takes over "the last incident," crashing this script and losing the
+    # evidence-bundle write for a fault that actually ran successfully.
     import pandas as pd
     incidents = pd.read_csv("output/live_incidents.csv")
+    # incident_id/injection_time are never legitimately null -- duration_seconds
+    # IS legitimately null for point-in-time faults (AML_HOLD), so don't filter
+    # on that or the most recent real AML_HOLD incident gets silently skipped.
+    incidents = incidents.dropna(subset=["incident_id", "injection_time"])
     incidents["injection_time"] = pd.to_datetime(incidents["injection_time"])
     inc = incidents.sort_values("injection_time").iloc[-1]
     incident_id = inc["incident_id"]
     start = inc["injection_time"]
-    end = start + pd.Timedelta(seconds=int(inc["duration_seconds"]) + 15)
+    dur = inc["duration_seconds"]
+    dur = int(dur) if pd.notna(dur) else 10
+    end = start + pd.Timedelta(seconds=dur + 15)
 
     # Pull the full real evidence bundle -- ES logs + witness events, same
     # window a blind investigator would look at
@@ -83,7 +94,7 @@ def main():
         "incident_id": incident_id,
         "fault_type": fault_type,
         "injection_time": str(start),
-        "duration_seconds": int(inc["duration_seconds"]),
+        "duration_seconds": dur,
         # deliberately last in the dict and clearly labeled -- read the
         # events and witness_output first, form a hypothesis, THEN look here
         "_INJECTOR_CLAIMED_ROOT_DO_NOT_READ_UNTIL_AFTER_YOUR_HYPOTHESIS": inc["root_service"],

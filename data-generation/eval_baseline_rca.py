@@ -42,7 +42,8 @@ NEMOTRON_MODEL = "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
 NIM_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
 
 LABEL_SPACE = ["gateway", "fraud-scoring", "validation-enrichment", "aml-compliance",
-               "routing-execution", "settlement", "audit", "mcp-readonly-gateway"]
+               "routing-execution", "settlement", "audit", "mcp-readonly-gateway",
+               "redis", "mongodb", "cassandra"]  # added 2026-09-02 for the infra_dependency fault family
 
 FUNNEL_STAGES = [
     ("gateway", "PAYMENT_SUBMITTED"),

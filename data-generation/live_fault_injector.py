@@ -90,9 +90,36 @@ LIVE_FAULT_CATALOG = [
     # concurrent with the real validation-enrichment outage -- a real decoy
     # signal on a service that is NOT the root cause, not a synthetic flag.
     ("VALIDATION_SLOWDOWN_GATEWAY_CONFOUND", "validation-enrichment", "confounded", "crash_with_gateway_decoy"),
+    # New fault class, added 2026-09-02 after actually mapping which of the
+    # 8 services depend on which real datastore (grep for
+    # RedisTemplate/MongoRepository/CassandraRepository across every
+    # service's Java source): MongoDB only backs validation-enrichment,
+    # Cassandra only backs audit, but Redis backs all 8 services
+    # (idempotency keys in gateway.IdempotencyService, payment-status
+    # lookups, likely caching elsewhere too) -- a real shared-dependency
+    # outage, not a single-service crash. Genuinely different causal shape
+    # from everything else in this catalog: root_service is the
+    # infrastructure component itself ("redis"), not one of the 8 app
+    # services, and the expected symptom is simultaneous degradation
+    # across multiple services rather than one funnel stall.
+    ("REDIS_OUTAGE", "redis", "infra_dependency", "container_stop"),
+    # MongoDB only backs validation-enrichment (PaymentEnrichmentRepository)
+    # -- single-service datastore dependency, unlike Redis's shared blast
+    # radius. Real healthcheck exists (mongosh ping), safe to poll for
+    # recovery the same way as redis.
+    ("MONGODB_OUTAGE", "mongodb", "infra_dependency", "container_stop"),
+    # Cassandra only backs audit (audit_records table). Documented in this
+    # repo's own docker-compose.yml comment as OOM-prone and slow to restart
+    # on this host (MAX_HEAP_SIZE capped at 1G specifically because of
+    # repeated OOM kills during past long fault-injection batches) -- given
+    # a longer recovery window than redis/mongo via CASSANDRA_RECOVERY_S,
+    # not the same 30s default, to avoid a false "recovered=False" from a
+    # genuinely-still-starting (not actually failed) container.
+    ("CASSANDRA_OUTAGE", "cassandra", "infra_dependency", "container_stop"),
 ]
 
-CRASH_DURATION_S = {"infra": 20, "cross_domain": 30, "confounded": 30}
+CRASH_DURATION_S = {"infra": 20, "cross_domain": 30, "confounded": 30, "infra_dependency": 20}
+CASSANDRA_RECOVERY_S = 90  # see CASSANDRA_OUTAGE comment above
 
 
 def now_iso():
@@ -228,6 +255,47 @@ def sample_kafka_lag(consumer_group):
         return total_lag if found else None
     except Exception:
         return None
+
+
+CONTAINER_NAMES = {"redis": "infrastructure-redis-1", "mongodb": "infrastructure-mongodb-1",
+                    "cassandra": "infrastructure-cassandra-1"}
+
+
+def trigger_container_stop(root_service, family, token, gen: TrafficGenerator):
+    """Real outage of a shared infra dependency (not an app service) --
+    `docker stop`/`docker start` on the actual container, same real-crash
+    discipline as trigger_crash but for a component with no AdminController
+    entry and no /actuator/health endpoint of its own. AOF persistence is
+    enabled on redis (--appendonly yes, see infrastructure/docker-compose.yml),
+    so a clean stop/start is safe -- no data loss expected, verified this is
+    a real assumption to state, not to leave silently unstated."""
+    duration = CRASH_DURATION_S[family]
+    container = CONTAINER_NAMES[root_service]
+    injection_time = now_iso()
+    stop = subprocess.run(["docker", "stop", container], capture_output=True, text=True, timeout=20)
+    if stop.returncode != 0:
+        return None, f"docker stop failed: {stop.stderr}"
+    time.sleep(duration)
+    start = subprocess.run(["docker", "start", container], capture_output=True, text=True, timeout=20)
+    if start.returncode != 0:
+        return None, f"docker start failed: {start.stderr}"
+    # No HTTP health endpoint for redis itself -- poll `docker inspect`'s own
+    # health status (the container has a HEALTHCHECK in docker-compose.yml)
+    # instead of assuming recovery the instant `docker start` returns.
+    recovered = False
+    deadline = time.time() + (CASSANDRA_RECOVERY_S if root_service == "cassandra" else 30)
+    while time.time() < deadline:
+        insp = subprocess.run(["docker", "inspect", "--format", "{{.State.Health.Status}}", container],
+                               capture_output=True, text=True, timeout=10)
+        if insp.stdout.strip() == "healthy":
+            recovered = True
+            break
+        time.sleep(2)
+    return {
+        "injection_time": injection_time,
+        "duration_seconds": duration,
+        "recovered": recovered,
+    }, None
 
 
 def trigger_crash(root_service, family, token, gen: TrafficGenerator):
@@ -424,6 +492,8 @@ def run_incident(fault_type, root_service, family, mechanism, token, gen: Traffi
         result, err = trigger_idempotency_collision(token, gen)
     elif mechanism == "aml_hold":
         result, err = trigger_aml_hold(token, gen)
+    elif mechanism == "container_stop":
+        result, err = trigger_container_stop(root_service, family, token, gen)
     else:
         return None
     if err:
@@ -435,7 +505,7 @@ def run_incident(fault_type, root_service, family, mechanism, token, gen: Traffi
     # "aml_hold"/"idempotency" the trigger can genuinely fail to produce the
     # labeled effect (e.g. an SDN-name draw that doesn't actually match) --
     # confirmed_held/duplicate_confirmed says whether it really did.
-    if mechanism in ("crash", "crash_with_gateway_decoy"):
+    if mechanism in ("crash", "crash_with_gateway_decoy", "container_stop"):
         confirmed = result.get("recovered", True)
     else:
         confirmed = result.get("confirmed_held", result.get("duplicate_confirmed", ""))
