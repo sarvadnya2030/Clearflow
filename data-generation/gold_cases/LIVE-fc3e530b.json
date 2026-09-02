@@ -1,0 +1,19 @@
+{
+  "incident_id": "LIVE-fc3e530b",
+  "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+  "injector_claimed_root": "validation-enrichment",
+  "injection_time": "2026-09-02T09:31:26.504383+00:00",
+  "duration_seconds": 30,
+  "mechanism_note": "Second rep with the engineered gateway-decoy, this time with the decoy strength quadrupled (n_decoy 15->60, decoy_confirmed_400=60/60 per output/live_incidents.csv -- every intended decoy send landed as a real HTTP 400 this time, vs only 3/15 visible in ES for the first clean-traffic rep). ES-visible evidence still only captured 10 of the 60 (the ES query is capped at 300 events total across the whole window, so this is a sampling artifact, not evidence loss -- decoy_confirmed_400 in the incidents CSV is the ground truth for how many actually landed at gateway).",
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: validation-enrichment: DOWN (consecutive=1), then RECOVERED, generated independently -- gateway never flagged DOWN by the same witness",
+    "validation-enrichment's own log stream: 6 PAYMENT_VALIDATED then HEALTH_CHECK_FAILED consecutiveFailures=1 at 09:31:29.285, plus 2 real unrelated business PAYMENT_REJECTED (UNSUPPORTED_CURRENCY_PAIR, EMBARGOED_COUNTRY)",
+    "gateway's own log stream: 10 PAYMENT_REJECTED in the ES-visible window (all confirmed fields=[currency], zero IBAN noise), out of 24 PAYMENT_SUBMITTED -- a real ~29% rejection rate, meaningfully stronger decoy than the first rep (3/33, ~9%)",
+    "Checked explicitly: gateway itself never logged a HEALTH_CHECK_FAILED anywhere in the window, even at this larger decoy volume -- it stayed healthy and kept serving traffic throughout"
+  ],
+  "reasoning_trace": "Witness monitor independently flagged validation-enrichment DOWN then RECOVERED, with zero foreknowledge -- and did not flag gateway, despite gateway showing a real, stronger decoy signal this rep (29% rejection rate vs 9% in the previous rep). validation-enrichment's own logs show a real funnel stall and a genuine health-check failure. The decisive distinguishing signal remains the same as the weaker-decoy rep: a service that is actually down and independently witnessed vs. a service that is healthy but rejecting some malformed traffic. Increasing the decoy volume 4x did not change which service produces the health-check failure or the independently-witnessed outage, so it did not change the correct conclusion. Conclusion reached from evidence alone, before reading the injector's own log: validation-enrichment.",
+  "blind_conclusion": "validation-enrichment",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (validation-enrichment) matches the injector's own ground-truth log exactly. Second consecutive honest finding, now at higher decoy strength: the confound mechanism produces real, larger, and cleanly-attributed decoy evidence, but the health-check-failure / independent-witness signal is a structurally stronger evidence class than an elevated-but-explained rejection rate, so a careful investigation resolves the case correctly even at 4x the decoy volume. Suggests the mechanism needs to attack the SAME evidence class validation-enrichment uses (e.g. a genuine gateway health-check degradation, not just application-level rejections) to actually produce a misleading case, rather than just more of the same weaker signal type."
+}

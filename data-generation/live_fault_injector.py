@@ -272,17 +272,29 @@ def trigger_crash_with_gateway_decoy(root_service, family, token, gen: TrafficGe
     if code != 200:
         return None, f"stop failed: {code} {body}"
 
-    n_decoy = max(3, int(duration / 2))
+    # First rep (2026-09-02, LIVE-3cf078b4) sent 15 (2s interval), all 15
+    # confirmed successful at the HTTP layer in isolated testing, but only 3
+    # showed up as real ES-visible PAYMENT_REJECTED evidence during an actual
+    # concurrent fault -- real evidence-pipeline loss under real load, not a
+    # code bug (verified: same loop got 15/15 through when run standalone with
+    # no concurrent crash happening). Doubling density and duration-independent
+    # volume so the decoy's landed evidence is comparable in magnitude to the
+    # real crash signal even at a realistic loss rate, rather than assuming
+    # every send lands.
+    n_decoy = max(10, duration * 2)
     decoy_sent = 0
+    decoy_confirmed_400 = 0
     interval = duration / n_decoy
     for _ in range(n_decoy):
         try:
             bad = traffic.build("clean")
             bad["currency"] = "XX1"  # violates @Pattern([A-Z]{3}) -- real 400
-            requests.post(f"{GATEWAY}/api/v1/payments", json=bad,
+            r = requests.post(f"{GATEWAY}/api/v1/payments", json=bad,
                           headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
                           timeout=5)
             decoy_sent += 1
+            if r.status_code == 400:
+                decoy_confirmed_400 += 1
         except Exception:
             pass  # gateway may be under real load from the outage; a failed decoy send isn't fatal
         time.sleep(interval)
@@ -297,6 +309,7 @@ def trigger_crash_with_gateway_decoy(root_service, family, token, gen: TrafficGe
         "kafka_lag_before": lag_before,
         "kafka_lag_after_recovery": lag_after,
         "decoy_sent": decoy_sent,
+        "decoy_confirmed_400": decoy_confirmed_400,
     }, None
 
 
@@ -442,6 +455,7 @@ def run_incident(fault_type, root_service, family, mechanism, token, gen: Traffi
         "kafka_lag_before": result.get("kafka_lag_before", ""),
         "kafka_lag_after_recovery": result.get("kafka_lag_after_recovery", ""),
         "decoy_sent": result.get("decoy_sent", ""),
+        "decoy_confirmed_400": result.get("decoy_confirmed_400", ""),
     }
 
 
@@ -524,7 +538,7 @@ def main():
                         # count (e.g. 3 of 15 intended) was send failures vs something
                         # else, instead of only being visible in gold_cases_manifest.csv
                         # prose notes.
-                        "decoy_sent"]
+                        "decoy_sent", "decoy_confirmed_400"]
 
     def persist_incident(inc):
         file_exists = os.path.exists(LIVE_INCIDENTS_CSV)

@@ -37,3 +37,4 @@ LIVE-8b01e57d,CPU_SATURATION,aml-compliance,true,witness+funnel-stall
 LIVE-b12684e5,SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND,settlement,true,witness+funnel-stall-no-confound-this-run
 LIVE-7e974bac,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,true,witness+funnel-stall-no-confound-this-run
 LIVE-3cf078b4,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,true,witness+real-decoy-present-still-resolvable
+LIVE-fc3e530b,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,true,witness+4x-decoy-still-resolvable-via-health-check-signal
