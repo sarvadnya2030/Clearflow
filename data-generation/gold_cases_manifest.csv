@@ -45,3 +45,4 @@ LIVE-c15c694b,MONGODB_OUTAGE,mongodb,true,witness-two-services-same-connection-f
 LIVE-0c342599,CASSANDRA_OUTAGE,cassandra,true,witness-single-service-direct-port-9042-evidence
 LIVE-5bb250bb,MONGODB_OUTAGE,mongodb,true,witness-two-services-same-signature-replicated
 LIVE-125bb06d,AML_HOLD,aml-compliance,true,direct-self-reported-log-recovered-after-fixing-300-event-cap-bug
+LIVE-0e259052,CASSANDRA_OUTAGE,cassandra,true,witness-single-service-replicated
