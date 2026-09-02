@@ -1,0 +1,17 @@
+{
+  "incident_id": "LIVE-1dd87cec",
+  "fault_type": "KAFKA_CONSUMER_LAG",
+  "injector_claimed_root": "routing-execution",
+  "injection_time": "2026-09-02T06:03:40.456170+00:00",
+  "duration_seconds": 20,
+  "evidence_reviewed": [
+    "ES query: clearflow-*,clearflow-healthmonitor-* range covering the injection window, sorted by @timestamp",
+    "Health witness log: routing-execution: DOWN (consecutive=1), then RECOVERED, generated independently",
+    "routing-execution's own log stream: 2 payments fully routed (RAIL_SELECTED->LIQUIDITY_RESERVED->PAYMENT_ROUTED) at 06:03:41, then HEALTH_CHECK_FAILED consecutiveFailures=1 at 06:03:43.8, then a full JVM restart (\"Starting RoutingExecutionApplication...\") at 06:04:06 -- a ~22s gap with no routing activity",
+    "Direct event-type funnel count across the window: 23 PAYMENT_SUBMITTED / 21 PAYMENT_VALIDATED / 42 AML_SCREENING_COMPLETE (partly carryover) vs only 2 PAYMENT_ROUTED and 2 SETTLEMENT_COMPLETE"
+  ],
+  "reasoning_trace": "Witness monitor independently flagged routing-execution DOWN then RECOVERED, with zero foreknowledge of the injected fault. routing-execution's own logs show it was healthy and actively routing at the start of the window (2 payments cleanly routed through liquidity reservation), then failed its health check, then came back up via a full application restart roughly 22 seconds later. In that gap, no further payments progressed past routing -- of ~21-23 submitted/validated payments, only 2 reached PAYMENT_ROUTED/SETTLEMENT_COMPLETE, everything else stalled at or before the routing stage. This is the same funnel-stall + independent-witness shape as prior KAFKA_CONSUMER_LAG rounds. Conclusion reached from evidence alone, before reading the injector's own log: routing-execution.",
+  "blind_conclusion": "routing-execution",
+  "confirmed": true,
+  "confirmation_basis": "Blind conclusion (routing-execution) matches the injector's own ground-truth log exactly. Consistent with three prior KAFKA_CONSUMER_LAG replications, all attributing the same root service via the same witness+funnel-stall evidentiary pattern."
+}

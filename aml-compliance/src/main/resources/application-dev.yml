@@ -28,12 +28,6 @@ camel:
     kafka:
       brokers: localhost:29092
 
-camunda:
-  client:
-    zeebe:
-      grpc-address: http://localhost:26500
-      prefer-rest-over-grpc: false
-
 aml:
   fuzzy-threshold: 0.92
 

@@ -31,3 +31,5 @@ LIVE-a41428fd,AML_SERVICE_DEGRADATION_RETRY_CASCADE,aml-compliance,true,witness+
 LIVE-d45c0b73,SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND,settlement,true,witness+funnel-stall-no-confound-this-run
 LIVE-724753fd,VALIDATION_SLOWDOWN_GATEWAY_CONFOUND,validation-enrichment,true,witness+funnel-stall-no-confound-this-run
 LIVE-a1018952,DB_TIMEOUT,settlement,true,witness+funnel-stall
+LIVE-1dd87cec,KAFKA_CONSUMER_LAG,routing-execution,true,witness+funnel-stall
+LIVE-b39b1e5f,NETWORK_LATENCY,validation-enrichment,true,witness+funnel-stall
