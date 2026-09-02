@@ -118,7 +118,11 @@ LIVE_FAULT_CATALOG = [
     ("CASSANDRA_OUTAGE", "cassandra", "infra_dependency", "container_stop"),
 ]
 
-CRASH_DURATION_S = {"infra": 20, "cross_domain": 30, "confounded": 30, "infra_dependency": 20}
+CRASH_DURATION_S = {"infra": 20, "cross_domain": 30, "confounded": 30, "infra_dependency": 60}
+# infra_dependency was 20s -- LIVE-0d5964c1 (REDIS_OUTAGE, 2026-09-02) proved a
+# 20s outage is silently absorbed (zero evidence, real finding, not a mechanism
+# bug -- see gold_cases/LIVE-0d5964c1.json). Testing whether a genuinely
+# sustained outage produces visible degradation instead.
 CASSANDRA_RECOVERY_S = 90  # see CASSANDRA_OUTAGE comment above
 
 
