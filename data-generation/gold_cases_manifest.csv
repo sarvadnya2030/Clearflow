@@ -50,3 +50,4 @@ LIVE-06e81ed2,SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE,settlement,true,witness+fu
 LIVE-166ba8bb,REDIS_OUTAGE,redis,false,no-evidence-third-consecutive-replication
 LIVE-8adba291,MONGODB_OUTAGE,mongodb,true,witness-two-services-third-replication
 LIVE-ee039e30,CASSANDRA_OUTAGE,cassandra,true,witness-single-service-third-replication
+LIVE-471a5319,AML_HOLD,aml-compliance,true,direct-self-reported-log-clean-with-fixed-cap
