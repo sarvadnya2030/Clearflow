@@ -46,6 +46,9 @@ public class CascadeFailureDetector {
     private static final long TIME_WINDOW_MS = 2000;  // 2 second window for cascade correlation
     private static final int MIN_SERVICES_FOR_CASCADE = 2;
     private static final double PROPAGATION_THRESHOLD_MS = 100;  // Services failing > 100ms apart likely not a cascade
+    // Same real, measured floor as eval_harness.py's MIN_ERROR_RATE_SIGMA --
+    // see the fix comment at its use site in computeServiceZScoresForRange.
+    private static final double MIN_ERROR_RATE_SIGMA = 0.01;
 
     private final com.clearflow.mcp.llm.LLMClient llmClient;
     private final com.clearflow.mcp.llm.LLMClient slmClient;
@@ -468,7 +471,18 @@ public class CascadeFailureDetector {
             double windowRate = fetchErrorRate(svc, windowStartMs, windowEndMs);
             // Same fallback as the Python method: no baseline data -> 0.0,
             // not a divide-by-zero or a misleadingly large z-score.
-            double std = Math.max(baselineRate * 0.3, 1e-6);  // real std not
+            // Floor was 1e-6 -- the same critical bug class found and fixed
+            // on the Python side (eval_harness.py MIN_ERROR_RATE_SIGMA,
+            // 2026-09-01): a clean, all-zero-error baseline (normal for a
+            // healthy service) makes baselineRate*0.3 == 0.0, so std floors
+            // at 1e-6 and any single error in the window divides by it,
+            // producing z-scores in the hundreds to millions -- confirmed
+            // live 2026-09-06 on LIVE-02346c6a (SETTLEMENT_DB_FAILURE_KAFKA_
+            // CONFOUND, true root settlement): aml-compliance's z-score came
+            // back as 216.58, an innocent bystander made to look like the
+            // root cause purely by this floor, not by any real signal.
+            // Fixed to the same measured-real floor as the Python side.
+            double std = Math.max(baselineRate * 0.3, MIN_ERROR_RATE_SIGMA);  // real std not
             // computed per-bucket here (single aggregate rate, not a bucket
             // series) -- approximated as 30% of the baseline rate, a
             // deliberately conservative placeholder pending a true bucketed
