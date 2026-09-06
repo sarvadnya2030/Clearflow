@@ -534,6 +534,16 @@ Rank all 5 services from MOST likely root cause to LEAST likely. Respond with ON
 # and actively mislead the agent. Per-payment endpoints filter by paymentId
 # and are historically exact regardless of when they're queried.
 MCP_URL = "http://localhost:8087"
+# Same propagation/recovery buffer as rca_tool.py's diagnose() extra_buffer_s.
+# Found live 2026-09-06 (LIVE-02346c6a, manual agent investigation): a
+# service's own crash-restart log signature (JVM startup banner, Camel/
+# Hibernate bean-init WARN lines) can land ~50-60s after injection_time --
+# well past a bare `duration_seconds` window -- so `_search_service_logs`
+# calls scoped to the raw z-score window (start, end) return "no matching
+# logs" even when decisive real evidence exists just outside it. This was
+# previously assumed to be a fundamental "settlement crashes produce no
+# self-log" limitation; it's partly a too-narrow search window instead.
+LOG_SEARCH_BUFFER_S = 30
 AGENTIC_MAX_TOOL_CALLS = 6  # raised from 4 now that there are 4 real
 # tools (payment timeline/compliance + real log search + real graph
 # dependency lookup) instead of 2 -- 4 rounds was already tight before
@@ -995,7 +1005,12 @@ def _agentic_tool_loop(incident, metrics, payments, client, model_name, max_toke
     window_payments = payments[(payments.created_at >= start) & (payments.created_at <= end)]
     payment_ids = window_payments["payment_id"].tolist() if "payment_id" in window_payments.columns else []
     fracs = _compute_payment_state_fracs_readonly(window_payments, end)
-    sample_logs = _fetch_sample_logs_for_agentic(start, end)
+    # Log evidence (upfront sample + on-demand search_service_logs below)
+    # uses a widened window -- see LOG_SEARCH_BUFFER_S -- while z-scores/
+    # payment-state fracs stay on the raw (start, end) fault window so
+    # metrics-based comparisons across methods remain apples-to-apples.
+    log_search_end = end + timedelta(seconds=LOG_SEARCH_BUFFER_S)
+    sample_logs = _fetch_sample_logs_for_agentic(start, log_search_end)
     # Deliberately NOT including graph_rag_baseline's own prediction as
     # "structural evidence" here -- tried it, and it actively misled the
     # model: graph_rag_baseline itself gets this exact incident type wrong
@@ -1061,7 +1076,7 @@ def _agentic_tool_loop(incident, metrics, payments, client, model_name, max_toke
                         result = {"note": "You already ran this exact search -- try a different service or keyword."}
                     else:
                         queried_already.add(dedup_key)
-                        result = _search_service_logs(start, end, svc, kw)
+                        result = _search_service_logs(start, log_search_end, svc, kw)
                 elif name == "get_service_dependencies":
                     svc = args.get("service", "")
                     dedup_key = (name, svc)
