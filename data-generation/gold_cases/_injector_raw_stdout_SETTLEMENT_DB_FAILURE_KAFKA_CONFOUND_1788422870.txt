@@ -1,0 +1,7 @@
+Background traffic started at 3.0/s
+
+=== SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND (root=settlement, family=confounded, mechanism=crash) rep=0 ===
+  OK: {"injection_time": "2026-09-03T08:03:01.778773+00:00", "duration_seconds": 30, "recovered": true, "kafka_lag_before": 51763, "kafka_lag_after_recovery": 51885}
+  [1 done, persisted]
+
+Background traffic stopped. 1 incidents persisted, 854 background payments sent total (each already persisted as sent).

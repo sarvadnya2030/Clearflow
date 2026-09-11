@@ -1,0 +1,7 @@
+Background traffic started at 3.0/s
+
+=== REDIS_OUTAGE (root=redis, family=infra_dependency, mechanism=container_stop) rep=0 ===
+  OK: {"injection_time": "2026-09-02T12:38:36.139791+00:00", "duration_seconds": 60, "recovered": false}
+  [1 done, persisted]
+
+Background traffic stopped. 1 incidents persisted, 983 background payments sent total (each already persisted as sent).

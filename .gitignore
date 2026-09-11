@@ -29,3 +29,12 @@ frontend/dist/
 data-generation/output/
 data-generation/output_v2_backup/
 data-generation/output_live/
+
+# LaTeX build artifacts
+*.aux
+*.out
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz

@@ -1,0 +1,7 @@
+Background traffic started at 3.0/s
+
+=== MONGODB_OUTAGE (root=mongodb, family=infra_dependency, mechanism=container_stop) rep=0 ===
+  OK: {"injection_time": "2026-09-02T12:47:47.054426+00:00", "duration_seconds": 60, "recovered": true}
+  [1 done, persisted]
+
+Background traffic stopped. 1 incidents persisted, 988 background payments sent total (each already persisted as sent).

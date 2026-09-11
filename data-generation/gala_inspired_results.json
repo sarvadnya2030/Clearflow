@@ -1,0 +1,101 @@
+[
+  {
+    "incident_id": "LIVE-549afd1b",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 7257.4709396362305,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Direct AML_SANCTIONS_HIT logs show payments were blocked before routing."
+  },
+  {
+    "incident_id": "LIVE-4e899937",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 1353.6983683109283,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: AML_SANCTIONS_HIT log line shows a payment was flagged as sanctioned, causing a hold."
+  },
+  {
+    "incident_id": "LIVE-2b3c53da",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 79.00628542900085,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Direct AML_SANCTIONS_HIT log lines for paymentId\u202ffbc37a91\u2011fb68\u201147f8\u20118fbe\u201132a569cc235b (and another hit) show the service halted the payment, explaining the downstream drop\u2011off."
+  },
+  {
+    "incident_id": "LIVE-0c342599",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 533.4254734516144,
+    "final_text": "ROOT CAUSE: audit. REASON: The audit service\u2019s health check failed at 11:20:06.609 and it threw an exception at 11:20:07.618, confirming the audit service was down during the incident."
+  },
+  {
+    "incident_id": "LIVE-125bb06d",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "gateway",
+    "hit": false,
+    "seconds": 570.2221670150757,
+    "final_text": "We need to call query_knowledge_graph on top suspect service(s). We suspect AML compliance. We called query_knowledge_graph on \"aml\" and got some nodes. But we need to find connections. The knowledge graph shows that .onAmlSanctionsClear and .onAmlSanctionsHit are in PaymentStatusKafkaConsumer in gateway. That indicates that gateway receives AML status updates. So AML compliance is upstream of gateway? Actually gateway receives status updates from AML compliance. So AML compliance is upstream of gateway? Wait, the pipeline: gateway -> validation-enrichment -> aml-compliance -> routing-execution -> settlement. So AML compliance is after validation-enrichment. The knowledge graph shows that gateway has methods .onAmlSanctionsClear and .onAmlSanctionsHit, which likely handle AML status updates. So AML compliance sends status to gateway. So AML compliance is upstream of gateway? Actually gateway receives status from AML compliance. So AML compliance is upstream of gateway? No, the pipeline: gateway initiates payment, then validation, then AML compliance, then routing, then settlement. So AML compliance is after validation, before routing. So gateway receives AML status updates. So the "
+  },
+  {
+    "incident_id": "LIVE-0e259052",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 162.9533565044403,
+    "final_text": "ROOT CAUSE: audit. REASON: audit service health check failed and logs show repeated \u201cError handler threw an exception\u201d entries, indicating the audit service was down during the incident."
+  },
+  {
+    "incident_id": "LIVE-ee039e30",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 83.34580898284912,
+    "final_text": "ROOT CAUSE: audit. REASON: The audit service failed during the incident window \u2013 its health check failed at 13:00:27.659, it logged numerous \u201cError handler threw an exception\u201d messages, and the independent witness recorded an audit DOWN/RECOVERED cycle, causing the audit chain to be incomplete."
+  },
+  {
+    "incident_id": "LIVE-471a5319",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "gateway",
+    "hit": false,
+    "seconds": 492.3445625305176,
+    "final_text": "We have performed many calls. We have evidence: AML_SANCTIONS_HIT logs for many payments. The funnel counts show many payments processed: audit 398, routing-execution 153, settlement 153, fraud-scoring 128, gateway 122, aml-compliance 102, gateway PAYMENT_SUBMITTED 61, validation-enrichment 55, routing-execution RAIL_SELECTED 51, PAYMENT_ROUTED 51, settlement SETTLEMENT_COMPLETE 51, unknown 14, aml-compliance AML_SANCTIONS_HIT 8, validation-enrichment PAYMENT_REJECTED 6, aml-compliance unlabeled 4.\n\nThe logs show that for payment 05851351... AML_SANCTIONS_HIT and AML_HOLD escalated. That payment had gateway PAYMENT_SUBMITTED? Actually gateway logs show PAYMENT_SUBMITTED for 011a7af6... not for 0585... So 0585... maybe not submitted? Wait gateway logs: first line: solacePublish topic=clearflow/payments/initiated/GBP/AF paymentId=05851351... correlationId=... Then Outbox enqueued paymentId=0585... Then PAYMENT_SUBMITTED log shows paymentId=011a7af6... So 0585... didn't get PAYMENT_SUBMITTED? It had initiated but not submitted? Actually gateway logs show PAYMENT_SUBMITTED only for 011a7af6. So 0585... maybe stuck at gateway? But AML_SANCTIONS_HIT happened after validation-enrichment? "
+  },
+  {
+    "incident_id": "LIVE-b6970a15",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 547.7794463634491,
+    "final_text": "ROOT CAUSE: audit. REASON: Health witness log shows audit DOWN then RECOVERED, and audit logs contain numerous \u201cError handler threw an exception\u201d entries."
+  },
+  {
+    "incident_id": "LIVE-930f1eb1",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 137.31673622131348,
+    "final_text": "ROOT CAUSE: audit. REASON: Audit service health check failed and logged repeated ConnectionInitException errors to Cassandra, indicating the audit service was down during the incident."
+  },
+  {
+    "incident_id": "LIVE-ab26f7eb",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "gateway",
+    "hit": false,
+    "seconds": 212.11640906333923,
+    "final_text": "We need to identify root cause. We have logs: many payments processed. The funnel counts show some missing events: gateway PAYMENT_SUBMITTED 63 vs audit AUDIT_CHAIN_APPENDED 419? Wait counts: audit AUDIT_CHAIN_APPENDED 419, gateway PAYMENT_SUBMITTED 63, validation-enrichment PAYMENT_VALIDATED 59, routing-execution RAIL_SELECTED 57, settlement SETTLEMENT_COMPLETE 57. So some payments didn't go through all steps. The missing events: gateway PAYMENT_SUBMITTED 63 but audit chain appended 419? That seems inconsistent: audit has many more events than gateway submitted. But maybe audit logs include many other events like audit chain appended for many other events. But the funnel counts show that 63 payments submitted, 59 validated, 57 routed, 57 settled. So 2 payments didn't get validated? Actually 63 submitted, 59 validated, 4 missing. 59 validated, 57 routed, 2 missing. 57 settled, 0 missing. So 2 payments didn't get routed? But settlement has 57 complete, so all routed payments settled. So 2 payments were validated but not routed? Wait counts: validation-enrichment PAYMENT_VALIDATED 59, routing-execution RAIL_SELECTED 57. So 2 payments validated but no rail selected. That suggests a fa"
+  }
+]

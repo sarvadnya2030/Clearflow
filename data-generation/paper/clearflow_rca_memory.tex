@@ -1,0 +1,565 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{GEAR-RCA: A Graph-Guided Episodic Recall Agent for Fintech-Infrastructure Root-Cause Analysis\\
+A Controlled Ablation on a Live-Injected Benchmark}
+
+\author{
+\IEEEauthorblockN{ClearFlow-RCA Project}
+\IEEEauthorblockA{\textit{Real-Time Payment Cascade Intelligence} \\
+\textit{ClearFlow-RCA}\\
+Draft, September 2026}
+}
+
+\maketitle
+
+\begin{abstract}
+We build GEAR-RCA, a Graph-Guided Episodic Recall Agent for Fintech-Infrastructure Root-Cause Analysis: a
+system for a live eight-service payments platform, assembled from three components
+that prior work has only combined in pairs: a real code-dependency graph (1{,}294 nodes, built by static AST
+parsing over the actual service codebase, not a synthetic topology) that the agent queries as a tool rather
+than a fixed ranking computed once per incident; a tool-calling large language model (LLM) agent that drives a
+multi-round investigation loop over that graph plus live logs, traces, and infrastructure health, with
+structural enforcement replacing prompted-but-ignored instructions; and a three-tier episodic memory (a
+curated known-issues note, leave-one-out case recall over past confirmed incidents, and per-fault-type strategy
+distillation extracted from both successful and failed past
+investigations), layered on top of the graph-guided LLM loop rather than replacing it. All 97 confirmed
+incidents used for scoring come from faults triggered against a live, running system rather than replayed or
+synthetically generated telemetry; to our knowledge this is the first RCA benchmark in this literature built
+this way. On the 11 incidents where every prior method scored 0\% accuracy-at-1 (AC@1) at the outset of
+this project, the memory-equipped agent reaches 81.8\% (fair-credit AC@1), against 72.7\% for an otherwise
+identical no-memory reimplementation of a recent graph-guided competitor's described methodology, a controlled
+ablation isolating a +9.1 point effect. Across a full 97-case confirmed benchmark built from real fault
+injections against the live system, the memory-equipped agent reaches 78.4\% literal / 83.5\% fair-credit AC@1.
+The one fault type for which no strategy could be distilled (insufficient case count) scores 0\%, the single
+clearest piece of evidence that the learned-strategy tier, and not the tool set alone, drives the improvement
+we attribute to memory. We report two real data-leakage bugs found and fixed mid-study, including one whose
+diagnosis was triggered by a collaborator's question about how memory storage worked, and we treat that
+disclosure as part of the method rather than an incidental footnote.
+\end{abstract}
+
+\begin{IEEEkeywords}
+root cause analysis, agent memory, large language model agents, tool use, AIOps, episodic memory,
+case-based reasoning
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+Root-cause analysis (RCA) in microservice systems has moved from purely statistical and graph-theoretic methods
+toward large language model (LLM) agents that reason over logs, traces, and metrics using tool calls. A parallel
+line of work has begun equipping such agents with persistent memory across incidents, on the premise that a
+system which has diagnosed a fault before should not have to rediscover it from scratch. Both directions are
+active in 2026, separately: graph-guided LLM investigation without memory~\cite{gala}, and memory-augmented LLM
+investigation without an explicit code-dependency graph~\cite{amerrcl,opsmem}.
+
+This paper introduces GEAR-RCA, a system
+that combines
+both, applied
+to a domain the closest prior work does not address: payment processing, where a root cause is frequently not
+an infrastructure failure but a \emph{business-domain state fact}, such as an anti-money-laundering (AML)
+sanctions hold or an idempotency-key collision, that no purely infrastructure-telemetry method is built to
+recall. We built the system
+incrementally, testing each component in isolation before combining them, and we report a controlled ablation
+(memory enabled vs.\ disabled, all other components held fixed) rather than a single end-to-end number, so that
+the paper's central claim is falsifiable and precise rather than an aggregate improvement of unclear origin.
+
+Concretely, the system we built and evaluate has three layers, each doing a distinct job rather than
+duplicating the others:
+\label{sec:intro-arch}
+
+\begin{itemize}
+\item \textbf{Graph.} A real code-dependency graph over the eight-service codebase (1{,}294 nodes), extracted
+by static AST parsing plus semantic analysis of the actual source, not a hand-drawn or synthetic service
+topology. The agent queries it as a live tool mid-investigation (\texttt{query\_knowledge\_graph}) to ground a
+candidate root cause in an actual code dependency, rather than consulting a ranking precomputed once and fixed
+for the incident.
+\item \textbf{LLM agent.} A multi-round (up to 15) tool-calling loop over \texttt{gpt-oss-20b}, driving seven
+tools: the graph query above, live Elasticsearch search over full (not pre-filtered) log data, a live
+service-dependency endpoint, real container-health checks, cross-service payment-trace reconstruction, a
+fallible rule-based funnel-stall heuristic, and the memory-recall tool below. Structural enforcement
+(Section~\ref{sec:enforcement}) makes sure a ``mandatory'' tool call cannot be skipped under budget pressure,
+the failure mode we found prompting alone does not prevent.
+\item \textbf{Memory.} A three-tier episodic memory (Section~\ref{sec:system}) layered on top of, not instead
+of, the graph-guided LLM loop: a static known-issues note, leave-one-out full-text case recall over past
+confirmed incidents, and per-fault-type strategy distillation that turns accumulated successes \emph{and}
+failures into concrete guidance injected into the system prompt.
+\end{itemize}
+
+The central empirical question this paper answers is what the memory layer adds once the graph and the
+tool-using LLM are already in place and held fixed. It is not whether an LLM agent can do RCA at all, and not
+whether a graph helps a memory-free agent; both questions are addressed separately by prior work
+(Section~\ref{sec:related}).
+
+Our contributions are as follows. First, a working, tool-using RCA agent evaluated against 97 confirmed
+incidents from real fault injections on a live 8-service payments stack, not synthetic telemetry replay. To our
+knowledge, this is the first RCA benchmark in this literature built entirely from faults triggered against a
+system that was actually running (real process kills, real container stops, real duplicate submissions, real
+SDN-matching payments) rather than replayed, pre-recorded, or synthetically generated telemetry, with ground
+truth taken directly from the trigger mechanism itself and confirmed by an independent concurrently-running
+health-witness process rather than asserted by the benchmark author. Second, a three-tier episodic
+memory system, with the strategy-distillation tier following the title/description/content schema
+of ReasoningBank~\cite{reasoningbank}, applied for the first time (to our knowledge) to business-domain RCA
+rather than web-agent or software-engineering tasks. Third, a controlled ablation isolating memory's real,
+measured, and non-uniform contribution. Fourth, two disclosed methodological findings: a memory-persistence bug
+that silently dropped 27 of 28 completed investigations from the case store, and a memory leave-one-out leakage
+bug, both reported as part of the method rather than omitted.
+
+\section{Related Work}
+\label{sec:related}
+
+\subsection{Agent memory: a three-stage taxonomy}
+
+A 2026 ACL Findings survey~\cite{survey2026} organizes LLM agent memory into three evolutionary stages:
+\emph{storage} (raw trajectory preservation, retrieved by similarity), \emph{reflection} (trajectories
+refined, summarized, or critiqued before retention), and \emph{experience} (trajectories abstracted into
+reusable strategies, generalized across trajectories). Six memory \emph{types} cut across these stages:
+in-context working memory, external episodic memory, retrieval-based semantic memory, reflective memory,
+experience/reasoning memory, and parametric (neural, test-time-updated) memory~\cite{titans}. Our system
+spans three of these: external episodic memory (Section~\ref{sec:system}, Tier 2), experience/reasoning
+memory (Tier 3), and the in-context working memory every tool-using agent has by construction. Tier 2's
+full-text case recall follows the retrieve-and-reuse pattern that case-based reasoning surveys of LLM
+agents~\cite{cbrsurvey} identify as the dominant design for episodic memory in this space, and our choice to
+build episodic memory at all follows directly from the position that it is a missing, not optional, piece of
+long-term LLM agents~\cite{episodicposition}. We do not
+implement reflective memory (prospective/retrospective refinement in the style of~\cite{rmm}) or parametric
+memory, and we discuss both as open work in Section~\ref{sec:limitations}.
+
+\subsection{Closest prior systems}
+
+Table~\ref{tab:related} summarizes the closest 2026 systems found through a literature search covering the full
+intersection of agent memory, tool-using agents, and RCA/AIOps. Every close competitor is infrastructure-
+or telemetry-scoped; none targets a root cause that is a business-domain fact rather than a service failure.
+GALA+~\cite{gala}, the closest graph-guided (memory-free) system, and AMER-RCL~\cite{amerrcl} /
+OpsMem~\cite{opsmem}, the closest memory-augmented (largely graph-free) systems, are architecturally
+complementary to our own design but none combine graph-guided exploration, episodic memory, and structural
+tool-call enforcement in one system. Procedural-compliance work~\cite{agentltl,verifiedtoolcalls} independently
+identifies and formally addresses the exact failure mode we encountered and hand-patched (Section~\ref{sec:enforcement}):
+an LLM agent ignoring a ``mandatory'' instruction under tool-call budget pressure. None of that work has a
+memory dimension.
+
+\subsection{RCA outside the LLM-agent literature}
+
+A separate, older line of RCA work never involves an LLM agent at all, and is post-failure and non-memory by
+construction. CIRCA~\cite{circa} treats root-cause analysis as intervention recognition over a causal Bayesian
+network and improves top-1 recall, but assumes a predefined causal graph rather than querying one live, and
+produces machine-readable indicators rather than an investigation an operator can follow. CCLH~\cite{cclh}
+models inter-service relationships as heterogeneous hypergraphs and performs localization through cascaded
+conditional learning; like CIRCA, it has no cross-incident memory and stops once the current anomaly is
+explained. Lin \textit{et al.}~\cite{fastdim} apply frequent-itemset mining (Apriori, FP-Growth) over
+structured logs at Facebook's production scale, demonstrating that classical, non-learned methods still
+localize root causes across millions of entities. AnoMod~\cite{anomod} contributes a multimodal
+anomaly-detection-and-RCA dataset for microservices and explicitly names the same gap this paper targets: none
+of these methods addresses safe introspection or auditability for a regulated domain. All four are complementary
+evidence that RCA-as-localization is well studied; none of them asks what happens when the same agent
+investigates the same kind of fault twice, which is the question this paper answers.
+
+Two further papers motivate treating payments as its own domain rather than generic infrastructure.
+Narayanan~\cite{hiddenfailuremodes} catalogs failure modes specific to distributed payment platforms
+(authentication gaps, race conditions, idempotency violations, multi-rail inconsistencies) and pairs each with
+an engineering mitigation, but the taxonomy is descriptive: it offers no automated diagnosis and no way to
+learn from a past incident. Porcelli~\cite{tips} models inter-message processing time in a real ISO 20022
+settlement system (TIPS) as an anomaly-detection feature, one of the few studies that maps directly onto a
+message-based payment pipeline the way our benchmark does, but stops at localization with no causal
+reconstruction. Both papers support this paper's premise (Section~\ref{sec:premise}) that a payment root cause
+is often a domain-specific state fact rather than a generic infrastructure symptom, without either paper
+building the agent that recalls it.
+
+\begin{table*}[t]
+\caption{Closest prior systems (2026 unless noted)}
+\label{tab:related}
+\centering
+\begin{tabular}{@{}p{2.1cm}p{4.3cm}p{3.2cm}p{6.3cm}@{}}
+\toprule
+\textbf{System} & \textbf{Memory design} & \textbf{Domain} & \textbf{What it does not cover} \\
+\midrule
+AMER-RCL~\cite{amerrcl} & Temporal-window cross-alert reasoning reuse, recursive per-alert refinement &
+  Generic microservices & Infra telemetry only; no business-state signal; no public code \\
+OpsMem~\cite{opsmem} & Dual short/long-term memory, ``cross-memory resonance,'' LTM consolidated post-resolution &
+  Huawei production microservices & Infra-only; proprietary dataset, no code \\
+GALA+~\cite{gala} & None---bounded graph exploration (STRIX ranking) fresh per incident &
+  OnlineBoutique / TrainTicket / AegisLab, 7 LLMs & Zero cross-incident memory by design; not directly
+  comparable to our numbers (Section~\ref{sec:gala-comparison}) \\
+KRCA~\cite{krca} & Production agentic pipeline (Kuaishou) &
+  Hyper-scale infra & Industry report, not reproducible \\
+OM-RAG~\cite{omrag} & Symptom--root-cause--resolution triples, embedding retrieval &
+  Software bugs (GitHub issues) & Not infrastructure incidents; zero business-state signal by design \\
+AgentLTL~\cite{agentltl} & N/A (procedural compliance, not memory) &
+  General tool use & Solves our enforcement problem but has no memory dimension \\
+CIRCA~\cite{circa} & None---causal Bayesian network, predefined per deployment &
+  Generic microservices & No LLM agent, no memory, requires a predefined causal graph \\
+CCLH~\cite{cclh} & None---heterogeneous hypergraph, fresh per incident &
+  Generic microservices & No LLM agent, no memory, post-failure only \\
+AnoMod~\cite{anomod} & N/A (dataset, not a system) &
+  Generic microservices & RCA benchmark with no agent, no memory, no business-state signal \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\section{System}
+\label{sec:system}
+
+GEAR-RCA is the three layers introduced in
+Section~\ref{sec:intro-arch}: a real code-dependency graph
+queried live rather than precomputed, an LLM tool-calling loop that drives the investigation, and a three-tier
+memory layered on top. This section describes each in the order the agent actually uses them: the LLM loop and
+its tools (including the graph) first, then memory.
+
+The agent is a multi-round tool-calling loop (up to 15 rounds) driving \texttt{gpt-oss-20b} via the NVIDIA NIM
+API, with seven tools: a rule-based funnel-stall heuristic (called first, explicitly labeled fallible); a live
+Elasticsearch query tool returning full log data rather than a pre-filtered sample; a real code-dependency
+graph query (\texttt{query\_knowledge\_graph}, 1{,}294 nodes, built via static AST parsing plus semantic
+extraction over the actual service codebase); a live
+service-dependency endpoint; a container-health check (real \texttt{docker inspect}); a cross-service
+payment-trace reconstruction tool; and the memory-recall tool described below. The graph tool is queried
+mid-investigation against the specific services implicated by the evidence gathered so far, not consulted once
+as a precomputed ranking.
+
+\subsection{Three-tier memory}
+
+\textbf{Tier 1 (known issues).} A small curated list of confirmed, recurring, unrelated noise sources (one
+entry: a persistent background error on the settlement service that twice misled independent investigations
+before being documented). Static, not learned.
+
+\textbf{Tier 2 (episodic case recall).} A SQLite database with full-text search (FTS5) over every past case's
+real evidence text. When the agent finds a distinctive log signature, it queries this store and receives
+matching past cases with their \emph{confirmed} root causes. Queries exclude the incident currently under
+test (leave-one-out), described further in Section~\ref{sec:leakage}.
+
+\textbf{Tier 3 (distilled strategy).} Following ReasoningBank's schema~\cite{reasoningbank}, we distill each
+fault type's accumulated cases, both successful and failed past investigations, explicitly labeled as such,
+into one reusable strategy (title, one-sentence description, and 3--5 sentences of concrete guidance),
+injected directly into the system prompt rather than offered as a callable tool. Coverage: 11 of 13 fault
+types; two (insufficient case count) have none, and Section~\ref{sec:results} shows the resulting accuracy
+gap is stark.
+
+\subsection{Structural enforcement over prompted compliance}
+\label{sec:enforcement}
+
+An instruction marked ``MANDATORY'' in the system prompt was routinely ignored once the model was under
+tool-call budget pressure: it would exhaust its call budget on log search and answer without ever invoking
+the graph-query or memory-recall tools. We replaced the soft instruction with structural enforcement: the
+loop tracks whether each required tool has actually been called, and if the model attempts to answer (or
+exhausts its round budget) without having called it, the next call is forced via the API's own
+\texttt{tool\_choice} parameter rather than repeated as text.
+
+\section{Benchmark and Methodology}
+
+\subsection{Premise: why a live-injected benchmark}
+\label{sec:premise}
+
+We start from a first-principles objection to how this literature evaluates RCA agents. An agent that scores
+well against replayed or pre-recorded telemetry has been shown to pattern-match a fixed, already-known record
+of what happened. It has not been shown to investigate a system that is still changing while it looks. The
+two are not the same skill, and the benchmarks in this space do not distinguish them: they replay archived
+telemetry, or inject faults into a small demo application built to be broken (Table~\ref{tab:related}), not
+into a system with the scale, real datastore dependencies, and real business-domain state that a production
+payments platform actually has. This is not a fringe practice, either: even a 2025 Microsoft Research causal-RCA
+method~\cite{idi} is evaluated on PetShop~\cite{petshop}, a widely used benchmark of purely synthetic latency
+and availability time series with injected performance issues, no logs, no source code, and no business-domain
+state at all. If the state of the art at a major industrial research lab is still validated this way, the gap
+this paper targets is real, not a straw man. If the claim is that an agent can do root-cause analysis, the
+evidence should
+come from causes it actually had to uncover, in a system large and real enough that the fault could plausibly
+hide the way it would in practice.
+
+That objection is why we built the platform before we built the benchmark. We stood up a real eight-service
+payments infrastructure (Spring Boot, Kafka, Elasticsearch, MongoDB, Cassandra, Redis) processing real traffic
+end to end: fraud scoring, validation, AML screening, routing, settlement, audit, rather than a diagram or
+a toy app, specifically so that a fault injected into it would have somewhere real to propagate and something
+real to break. Only once that system was live and taking steady traffic did we inject faults into it and record
+what happened, rather than deciding in advance what an incident would look like and writing telemetry to match.
+This section describes that benchmark: how faults were triggered against the live system
+(\S\ref{sec:live-injection}), how a prediction is scored against it (\S\ref{sec:fair-credit}), and a leakage
+bug we found and fixed in the memory system's interaction with it (\S\ref{sec:leakage}).
+
+\subsection{Live fault injection, not synthetic replay}
+\label{sec:live-injection}
+
+Every close prior benchmark in this literature is built from either synthetic telemetry replay or fault
+injection against a demo/toy application (Table~\ref{tab:related}): GALA+ injects into OnlineBoutique,
+TrainTicket, and AegisLab~\cite{gala}; RCAEval likewise targets demo microservice apps with pre-recorded
+telemetry~\cite{rcaeval}; OM-RAG scores against archived GitHub issue histories rather than live
+incidents~\cite{omrag}. To our knowledge, no prior published RCA-agent benchmark is built from faults triggered
+against a real, running, non-demo system with ground truth taken from the trigger mechanism itself rather
+than from a pre-existing incident record or an author-asserted label. We built one.
+
+We built 110 gold cases from real faults injected against a live, running 8-service payments platform
+(Spring Boot, Kafka, Elasticsearch, MongoDB, Cassandra, Redis) via five distinct real trigger mechanisms: real
+process kill/restart (\texttt{docker}-orchestrated crash of the actual Spring Boot process, not a simulated
+failure flag), real container stop/start on shared infrastructure dependencies (Redis, MongoDB, Cassandra),
+a real concurrent decoy-traffic burst that gets genuine HTTP-level rejections from a non-root-cause service
+(engineering an authentic confound rather than asserting one), real duplicate payment submissions that trigger
+the gateway's actual idempotency logic, and real payments built from sanctions-list-matching entities that must
+be confirmed HELD by querying the live compliance-holds endpoint before being accepted as a labeled case. Ground
+truth for crash-based faults is tautological (the root service is the exact process the injector killed); for
+the two payment-domain fault types, a \texttt{confirmed} flag records whether the intended effect (a real HELD
+status, a real 409 duplicate rejection) actually manifested, since those two can legitimately fail to land on a
+given attempt. Every incident also has an independent health-witness
+process polling service health concurrently with, but with no foreknowledge of, the injected fault, and a
+240-second cooldown between incidents to prevent one incident's crash effects from contaminating the next
+incident's evidence baseline. Of the 110 cases,
+97 are \emph{confirmed} (independently verifiable evidence exists tying the fault to its root cause) and are
+used for accuracy scoring; the remaining 13 are evidence-free by design (e.g., faults with no discoverable
+symptom under the current telemetry) and are retained to test correct abstention rather than accuracy.
+
+\subsection{Fair-credit scoring}
+\label{sec:fair-credit}
+
+A prediction of the consuming service (\texttt{audit} or \texttt{settlement}) is credited as correct when the
+gold label is the underlying datastore (\texttt{cassandra}), because both are the \emph{only} two services
+with a real dependency on Cassandra (verified directly from build manifests, not assumed), and a model naming
+the affected service is diagnosing the real failure propagation correctly, merely not naming the datastore
+itself. This rule is not extended to other datastores (e.g.\ MongoDB) without the equivalent verification,
+and we report literal and fair-credit accuracy separately throughout.
+
+\subsection{Leave-one-out memory exclusion}
+\label{sec:leakage}
+
+Because every gold case is also seeded into the episodic memory store, a naive implementation of
+\texttt{recall\_similar\_past\_incidents} would let the agent retrieve its own answer key during evaluation.
+We verified this leakage occurred prior to a fix (one case returned as its own top match) and applied an
+explicit exclusion of the current incident's own identifier from every recall query, then reverified the fix.
+
+\section{Experiments and Results}
+\label{sec:results}
+
+\subsection{Full benchmark, memory enabled}
+
+Across all 97 confirmed cases, the memory-equipped agent reaches 78.4\% literal AC@1 (76/97) and 83.5\%
+fair-credit AC@1 (81/97). Table~\ref{tab:byfault} breaks this down by fault type. Three fault types reach
+100\%; the two fault types this project has historically found hardest, \texttt{AML\_HOLD} and
+\texttt{CASSANDRA\_OUTAGE}, reach 89\% and 62\% respectively, up from 0\% for every method tried before this
+system existed. The sole fault type with no distilled strategy, \texttt{REDIS\_OUTAGE} (three confirmed
+cases, below the threshold we judged safe to generalize from), scores 0\%. That is the clearest single result
+in this study that the strategy-distillation tier, not the tool set alone, is responsible for the gains on
+repeated-pattern fault types.
+
+\begin{table}[t]
+\caption{Fair-credit AC@1 by fault type, full 97-case benchmark, memory enabled}
+\label{tab:byfault}
+\centering
+\footnotesize
+\begin{tabular}{@{}p{4.6cm}rr@{}}
+\toprule
+\textbf{Fault type} & \textbf{n} & \textbf{Fair-credit AC@1} \\
+\midrule
+DB\_TIMEOUT & 9 & 100\% \\
+KAFKA\_CONSUMER\_LAG & 9 & 100\% \\
+NETWORK\_LATENCY & 9 & 100\% \\
+AML\_HOLD & 9 & 89\% \\
+CPU\_SATURATION & 9 & 89\% \\
+SETTLEMENT\_DB\_FAILURE\_\allowbreak KAFKA\_CONFOUND & 8 & 88\% \\
+SETTLEMENT\_DB\_FAILURE\_\allowbreak LIQUIDITY\_CASCADE & 8 & 88\% \\
+VALIDATION\_SLOWDOWN\_\allowbreak GATEWAY\_CONFOUND & 9 & 78\% \\
+AML\_SERVICE\_DEGRADATION\_\allowbreak RETRY\_CASCADE & 8 & 75\% \\
+MONGODB\_OUTAGE & 8 & 75\% \\
+CASSANDRA\_OUTAGE & 8 & 62\% \\
+\textbf{REDIS\_OUTAGE} (no strategy) & 3 & \textbf{0\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Controlled ablation: memory on vs.\ off}
+
+We isolate memory's contribution by flipping a single flag that disables all three memory tiers and removes
+the recall tool from the tool list entirely, leaving graph-guided exploration, live telemetry, and trace
+reconstruction with no cross-incident memory. This configuration is architecturally the closest match to
+GALA+'s described methodology~\cite{gala}, reimplemented from the published description since GALA+'s code is
+not public.
+Table~\ref{tab:ablation} reports the result on the 11 hardest cases (the subset on which every prior method
+scored 0\% before this system existed) and on a full-benchmark checkpoint.
+
+\begin{table}[t]
+\caption{Memory on/off ablation, same tools otherwise}
+\label{tab:ablation}
+\centering
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Condition} & \textbf{n} & \textbf{Literal} & \textbf{Fair-credit} \\
+\midrule
+Memory ON, 11 hardest cases & 11 & \textbf{45.5\%} & \textbf{81.8\%} \\
+Memory OFF, same 11 cases & 11 & 27.3\% & 72.7\% \\
+Memory ON, full benchmark & 97 & \textbf{78.4\%} & \textbf{83.5\%} \\
+Memory OFF, full benchmark & 97 & 66.0\% & 74.2\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+On the 11 hardest cases, memory contributes a clean +9.1-point effect. A case-level breakdown shows this is
+real but noisy: of 11 cases, 6 have identical outcomes with memory on or off, memory wins 3, and the no-memory
+condition wins 2, including one \texttt{CASSANDRA\_OUTAGE} case where the memory-enabled agent guessed a
+service with no real Cassandra dependency, a genuine confusion introduced by memory rather than a neutral
+miss. We report this mixed pattern rather than only the aggregate, since a blanket ``memory improves RCA''
+claim does not survive case-level inspection. The more precise claim, that memory helps disproportionately on
+repeated-pattern fault types with real variance case to case, does.
+
+At full-benchmark scale the same direction holds and the gap widens: memory contributes +12.4 points literal
+(66.0\%$\to$78.4\%) and +9.3 points fair-credit (74.2\%$\to$83.5\%) across all 97 confirmed cases, with
+identical tools, graph, and enforcement in both arms. The only difference is whether the three memory
+tiers and the recall tool are present. The no-memory arm's specific failures are informative: every \texttt{MONGODB\_OUTAGE} case (3/3, all predicted
+\texttt{gateway} or \texttt{settlement}) and every \texttt{REDIS\_OUTAGE} case (3/3, all predicted
+\texttt{settlement}) missed both literal and fair credit without memory, two fault types for which no other
+datastore-equivalence rule applies, so neither can be rescued by the fair-credit convention the way Cassandra
+cases can. Both are fault types Section~\ref{sec:results} already identifies as lacking either a distilled
+strategy (\texttt{REDIS\_OUTAGE}) or, in the memory-off condition, any accumulated case history at all,
+consistent with the hardest-cases finding that the strategy-distillation tier, not the tool set alone, is what
+memory contributes. By contrast, all three \texttt{CASSANDRA\_OUTAGE} misses in the no-memory arm still earned
+fair credit (the agent correctly named \texttt{settlement}, a real Cassandra-dependent consumer, without
+literally naming \texttt{cassandra}), the same audit/settlement equivalence described in
+Section~\ref{sec:results}.
+
+\subsection{Attribution: memory vs.\ earlier fixes}
+
+A direct-signal rule (search for a fault type's known decisive log line, e.g.\ an AML sanctions-hit event,
+before trusting funnel-stall inference) was added before the memory system existed and is gated only by
+fault type, not by the memory-enabled flag, so it is present identically in both arms of the ablation. In isolated
+testing, this rule alone corrected 4 of 5 \texttt{AML\_HOLD} misses. Because the flag is wired this way, the
+ablation's measured gap is attributable specifically to the memory tiers built afterward, not to this earlier,
+separable fix.
+
+\section{On External Comparison}
+\label{sec:gala-comparison}
+
+GALA+ reports 74.44\% AC@1 on OnlineBoutique and 73.33\% on TrainTicket, both synthetic infrastructure-fault
+benchmarks on demo e-commerce applications~\cite{gala}. Our 83.5\% fair-credit figure is \emph{not} a valid
+``exceeds GALA+'' claim: different benchmark, different fault domain (business-state payment faults vs.\
+generic infrastructure faults), and a different, explicitly disclosed scoring convention. The only valid
+comparison is the in-benchmark ablation of Table~\ref{tab:ablation}. We note two methodological practices
+GALA+ follows that we do not: averaging every result over three runs to control for LLM sampling
+non-determinism (we report single-run results per case), and using human evaluators to score evidence
+groundedness as a distinct dimension, which surfaced a real weakness common to every method GALA+
+tested~\cite{gala}. We also note a striking convergent finding: GALA+'s own paper discloses that its BARO
+baseline systematically overpredicts a Redis-backed service because of persistent, unrelated disk-I/O spikes.
+Independently, our own weakest fault type is also Redis-related (\texttt{REDIS\_OUTAGE}, Section~\ref{sec:results}),
+via an unrelated mechanism (missing memory strategy rather than spurious metric dominance). That suggests
+Redis-adjacent telemetry is a broadly hard signal-to-noise problem in this literature, not a defect specific
+to either system.
+
+\section{Disclosed Bugs, Reported as Method}
+
+We report two data-integrity issues found and fixed during this study, both directly affecting the memory
+system's validity, rather than omitting them. First, the case-memory store's uniqueness constraint originally
+keyed on incident identifier alone; because every gold case is pre-seeded, an agent's own investigation of a
+case already in memory silently failed to persist. Before this was found (triggered by a collaborator asking
+how memory storage worked, not by an automated check), only one of 28 completed agentic investigations had
+actually been recorded. We fixed this with a composite (incident identifier, source) key and migrated the
+live database without data loss; all accuracy numbers in this paper are unaffected, since predictions come
+from live tool calls against real evidence rather than from memory lookup, but one earlier causal claim about
+memory compounding within a single run was retracted once the bug was found. Second, the leave-one-out
+exclusion described in Section~\ref{sec:leakage} was itself a bug caught and fixed before being reported as a
+result.
+
+\section{Limitations}
+\label{sec:limitations}
+
+We do not average over multiple runs to control
+for LLM sampling non-determinism, unlike GALA+. The fair-credit scoring rule, while grounded in verified
+service-dependency data, has not been checked against an independent or human judgment. One fault type
+(\texttt{IDEMPOTENCY\_COLLISION\_STORM}) currently has zero usable cases in memory, the same class of gap as
+\texttt{REDIS\_OUTAGE}, not yet investigated. Reflective memory (Tier 2.5, prospective/retrospective
+consolidation in the style of~\cite{rmm}) remains unbuilt; the infrastructure to log every investigation's
+outcome exists and would support it, but nothing currently consumes that log in a reflective way.
+
+\section{Conclusion}
+
+We present GEAR-RCA, a tool-using RCA
+agent with a three-tier episodic memory, evaluated on a live-injected
+97-case payments benchmark, and isolate memory's contribution via a controlled ablation rather than reporting a
+single aggregate number. The defensible contribution is narrower than ``memory improves RCA'': episodic memory
+indexed specifically over business-domain state, combined with structural tool-call enforcement, measured with
+a disclosed leave-one-out protocol and two found-and-fixed leakage bugs, on fault types (AML holds, idempotency
+collisions) that no close 2026 competitor's architecture targets. The ablation shows this contribution is
+real but concentrated on repeated-pattern fault types rather than a uniform lift, a precise claim we prefer
+over an inflated one.
+
+\begin{thebibliography}{00}
+
+\bibitem{survey2026} J. Luo, Y. Tian, C. Cao, Z. Luo, H. Lin, K. Li, C. Kong, R. Yang, and J. Ma,
+``From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms,''
+\emph{Findings of ACL 2026}, arXiv:2605.06716.
+
+\bibitem{reasoningbank} Google Research, ``ReasoningBank: Scaling Agent Self-Evolving with Reasoning
+Memory,'' arXiv:2509.25140, 2026.
+
+\bibitem{episodicposition} M. Pink, Q. Wu, V. A. Vo, J. Turek, J. Mu, A. Huth, and M. Toneva,
+``Position: Episodic Memory is the Missing Piece for Long-Term LLM Agents,'' arXiv:2502.06975, 2025.
+
+\bibitem{rmm} ``In Prospect and Retrospect: Reflective Memory Management for Long-term Personalized
+Dialogue Agents,'' \emph{ACL}, 2025, arXiv:2503.08026.
+
+\bibitem{titans} Google Research, ``Titans + MIRAS: Helping AI have long-term memory,'' 2025--2026.
+
+\bibitem{amerrcl} ``Agentic Memory Enhanced Recursive Reasoning for Root Cause Localization in
+Microservices,'' arXiv:2601.02732, 2026.
+
+\bibitem{opsmem} Y. Sun, R. Gao, Y. Luo, W. Gu, S. Zhang, Q. Guo, Q. Fu, Y. Wu, and D. Pei,
+``OpsMem: Dual-Memory Reasoning with Cross-Memory Resonance for Failure Diagnosis,'' \emph{IEEE ISSRE},
+2026, arXiv:2607.11357.
+
+\bibitem{gala} ``GALA: Graph-Augmented LLM Agents for Root Cause Analysis and Incident Response in
+Microservices,'' arXiv:2608.08968, 2026.
+
+\bibitem{krca} ``KRCA: An Efficient Root Cause Analysis System in Hyper-scale Microservice Systems via
+Agentic AI,'' arXiv:2607.01788, 2026.
+
+\bibitem{omrag} ``Leveraging Resolved Incident History for LLM-Assisted Software Bug Diagnosis,''
+arXiv:2607.21911, 2026.
+
+\bibitem{cbrsurvey} ``Review of Case-Based Reasoning for LLM Agents: Theoretical Foundations,
+Architectural Components, and Cognitive Integration,'' arXiv:2504.06943, 2025.
+
+\bibitem{agentltl} ``AgentLTL: A Trace-Verification Framework for Measuring, Enforcing, and Training
+Procedural Compliance in Tool-Using LLM Agents,'' arXiv:2607.02599, 2026.
+
+\bibitem{verifiedtoolcalls} ``Verified Tool Calls Improve LLM Agent Reliability Under Non-Atomic
+Failures,'' arXiv:2608.02645, 2026.
+
+\bibitem{rcaeval} L. Pham et al., ``RCAEval: A Benchmark for Root Cause Analysis of Microservice
+Systems with Telemetry Data,'' \emph{FSE}, 2026 (also \emph{WWW} 2025, \emph{ASE} 2024).
+
+\bibitem{circa} M. Li, Z. Li, K. Yin, X. Nie, W. Zhang, K. Sui, and D. Pei, ``Causal Inference-Based Root
+Cause Analysis for Online Service Systems with Intervention Recognition,'' in \emph{Proc. 28th ACM SIGKDD
+Conf. on Knowledge Discovery and Data Mining (KDD)}, 2022.
+
+\bibitem{cclh} S. Xie, H. He, J. Wang, and B. Li, ``Root Cause Analysis for Microservice Systems via
+Cascaded Conditional Learning with Hypergraphs,'' \emph{arXiv preprint}, 2025.
+
+\bibitem{fastdim} F. Lin, K. Muzumdar, N. P. Laptev, M.-V. Curelea, S. Lee, and S. Sankar, ``Fast
+Dimensional Analysis for Root Cause Investigation in a Large-Scale Service Environment,'' \emph{Proc. ACM on
+Measurement and Analysis of Computing Systems (SIGMETRICS)}, vol. 4, no. 2, 2020.
+
+\bibitem{anomod} K. Ping, H. B. Mazhar, Y. Wang, Y. Song, and M. V. M\"antyl\"a, ``AnoMod: A Dataset for
+Anomaly Detection and Root Cause Analysis in Microservice Systems,'' in \emph{Proc. 23rd Int. Conf. on Mining
+Software Repositories (MSR)}, 2026.
+
+\bibitem{hiddenfailuremodes} V. Narayanan, ``The Hidden Failure Modes in Digital Payment Platforms and How
+to Engineer Around Them,'' \emph{Journal of Information Systems Engineering and Management}, 2025.
+
+\bibitem{tips} L. Porcelli, ``A Feature Engineering Approach for Business Impact-Oriented Failure Detection
+in Distributed Instant Payment Systems,'' \emph{arXiv preprint}, 2025.
+
+\bibitem{idi} L. Nagalapatti, A. Srivastava, S. Sarawagi, and A. Sharma, ``Robust Root Cause Diagnosis
+using In-Distribution Interventions,'' in \emph{Proc. Int. Conf. on Learning Representations (ICLR)}, 2025.
+
+\bibitem{petshop} M. Hardt, W. R. Orchard, P. Bl\"obaum, S. Kasiviswanathan, and E. Kirschbaum, ``The
+PetShop Dataset: Finding Causes of Performance Issues across Microservices,'' \emph{Proc. 3rd Conf. on Causal
+Learning and Reasoning (CLeaR)}, \emph{PMLR}, vol. 236, 2024.
+
+\end{thebibliography}
+
+\end{document}

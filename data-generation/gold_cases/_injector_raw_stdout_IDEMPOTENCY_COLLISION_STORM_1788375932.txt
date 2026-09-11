@@ -1,0 +1,7 @@
+Background traffic started at 3.0/s
+
+=== IDEMPOTENCY_COLLISION_STORM (root=gateway, family=payment_domain, mechanism=idempotency) rep=0 ===
+  OK: {"injection_time": "2026-09-02T19:01:27.612081+00:00", "duration_seconds": 5, "response_codes": [202, 409, 409, 409, 409, 409, 409, 409, 409, 409, 409, 409, 409, 409, 409], "original_payment_id": "d070ecdb-6445-4e3c-a943-f9cd9c464f06", "duplicate_confirmed": true}
+  [1 done, persisted]
+
+Background traffic stopped. 1 incidents persisted, 727 background payments sent total (each already persisted as sent).

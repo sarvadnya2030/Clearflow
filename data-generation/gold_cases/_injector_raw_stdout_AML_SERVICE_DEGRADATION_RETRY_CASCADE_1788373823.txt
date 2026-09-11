@@ -1,0 +1,7 @@
+Background traffic started at 3.0/s
+
+=== AML_SERVICE_DEGRADATION_RETRY_CASCADE (root=aml-compliance, family=cross_domain, mechanism=crash) rep=0 ===
+  OK: {"injection_time": "2026-09-02T18:25:23.886035+00:00", "duration_seconds": 30, "recovered": true, "kafka_lag_before": 43214, "kafka_lag_after_recovery": 43373}
+  [1 done, persisted]
+
+Background traffic stopped. 1 incidents persisted, 889 background payments sent total (each already persisted as sent).

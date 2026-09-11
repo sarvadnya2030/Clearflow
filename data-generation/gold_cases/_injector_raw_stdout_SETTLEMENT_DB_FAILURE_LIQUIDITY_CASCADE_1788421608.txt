@@ -1,0 +1,6 @@
+Background traffic started at 3.0/s
+
+=== SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE (root=settlement, family=cross_domain, mechanism=crash) rep=0 ===
+  FAILED: stop failed: 404 {"timestamp":"2026-09-03T07:42:47.856+00:00","status":404,"error":"Not Found","path":"/mcp/admin/service/settlement/stop"}
+
+Background traffic stopped. 0 incidents persisted, 716 background payments sent total (each already persisted as sent).

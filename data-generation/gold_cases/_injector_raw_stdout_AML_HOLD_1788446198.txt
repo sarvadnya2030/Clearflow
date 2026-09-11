@@ -1,0 +1,7 @@
+Background traffic started at 3.0/s
+
+=== AML_HOLD (root=aml-compliance, family=payment_domain, mechanism=aml_hold) rep=0 ===
+  OK: {"injection_time": "2026-09-03T14:32:28.829283+00:00", "duration_seconds": 5, "payment_id": "f65b24b2-04e9-4bea-98b9-8b33132ba46a", "confirmed_held": true}
+  [1 done, persisted]
+
+Background traffic stopped. 1 incidents persisted, 741 background payments sent total (each already persisted as sent).

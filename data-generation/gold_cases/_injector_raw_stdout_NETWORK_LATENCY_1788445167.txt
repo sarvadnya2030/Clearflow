@@ -1,0 +1,7 @@
+Background traffic started at 3.0/s
+
+=== NETWORK_LATENCY (root=validation-enrichment, family=infra, mechanism=crash) rep=0 ===
+  OK: {"injection_time": "2026-09-03T14:14:46.087411+00:00", "duration_seconds": 20, "recovered": true, "kafka_lag_before": 64055, "kafka_lag_after_recovery": 64174}
+  [1 done, persisted]
+
+Background traffic stopped. 1 incidents persisted, 835 background payments sent total (each already persisted as sent).
