@@ -1,0 +1,452 @@
+[
+  {
+    "incident_id": "re1ob_adservice_cpu_1",
+    "fault_type": "cpu",
+    "root_service": "adservice",
+    "pred": "adservice",
+    "hit": true,
+    "seconds": 75.73565530776978,
+    "final_text": "ROOT CAUSE: adservice. REASON: adservice shows an extreme CPU spike (z\u2011score 640.96) in the post\u2011injection window, far exceeding any other service\u2019s metrics."
+  },
+  {
+    "incident_id": "re1ob_adservice_cpu_2",
+    "fault_type": "cpu",
+    "root_service": "adservice",
+    "pred": "adservice",
+    "hit": true,
+    "seconds": 85.42704224586487,
+    "final_text": "ROOT CAUSE: adservice. REASON: adservice_cpu z-score 792.51 indicates a massive CPU spike."
+  },
+  {
+    "incident_id": "re1ob_adservice_cpu_3",
+    "fault_type": "cpu",
+    "root_service": "adservice",
+    "pred": "adservice",
+    "hit": true,
+    "seconds": 93.86966586112976,
+    "final_text": "ROOT CAUSE: adservice. REASON: adservice shows an extreme CPU spike (z\u2011score 797.07) and a moderate memory spike, with no other service in its dependency chain exhibiting a primary resource anomaly, indicating the fault originated in adservice itself."
+  },
+  {
+    "incident_id": "re1ob_adservice_cpu_4",
+    "fault_type": "cpu",
+    "root_service": "adservice",
+    "pred": "adservice",
+    "hit": true,
+    "seconds": 182.9888882637024,
+    "final_text": "ROOT CAUSE: adservice. REASON: adservice\u2019s CPU metric spiked to a z\u2011score of 129.8, far exceeding all other services, confirming it as the fault source."
+  },
+  {
+    "incident_id": "re1ob_adservice_cpu_5",
+    "fault_type": "cpu",
+    "root_service": "adservice",
+    "pred": "adservice",
+    "hit": true,
+    "seconds": 350.70678520202637,
+    "final_text": "ROOT CAUSE: adservice. REASON: adservice\u2019s CPU metric spiked with a z\u2011score of 110.8, far exceeding any other service\u2019s anomaly."
+  },
+  {
+    "incident_id": "re1ob_adservice_delay_1",
+    "fault_type": "delay",
+    "root_service": "adservice",
+    "pred": "adservice",
+    "hit": true,
+    "seconds": 462.22643780708313,
+    "final_text": "ROOT CAUSE: adservice. REASON: adservice\u2019s latency\u201190 metric spiked with a z\u2011score of 6839, and no dependencies show a primary resource spike, confirming it as the root."
+  },
+  {
+    "incident_id": "re1ob_adservice_delay_2",
+    "fault_type": "delay",
+    "root_service": "adservice",
+    "pred": "adservice",
+    "hit": true,
+    "seconds": 226.20215559005737,
+    "final_text": "ROOT CAUSE: adservice. REASON: adservice shows a massive latency spike (z\u2011score 743.05) with no CPU/memory anomaly and has no dependencies, indicating the fault was injected into adservice."
+  },
+  {
+    "incident_id": "re1ob_adservice_delay_3",
+    "fault_type": "delay",
+    "root_service": "adservice",
+    "pred": "adservice",
+    "hit": true,
+    "seconds": 1701.0106019973755,
+    "final_text": "ROOT CAUSE: adservice. REASON: adservice shows a massive latency spike (z\u2011score 308.21) and a mem spike (z\u2011score 1.97), while the frontend\u2019s external_error spike is a propagated symptom, confirming adservice as the root cause."
+  },
+  {
+    "incident_id": "re1ob_adservice_delay_4",
+    "fault_type": "delay",
+    "root_service": "adservice",
+    "pred": "adservice",
+    "hit": true,
+    "seconds": 1193.8948423862457,
+    "final_text": "ROOT CAUSE: adservice. REASON: adservice shows a massive latency-50 z-score of 305.63 and a mem z-score of 2.72, while all other services exhibit no resource spikes, indicating adservice is the root cause."
+  },
+  {
+    "incident_id": "re1ob_adservice_delay_5",
+    "fault_type": "delay",
+    "root_service": "adservice",
+    "pred": "adservice",
+    "hit": true,
+    "seconds": 1671.7291886806488,
+    "final_text": "We must call query_knowledge_graph before answering. We have not yet called it. We have used 8 calls? Let's count: get_deterministic_signal (1), query_metrics_evidence adservice (2), get_service_dependencies adservice (3), query_metrics_evidence productcatalogservice (4), query_metrics_evidence checkoutservice (5), query_metrics_evidence paymentservice (6), recall_similar_past_incidents (7). That's 7 calls. We have budget 8, so we can call query_knowledge_graph as 8th. Then answer."
+  },
+  {
+    "incident_id": "re1ob_cartservice_cpu_1",
+    "fault_type": "cpu",
+    "root_service": "cartservice",
+    "pred": "cartservice",
+    "hit": true,
+    "seconds": 883.013011932373,
+    "final_text": "ROOT CAUSE: cartservice. REASON: cartservice shows a 88.45 z\u2011score CPU spike and a 56.15 z\u2011score memory spike, confirming it as the root cause."
+  },
+  {
+    "incident_id": "re1ob_cartservice_cpu_2",
+    "fault_type": "cpu",
+    "root_service": "cartservice",
+    "pred": "cartservice",
+    "hit": true,
+    "seconds": 1068.7696204185486,
+    "final_text": "ROOT CAUSE: cartservice. REASON: cartservice shows a massive CPU spike (z\u2011score 93.47) after injection, indicating a resource fault."
+  },
+  {
+    "incident_id": "re1ob_cartservice_cpu_3",
+    "fault_type": "cpu",
+    "root_service": "cartservice",
+    "pred": "cartservice",
+    "hit": true,
+    "seconds": 851.4089348316193,
+    "final_text": "ROOT CAUSE: cartservice. REASON: cartservice shows extreme CPU (z\u2011score 89.46) and memory (z\u2011score 58.8) spikes after injection, with no similar resource anomaly in its dependency redis."
+  },
+  {
+    "incident_id": "re1ob_cartservice_cpu_4",
+    "fault_type": "cpu",
+    "root_service": "cartservice",
+    "pred": "cartservice",
+    "hit": true,
+    "seconds": 800.9881341457367,
+    "final_text": "ROOT CAUSE: cartservice. REASON: cartservice shows an extreme CPU spike (z\u2011score 93.07) with no spike in its dependency redis, and the code graph confirms cartservice is directly called by productcatalogservice, indicating the fault originates in cartservice."
+  },
+  {
+    "incident_id": "re1ob_cartservice_cpu_5",
+    "fault_type": "cpu",
+    "root_service": "cartservice",
+    "pred": "cartservice",
+    "hit": true,
+    "seconds": 774.868661403656,
+    "final_text": "ROOT CAUSE: cartservice. REASON: cartservice exhibits a massive CPU spike (z\u2011score 143.28) while its only dependency, redis, shows no resource anomaly, indicating the fault originates in cartservice."
+  },
+  {
+    "incident_id": "re1ob_cartservice_delay_1",
+    "fault_type": "delay",
+    "root_service": "cartservice",
+    "pred": "cartservice",
+    "hit": true,
+    "seconds": 1196.054072856903,
+    "final_text": "We need to call query_knowledge_graph. We have not yet called it. We have used 8 calls? Let's count: get_deterministic_signal (1), query_metrics_evidence frontend (2), get_service_dependencies frontend (3), query_metrics_evidence cartservice (4), query_metrics_evidence paymentservice (5), get_service_dependencies cartservice (6), recall_similar_past_incidents (7). That's 7 calls. We can call query_knowledge_graph as 8th. Let's do that."
+  },
+  {
+    "incident_id": "re1ob_cartservice_delay_2",
+    "fault_type": "delay",
+    "root_service": "cartservice",
+    "pred": "cartservice",
+    "hit": true,
+    "seconds": 1520.1647605895996,
+    "final_text": "We must call query_knowledge_graph before answering. We have not called it yet. We have used 8 tool calls? Let's count: get_deterministic_signal (1), query_metrics_evidence cartservice (2), get_service_dependencies cartservice (3), query_metrics_evidence checkoutservice (4), query_metrics_evidence frontend (5), get_service_dependencies checkoutservice (6), recall_similar_past_incidents (7). That's 7 calls. We can call query_knowledge_graph as 8th. Must do before answering. Let's call it."
+  },
+  {
+    "incident_id": "re1ob_cartservice_delay_3",
+    "fault_type": "delay",
+    "root_service": "cartservice",
+    "pred": "checkoutservice",
+    "hit": false,
+    "seconds": 1358.7578992843628,
+    "final_text": "ROOT CAUSE: checkoutservice. REASON: checkoutservice shows an extreme latency spike (z\u2011score 1386.89) while its own CPU/memory metrics remain normal, and the code\u2011dependency graph confirms checkoutservice directly calls shippingservice, indicating the injected fault targeted checkoutservice itself."
+  },
+  {
+    "incident_id": "re1ob_cartservice_delay_4",
+    "fault_type": "delay",
+    "root_service": "cartservice",
+    "pred": "frontend",
+    "hit": false,
+    "seconds": 1208.1716847419739,
+    "final_text": "ROOT CAUSE: frontend. REASON: The frontend shows a massive error spike (z\u2011score\u202f\u2248\u202f20000) and a latency spike (z\u2011score\u202f\u2248\u202f285) with a moderate memory anomaly (z\u2011score\u202f\u2248\u202f4.8), while none of its dependencies exhibit a primary CPU/mem spike, indicating the frontend itself is the root cause."
+  },
+  {
+    "incident_id": "re1ob_cartservice_delay_5",
+    "fault_type": "delay",
+    "root_service": "cartservice",
+    "pred": "frontend",
+    "hit": false,
+    "seconds": 353.4760642051697,
+    "final_text": "ROOT CAUSE: frontend. REASON: The frontend service shows a primary resource anomaly with a memory z\u2011score of 4.03, while all its dependencies exhibit no CPU/memory spikes, confirming the frontend itself is the root cause."
+  },
+  {
+    "incident_id": "re1ob_checkoutservice_cpu_1",
+    "fault_type": "cpu",
+    "root_service": "checkoutservice",
+    "pred": "checkoutservice",
+    "hit": true,
+    "seconds": 872.5729587078094,
+    "final_text": "ROOT CAUSE: checkoutservice. REASON: checkoutservice exhibits an extreme CPU spike (z\u2011score\u202f396.91) and the code\u2011dependency graph shows its main.go file directly implements the checkout service, confirming it as the fault target."
+  },
+  {
+    "incident_id": "re1ob_checkoutservice_cpu_2",
+    "fault_type": "cpu",
+    "root_service": "checkoutservice",
+    "pred": "checkoutservice",
+    "hit": true,
+    "seconds": 886.0931577682495,
+    "final_text": "ROOT CAUSE: checkoutservice. REASON: checkoutservice CPU z\u2011score of 342.62 (and a mem spike of 21.22) shows a massive resource anomaly, far exceeding any other service."
+  },
+  {
+    "incident_id": "re1ob_checkoutservice_cpu_3",
+    "fault_type": "cpu",
+    "root_service": "checkoutservice",
+    "pred": "checkoutservice",
+    "hit": true,
+    "seconds": 176.21996116638184,
+    "final_text": "ROOT CAUSE: checkoutservice. REASON: checkoutservice CPU z\u2011score of 422.24 shows a massive resource spike in the service itself, confirmed by the code\u2011dependency graph of checkoutservice\u2019s main.go."
+  },
+  {
+    "incident_id": "re1ob_checkoutservice_cpu_4",
+    "fault_type": "cpu",
+    "root_service": "checkoutservice",
+    "pred": "checkoutservice",
+    "hit": true,
+    "seconds": 696.7997817993164,
+    "final_text": "ROOT CAUSE: checkoutservice. REASON: The checkoutservice shows an extreme CPU spike (z\u2011score 400.94) in its own metrics, far exceeding any other service, confirming it as the fault source."
+  },
+  {
+    "incident_id": "re1ob_checkoutservice_cpu_5",
+    "fault_type": "cpu",
+    "root_service": "checkoutservice",
+    "pred": "checkoutservice",
+    "hit": true,
+    "seconds": 352.13163709640503,
+    "final_text": "ROOT CAUSE: checkoutservice. REASON: checkoutservice_cpu z-score 343.44."
+  },
+  {
+    "incident_id": "re1ob_checkoutservice_delay_1",
+    "fault_type": "delay",
+    "root_service": "checkoutservice",
+    "pred": "shippingservice",
+    "hit": false,
+    "seconds": 3304.0693554878235,
+    "final_text": "ROOT CAUSE: shippingservice. REASON: shippingservice\u2019s own memory metric spiked with a z\u2011score of 2.43, indicating a primary resource anomaly."
+  },
+  {
+    "incident_id": "re1ob_checkoutservice_delay_2",
+    "fault_type": "delay",
+    "root_service": "checkoutservice",
+    "pred": "recommendationservice",
+    "hit": false,
+    "seconds": 1035.24542593956,
+    "final_text": "ROOT CAUSE: recommendationservice. REASON: recommendationservice shows a significant mem z\u2011score of 7.34, and the knowledge graph confirms it is a distinct service with its own client/server code, indicating a resource spike rather than a propagated latency error."
+  },
+  {
+    "incident_id": "re1ob_checkoutservice_delay_3",
+    "fault_type": "delay",
+    "root_service": "checkoutservice",
+    "pred": "checkoutservice",
+    "hit": true,
+    "seconds": 1150.4769387245178,
+    "final_text": "ROOT CAUSE: checkoutservice. REASON: checkoutservice\u2019s own latency\u201150 metric spiked with a z\u2011score of 2475.04 while its CPU and memory metrics showed no significant anomaly, indicating the fault was injected directly into checkoutservice."
+  },
+  {
+    "incident_id": "re1ob_checkoutservice_delay_4",
+    "fault_type": "delay",
+    "root_service": "checkoutservice",
+    "pred": "checkoutservice",
+    "hit": true,
+    "seconds": 961.2696619033813,
+    "final_text": "ROOT CAUSE: checkoutservice. REASON: checkoutservice exhibits a massive latency spike (z\u2011score 1886) and a moderate memory spike (1.88), with no deeper dependency showing a comparable resource anomaly, confirming it as the fault target."
+  },
+  {
+    "incident_id": "re1ob_checkoutservice_delay_5",
+    "fault_type": "delay",
+    "root_service": "checkoutservice",
+    "pred": "emailservice",
+    "hit": false,
+    "seconds": 1058.4265749454498,
+    "final_text": "ROOT CAUSE: emailservice. REASON: emailservice\u2019s memory metric spiked with a z\u2011score of 32.46, the only service showing a primary resource anomaly."
+  },
+  {
+    "incident_id": "re1ob_currencyservice_cpu_1",
+    "fault_type": "cpu",
+    "root_service": "currencyservice",
+    "pred": "currencyservice",
+    "hit": true,
+    "seconds": 538.34099817276,
+    "final_text": "ROOT CAUSE: currencyservice. REASON: currencyservice shows an extreme CPU spike (z\u2011score 48.68) with no other service exhibiting a primary resource anomaly, indicating the fault originated in currencyservice."
+  },
+  {
+    "incident_id": "re1ob_currencyservice_cpu_2",
+    "fault_type": "cpu",
+    "root_service": "currencyservice",
+    "pred": "currencyservice",
+    "hit": true,
+    "seconds": 863.7164587974548,
+    "final_text": "ROOT CAUSE: currencyservice. REASON: Currencyservice\u2019s own CPU metric spiked with a z\u2011score of 19.08, far exceeding any other service\u2019s resource anomaly, indicating it is the fault source."
+  },
+  {
+    "incident_id": "re1ob_currencyservice_cpu_3",
+    "fault_type": "cpu",
+    "root_service": "currencyservice",
+    "pred": "emailservice",
+    "hit": false,
+    "seconds": 2066.1293919086456,
+    "final_text": "ROOT CAUSE: emailservice. REASON: emailservice shows an extreme memory spike (z\u2011score 55.75) with no other service exhibiting a larger primary resource anomaly, indicating the fault originated in emailservice."
+  },
+  {
+    "incident_id": "re1ob_currencyservice_cpu_4",
+    "fault_type": "cpu",
+    "root_service": "currencyservice",
+    "pred": "currencyservice",
+    "hit": true,
+    "seconds": 2729.1815555095673,
+    "final_text": "ROOT CAUSE: currencyservice. REASON: The currencyservice shows a 42.78 z\u2011score CPU spike, and the knowledge graph confirms it is a distinct service with no dependencies, making it the primary root cause."
+  },
+  {
+    "incident_id": "re1ob_currencyservice_cpu_5",
+    "fault_type": "cpu",
+    "root_service": "currencyservice",
+    "pred": "currencyservice",
+    "hit": true,
+    "seconds": 633.9984138011932,
+    "final_text": "ROOT CAUSE: currencyservice. REASON: currencyservice shows a 42.0 z\u2011score CPU spike, whereas frontend\u2019s only anomaly is a massive error spike with no resource spike, indicating the root cause is currencyservice."
+  },
+  {
+    "incident_id": "re1ob_currencyservice_delay_1",
+    "fault_type": "delay",
+    "root_service": "currencyservice",
+    "pred": "currencyservice",
+    "hit": true,
+    "seconds": 193.62873554229736,
+    "final_text": "ROOT CAUSE: currencyservice. REASON: Currencyservice\u2019s own latency metric spiked with a z\u2011score of 1093 while its CPU/memory metrics remained normal, and its dependencies are empty, confirming the fault originates in currencyservice itself."
+  },
+  {
+    "incident_id": "re1ob_currencyservice_delay_2",
+    "fault_type": "delay",
+    "root_service": "currencyservice",
+    "pred": "currencyservice",
+    "hit": true,
+    "seconds": 142.22844409942627,
+    "final_text": "ROOT CAUSE: currencyservice. REASON: currencyservice shows an extreme latency\u201150 z\u2011score of 3645.0 with no CPU/memory spike, indicating a delay fault that propagates to frontend external errors."
+  },
+  {
+    "incident_id": "re1ob_currencyservice_delay_3",
+    "fault_type": "delay",
+    "root_service": "currencyservice",
+    "pred": "currencyservice",
+    "hit": true,
+    "seconds": 51.701258182525635,
+    "final_text": "ROOT CAUSE: currencyservice. REASON: currencyservice shows a massive latency spike (z\u2011score 3908.86) with no dependencies, indicating the fault is in currencyservice itself."
+  },
+  {
+    "incident_id": "re1ob_currencyservice_delay_4",
+    "fault_type": "delay",
+    "root_service": "currencyservice",
+    "pred": "checkoutservice",
+    "hit": false,
+    "seconds": 68.59692525863647,
+    "final_text": "ROOT CAUSE: checkoutservice. REASON: checkoutservice shows a massive latency\u201150 z\u2011score of 955.08 with no primary resource spike in its dependencies, indicating the fault was injected into checkoutservice itself."
+  },
+  {
+    "incident_id": "re1ob_currencyservice_delay_5",
+    "fault_type": "delay",
+    "root_service": "currencyservice",
+    "pred": "currencyservice",
+    "hit": true,
+    "seconds": 50.181978940963745,
+    "final_text": "ROOT CAUSE: currencyservice. REASON: currencyservice\u2019s own latency metric spiked with a z\u2011score of 3803.7 while it has no dependencies and no CPU/mem anomaly, matching past delay incidents where currencyservice was the root."
+  },
+  {
+    "incident_id": "re1ob_productcatalogservice_cpu_1",
+    "fault_type": "cpu",
+    "root_service": "productcatalogservice",
+    "pred": "productcatalogservice",
+    "hit": true,
+    "seconds": 71.56775641441345,
+    "final_text": "ROOT CAUSE: productcatalogservice. REASON: productcatalogservice exhibits a massive CPU anomaly (z\u2011score 120.96) while other services show only latency or error spikes, and past incidents confirm it as the root."
+  },
+  {
+    "incident_id": "re1ob_productcatalogservice_cpu_2",
+    "fault_type": "cpu",
+    "root_service": "productcatalogservice",
+    "pred": "productcatalogservice",
+    "hit": true,
+    "seconds": 54.80621314048767,
+    "final_text": "ROOT CAUSE: productcatalogservice. REASON: productcatalogservice\u2019s CPU z\u2011score of 135.86 (and a memory spike) shows a direct resource fault, and the knowledge graph confirms it has no downstream dependencies with similar anomalies."
+  },
+  {
+    "incident_id": "re1ob_productcatalogservice_cpu_3",
+    "fault_type": "cpu",
+    "root_service": "productcatalogservice",
+    "pred": "checkoutservice",
+    "hit": false,
+    "seconds": 111.36896920204163,
+    "final_text": "ROOT CAUSE: checkoutservice. REASON: Past incident re1ob_checkoutservice_cpu_4 (a CPU fault in checkoutservice) was confirmed as the root cause, matching the current anomaly pattern."
+  },
+  {
+    "incident_id": "re1ob_productcatalogservice_cpu_4",
+    "fault_type": "cpu",
+    "root_service": "productcatalogservice",
+    "pred": "cartservice",
+    "hit": false,
+    "seconds": 45.54476523399353,
+    "final_text": "ROOT CAUSE: cartservice. REASON: cartservice\u2019s own memory metric shows a massive z\u2011score spike of 95.55, while its dependents only exhibit latency/error anomalies, confirming cartservice itself is the fault source."
+  },
+  {
+    "incident_id": "re1ob_productcatalogservice_cpu_5",
+    "fault_type": "cpu",
+    "root_service": "productcatalogservice",
+    "pred": "productcatalogservice",
+    "hit": true,
+    "seconds": 53.059449672698975,
+    "final_text": "ROOT CAUSE: productcatalogservice. REASON: productcatalogservice shows an extreme CPU spike (z\u2011score 93.86) in the post\u2011injection window, confirming it as the fault source."
+  },
+  {
+    "incident_id": "re1ob_productcatalogservice_delay_1",
+    "fault_type": "delay",
+    "root_service": "productcatalogservice",
+    "pred": "frontend",
+    "hit": false,
+    "seconds": 93.37960362434387,
+    "final_text": "ROOT CAUSE: frontend. REASON: The frontend service shows a significant primary resource anomaly with a mem z\u2011score of 10.41, indicating a direct resource spike that is stronger evidence than the latency spikes observed in its dependencies."
+  },
+  {
+    "incident_id": "re1ob_productcatalogservice_delay_2",
+    "fault_type": "delay",
+    "root_service": "productcatalogservice",
+    "pred": "productcatalogservice",
+    "hit": true,
+    "seconds": 94.19828462600708,
+    "final_text": "ROOT CAUSE: productcatalogservice. REASON: productcatalogservice shows a massive latency spike (z\u2011score 14150.8) with no CPU/mem spike, matching past delay incidents."
+  },
+  {
+    "incident_id": "re1ob_productcatalogservice_delay_3",
+    "fault_type": "delay",
+    "root_service": "productcatalogservice",
+    "pred": "recommendationservice",
+    "hit": false,
+    "seconds": 72.42231225967407,
+    "final_text": "ROOT CAUSE: recommendationservice. REASON: recommendationservice exhibits a significant memory spike (z\u2011score 64.07) while its dependency productcatalogservice shows no CPU/mem anomaly, indicating the fault originates in recommendationservice."
+  },
+  {
+    "incident_id": "re1ob_productcatalogservice_delay_4",
+    "fault_type": "delay",
+    "root_service": "productcatalogservice",
+    "pred": "frontend",
+    "hit": false,
+    "seconds": 65.29447817802429,
+    "final_text": "ROOT CAUSE: frontend. REASON: The frontend service shows a significant memory spike (z\u2011score\u202f8.81) while its dependencies do not exhibit comparable resource anomalies, indicating the fault originated in frontend."
+  },
+  {
+    "incident_id": "re1ob_productcatalogservice_delay_5",
+    "fault_type": "delay",
+    "root_service": "productcatalogservice",
+    "pred": "productcatalogservice",
+    "hit": true,
+    "seconds": 66.35210704803467,
+    "final_text": "ROOT CAUSE: productcatalogservice. REASON: productcatalogservice shows an extreme latency spike (z\u2011score 23975) with no CPU/memory anomaly and no dependencies to blame, indicating the fault was injected directly into that service."
+  }
+]

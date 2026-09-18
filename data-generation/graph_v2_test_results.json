@@ -1,0 +1,146 @@
+[
+  {
+    "incident_id": "LIVE-c15c694b",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 202.6046552658081,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Validation\u2011enrichment and aml\u2011compliance logged MongoSocketReadException \u201cConnection reset\u201d to localhost:27017, matching a known MongoDB outage."
+  },
+  {
+    "incident_id": "LIVE-0c342599",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 276.0983784198761,
+    "final_text": "ROOT CAUSE: audit. REASON: audit service failed due to Cassandra connection errors (ConnectionInitException) causing health check failures and no payment processing."
+  },
+  {
+    "incident_id": "LIVE-5bb250bb",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 227.63481855392456,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Validation\u2011enrichment and AML\u2011compliance logged \u201cMongoSocketReadException: Connection reset\u201d to localhost:27017, matching a known MongoDB outage."
+  },
+  {
+    "incident_id": "LIVE-0e259052",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 780.9780786037445,
+    "final_text": "ROOT CAUSE: audit. REASON: audit service failed to connect to Cassandra (ConnectionInitException), causing a health\u2011check failure and stalling the payment pipeline."
+  },
+  {
+    "incident_id": "LIVE-8adba291",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 273.344199180603,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Both validation\u2011enrichment and aml\u2011compliance logged MongoDB driver errors (\u201cConnection reset/refused\u201d to localhost:27017) and health\u2011check failures, matching past confirmed MongoDB outage incidents."
+  },
+  {
+    "incident_id": "LIVE-ee039e30",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "validation-enrichment",
+    "hit": false,
+    "seconds": 451.9591727256775,
+    "final_text": "We have called get_deterministic_signal, check_infra_health, query_knowledge_graph, recall_similar_past_incidents. We still need to call search_live_elasticsearch on top 2 suspect services. We have not yet called search_live_elasticsearch. We need to do that. We need to pick top 2 suspect services. The deterministic signal gave routing-execution, validation-enrichment, settlement. But we also see audit health check failure. The audit service might be suspect. But the deterministic signal didn't rank audit. But we can still search audit logs. But we need to pick top 2 suspect services. Let's pick audit and routing-execution. Or audit and settlement? The audit service had a health check failure. The audit service had 1700 unlabeled events, but only 2 chain appended events for that payment. That might indicate a problem. But the audit service had a health check failure at 13:00:27.659. The audit service might have been down after that. But the payment was processed before that. But the audit service might have had a brief outage that caused some payments to be lost. But the funnel counts show 71 payments processed. The audit service had 1700 unlabeled events, but only 2 chain appended"
+  },
+  {
+    "incident_id": "LIVE-b6970a15",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 179.76898431777954,
+    "final_text": "ROOT CAUSE: cassandra. REASON: Audit service logs show repeated ConnectionInitException to 127.0.0.1:9042 and the health witness recorded audit DOWN then RECOVERED, matching past confirmed Cassandra outage incidents."
+  },
+  {
+    "incident_id": "LIVE-2d244bc5",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 134.47549176216125,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Both validation\u2011enrichment and aml\u2011compliance logged \u201cMongoSocketReadException: Connection reset\u201d to localhost:27017, matching past confirmed MongoDB outage incidents."
+  },
+  {
+    "incident_id": "LIVE-930f1eb1",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 149.35150575637817,
+    "final_text": "ROOT CAUSE: cassandra. REASON: audit service logs show repeated ConnectionInitException to Cassandra at 127.0.0.1:9042, matching past confirmed Cassandra outage incidents."
+  },
+  {
+    "incident_id": "LIVE-1da629c1",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 218.47318124771118,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Both validation\u2011enrichment and aml\u2011compliance logged \u201cException in monitor thread while connecting to server localhost:27017\u201d and \u201cWaiting for server to become available\u201d around 07:23:53, followed by HEALTH_CHECK_FAILED, and the incident matches past confirmed MongoDB outage cases."
+  },
+  {
+    "incident_id": "LIVE-945564dc",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 338.4079399108887,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Both validation\u2011enrichment and AML\u2011compliance logged MongoDB \u201cConnection refused\u201d errors and health\u2011check failures, matching past confirmed MongoDB outage incidents."
+  },
+  {
+    "incident_id": "LIVE-c1d6156d",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 89.00230836868286,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Validation\u2011enrichment health checks failed with MongoDB \u201cTimed out while waiting for a server that matches WritableServerSelector\u201d errors, matching past confirmed MongoDB outage incidents."
+  },
+  {
+    "incident_id": "LIVE-4924768a",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "validation-enrichment",
+    "hit": false,
+    "seconds": 514.523449420929,
+    "final_text": "We have a lot of logs from validation-enrichment showing MongoDB health contributor warnings and errors. The logs show that at 19:03:31, the MongoHealthIndicator took a long time to respond, and there were errors about \"Timed out while waiting for a server that matches WritableServerSelector\" and \"Connection reset\". This indicates a MongoDB outage or connectivity issue. The health check failures at 19:02:31 for validation-enrichment and aml-compliance might be due to MongoDB connectivity issues. The unknown events at 19:02:25 might be from a service that crashed due to MongoDB connectivity? But the unknown events are earlier. However, the logs show that at 19:03:31, validation-enrichment had health check failures due to MongoDB. The health check failures at 19:02:31 might be earlier but not captured in logs. But the logs show that at 19:03:31, validation-enrichment had health check failures due to MongoDB. The unknown events at 19:02:25 might be from a service that crashed due to MongoDB connectivity? But the unknown events are earlier. But the logs show that at 19:03:31, validation-enrichment had health check failures due to MongoDB. The health check failures at 19:02:31 might be "
+  },
+  {
+    "incident_id": "LIVE-d91b892a",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 459.3382670879364,
+    "final_text": "ROOT CAUSE: cassandra. REASON: audit service logged ConnectionInitException to Cassandra, matching past confirmed Cassandra outage incidents."
+  },
+  {
+    "incident_id": "LIVE-1cd23958",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "settlement",
+    "hit": false,
+    "seconds": 735.4099080562592,
+    "final_text": "We need to call recall_similar_past_incidents. We need a query string. We should use a distinctive log line or error signature. The unknown lines are not distinctive. But we have a known recurring noise: settlement ClickHouseAnalyticsService. But that is noise. We need to find a distinctive error. The logs show \"ClickHouse record failed for paymentId=42528d7d-0761-4dd4-b0a6-f89c34dd07fd: Connection refused, server ClickHouseNode [uri=http://localhost:8123/defa\". That is known noise. But we might still call recall_similar_past_incidents with that. But we need to find root cause. The unknown lines might be from a service that crashed. The unknown lines might be from a service that had a crash. The unknown lines might be from a service that had a crash. The unknown lines might be from a service that had a crash. The unknown lines might be from a service that had a crash. The unknown lines might be from a service that had a crash. The unknown lines might be from a service that had a crash. The unknown lines might be from a service that had a crash. The unknown lines might be from a service that had a crash. The unknown lines might be from a service that had a crash. The unknown lines m"
+  },
+  {
+    "incident_id": "LIVE-c15311dc",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 299.98491859436035,
+    "final_text": "ROOT CAUSE: audit. REASON: audit service failed to connect to Cassandra (ConnectionInitException warnings and a HEALTH_CHECK_FAILED event), stalling the payment pipeline."
+  }
+]

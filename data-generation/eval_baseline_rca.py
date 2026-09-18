@@ -36,7 +36,12 @@ import requests
 
 ES = "http://elastic:changeme@localhost:9200"
 OLLAMA = "http://localhost:11434/api/chat"
-SLM_MODEL = "qwen3.5:4b"
+SLM_MODEL = "qwen3:4b"  # was "qwen3.5:4b" -- not a real pulled model (confirmed:
+# `ollama list` only has qwen3:4b/gemma3:4b; direct API call returned
+# "model 'qwen3.5:4b' not found") -- every SLM call in the prior run
+# silently returned None via call_slm's except branch, scoring 0.0%
+# across all 61 confirmed cases. That number was invalid, not a real
+# SLM capability result.
 NIM_MODEL = "openai/gpt-oss-20b"
 NEMOTRON_MODEL = "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
 NIM_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
@@ -217,6 +222,20 @@ def parse_llm_json(text):
     text = (text or "").strip()
     if not text:
         return None, "(empty response)"
+    # Real bug found 2026-09-07: with Ollama's "think": false, qwen3:4b
+    # still emits its full reasoning as plain text ending in a bare
+    # `</think>` (no opening <think> tag at all -- confirmed directly)
+    # before its actual answer. That reasoning text itself discusses/
+    # quotes example JSON snippets, so the old greedy `\{.*\}` regex
+    # spanned from the FIRST brace inside the reasoning to the LAST brace
+    # at the very end, producing an invalid JSON blob that silently
+    # failed to parse on EVERY call (call_slm scored 0.0% across all 61
+    # confirmed gold cases as a result -- not a real capability
+    # measurement). Take only what follows the closing tag, since that's
+    # the model's real final answer regardless of whether an opening tag
+    # is present.
+    if "</think>" in text:
+        text = text.split("</think>", 1)[1].strip()
     text = re.sub(r"^```(json)?", "", text).strip()
     text = re.sub(r"```$", "", text).strip()
     m = re.search(r'\{.*\}', text, re.DOTALL)
@@ -268,7 +287,27 @@ def call_nim(prompt, model, api_key, extra=None, retries=3):
                 time.sleep(3 * (attempt + 1))
                 continue
             content = body["choices"][0]["message"]["content"]
-            return parse_llm_json(content)
+            if not content or not content.strip():
+                # A 200 response with empty content is not a final answer -- it's the
+                # same transport-level flakiness call_nim already retries HTTP errors
+                # for. Treating it as terminal on attempt 1 (the pre-fix behavior)
+                # confounded "the model had nothing to say" with "the API dropped the
+                # response," and made every infra-aware-vs-baseline comparison this
+                # session unreliable -- see infra_aware_fusion_full.py, 8/8 "broken"
+                # cases were empty-response flips, not real reasoning regressions.
+                last_err = "(empty response)"
+                time.sleep(3 * (attempt + 1))
+                continue
+            top3, reasoning = parse_llm_json(content)
+            if top3 is None and attempt < retries - 1:
+                # Unparseable JSON is usually truncation (max_tokens cutting a string
+                # mid-value, confirmed on a real nemotron case this session) rather
+                # than the model refusing to answer -- worth one more attempt before
+                # giving up, same reasoning as the empty-response retry above.
+                last_err = f"unparseable: {(reasoning or '')[:200]}"
+                time.sleep(3 * (attempt + 1))
+                continue
+            return top3, reasoning
         except Exception as e:
             last_err = f"ERROR: {e}"
             time.sleep(3 * (attempt + 1))

@@ -1,0 +1,2 @@
+{"query": "ClickHouse connection refused settlement", "tokens": 4, "bm25_scores": [-13.3, -13.3, -13.3, -7.53, -7.17], "n_results": 5, "result": "hit", "ts": 1789474344.2810102}
+{"query": "ClickHouse connection refused settlement", "strategy": "selective-AND", "selective_tokens": ["refused", "ClickHouse", "connection", "settlement"], "doc_freq": {"settlement": 57, "connection": 16, "ClickHouse": 10, "refused": 8}, "bm25_scores": [-13.3, -13.3, -13.3, -6.47, -5.01], "n_results": 5, "result": "hit", "ts": 1789474410.2182806}

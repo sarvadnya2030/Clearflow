@@ -1,0 +1,146 @@
+[
+  {
+    "incident_id": "LIVE-c15c694b",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 83.36141705513,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Validation\u2011enrichment and AML\u2011compliance logs show \u201cException in monitor thread while connecting to server localhost:27017\u201d and \u201cinterrupted at shutdown\u201d errors, matching past confirmed MongoDB outage incidents."
+  },
+  {
+    "incident_id": "LIVE-0c342599",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 249.9261438846588,
+    "final_text": "ROOT CAUSE: audit. REASON: audit service failed due to Cassandra connection errors (ConnectionInitException)."
+  },
+  {
+    "incident_id": "LIVE-5bb250bb",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 96.42387342453003,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Both validation\u2011enrichment and aml\u2011compliance logged MongoDB connection errors (InterruptedAtShutdown, Connection refused) during the incident, indicating the MongoDB instance was unavailable."
+  },
+  {
+    "incident_id": "LIVE-0e259052",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 107.57088088989258,
+    "final_text": "ROOT CAUSE: cassandra. REASON: audit logs show repeated ConnectionInitException to 127.0.0.1:9042, matching known Cassandra outage pattern."
+  },
+  {
+    "incident_id": "LIVE-8adba291",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 81.24097228050232,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Validation\u2011enrichment and aml\u2011compliance both logged MongoDB connection failures (\u201cException in monitor thread while connecting to server localhost:27017\u201d and \u201cMongoNodeIsRecoveringException: interrupted at shutdown\u201d), matching a known MongoDB outage pattern."
+  },
+  {
+    "incident_id": "LIVE-ee039e30",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 89.76455640792847,
+    "final_text": "ROOT CAUSE: cassandra. REASON: audit service logged a ConnectionInitException to Cassandra and a HEALTH_CHECK_FAILED, matching the known Cassandra outage pattern from past incidents."
+  },
+  {
+    "incident_id": "LIVE-b6970a15",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 92.2035620212555,
+    "final_text": "ROOT CAUSE: cassandra. REASON: audit service logs contain repeated \u201cError while opening new channel (ConnectionInitException \u2026 127.0.0.1:9042)\u201d entries, matching the documented Cassandra outage signature and confirmed by past incidents."
+  },
+  {
+    "incident_id": "LIVE-2d244bc5",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 121.97713828086853,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Validation\u2011enrichment and aml\u2011compliance both logged MongoDB connection failures, indicating a MongoDB outage."
+  },
+  {
+    "incident_id": "LIVE-930f1eb1",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 65.50817155838013,
+    "final_text": "ROOT CAUSE: cassandra. REASON: audit logs show repeated ConnectionInitException to 127.0.0.1:9042 and a HEALTH_CHECK_FAILED, matching the known Cassandra outage pattern from past incidents."
+  },
+  {
+    "incident_id": "LIVE-1da629c1",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 173.93177008628845,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Both validation\u2011enrichment and AML\u2011compliance logged \u201cException in monitor thread while connecting to server localhost:27017\u201d and health\u2011check failures, matching past MongoDB outage cases."
+  },
+  {
+    "incident_id": "LIVE-945564dc",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 247.3926157951355,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Validation\u2011enrichment and AML\u2011compliance health checks failed with MongoDB connection errors (\u201cTimed out while waiting for a server that matches WritableServerSelector\u201d), matching past confirmed MongoDB outage incidents."
+  },
+  {
+    "incident_id": "LIVE-c1d6156d",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 114.52078938484192,
+    "final_text": "ROOT CAUSE: mongodb. REASON: repeated MongoHealthIndicator health\u2011check timeouts and health\u2011check failures in validation\u2011enrichment and aml\u2011compliance during the incident window."
+  },
+  {
+    "incident_id": "LIVE-4924768a",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 143.25858807563782,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Validation\u2011enrichment logs show repeated \u201cMongoDB health check failed\u201d and \u201cTimed out while waiting for a server that matches WritableServerSelector\u201d errors, and recall_similar_past_incidents confirms this pattern is a known MongoDB outage."
+  },
+  {
+    "incident_id": "LIVE-d91b892a",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 59.536168575286865,
+    "final_text": "ROOT CAUSE: cassandra. REASON: Audit service logged \u201cError while opening new channel (ConnectionInitException \u2026 127.0.0.1:9042)\u201d and health\u2011check failures, matching known Cassandra outage signatures."
+  },
+  {
+    "incident_id": "LIVE-1cd23958",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 422.9016213417053,
+    "final_text": "ROOT CAUSE: audit. REASON: audit service failed to connect to Cassandra (ConnectionInitException) and reported a health\u2011check failure, blocking payment processing."
+  },
+  {
+    "incident_id": "LIVE-c15311dc",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 126.2433602809906,
+    "final_text": "ROOT CAUSE: cassandra. REASON: audit logs show ConnectionInitException to Cassandra at 19:18:50, matching the known Cassandra outage pattern."
+  }
+]

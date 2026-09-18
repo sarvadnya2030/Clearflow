@@ -1,0 +1,730 @@
+[
+  {
+    "incident_id": "re2tt_ts-auth-service_disk_1",
+    "root_service": "ts-auth-service",
+    "fault_type": "disk",
+    "pred": "ts-order-service",
+    "hit": false,
+    "seconds": 37.64016151428223,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: Disk I/O anomaly (z\u2011score 2.91) in ts-order-service caused its operations to become significantly slower.",
+    "backends_used": [
+      "nim"
+    ],
+    "note": "retried, still wrong"
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_disk_2",
+    "root_service": "ts-auth-service",
+    "fault_type": "disk",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 56.98710322380066,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: The auth service shows the highest self\u2011time anomaly ratio and an extreme disk\u2011IO z\u2011score, indicating a disk\u2011related failure.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_disk_3",
+    "root_service": "ts-auth-service",
+    "fault_type": "disk",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 98.89265704154968,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: Disk I/O anomaly in ts-auth-service caused a dramatic spike in latency.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_loss_1",
+    "root_service": "ts-auth-service",
+    "fault_type": "loss",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 101.90692448616028,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: The auth service shows a severe disk\u2011I/O spike and a 12\u00d7 self\u2011time anomaly in its Mongo query, causing the loss.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_loss_2",
+    "root_service": "ts-auth-service",
+    "fault_type": "loss",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 59.36385369300842,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: The trace causal analysis shows a 15\u00d7 spike in self\u2011time for the auth service\u2019s Mongo user lookup, indicating a severe latency anomaly in ts\u2011auth\u2011service.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_loss_3",
+    "root_service": "ts-auth-service",
+    "fault_type": "loss",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 58.56965708732605,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: The auth service\u2019s operations showed a 13\u00d7 increase in self\u2011time anomaly, making it the primary source of the loss.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_mem_1",
+    "root_service": "ts-auth-service",
+    "fault_type": "mem",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 41.256956815719604,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: The auth service shows the highest self\u2011time anomaly ratio and a significant memory anomaly, indicating a memory leak in ts-auth-service.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_mem_2",
+    "root_service": "ts-auth-service",
+    "fault_type": "mem",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 82.32154202461243,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: The auth service shows the highest memory, CPU, and latency anomalies, and its own operations have the largest self\u2011time anomaly ratio.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_mem_3",
+    "root_service": "ts-auth-service",
+    "fault_type": "mem",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 41.34569573402405,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: The auth service shows the highest self\u2011time anomaly ratio (16.77) and a significant memory anomaly (z\u2011score 24.5).",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_socket_1",
+    "root_service": "ts-auth-service",
+    "fault_type": "socket",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 32.2002055644989,
+    "final_text": "The knowledge graph query for **ts-auth-service** has been executed.",
+    "backends_used": [
+      "nim"
+    ],
+    "note": "recovered on retry (resume-artifact fix)"
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_socket_2",
+    "root_service": "ts-auth-service",
+    "fault_type": "socket",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 6.868459701538086,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: The auth service shows the highest self\u2011time anomaly ratio and a significant socket latency spike, indicating a socket fault.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_socket_3",
+    "root_service": "ts-auth-service",
+    "fault_type": "socket",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 59.58287572860718,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: The auth service shows the highest self\u2011time anomaly ratio and a significant socket latency spike, indicating a socket\u2011related failure.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_disk_1",
+    "root_service": "ts-order-service",
+    "fault_type": "disk",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 49.155983209609985,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The order service shows the highest self\u2011time anomaly ratio in traces and an extreme disk\u2011I/O z\u2011score, indicating a disk\u2011related bottleneck.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_disk_2",
+    "root_service": "ts-order-service",
+    "fault_type": "disk",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 77.63783001899719,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: Disk I/O anomaly caused a dramatic increase in self\u2011time for its operations.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_disk_3",
+    "root_service": "ts-order-service",
+    "fault_type": "disk",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 69.6567816734314,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: Disk I/O anomaly in ts-order-service caused its operations to become extremely slow.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_loss_1",
+    "root_service": "ts-order-service",
+    "fault_type": "loss",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 25.53491234779358,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The order service showed a 23.17\u00d7 self\u2011time anomaly and a 15.8 z\u2011score disk\u2011I/O spike, clearly making it the source of the loss.",
+    "backends_used": [
+      "nim"
+    ],
+    "note": "recovered on retry (resume-artifact fix)"
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_loss_2",
+    "root_service": "ts-order-service",
+    "fault_type": "loss",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 36.70637011528015,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The order service shows a 70.76 z\u2011score for 90th\u2011percentile latency and a 29.49\u00d7 self\u2011time anomaly, indicating it is the source of the loss.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_loss_3",
+    "root_service": "ts-order-service",
+    "fault_type": "loss",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 75.15182256698608,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The order service shows a 26.56\u00d7 self\u2011time anomaly and a 483.41 z\u2011score on 90th\u2011percentile latency, clearly making it the source of the loss.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_mem_1",
+    "root_service": "ts-order-service",
+    "fault_type": "mem",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 50.58358693122864,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The order service shows the highest self\u2011time anomaly ratio and a significant memory anomaly, indicating a memory leak in ts-order-service.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_mem_2",
+    "root_service": "ts-order-service",
+    "fault_type": "mem",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 44.64090824127197,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The order service shows the highest self\u2011time anomaly ratio in traces and a severe memory anomaly (z\u2011score 50.83).",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_mem_3",
+    "root_service": "ts-order-service",
+    "fault_type": "mem",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 63.37933588027954,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The order service shows the highest self\u2011time anomaly ratio in traces and a severe memory anomaly (z\u2011score 40.95).",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_socket_1",
+    "root_service": "ts-order-service",
+    "fault_type": "socket",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 42.89713788032532,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The order service shows the highest self\u2011time anomaly ratio in traces and a significant socket anomaly in metrics, indicating it is the source of the socket\u2011related performance issue.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_socket_2",
+    "root_service": "ts-order-service",
+    "fault_type": "socket",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 48.83791756629944,
+    "final_text": "Acknowledged. The knowledge graph for **ts-order-service** has been retrieved.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_socket_3",
+    "root_service": "ts-order-service",
+    "fault_type": "socket",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 47.80551719665527,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The order service shows the highest self\u2011time anomaly ratio in traces and a significant socket\u2011related z\u2011score, indicating socket errors are driving its performance degradation.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_disk_1",
+    "root_service": "ts-route-service",
+    "fault_type": "disk",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 28.752745866775513,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The route service shows the highest self\u2011time anomaly ratio and an extreme disk\u2011I/O z\u2011score, indicating a disk\u2011related bottleneck.",
+    "backends_used": [
+      "nim"
+    ],
+    "note": "recovered on retry (resume-artifact fix)"
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_disk_2",
+    "root_service": "ts-route-service",
+    "fault_type": "disk",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 659.1510694026947,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The route service shows the highest self\u2011time anomaly ratio and a massive disk\u2011I/O z\u2011score, indicating a disk\u2011related bottleneck.",
+    "backends_used": [
+      "groq",
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_disk_3",
+    "root_service": "ts-route-service",
+    "fault_type": "disk",
+    "pred": "ts-order-other-service",
+    "hit": false,
+    "seconds": 34.165992975234985,
+    "final_text": "ROOT CAUSE: ts-order-other-service. REASON: Disk I/O anomaly in ts-order-other-service caused the incident.",
+    "backends_used": [
+      "nim"
+    ],
+    "note": "retried, still wrong"
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_loss_1",
+    "root_service": "ts-route-service",
+    "fault_type": "loss",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 42.3568799495697,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The trace causal analysis shows a 19.18\u00d7 self\u2011time anomaly for its \u201cfind ts.routes\u201d operation, and metrics evidence reports an extreme 236.13 z\u2011score for 90th\u2011percentile latency, confirming ts\u2011route\u2011service as the culprit.",
+    "backends_used": [
+      "groq"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_loss_2",
+    "root_service": "ts-route-service",
+    "fault_type": "loss",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 1128.110655784607,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The route service exhibited a 26.39\u00d7 self\u2011time anomaly and a 215.66 z\u2011score on 90th\u2011percentile latency, indicating a severe performance regression.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_loss_3",
+    "root_service": "ts-route-service",
+    "fault_type": "loss",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 59.69171094894409,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The route service exhibited a 25\u00d7 self\u2011time anomaly and a 24.69 z\u2011score on 90th\u2011percentile latency, indicating a severe performance loss.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_mem_1",
+    "root_service": "ts-route-service",
+    "fault_type": "mem",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 57.04693841934204,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The trace causal analysis and metrics evidence both show the ts-route-service has the highest self\u2011time anomaly ratio and a significant memory anomaly, indicating it is the source of the incident.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_mem_2",
+    "root_service": "ts-route-service",
+    "fault_type": "mem",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 95.31186056137085,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: It shows the highest memory usage anomaly (z\u2011score 24.74) and the largest self\u2011time anomaly ratio in the trace, indicating a memory leak in that service.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_mem_3",
+    "root_service": "ts-route-service",
+    "fault_type": "mem",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 47.37852144241333,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The trace causal analysis and metrics evidence both show the ts-route-service has the highest self\u2011time anomaly ratio and a significant memory usage spike.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_socket_1",
+    "root_service": "ts-route-service",
+    "fault_type": "socket",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 68.3565673828125,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The route service shows the highest self\u2011time anomaly ratio and a significant socket anomaly, indicating it is the source of the socket\u2011related performance issue.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_socket_2",
+    "root_service": "ts-route-service",
+    "fault_type": "socket",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 48.34570240974426,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The route service exhibits the highest self\u2011time anomaly ratio and a significant socket\u2011related z\u2011score, indicating socket failures in ts\u2011route\u2011service caused the incident.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_socket_3",
+    "root_service": "ts-route-service",
+    "fault_type": "socket",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 43.06966781616211,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The route service exhibited the highest self\u2011time anomaly ratio and a significant socket anomaly, indicating a socket\u2011related failure.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_disk_1",
+    "root_service": "ts-train-service",
+    "fault_type": "disk",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 66.98576593399048,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: Disk I/O anomaly and high latency in ts-train-service indicate a disk failure.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_disk_2",
+    "root_service": "ts-train-service",
+    "fault_type": "disk",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 49.67809700965881,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: Disk I/O anomaly in ts-train-service caused its operations to become anomalously slow.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_disk_3",
+    "root_service": "ts-train-service",
+    "fault_type": "disk",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 29.352317810058594,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The train service shows the highest self\u2011time anomaly ratio and a massive disk\u2011I/O z\u2011score spike, indicating a disk\u2011related fault.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_loss_1",
+    "root_service": "ts-train-service",
+    "fault_type": "loss",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 48.07091426849365,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The train service\u2019s operations exhibit the highest self\u2011time anomaly ratio and an extreme latency\u201190 z\u2011score, indicating it is the source of the loss.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_loss_2",
+    "root_service": "ts-train-service",
+    "fault_type": "loss",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 32.95058751106262,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The trace causal analysis and latency metrics show a massive self\u2011time anomaly (26.51\u00d7) and a 344.53 z\u2011score on 90th\u2011percentile latency, indicating ts\u2011train\u2011service is the source of the loss.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_loss_3",
+    "root_service": "ts-train-service",
+    "fault_type": "loss",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 50.94669985771179,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The trace causal analysis and latency metrics both show a massive self\u2011time anomaly in ts\u2011train\u2011service\u2019s find ts.trainType operation, indicating it is the source of the loss.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_mem_1",
+    "root_service": "ts-train-service",
+    "fault_type": "mem",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 36.94080448150635,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The train service shows the highest self\u2011time anomaly ratio and a severe memory z\u2011score spike, indicating a memory\u2011related bottleneck.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_mem_2",
+    "root_service": "ts-train-service",
+    "fault_type": "mem",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 41.2751100063324,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The trace analysis and memory z\u2011score both point to ts\u2011train\u2011service as the service with the largest self\u2011time and memory anomaly.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_mem_3",
+    "root_service": "ts-train-service",
+    "fault_type": "mem",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 73.86647081375122,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The train service shows a massive memory anomaly (z\u2011score 48.95) and dominates the trace causal analysis with the highest self\u2011time anomaly ratio.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_socket_1",
+    "root_service": "ts-train-service",
+    "fault_type": "socket",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 24.735877513885498,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The train service showed a high socket anomaly z\u2011score and the largest self\u2011time anomaly in traces, indicating a socket\u2011related issue.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_socket_2",
+    "root_service": "ts-train-service",
+    "fault_type": "socket",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 36.73195433616638,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The train service shows the highest self\u2011time anomaly ratio and a significant socket latency spike, indicating socket\u2011related issues in ts\u2011train\u2011service.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_socket_3",
+    "root_service": "ts-train-service",
+    "fault_type": "socket",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 59.59273934364319,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The train service shows the highest self\u2011time anomaly ratio and a significant socket\u2011related z\u2011score, indicating socket errors are originating there.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_disk_1",
+    "root_service": "ts-travel-service",
+    "fault_type": "disk",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 49.17137789726257,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: Disk I/O anomaly in ts-travel-service caused its operations to become dramatically slower.",
+    "backends_used": [
+      "nim"
+    ],
+    "note": "recovered on retry (resume-artifact fix)"
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_disk_2",
+    "root_service": "ts-travel-service",
+    "fault_type": "disk",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 39.011900901794434,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The trace analysis shows the largest self\u2011time anomaly in ts\u2011travel\u2011service, and its disk\u2011I/O metric is wildly out of range, confirming a disk\u2011related failure.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_disk_3",
+    "root_service": "ts-travel-service",
+    "fault_type": "disk",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 49.853281021118164,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: Disk I/O anomaly caused extreme self\u2011time spikes in its operations.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_loss_1",
+    "root_service": "ts-travel-service",
+    "fault_type": "loss",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 42.79412245750427,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The trace causal analysis shows ts-travel-service has the highest self\u2011time anomaly ratio (20.27) and its latency metrics are significantly above normal, indicating it is the source of the loss.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_loss_2",
+    "root_service": "ts-travel-service",
+    "fault_type": "loss",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 50.53514766693115,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The travel service shows the highest self\u2011time anomaly ratio (19.2) and significant latency z\u2011score spikes, indicating it is the source of the loss.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_loss_3",
+    "root_service": "ts-travel-service",
+    "fault_type": "loss",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 30.98896551132202,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The travel service shows the highest self\u2011time anomaly ratio and an extreme error z\u2011score, indicating it is the source of the loss.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_mem_1",
+    "root_service": "ts-travel-service",
+    "fault_type": "mem",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 31.204251289367676,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The travel service shows the highest self\u2011time anomaly ratio and a massive memory usage z\u2011score, indicating a memory\u2011related performance regression.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_mem_2",
+    "root_service": "ts-travel-service",
+    "fault_type": "mem",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 25.940984964370728,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The travel service shows the highest self\u2011time anomaly ratio and a significant memory z\u2011score, indicating a memory\u2011related performance regression.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_mem_3",
+    "root_service": "ts-travel-service",
+    "fault_type": "mem",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 29.876168251037598,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The service shows the highest self\u2011time anomaly ratio in traces and an extreme memory z\u2011score of 34.68, indicating a memory\u2011related issue.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_socket_1",
+    "root_service": "ts-travel-service",
+    "fault_type": "socket",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 22.697091817855835,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The service shows the highest self\u2011time anomaly ratio in distributed traces and a significant socket\u2011related z\u2011score, indicating a socket\u2011level issue within ts\u2011travel\u2011service.",
+    "backends_used": [
+      "nim"
+    ]
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_socket_2",
+    "root_service": "ts-travel-service",
+    "fault_type": "socket",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 27.802969694137573,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The service exhibits the highest self\u2011time anomaly ratio and a significant socket anomaly, indicating it is the source of the latency spike.",
+    "backends_used": [
+      "nim"
+    ],
+    "note": "recovered on retry (resume-artifact fix)"
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_socket_3",
+    "root_service": "ts-travel-service",
+    "fault_type": "socket",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 36.19384479522705,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The travel service shows the highest self\u2011time anomaly and a significant socket\u2011related z\u2011score, indicating socket faults are driving the incident.",
+    "backends_used": [
+      "nim"
+    ]
+  }
+]

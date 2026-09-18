@@ -1,0 +1,272 @@
+[
+  {
+    "incident_id": "re2tt_ts-auth-service_cpu_1",
+    "root_service": "ts-auth-service",
+    "fault_type": "cpu",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 67.09318256378174,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: The auth service shows the highest CPU z\u2011score (29.28) and dominates the trace anomaly ranking."
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_cpu_2",
+    "root_service": "ts-auth-service",
+    "fault_type": "cpu",
+    "pred": "ts-food-service",
+    "hit": false,
+    "seconds": 50.66020703315735,
+    "final_text": "ROOT CAUSE: ts-food-service. REASON: The trace causal analysis shows an 8.46\u00d7 self\u2011time anomaly for FoodOrderRepository.save, confirming that ts\u2011food\u2011service\u2019s CPU usage spiked dramatically."
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_cpu_3",
+    "root_service": "ts-auth-service",
+    "fault_type": "cpu",
+    "pred": null,
+    "hit": false,
+    "seconds": 31.524566411972046,
+    "final_text": "No similar past incidents found."
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_delay_1",
+    "root_service": "ts-auth-service",
+    "fault_type": "delay",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 55.22605013847351,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: The auth service exhibited a massive self\u2011time anomaly (129\u00d7) and extreme latency spikes, making it the source of the delay."
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_delay_2",
+    "root_service": "ts-auth-service",
+    "fault_type": "delay",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 38.8817572593689,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: The auth service shows an extreme self\u2011time anomaly (ratio 109.23) and a high latency z\u2011score, indicating it is the primary source of the delay."
+  },
+  {
+    "incident_id": "re2tt_ts-auth-service_delay_3",
+    "root_service": "ts-auth-service",
+    "fault_type": "delay",
+    "pred": "ts-auth-service",
+    "hit": true,
+    "seconds": 31.906359434127808,
+    "final_text": "ROOT CAUSE: ts-auth-service. REASON: The trace causal analysis shows a 90.66\u00d7 self\u2011time anomaly in ts\u2011auth\u2011service, and its latency metrics have extreme z\u2011scores, indicating it is the source of the delay."
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_cpu_1",
+    "root_service": "ts-order-service",
+    "fault_type": "cpu",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 58.04438376426697,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The order service exhibits the highest CPU anomaly (z\u2011score 18.47) and dominates the trace with the largest self\u2011time anomaly ratio, indicating it is the source of the CPU spike."
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_cpu_2",
+    "root_service": "ts-order-service",
+    "fault_type": "cpu",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 33.33273887634277,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The order service shows the highest self\u2011time anomaly ratio and a significant CPU z\u2011score spike, indicating it is the source of the CPU\u2011related incident."
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_cpu_3",
+    "root_service": "ts-order-service",
+    "fault_type": "cpu",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 28.62955069541931,
+    "final_text": "Acknowledged. The knowledge graph for **ts-order-service** has been retrieved."
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_delay_1",
+    "root_service": "ts-order-service",
+    "fault_type": "delay",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 57.85713791847229,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The trace analysis shows ts-order-service\u2019s operations have the highest self\u2011time anomaly ratio (158\u00d7), and its latency metrics are severely elevated, indicating it is the source of the delay."
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_delay_2",
+    "root_service": "ts-order-service",
+    "fault_type": "delay",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 67.56162643432617,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The order service\u2019s own operations exhibit the highest self\u2011time anomaly ratio (128.93) and its latency metrics are severely elevated, indicating it is the source of the delay."
+  },
+  {
+    "incident_id": "re2tt_ts-order-service_delay_3",
+    "root_service": "ts-order-service",
+    "fault_type": "delay",
+    "pred": "ts-order-service",
+    "hit": true,
+    "seconds": 66.86630368232727,
+    "final_text": "ROOT CAUSE: ts-order-service. REASON: The order service\u2019s operations exhibit the highest self\u2011time anomaly ratio and extreme latency z\u2011scores, indicating it is the primary source of the delay."
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_cpu_1",
+    "root_service": "ts-route-service",
+    "fault_type": "cpu",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 61.71702694892883,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The route service exhibited the highest self\u2011time anomaly ratio (11.76\u00d7) and a CPU z\u2011score of 58.46, indicating a severe CPU spike."
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_cpu_2",
+    "root_service": "ts-route-service",
+    "fault_type": "cpu",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 46.79409623146057,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The trace analysis and CPU z\u2011score both indicate a severe anomaly in ts\u2011route\u2011service."
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_cpu_3",
+    "root_service": "ts-route-service",
+    "fault_type": "cpu",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 45.3771493434906,
+    "final_text": "Knowledge graph query for \u201cts-route-service\u201d completed."
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_delay_1",
+    "root_service": "ts-route-service",
+    "fault_type": "delay",
+    "pred": null,
+    "hit": false,
+    "seconds": 34.57588219642639,
+    "final_text": "No further action required."
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_delay_2",
+    "root_service": "ts-route-service",
+    "fault_type": "delay",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 37.97816061973572,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The trace causal analysis and latency metrics both show a massive self\u2011time anomaly in ts\u2011route\u2011service, indicating it is the source of the delay."
+  },
+  {
+    "incident_id": "re2tt_ts-route-service_delay_3",
+    "root_service": "ts-route-service",
+    "fault_type": "delay",
+    "pred": "ts-route-service",
+    "hit": true,
+    "seconds": 38.162904500961304,
+    "final_text": "ROOT CAUSE: ts-route-service. REASON: The trace causal analysis and latency metrics both show a massive self\u2011time anomaly (215.64\u00d7) and 90th\u2011percentile latency spike (\u22481.6\u202fs), indicating ts\u2011route\u2011service is the source of the delay."
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_cpu_1",
+    "root_service": "ts-train-service",
+    "fault_type": "cpu",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 35.45597577095032,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The trace causal analysis and CPU z\u2011score both indicate a severe self\u2011time and CPU anomaly in ts\u2011train\u2011service."
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_cpu_2",
+    "root_service": "ts-train-service",
+    "fault_type": "cpu",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 42.24924182891846,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The trace analysis and CPU z\u2011score both indicate a severe self\u2011time anomaly in ts\u2011train\u2011service, confirming it as the source of the CPU spike."
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_cpu_3",
+    "root_service": "ts-train-service",
+    "fault_type": "cpu",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 53.0380597114563,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: It has the highest CPU anomaly score and the largest self\u2011time anomaly ratio in the trace."
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_delay_1",
+    "root_service": "ts-train-service",
+    "fault_type": "delay",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 52.7499942779541,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The train service\u2019s own operations exhibit the largest self\u2011time anomaly (174\u00d7) and its latency metrics are severely elevated, indicating it is the source of the delay."
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_delay_2",
+    "root_service": "ts-train-service",
+    "fault_type": "delay",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 54.05093312263489,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: The train service\u2019s own operations, especially find ts.trainType, exhibited a 224.5\u00d7 self\u2011time spike, driving the overall delay."
+  },
+  {
+    "incident_id": "re2tt_ts-train-service_delay_3",
+    "root_service": "ts-train-service",
+    "fault_type": "delay",
+    "pred": "ts-train-service",
+    "hit": true,
+    "seconds": 67.97443580627441,
+    "final_text": "ROOT CAUSE: ts-train-service. REASON: It shows the highest self\u2011time anomaly ratio (221.25) and extreme latency z\u2011scores, indicating its operations are the primary source of the delay."
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_cpu_1",
+    "root_service": "ts-travel-service",
+    "fault_type": "cpu",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 65.70206809043884,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The travel service shows the highest self\u2011time anomaly ratio and a CPU z\u2011score of 13.73, indicating a CPU\u2011related performance spike."
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_cpu_2",
+    "root_service": "ts-travel-service",
+    "fault_type": "cpu",
+    "pred": null,
+    "hit": false,
+    "seconds": 47.393983364105225,
+    "final_text": "(knowledge graph query executed)"
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_cpu_3",
+    "root_service": "ts-travel-service",
+    "fault_type": "cpu",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 30.997878074645996,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The travel service exhibits an extreme CPU z\u2011score of 59.11 and the highest self\u2011time anomaly ratio (7.82), indicating it is the source of the CPU overload."
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_delay_1",
+    "root_service": "ts-travel-service",
+    "fault_type": "delay",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 33.47693133354187,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: its own operations (e.g., find ts.trip) exhibited a 180\u00d7 self\u2011time anomaly, driving the observed latency spikes."
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_delay_2",
+    "root_service": "ts-travel-service",
+    "fault_type": "delay",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 52.49369430541992,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The travel service\u2019s own operations exhibit the largest self\u2011time anomaly (180\u00d7) and its latency metrics are severely elevated, indicating it is the source of the delay."
+  },
+  {
+    "incident_id": "re2tt_ts-travel-service_delay_3",
+    "root_service": "ts-travel-service",
+    "fault_type": "delay",
+    "pred": "ts-travel-service",
+    "hit": true,
+    "seconds": 66.62674641609192,
+    "final_text": "ROOT CAUSE: ts-travel-service. REASON: The travel service exhibits the highest self\u2011time anomaly ratio and significant latency/error spikes, making it the primary source of the delay."
+  }
+]

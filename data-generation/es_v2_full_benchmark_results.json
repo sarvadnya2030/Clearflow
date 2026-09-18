@@ -1,0 +1,875 @@
+[
+  {
+    "incident_id": "LIVE-cd1f76ee",
+    "fault_type": "DB_TIMEOUT",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 222.19285774230957,
+    "final_text": "ROOT CAUSE: settlement. REASON: settlement service reported HEALTH_CHECK_FAILED and went down during the incident window."
+  },
+  {
+    "incident_id": "LIVE-c15c694b",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 83.36141705513,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Validation\u2011enrichment and AML\u2011compliance logs show \u201cException in monitor thread while connecting to server localhost:27017\u201d and \u201cinterrupted at shutdown\u201d errors, matching past confirmed MongoDB outage incidents."
+  },
+  {
+    "incident_id": "LIVE-0c342599",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 249.9261438846588,
+    "final_text": "ROOT CAUSE: audit. REASON: audit service failed due to Cassandra connection errors (ConnectionInitException)."
+  },
+  {
+    "incident_id": "LIVE-5bb250bb",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 96.42387342453003,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Both validation\u2011enrichment and aml\u2011compliance logged MongoDB connection errors (InterruptedAtShutdown, Connection refused) during the incident, indicating the MongoDB instance was unavailable."
+  },
+  {
+    "incident_id": "LIVE-0e259052",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 107.57088088989258,
+    "final_text": "ROOT CAUSE: cassandra. REASON: audit logs show repeated ConnectionInitException to 127.0.0.1:9042, matching known Cassandra outage pattern."
+  },
+  {
+    "incident_id": "LIVE-8adba291",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 81.24097228050232,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Validation\u2011enrichment and aml\u2011compliance both logged MongoDB connection failures (\u201cException in monitor thread while connecting to server localhost:27017\u201d and \u201cMongoNodeIsRecoveringException: interrupted at shutdown\u201d), matching a known MongoDB outage pattern."
+  },
+  {
+    "incident_id": "LIVE-ee039e30",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 89.76455640792847,
+    "final_text": "ROOT CAUSE: cassandra. REASON: audit service logged a ConnectionInitException to Cassandra and a HEALTH_CHECK_FAILED, matching the known Cassandra outage pattern from past incidents."
+  },
+  {
+    "incident_id": "LIVE-b6970a15",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 92.2035620212555,
+    "final_text": "ROOT CAUSE: cassandra. REASON: audit service logs contain repeated \u201cError while opening new channel (ConnectionInitException \u2026 127.0.0.1:9042)\u201d entries, matching the documented Cassandra outage signature and confirmed by past incidents."
+  },
+  {
+    "incident_id": "LIVE-2d244bc5",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 121.97713828086853,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Validation\u2011enrichment and aml\u2011compliance both logged MongoDB connection failures, indicating a MongoDB outage."
+  },
+  {
+    "incident_id": "LIVE-930f1eb1",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 65.50817155838013,
+    "final_text": "ROOT CAUSE: cassandra. REASON: audit logs show repeated ConnectionInitException to 127.0.0.1:9042 and a HEALTH_CHECK_FAILED, matching the known Cassandra outage pattern from past incidents."
+  },
+  {
+    "incident_id": "LIVE-1da629c1",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 173.93177008628845,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Both validation\u2011enrichment and AML\u2011compliance logged \u201cException in monitor thread while connecting to server localhost:27017\u201d and health\u2011check failures, matching past MongoDB outage cases."
+  },
+  {
+    "incident_id": "LIVE-945564dc",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 247.3926157951355,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Validation\u2011enrichment and AML\u2011compliance health checks failed with MongoDB connection errors (\u201cTimed out while waiting for a server that matches WritableServerSelector\u201d), matching past confirmed MongoDB outage incidents."
+  },
+  {
+    "incident_id": "LIVE-c1d6156d",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 114.52078938484192,
+    "final_text": "ROOT CAUSE: mongodb. REASON: repeated MongoHealthIndicator health\u2011check timeouts and health\u2011check failures in validation\u2011enrichment and aml\u2011compliance during the incident window."
+  },
+  {
+    "incident_id": "LIVE-4924768a",
+    "fault_type": "MONGODB_OUTAGE",
+    "root_service": "mongodb",
+    "pred": "mongodb",
+    "hit": true,
+    "seconds": 143.25858807563782,
+    "final_text": "ROOT CAUSE: mongodb. REASON: Validation\u2011enrichment logs show repeated \u201cMongoDB health check failed\u201d and \u201cTimed out while waiting for a server that matches WritableServerSelector\u201d errors, and recall_similar_past_incidents confirms this pattern is a known MongoDB outage."
+  },
+  {
+    "incident_id": "LIVE-d91b892a",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 59.536168575286865,
+    "final_text": "ROOT CAUSE: cassandra. REASON: Audit service logged \u201cError while opening new channel (ConnectionInitException \u2026 127.0.0.1:9042)\u201d and health\u2011check failures, matching known Cassandra outage signatures."
+  },
+  {
+    "incident_id": "LIVE-1cd23958",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 422.9016213417053,
+    "final_text": "ROOT CAUSE: audit. REASON: audit service failed to connect to Cassandra (ConnectionInitException) and reported a health\u2011check failure, blocking payment processing."
+  },
+  {
+    "incident_id": "LIVE-c15311dc",
+    "fault_type": "CASSANDRA_OUTAGE",
+    "root_service": "cassandra",
+    "pred": "audit",
+    "hit": false,
+    "seconds": 126.2433602809906,
+    "final_text": "ROOT CAUSE: cassandra. REASON: audit logs show ConnectionInitException to Cassandra at 19:18:50, matching the known Cassandra outage pattern."
+  },
+  {
+    "incident_id": "LIVE-158ce68e",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "root_service": "routing-execution",
+    "pred": "routing-execution",
+    "hit": true,
+    "seconds": 307.5300443172455,
+    "final_text": "ROOT CAUSE: routing-execution. REASON: The HEALTH_CHECK_FAILED event at 21:17:15 caused routing\u2011execution to go down, matching past incidents where a routing\u2011execution health\u2011check failure was the confirmed root cause."
+  },
+  {
+    "incident_id": "LIVE-c714ec37",
+    "fault_type": "NETWORK_LATENCY",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 211.1737415790558,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: The service reported a HEALTH_CHECK_FAILED at 21:27:29 and restarted immediately after, causing the majority of payments submitted at 21:27:28 to never receive a PAYMENT_VALIDATED event (only one validated event appears in the logs)."
+  },
+  {
+    "incident_id": "LIVE-75f80ed7",
+    "fault_type": "CPU_SATURATION",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 124.2074339389801,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: The health\u2011check log shows a consecutive HEALTH_CHECK_FAILED at 21:37:24 followed by a HEALTH_CHECK_RECOVERED at 21:38:01, matching the exact pattern of past confirmed AML\u2011compliance outages (see recalled incidents)."
+  },
+  {
+    "incident_id": "LIVE-549afd1b",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 144.79384899139404,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Direct AML_SANCTIONS_HIT and AML_HOLD log lines for paymentId=450eefbc\u20111a70\u20114cb0\u20119135\u2011d4930c9d8717 show the AML compliance service halted the payment."
+  },
+  {
+    "incident_id": "LIVE-d29470d5",
+    "fault_type": "SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 128.05547523498535,
+    "final_text": "ROOT CAUSE: settlement. REASON: The settlement service logged a HEALTH_CHECK_FAILED at 22:22:13.414 (and the health witness confirmed it was down), and no settlement\u2011level payment events appear thereafter, matching past confirmed incidents with the same signature."
+  },
+  {
+    "incident_id": "LIVE-92d99e70",
+    "fault_type": "AML_SERVICE_DEGRADATION_RETRY_CASCADE",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 99.34888052940369,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Health check failed and recovered during the fault window, causing a temporary outage that stalled AML screening for payments."
+  },
+  {
+    "incident_id": "LIVE-0fbc4973",
+    "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 108.97578048706055,
+    "final_text": "ROOT CAUSE: settlement. REASON: The settlement service\u2019s health check failed at 22:46:11.888, matching past incidents where a HEALTH_CHECK_FAILED event in settlement caused the payment pipeline to stall."
+  },
+  {
+    "incident_id": "LIVE-8ed9457d",
+    "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 162.67166304588318,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: Health\u2011check failure reported by validation\u2011enrichment at 22:58:11 caused a temporary outage, matching the known VALIDATION_SLOWDOWN_GATEWAY_CONFOUND pattern."
+  },
+  {
+    "incident_id": "LIVE-e5f57fc7",
+    "fault_type": "DB_TIMEOUT",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 136.09148120880127,
+    "final_text": "ROOT CAUSE: settlement. REASON: settlement service reported HEALTH_CHECK_FAILED at 23:10:17, logged repeated \u201cError when creating APACHE_HTTP_CLIENT\u201d failures, and the health witness marked settlement DOWN, causing most routed payments to stall before settlement completion."
+  },
+  {
+    "incident_id": "LIVE-fc3f6e2a",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "root_service": "routing-execution",
+    "pred": "routing-execution",
+    "hit": true,
+    "seconds": 145.69147658348083,
+    "final_text": "ROOT CAUSE: routing-execution. REASON: Health check failure at 23:22:12.011 caused a restart of routing\u2011execution, stalling the routing consumer and preventing further payments from being routed."
+  },
+  {
+    "incident_id": "LIVE-50580610",
+    "fault_type": "NETWORK_LATENCY",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 237.7643005847931,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: Health check failure and restart of validation\u2011enrichment caused a brief outage, matching the fault window."
+  },
+  {
+    "incident_id": "LIVE-084a3a65",
+    "fault_type": "CPU_SATURATION",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 223.75542783737183,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Health check failure at 23:46:11 and subsequent restart of the aml-compliance service caused it to be unavailable during the incident window, preventing AML compliance processing for payments."
+  },
+  {
+    "incident_id": "LIVE-4e899937",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 87.87544679641724,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: AML_SANCTIONS_HIT and AML_HOLD logs for payment 4da13f8c-1a33-46bc-b7ae-77c61e2af2fa, with no subsequent downstream events, confirm that the AML compliance service halted the payment."
+  },
+  {
+    "incident_id": "LIVE-c9126bf2",
+    "fault_type": "SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 61.8032431602478,
+    "final_text": "ROOT CAUSE: settlement. REASON: settlement logged a HEALTH_CHECK_FAILED event at 00:22:12.731, which is the definitive signal that the settlement service was unhealthy and caused the payment pipeline to stall."
+  },
+  {
+    "incident_id": "LIVE-86e563f1",
+    "fault_type": "AML_SERVICE_DEGRADATION_RETRY_CASCADE",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 78.96918845176697,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Health check failure at 00:34:09 caused a brief outage, preventing AML screening events for payments."
+  },
+  {
+    "incident_id": "LIVE-9608ddd3",
+    "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 132.05115580558777,
+    "final_text": "ROOT CAUSE: settlement. REASON: settlement health check failed at 00:46:11.876 and settlement logs show repeated \u201cError when creating APACHE_HTTP_CLIENT\u201d warnings, indicating the settlement service was down and prevented settlement completions."
+  },
+  {
+    "incident_id": "LIVE-6e7fe0ef",
+    "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 199.83790922164917,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: The health\u2011check failure logged at 00:58:11.812 (and confirmed by the independent witness) matches past incidents where validation\u2011enrichment was the root cause of a slowdown."
+  },
+  {
+    "incident_id": "LIVE-f8458870",
+    "fault_type": "DB_TIMEOUT",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 210.89854311943054,
+    "final_text": "ROOT CAUSE: settlement. REASON: settlement service was reported DOWN by the health witness at 01:10:10.976 and logged a HEALTH_CHECK_FAILED, causing the remaining payments to stall after routing."
+  },
+  {
+    "incident_id": "LIVE-98435f36",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "root_service": "routing-execution",
+    "pred": "routing-execution",
+    "hit": true,
+    "seconds": 196.61672639846802,
+    "final_text": "ROOT CAUSE: routing-execution. REASON: Health check failure at 01:22:10.564 caused routing\u2011execution to be down, stalling payments."
+  },
+  {
+    "incident_id": "LIVE-2e6706a0",
+    "fault_type": "NETWORK_LATENCY",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 73.35228824615479,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: Health check failure and service restart at 01:34:11 caused a 22\u2011second outage, during which 24 payments were submitted but only 2 reached validation\u2011enrichment, proving the service was down."
+  },
+  {
+    "incident_id": "LIVE-4d00a0c8",
+    "fault_type": "CPU_SATURATION",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 63.26398944854736,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Health check failure and immediate restart at 01:46:12\u201301:46:34 indicate CPU saturation in aml\u2011compliance."
+  },
+  {
+    "incident_id": "LIVE-2b3c53da",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 200.5317726135254,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Direct AML_SANCTIONS_HIT log lines for payment fbc37a91-fb68-47f8-8fbe-32a569cc235b confirm that the AML compliance service flagged sanctions, matching past incidents with confirmed root cause aml-compliance."
+  },
+  {
+    "incident_id": "LIVE-0c057497",
+    "fault_type": "SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 74.60491013526917,
+    "final_text": "ROOT CAUSE: settlement. REASON: settlement\u2019s health check failed at 02:22:12, which matches past incidents where a settlement health\u2011check failure caused the service to be considered down and halted payment processing."
+  },
+  {
+    "incident_id": "LIVE-a41428fd",
+    "fault_type": "AML_SERVICE_DEGRADATION_RETRY_CASCADE",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 72.4766309261322,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Health check failure at 02:34:11.955 caused a brief outage, leading to a drop from 25 PAYMENT_VALIDATED to only 6 AML_SCREENING_COMPLETE events."
+  },
+  {
+    "incident_id": "LIVE-d45c0b73",
+    "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 80.6663863658905,
+    "final_text": "ROOT CAUSE: settlement. REASON: Health check failure and lack of settlement completions indicate settlement service crashed during the incident."
+  },
+  {
+    "incident_id": "LIVE-724753fd",
+    "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+    "root_service": "validation-enrichment",
+    "pred": "gateway",
+    "hit": false,
+    "seconds": 111.4562017917633,
+    "final_text": "We need to determine root cause. We have evidence: validation-enrichment health check failed at 02:59:33.575, then recovered at 03:00:06. The payment 5f31201b... was submitted at 02:59:32.380, validated at 02:59:32.550, AML screening at 02:59:32.565, routing at 02:59:32.566, settlement at 02:59:32.574. So the payment was processed before the health check failure. The health check failure happened after the payment had already been processed. So the health check failure is not the cause of the payment failure. But the funnel counts show unknown events 10, validation-enrichment unlabeled 6, routing-execution unlabeled 3, settlement unlabeled 36. The unknown events might be health check failures? The health check failure is a known event type. The unknown events might be something else.\n\nWe need to see if any payment was stalled. The funnel counts: gateway PAYMENT_SUBMITTED: 31, but gateway unlabeled: 63. So 32 unlabeled events. That might be health checks or other. The unknown unlabeled: 10. The validation-enrichment unlabeled: 6. The routing-execution unlabeled: 3. The settlement unlabeled: 36. The audit unlabeled: 72. The fraud-scoring unlabeled: 72. So the unlabeled events are man"
+  },
+  {
+    "incident_id": "LIVE-a1018952",
+    "fault_type": "DB_TIMEOUT",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 64.06446146965027,
+    "final_text": "ROOT CAUSE: settlement. REASON: The settlement service logged repeated \u201cError when creating APACHE_HTTP_CLIENT, fall back to HTTP_URL_CONNECTION\u201d warnings and a HEALTH_CHECK_FAILED event, matching a past confirmed incident where the same error pattern caused a settlement\u2011service failure."
+  },
+  {
+    "incident_id": "LIVE-1dd87cec",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "root_service": "routing-execution",
+    "pred": "routing-execution",
+    "hit": true,
+    "seconds": 102.00600528717041,
+    "final_text": "ROOT CAUSE: routing-execution. REASON: A HEALTH_CHECK_FAILED at 06:03:43.802 caused routing\u2011execution to go down and recover (HEALTH_CHECK_RECOVERED at 06:04:18), stalling payment routing."
+  },
+  {
+    "incident_id": "LIVE-b39b1e5f",
+    "fault_type": "NETWORK_LATENCY",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 102.2066695690155,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: Health check failure caused the service to go down, blocking subsequent PAYMENT_VALIDATED events."
+  },
+  {
+    "incident_id": "LIVE-8b01e57d",
+    "fault_type": "CPU_SATURATION",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 63.68182325363159,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: health check failed (HEALTH_CHECK_FAILED event) and the service restarted (witness log shows DOWN\u2192RECOVERED), causing the payment pipeline to stall."
+  },
+  {
+    "incident_id": "LIVE-b12684e5",
+    "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 43.782105684280396,
+    "final_text": "ROOT CAUSE: settlement. REASON: Health witness and settlement logs show a HEALTH_CHECK_FAILED event and no settlement processing, indicating the settlement service was down during the incident."
+  },
+  {
+    "incident_id": "LIVE-7e974bac",
+    "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 37.9321494102478,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: Health check failure and DOWN/RECOVERED status in validation\u2011enrichment caused a severe drop in PAYMENT_VALIDATED events, matching past confirmed incidents with the same HEALTH_CHECK_FAILED signature."
+  },
+  {
+    "incident_id": "LIVE-3cf078b4",
+    "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 98.03341841697693,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: The health witness and logs show validation\u2011enrichment went DOWN (HEALTH_CHECK_FAILED) during the window, and past incidents with the same health\u2011check failure pattern confirm validation\u2011enrichment as the root cause."
+  },
+  {
+    "incident_id": "LIVE-fc3e530b",
+    "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 31.597054481506348,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: Health check failure reported by validation\u2011enrichment during the incident window."
+  },
+  {
+    "incident_id": "LIVE-32fb18f2",
+    "fault_type": "AML_SERVICE_DEGRADATION_RETRY_CASCADE",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 50.090086460113525,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Health witness and logs show aml-compliance went DOWN and recovered, with a drop from 22 PAYMENT_VALIDATED to 8 AML_SCREENING_COMPLETE events."
+  },
+  {
+    "incident_id": "LIVE-125bb06d",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 33.117040395736694,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Direct AML_SANCTIONS_HIT and AML_HOLD logs for paymentIds 33c75579\u20113c31\u201145d8\u2011b0f6\u2011d2cf14f08f18 and 750bbbf8\u2011228f\u20114cb1\u20119e73\u2011c7f792bbce53 confirm the AML compliance service flagged sanctions and escalated a hold, matching past incidents with the same root cause."
+  },
+  {
+    "incident_id": "LIVE-06e81ed2",
+    "fault_type": "SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 27.16262412071228,
+    "final_text": "ROOT CAUSE: settlement. REASON: The settlement service logged a HEALTH_CHECK_FAILED event at 12:29:30, and the independent witness confirmed settlement went down and then recovered, directly blocking the payment pipeline."
+  },
+  {
+    "incident_id": "LIVE-471a5319",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 41.988330125808716,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: AML_SANCTIONS_HIT logs for paymentId\u202f05851351\u2011a8b2\u2011487e\u2011a2a8\u201156ffe4e316da triggered an AML_HOLD, directly causing the payment to stall."
+  },
+  {
+    "incident_id": "LIVE-e0bb5818",
+    "fault_type": "AML_SERVICE_DEGRADATION_RETRY_CASCADE",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 97.23105192184448,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Health witness and logs show a HEALTH_CHECK_FAILED event for aml-compliance, with a DOWN/RECOVERED pattern and a funnel drop from 123 PAYMENT_VALIDATED to 12 AML_SCREENING_COMPLETE."
+  },
+  {
+    "incident_id": "LIVE-91a7a4e1",
+    "fault_type": "CPU_SATURATION",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 34.95785093307495,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Health\u2011check failure and recovery logs for aml\u2011compliance match known CPU saturation incidents."
+  },
+  {
+    "incident_id": "LIVE-1a15e740",
+    "fault_type": "DB_TIMEOUT",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 64.31384611129761,
+    "final_text": "ROOT CAUSE: settlement. REASON: settlement health checks failed and the service restarted during the incident window, causing most payments to stall."
+  },
+  {
+    "incident_id": "LIVE-945a2566",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "root_service": "routing-execution",
+    "pred": "routing-execution",
+    "hit": true,
+    "seconds": 73.59967398643494,
+    "final_text": "ROOT CAUSE: routing-execution. REASON: A HEALTH_CHECK_FAILED event at 19:10:42 caused routing\u2011execution to go down (witness log shows DOWN then RECOVERED), stalling payment routing."
+  },
+  {
+    "incident_id": "LIVE-20c7d62a",
+    "fault_type": "NETWORK_LATENCY",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 179.94204235076904,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: Health check failure caused the service to go down, stalling most payments."
+  },
+  {
+    "incident_id": "LIVE-1a1dcc24",
+    "fault_type": "SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 98.48507976531982,
+    "final_text": "ROOT CAUSE: settlement. REASON: The settlement service logged a HEALTH_CHECK_FAILED event at 07:53:15.449, matching past incidents where a settlement health\u2011check failure caused a cascade of stalled payments."
+  },
+  {
+    "incident_id": "LIVE-6ca737bb",
+    "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 104.54569029808044,
+    "final_text": "ROOT CAUSE: settlement. REASON: Health check failure indicated the settlement service was down, causing payment stalls."
+  },
+  {
+    "incident_id": "LIVE-ff0092f0",
+    "fault_type": "DB_TIMEOUT",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 90.51055598258972,
+    "final_text": "ROOT CAUSE: settlement. REASON: Health check failure logged by settlement at 13:47:38.003681+00:00, matching past incidents where settlement service failure caused the incident."
+  },
+  {
+    "incident_id": "LIVE-7f2b759d",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "root_service": "routing-execution",
+    "pred": "routing-execution",
+    "hit": true,
+    "seconds": 105.70952987670898,
+    "final_text": "ROOT CAUSE: routing-execution. REASON: A HEALTH_CHECK_FAILED event in routing\u2011execution triggered a service restart, stalling the payment pipeline."
+  },
+  {
+    "incident_id": "LIVE-8ca37f16",
+    "fault_type": "NETWORK_LATENCY",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 68.02364230155945,
+    "final_text": "We have evidence: health check failed at 14:14:48.243, then restart at 14:15:10. The funnel counts show many payments submitted but few validated. So root cause: validation-enrichment service failure.\n\nWe can also get correlation trace for a payment that was affected. Let's pick a payment that was submitted after 14:14:48.243. We don't have logs for that. But we can pick a payment that was submitted at 14:14:46.583? That had validated. But we need a payment that was submitted after the health check failure. But we don't have logs for that. But we can pick a payment that was submitted at 14:14:46.583? That had validated. But we need a payment that was submitted after 14:14:48.243. But we don't have logs for that. But we can pick a payment that was submitted at 14:14:46.583? That had validated. But we need a payment that was submitted after 14:14:48.243. But we don't have logs for that. But we can pick a payment that was submitted at 14:14:46.583? That had validated. But we need a payment that was submitted after 14:14:48.243. But we don't have logs for that. But we can pick a payment that was submitted at 14:14:46.583? That had validated. But we need a payment that was submitted aft"
+  },
+  {
+    "incident_id": "LIVE-0d446d08",
+    "fault_type": "CPU_SATURATION",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 87.01470494270325,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: HEALTH_CHECK_FAILED at 14:23:27 and the subsequent restart of aml\u2011compliance at 14:23:50 caused the service to be unavailable, stalling payments in the pipeline."
+  },
+  {
+    "incident_id": "LIVE-ab26f7eb",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 84.91644287109375,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: AML_SANCTIONS_HIT logs for paymentIds f65b24b2-04e9-4bea-98b9-8b33132ba46a and 8eda20fc-e751-4f62-9afc-6439656a6bc9 directly triggered AML_HOLD, halting those payments."
+  },
+  {
+    "incident_id": "LIVE-1fbabeee",
+    "fault_type": "DB_TIMEOUT",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 118.37655639648438,
+    "final_text": "ROOT CAUSE: settlement. REASON: settlement\u2019s health check failed at 16:16:49.601767 (log: `[WARN] HEALTH_CHECK_FAILED service=settlement`) and the service restarted, matching past incidents where a settlement health\u2011check failure caused payment stalls."
+  },
+  {
+    "incident_id": "LIVE-60ee5f91",
+    "fault_type": "DB_TIMEOUT",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 157.03725934028625,
+    "final_text": "ROOT CAUSE: settlement. REASON: The settlement service\u2019s health check failed at 16:21:28, causing a restart and a temporary outage that stalled payments."
+  },
+  {
+    "incident_id": "LIVE-8075a169",
+    "fault_type": "DB_TIMEOUT",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 59.015795946121216,
+    "final_text": "ROOT CAUSE: settlement. REASON: Settlement service health check failed at 16:26:06, causing 100 routed payments to stall and only 18 settlement completions."
+  },
+  {
+    "incident_id": "LIVE-d199ebd4",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "root_service": "routing-execution",
+    "pred": "routing-execution",
+    "hit": true,
+    "seconds": 140.85074853897095,
+    "final_text": "ROOT CAUSE: routing-execution. REASON: A HEALTH_CHECK_FAILED event at 16:30:44 caused routing\u2011execution to go down, and the service was restarted at 16:31:06, leaving only 15 routing events for the entire window while 118 payments were submitted."
+  },
+  {
+    "incident_id": "LIVE-efe06f0f",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "root_service": "routing-execution",
+    "pred": "routing-execution",
+    "hit": true,
+    "seconds": 191.59014296531677,
+    "final_text": "ROOT CAUSE: routing-execution. REASON: A health\u2011check failure at 16:35:22.763757 caused routing\u2011execution to restart (log at 16:35:45.025672749), temporarily stalling payment routing until the service recovered."
+  },
+  {
+    "incident_id": "LIVE-ba07b860",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "root_service": "routing-execution",
+    "pred": "routing-execution",
+    "hit": true,
+    "seconds": 92.23950266838074,
+    "final_text": "ROOT CAUSE: routing-execution. REASON: The HEALTH_CHECK_FAILED event at 16:39:57.9 and subsequent restart of routing\u2011execution caused the service to go down, stalling the payment pipeline, as confirmed by past incidents with identical health\u2011check failure signatures."
+  },
+  {
+    "incident_id": "LIVE-b9d8577f",
+    "fault_type": "NETWORK_LATENCY",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 56.29599690437317,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: HEALTH_CHECK_FAILED and restart of validation\u2011enrichment caused a drop in PAYMENT_VALIDATED events, matching past confirmed incidents with the same signature."
+  },
+  {
+    "incident_id": "LIVE-370ae683",
+    "fault_type": "NETWORK_LATENCY",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 69.59092092514038,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: Health check failures at 16:49:14 caused the validation\u2011enrichment service to go down, leading to a large drop\u2011off of PAYMENT_VALIDATED events (only 18 of 118 submitted payments were validated)."
+  },
+  {
+    "incident_id": "LIVE-f7d7f71e",
+    "fault_type": "NETWORK_LATENCY",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 34.7470338344574,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: Health check failures and service restart caused missing PAYMENT_VALIDATED events."
+  },
+  {
+    "incident_id": "LIVE-766895cc",
+    "fault_type": "CPU_SATURATION",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 84.21792030334473,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Health check failed and service restart observed in aml-compliance logs."
+  },
+  {
+    "incident_id": "LIVE-d1fe3d33",
+    "fault_type": "CPU_SATURATION",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 101.60799241065979,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: HEALTH_CHECK_FAILED at 17:03:08.818 caused a crash and restart, stalling AML compliance processing."
+  },
+  {
+    "incident_id": "LIVE-77f817e7",
+    "fault_type": "CPU_SATURATION",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 93.70224356651306,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: consecutive HEALTH_CHECK_FAILED and HEALTH_CHECK_RECOVERED logs in aml-compliance indicate a CPU saturation crash that caused the service to restart during the incident window."
+  },
+  {
+    "incident_id": "LIVE-b2884100",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 47.40923714637756,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Direct AML_SANCTIONS_HIT and AML_HOLD logs for multiple payments confirm the AML compliance service is the fault."
+  },
+  {
+    "incident_id": "LIVE-927b0a16",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 99.22595477104187,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Direct AML_SANCTIONS_HIT logs for payment IDs bba2d4d6-d0e1-4f9e-b81f-3eb4e2365530 and 2497fe43-92c1-46a5-bb0c-24550f2cae82 show the compliance service flagged sanctions, causing AML_HOLD and blocking the payments."
+  },
+  {
+    "incident_id": "LIVE-2012e904",
+    "fault_type": "AML_HOLD",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 72.64108347892761,
+    "final_text": "We need to call query_knowledge_graph on top suspect service. We tried \"aml-compliance\" but no node. Maybe service name is \"aml-compliance\" but graph uses different naming. We saw matches for AMLComplianceApplication etc. But we need to confirm code-level coupling. The knowledge graph didn't find service node. Maybe the service is \"aml-compliance\" but graph uses \"aml-compliance-service\" or \"aml-compliance\". Let's try \"aml-compliance\" again? Already did. Maybe \"aml\" is enough. We got matches for AMLPatternInjector etc. But not service. Maybe the graph uses \"aml-compliance\" as a node but we didn't find. Let's try \"aml-compliance\" with quotes? Not needed. Let's try \"aml-compliance\" again? Already did. Let's try \"aml-compliance-service\" again? Already did. Let's try \"aml-compliance-service\" again? Already did. Let's try \"aml-compliance-service\" maybe with hyphen? Already. Let's try \"aml-compliance-service\" again? Already. Let's try \"aml-compliance-service\" again? Already. Let's try \"aml-compliance-service\" again? Already. Let's try \"aml-compliance-service\" again? Already. Let's try \"aml-compliance-service\" again? Already. Let's try \"aml-compliance-service\" again? Already. Let's try \"am"
+  },
+  {
+    "incident_id": "LIVE-2eb2af18",
+    "fault_type": "SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 101.53273320198059,
+    "final_text": "ROOT CAUSE: settlement. REASON: settlement health check failed at 17:37:09.678951, matching past incidents where a settlement health\u2011check failure caused the payment pipeline to stall."
+  },
+  {
+    "incident_id": "LIVE-be0b03a9",
+    "fault_type": "SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 48.74502992630005,
+    "final_text": "ROOT CAUSE: settlement. REASON: settlement health check failed and service restarted, causing a stall between routing and settlement."
+  },
+  {
+    "incident_id": "LIVE-66d379ba",
+    "fault_type": "SETTLEMENT_DB_FAILURE_LIQUIDITY_CASCADE",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 52.03468871116638,
+    "final_text": "ROOT CAUSE: settlement. REASON: A HEALTH_CHECK_FAILED event at 2026\u201109\u201109T17:46:46.499 caused the settlement service to restart, blocking downstream payment processing."
+  },
+  {
+    "incident_id": "LIVE-b778d8ee",
+    "fault_type": "AML_SERVICE_DEGRADATION_RETRY_CASCADE",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 54.08718729019165,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Direct AML_HOLD log line (AML_HOLD paymentId=8f6d762f-74ad-497a-8a3b-0e7b31426962) and accompanying AML_SANCTIONS_HIT in the same window, plus the health\u2011check failure/recovery pattern, confirm the AML service was the source of the stall."
+  },
+  {
+    "incident_id": "LIVE-e10775ab",
+    "fault_type": "AML_SERVICE_DEGRADATION_RETRY_CASCADE",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 61.715699434280396,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: Health check failure and missing AML_SCREENING_COMPLETE events after PAYMENT_VALIDATED indicate the AML service stalled."
+  },
+  {
+    "incident_id": "LIVE-3c874983",
+    "fault_type": "AML_SERVICE_DEGRADATION_RETRY_CASCADE",
+    "root_service": "aml-compliance",
+    "pred": "aml-compliance",
+    "hit": true,
+    "seconds": 93.57940912246704,
+    "final_text": "ROOT CAUSE: aml-compliance. REASON: The AML compliance service logged a HEALTH_CHECK_FAILED at 18:01:09 and restarted at 18:01:41, causing a gap where many PAYMENT_VALIDATED events (137) did not receive AML_SCREENING_COMPLETE events (36)."
+  },
+  {
+    "incident_id": "LIVE-c005200b",
+    "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 132.12861847877502,
+    "final_text": "ROOT CAUSE: settlement. REASON: A settlement health\u2011check failure at 18:05:58 caused the settlement service to crash and restart, leaving many routed payments without a SETTLEMENT_COMPLETE event."
+  },
+  {
+    "incident_id": "LIVE-6a99cfb7",
+    "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 35.76928114891052,
+    "final_text": "ROOT CAUSE: settlement. REASON: settlement health check failed at 18:10:46, causing no further SETTLEMENT_COMPLETE events."
+  },
+  {
+    "incident_id": "LIVE-f95f4181",
+    "fault_type": "SETTLEMENT_DB_FAILURE_KAFKA_CONFOUND",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 86.71775650978088,
+    "final_text": "ROOT CAUSE: settlement. REASON: The settlement service logged a HEALTH_CHECK_FAILED at 18:15:35, restarted at 18:16:07, and thereafter no SETTLEMENT_COMPLETE events were emitted for the 171 payments that reached settlement, matching prior incidents where a settlement health\u2011check failure caused the pipeline to stall."
+  },
+  {
+    "incident_id": "LIVE-790ab890",
+    "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 92.68388986587524,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: A HEALTH_CHECK_FAILED event at 18:20:23 caused validation\u2011enrichment to restart, leading to only 16 validations for 148 submitted payments, matching past incidents where similar health\u2011check failures in validation\u2011enrichment caused the slowdown."
+  },
+  {
+    "incident_id": "LIVE-fcd9967d",
+    "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 72.3992211818695,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: A HEALTH_CHECK_FAILED event at 18:25:12 and subsequent restart of validation\u2011enrichment caused the service to become unavailable, which led to the gateway rejecting many payments."
+  },
+  {
+    "incident_id": "LIVE-6dcf8d74",
+    "fault_type": "VALIDATION_SLOWDOWN_GATEWAY_CONFOUND",
+    "root_service": "validation-enrichment",
+    "pred": "validation-enrichment",
+    "hit": true,
+    "seconds": 93.78711080551147,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: Health check failure at 18:30:04.711708+00:00 shows validation\u2011enrichment was down, matching past incidents with the same signature."
+  },
+  {
+    "incident_id": "LIVE-f043b295",
+    "fault_type": "REDIS_OUTAGE",
+    "root_service": "redis",
+    "pred": "settlement",
+    "hit": false,
+    "seconds": 174.68185472488403,
+    "final_text": "We have called query_knowledge_graph, recall_similar_past_incidents, check_infra_health for redis. We still have 2 calls left. We need to determine root cause. The logs show no errors except ClickHouse. The known recurring noise is ClickHouse. The recall_similar_past_incidents shows that ClickHouse record failed is often associated with REDIS outage. But check_infra_health shows redis is running. So maybe the root cause is not redis. The recall_similar_past_incidents also shows that AML_HOLD is associated with aml-compliance. But we have AML_HOLD events for 4 payments. But those are normal. The incident might be that the AML compliance service had a hold on some payments, but that is expected. The incident might be that the ClickHouse analytics failure caused the settlement service to not record analytics, but that is known noise. But the question: \"A fault of unknown root cause occurred.\" We need to find root cause. The logs show no errors. So maybe the root cause is that the ClickHouse analytics failure caused the settlement service to not record analytics, but that is known noise. But maybe the root cause is that the ClickHouse analytics failure caused the settlement service to "
+  },
+  {
+    "incident_id": "LIVE-21d073a7",
+    "fault_type": "REDIS_OUTAGE",
+    "root_service": "redis",
+    "pred": "settlement",
+    "hit": false,
+    "seconds": 151.4308271408081,
+    "final_text": "We need to produce final answer. We have to call recall_similar_past_incidents. We did. But we didn't use it. We need to incorporate evidence. The recall shows incidents with unknown events. But we need to find root cause. The recall shows incidents with Cassandra outage, settlement DB failure, MongoDB outage. But the unknown events might be from a service that is not part of the pipeline. The recall shows Cassandra outage had unknown events. But we already checked Cassandra health: running. So not Cassandra. The recall shows settlement DB failure had unknown events. But we know settlement had ClickHouse error but that's noise. The recall shows MongoDB outage had unknown events. But we didn't check MongoDB. We should check MongoDB health. But we didn't. We should call check_infra_health for mongodb. But we have a limit of 15 calls. We have used 1 deterministic, 1 infra health for cassandra, 1 query_knowledge_graph, 1 search_live_elasticsearch, 1 recall_similar_past_incidents. That's 5 calls. We can still call more. We need to find root cause. The unknown logs might be from a service that crashed. The unknown logs appear at 18:40:23 and 18:40:28. They are empty lines. They might be "
+  },
+  {
+    "incident_id": "LIVE-e667695f",
+    "fault_type": "REDIS_OUTAGE",
+    "root_service": "redis",
+    "pred": "validation-enrichment",
+    "hit": false,
+    "seconds": 131.89702701568604,
+    "final_text": "ROOT CAUSE: validation-enrichment. REASON: One payment was submitted but never validated, causing a drop in the pipeline."
+  }
+]

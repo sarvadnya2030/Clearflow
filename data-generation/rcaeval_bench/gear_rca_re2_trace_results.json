@@ -1,0 +1,272 @@
+[
+  {
+    "incident_id": "re2ob_currencyservice_delay_1",
+    "root_service": "currencyservice",
+    "fault_type": "delay",
+    "pred": "currencyservice",
+    "hit": true,
+    "seconds": 870.6866059303284,
+    "final_text": "ROOT CAUSE: currencyservice. REASON: The currencyservice experienced a dramatic spike in latency, as shown by the trace causal analysis and metric z-scores, matching prior delay incidents."
+  },
+  {
+    "incident_id": "re2ob_currencyservice_delay_2",
+    "root_service": "currencyservice",
+    "fault_type": "delay",
+    "pred": "currencyservice",
+    "hit": true,
+    "seconds": 1345.5700340270996,
+    "final_text": "ROOT CAUSE: currencyservice. REASON: The distributed\u2011trace analysis shows a >40\u00d7 increase in self\u2011time for currencyservice calls, and its latency metrics have extreme z\u2011scores, indicating a severe delay in that service."
+  },
+  {
+    "incident_id": "re2ob_currencyservice_cpu_3",
+    "root_service": "currencyservice",
+    "fault_type": "cpu",
+    "pred": "currencyservice",
+    "hit": true,
+    "seconds": 1052.419846534729,
+    "final_text": "ROOT CAUSE: currencyservice. REASON: The currencyservice shows significant CPU and latency anomalies, and trace analysis indicates it is the primary source of increased downstream self\u2011time."
+  },
+  {
+    "incident_id": "re2ob_checkoutservice_delay_2",
+    "root_service": "checkoutservice",
+    "fault_type": "delay",
+    "pred": null,
+    "hit": false,
+    "seconds": 441.45232820510864,
+    "final_text": ""
+  },
+  {
+    "incident_id": "re2ob_productcatalogservice_cpu_3",
+    "root_service": "productcatalogservice",
+    "fault_type": "cpu",
+    "pred": "productcatalogservice",
+    "hit": true,
+    "seconds": 2394.2213933467865,
+    "final_text": "ROOT CAUSE: productcatalogservice. REASON: CPU usage spiked, causing latency."
+  },
+  {
+    "incident_id": "re2ob_checkoutservice_cpu_1",
+    "root_service": "checkoutservice",
+    "fault_type": "cpu",
+    "pred": "checkoutservice",
+    "hit": true,
+    "seconds": 69.7882764339447,
+    "final_text": "ROOT CAUSE: checkoutservice. REASON: checkoutservice\u2019s CPU usage spiked, causing a dramatic increase in its self\u2011time and downstream latency."
+  },
+  {
+    "incident_id": "re2ob_checkoutservice_cpu_2",
+    "root_service": "checkoutservice",
+    "fault_type": "cpu",
+    "pred": "checkoutservice",
+    "hit": true,
+    "seconds": 92.52014517784119,
+    "final_text": "ROOT CAUSE: checkoutservice. REASON: checkoutservice\u2019s CPU usage spiked (z\u2011score 199.53), causing a dramatic increase in its self\u2011time and downstream latency."
+  },
+  {
+    "incident_id": "re2ob_checkoutservice_cpu_3",
+    "root_service": "checkoutservice",
+    "fault_type": "cpu",
+    "pred": "adservice",
+    "hit": false,
+    "seconds": 121.87890124320984,
+    "final_text": "ROOT CAUSE: adservice. REASON: adservice\u2019s CPU usage spiked (z\u2011score 4.62), driving downstream latency increases."
+  },
+  {
+    "incident_id": "re2ob_checkoutservice_delay_1",
+    "root_service": "checkoutservice",
+    "fault_type": "delay",
+    "pred": "productcatalogservice",
+    "hit": false,
+    "seconds": 81.79659271240234,
+    "final_text": "ROOT CAUSE: productcatalogservice. REASON: The trace causal analysis shows a massive increase in self\u2011time for productcatalogservice calls, indicating a network latency fault."
+  },
+  {
+    "incident_id": "re2ob_checkoutservice_delay_3",
+    "root_service": "checkoutservice",
+    "fault_type": "delay",
+    "pred": "productcatalogservice",
+    "hit": false,
+    "seconds": 54.0613477230072,
+    "final_text": "ROOT CAUSE: productcatalogservice. REASON: The trace causal analysis shows a dramatic increase in self\u2011time for productcatalogservice calls, indicating a delay fault."
+  },
+  {
+    "incident_id": "re2ob_currencyservice_cpu_1",
+    "root_service": "currencyservice",
+    "fault_type": "cpu",
+    "pred": "currencyservice",
+    "hit": true,
+    "seconds": 150.47973251342773,
+    "final_text": "ROOT CAUSE: currencyservice. REASON: Its CPU usage spiked (z\u2011score 4.13), driving the observed latency and downstream self\u2011time increases."
+  },
+  {
+    "incident_id": "re2ob_currencyservice_cpu_2",
+    "root_service": "currencyservice",
+    "fault_type": "cpu",
+    "pred": null,
+    "hit": false,
+    "seconds": 96.16783857345581,
+    "final_text": ""
+  },
+  {
+    "incident_id": "re2ob_currencyservice_delay_3",
+    "root_service": "currencyservice",
+    "fault_type": "delay",
+    "pred": "currencyservice",
+    "hit": true,
+    "seconds": 50.443692684173584,
+    "final_text": "ROOT CAUSE: currencyservice. REASON: CurrencyService\u2019s self\u2011time spiked dramatically, with latency z\u2011scores far above normal, indicating a delay fault."
+  },
+  {
+    "incident_id": "re2ob_emailservice_cpu_1",
+    "root_service": "emailservice",
+    "fault_type": "cpu",
+    "pred": "emailservice",
+    "hit": true,
+    "seconds": 133.8681561946869,
+    "final_text": "ROOT CAUSE: emailservice. REASON: The emailservice shows an extreme CPU z\u2011score (543.89), indicating a CPU fault."
+  },
+  {
+    "incident_id": "re2ob_emailservice_cpu_2",
+    "root_service": "emailservice",
+    "fault_type": "cpu",
+    "pred": "emailservice",
+    "hit": true,
+    "seconds": 41.2255654335022,
+    "final_text": "ROOT CAUSE: emailservice. REASON: The emailservice shows a massive CPU z\u2011score spike (579.35) and a 7\u00d7 increase in self\u2011time during checkout, indicating a CPU\u2011related fault."
+  },
+  {
+    "incident_id": "re2ob_emailservice_cpu_3",
+    "root_service": "emailservice",
+    "fault_type": "cpu",
+    "pred": "emailservice",
+    "hit": true,
+    "seconds": 92.23156809806824,
+    "final_text": "ROOT CAUSE: emailservice. REASON: The emailservice shows a massive CPU z\u2011score spike (537.58) and a 7.8\u00d7 increase in self\u2011time, indicating a CPU\u2011related fault."
+  },
+  {
+    "incident_id": "re2ob_emailservice_delay_1",
+    "root_service": "emailservice",
+    "fault_type": "delay",
+    "pred": "emailservice",
+    "hit": true,
+    "seconds": 49.90792536735535,
+    "final_text": "ROOT CAUSE: emailservice. REASON: The emailservice\u2019s latency spiked dramatically, causing checkoutservice\u2019s calls to it to take far longer than normal."
+  },
+  {
+    "incident_id": "re2ob_emailservice_delay_2",
+    "root_service": "emailservice",
+    "fault_type": "delay",
+    "pred": "emailservice",
+    "hit": true,
+    "seconds": 89.10181593894958,
+    "final_text": "ROOT CAUSE: emailservice. REASON: EmailService experienced a severe latency spike, causing the checkoutservice's email confirmation RPC to take far longer."
+  },
+  {
+    "incident_id": "re2ob_emailservice_delay_3",
+    "root_service": "emailservice",
+    "fault_type": "delay",
+    "pred": "emailservice",
+    "hit": true,
+    "seconds": 119.98535394668579,
+    "final_text": "ROOT CAUSE: emailservice. REASON: emailservice experienced a massive latency spike, causing downstream delays."
+  },
+  {
+    "incident_id": "re2ob_productcatalogservice_cpu_1",
+    "root_service": "productcatalogservice",
+    "fault_type": "cpu",
+    "pred": "cartservice",
+    "hit": false,
+    "seconds": 66.83095955848694,
+    "final_text": "{\"matches\":[{\"node\":\"demo_grpc.pb.go\",\"edges\":[\"demo_grpc_pb --contains--> genproto_cartserviceclient\",\"demo_grpc_pb --contains--> demo_grpc_pb_newcartserviceclient\",\"demo_grpc_pb --contains--> genproto_cartserviceserver\",\"demo_grpc_pb --contains--> genproto_unimplementedcartserviceserver\",\"demo_grpc_pb --contains--> genproto_unsafecartserviceserver\",\"demo_grpc_pb --contains--> demo_grpc_pb_registercartserviceserver\",\"demo_grpc_pb --contains--> demo_grpc_pb_cartservice_additem_handler\",\"demo_grpc_pb --contains--> demo_grpc_pb_cartservice_getcart_handler\"]},{\"node\":\"CartServiceClient\",\"edges\":[\"demo_grpc_pb --contains--> genproto_cartserviceclient\",\"genproto_cartserviceclient --method--> genproto_cartserviceclient_additem\",\"genproto_cartserviceclient --method--> genproto_cartserviceclient_getcart\",\"genproto_cartserviceclient --method--> genproto_cartserviceclient_emptycart\"]},{\"node\":\"NewCartServiceClient()\",\"edges\":[\"demo_grpc_pb --contains--> demo_grpc_pb_newcartserviceclient\"]},{\"nod"
+  },
+  {
+    "incident_id": "re2ob_productcatalogservice_cpu_2",
+    "root_service": "productcatalogservice",
+    "fault_type": "cpu",
+    "pred": "productcatalogservice",
+    "hit": true,
+    "seconds": 77.40383744239807,
+    "final_text": "ROOT CAUSE: productcatalogservice. REASON: The productcatalogservice\u2019s CPU usage spiked, causing a dramatic increase in its self\u2011time and latency."
+  },
+  {
+    "incident_id": "re2ob_productcatalogservice_delay_1",
+    "root_service": "productcatalogservice",
+    "fault_type": "delay",
+    "pred": "productcatalogservice",
+    "hit": true,
+    "seconds": 102.5505006313324,
+    "final_text": "I have executed the mandatory `query_knowledge_graph` call for `productcatalogservice`."
+  },
+  {
+    "incident_id": "re2ob_productcatalogservice_delay_2",
+    "root_service": "productcatalogservice",
+    "fault_type": "delay",
+    "pred": "productcatalogservice",
+    "hit": true,
+    "seconds": 82.25740313529968,
+    "final_text": "ROOT CAUSE: productcatalogservice. REASON: productcatalogservice shows extreme latency anomalies and a massive increase in self\u2011time, indicating a delay fault."
+  },
+  {
+    "incident_id": "re2ob_productcatalogservice_delay_3",
+    "root_service": "productcatalogservice",
+    "fault_type": "delay",
+    "pred": "productcatalogservice",
+    "hit": true,
+    "seconds": 109.01167368888855,
+    "final_text": "ROOT CAUSE: productcatalogservice. REASON: The productcatalogservice shows a massive increase in self\u2011time and latency z\u2011scores, indicating a delay fault."
+  },
+  {
+    "incident_id": "re2ob_recommendationservice_cpu_1",
+    "root_service": "recommendationservice",
+    "fault_type": "cpu",
+    "pred": "recommendationservice",
+    "hit": true,
+    "seconds": 133.82523822784424,
+    "final_text": "ROOT CAUSE: recommendationservice. REASON: The recommendationservice shows a severe CPU anomaly (z\u2011score 63.21) and its self\u2011time in traces increased nearly 10\u00d7, indicating it is the source of the CPU fault."
+  },
+  {
+    "incident_id": "re2ob_recommendationservice_cpu_2",
+    "root_service": "recommendationservice",
+    "fault_type": "cpu",
+    "pred": null,
+    "hit": false,
+    "seconds": 142.87395763397217,
+    "final_text": ""
+  },
+  {
+    "incident_id": "re2ob_recommendationservice_cpu_3",
+    "root_service": "recommendationservice",
+    "fault_type": "cpu",
+    "pred": "recommendationservice",
+    "hit": true,
+    "seconds": 150.35892963409424,
+    "final_text": "ROOT CAUSE: recommendationservice. REASON: The recommendationservice exhibited a high CPU z\u2011score and trace analysis showed a large increase in its self\u2011time, indicating CPU overload."
+  },
+  {
+    "incident_id": "re2ob_recommendationservice_delay_1",
+    "root_service": "recommendationservice",
+    "fault_type": "delay",
+    "pred": "recommendationservice",
+    "hit": true,
+    "seconds": 38.228349924087524,
+    "final_text": "ROOT CAUSE: recommendationservice. REASON: The recommendationservice\u2019s latency z\u2011scores are extremely high and its self\u2011time in traces increased 49\u00d7, indicating a delay fault."
+  },
+  {
+    "incident_id": "re2ob_recommendationservice_delay_2",
+    "root_service": "recommendationservice",
+    "fault_type": "delay",
+    "pred": "recommendationservice",
+    "hit": true,
+    "seconds": 60.27505111694336,
+    "final_text": "ROOT CAUSE: recommendationservice. REASON: RecommendationService exhibited a dramatic spike in self\u2011time (ratio 48\u00d7) and extreme latency z\u2011scores, indicating a delay."
+  },
+  {
+    "incident_id": "re2ob_recommendationservice_delay_3",
+    "root_service": "recommendationservice",
+    "fault_type": "delay",
+    "pred": "recommendationservice",
+    "hit": true,
+    "seconds": 57.40524387359619,
+    "final_text": "ROOT CAUSE: recommendationservice. REASON: The recommendationservice\u2019s latency metrics show extreme z\u2011scores and trace analysis reveals a massive increase in self\u2011time for its ListRecommendations RPC, indicating a severe delay in that service."
+  }
+]

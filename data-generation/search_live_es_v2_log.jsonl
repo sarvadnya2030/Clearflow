@@ -1,0 +1,500 @@
+{"service": "settlement", "keyword": null, "result": "miss", "ts": 1789474291.5593102}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789474312.1712844}
+{"service": "validation-enrichment", "keyword": "Exception", "earliest_count": 10, "latest_count": 10, "overlap": 2, "total_returned": 18, "result": "hit", "ts": 1789474862.8757734}
+{"service": "mongodb", "keyword": "Exception", "result": "miss", "ts": 1789474896.3138924}
+{"service": "cassandra", "keyword": "ConnectionInitException", "result": "miss", "ts": 1789474990.4233994}
+{"service": "audit", "keyword": "ConnectionInitException", "earliest_count": 6, "latest_count": 6, "overlap": 6, "total_returned": 6, "result": "hit", "ts": 1789474994.1002698}
+{"service": "cassandra", "keyword": "ClosedConnectionException", "result": "miss", "ts": 1789475008.3609788}
+{"service": "cassandra", "keyword": "StacklessClosedChannelException", "result": "miss", "ts": 1789475011.245996}
+{"service": "cassandra", "keyword": "ERROR", "result": "miss", "ts": 1789475018.5655944}
+{"service": "cassandra", "keyword": "WARN", "result": "miss", "ts": 1789475020.6862512}
+{"service": "cassandra", "keyword": "unavailable", "result": "miss", "ts": 1789475026.0964694}
+{"service": "cassandra", "keyword": "unreachable", "result": "miss", "ts": 1789475028.347502}
+{"service": "cassandra", "keyword": "Connection refused", "result": "miss", "ts": 1789475032.4483583}
+{"service": "cassandra", "keyword": "shutdown", "result": "miss", "ts": 1789475039.1860557}
+{"service": "cassandra", "keyword": "restart", "result": "miss", "ts": 1789475041.218075}
+{"service": "validation-enrichment", "keyword": "Exception", "earliest_count": 10, "latest_count": 10, "overlap": 2, "total_returned": 18, "result": "hit", "ts": 1789475203.5136387}
+{"service": "mongodb", "keyword": "Exception", "result": "miss", "ts": 1789475236.094902}
+{"service": "audit", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 9, "total_returned": 11, "result": "hit", "ts": 1789475298.6787155}
+{"service": "cassandra", "keyword": "Connection", "result": "miss", "ts": 1789475324.4730341}
+{"service": "validation-enrichment", "keyword": "Exception", "earliest_count": 10, "latest_count": 10, "overlap": 2, "total_returned": 18, "result": "hit", "ts": 1789475402.68534}
+{"service": "aml-compliance", "keyword": "Exception", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789475414.0110931}
+{"service": "audit", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 9, "total_returned": 11, "result": "hit", "ts": 1789475510.3644402}
+{"service": "audit", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 9, "total_returned": 11, "result": "hit", "ts": 1789475609.9900923}
+{"service": "validation-enrichment", "keyword": "Exception", "earliest_count": 10, "latest_count": 10, "overlap": 2, "total_returned": 18, "result": "hit", "ts": 1789475676.1569474}
+{"service": "aml\u2011compliance", "keyword": "Exception", "result": "miss", "ts": 1789475677.9039412}
+{"service": "audit", "keyword": "ConnectionInitException", "earliest_count": 6, "latest_count": 6, "overlap": 6, "total_returned": 6, "result": "hit", "ts": 1789475793.9937787}
+{"service": "audit", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789475799.3896596}
+{"service": "mongodb", "keyword": "Exception", "result": "miss", "ts": 1789475850.3599865}
+{"service": "mongodb", "keyword": "Connection", "result": "miss", "ts": 1789475864.4530277}
+{"service": "mongodb", "keyword": "error", "result": "miss", "ts": 1789475889.6118004}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 1, "total_returned": 19, "result": "hit", "ts": 1789476156.1067517}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789476264.7821422}
+{"service": "validation-enrichment", "keyword": "Mongo", "earliest_count": 10, "latest_count": 10, "overlap": 5, "total_returned": 15, "result": "hit", "ts": 1789476285.9834187}
+{"service": "aml-compliance", "keyword": "Mongo", "earliest_count": 10, "latest_count": 10, "overlap": 5, "total_returned": 15, "result": "hit", "ts": 1789476296.4605386}
+{"service": "routing-execution", "keyword": null, "result": "miss", "ts": 1789476396.0105011}
+{"service": "unknown", "keyword": null, "result": "miss", "ts": 1789476445.129479}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 1, "total_returned": 19, "result": "hit", "ts": 1789476460.301873}
+{"service": "routing-execution", "keyword": null, "result": "miss", "ts": 1789476519.2345977}
+{"service": "routing-execution", "keyword": "RAIL_SELECTED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789476529.42103}
+{"service": "fraud-scoring", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 7, "total_returned": 13, "result": "hit", "ts": 1789476531.8641987}
+{"service": "validation-enrichment", "keyword": null, "result": "miss", "ts": 1789476534.2717628}
+{"service": "audit", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 8, "total_returned": 12, "result": "hit", "ts": 1789476536.5727737}
+{"service": "gateway", "keyword": "ConnectionInitException", "result": "miss", "ts": 1789476552.1523814}
+{"service": "fraud-scoring", "keyword": "ConnectionInitException", "result": "miss", "ts": 1789476555.0540466}
+{"service": "routing-execution", "keyword": null, "result": "miss", "ts": 1789476637.889302}
+{"service": "routing-execution", "keyword": "RAIL", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789476642.2992523}
+{"service": "audit", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 8, "total_returned": 12, "result": "hit", "ts": 1789476651.5513515}
+{"service": "audit", "keyword": "ConnectionInitException", "earliest_count": 6, "latest_count": 6, "overlap": 6, "total_returned": 6, "result": "hit", "ts": 1789477065.2567368}
+{"service": "settlement", "keyword": "20:40", "result": "miss", "ts": 1789477145.6272304}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789477182.609264}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789477200.9590187}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789477213.0549364}
+{"service": "fraud-scoring", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789477215.3072345}
+{"service": "validation-enrichment", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789477217.7504454}
+{"service": "aml-compliance", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789477220.7996423}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789477224.2151268}
+{"service": "audit", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789477226.9349144}
+{"service": "settlement", "keyword": "ClickHouseAnalyticsService", "result": "miss", "ts": 1789477232.9287615}
+{"service": "settlement", "keyword": "ClickHouse", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789477234.929353}
+{"service": "settlement", "keyword": "httpclient5", "result": "miss", "ts": 1789477254.1863234}
+{"service": "settlement", "keyword": "httpclient", "result": "miss", "ts": 1789477256.5395885}
+{"service": "settlement", "keyword": "Connection refused", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789477258.8430462}
+{"service": "routing-execution", "keyword": "HEALTH", "result": "miss", "ts": 1789477359.5072846}
+{"service": "routing-execution", "keyword": null, "earliest_count": 5, "latest_count": 5, "overlap": 5, "total_returned": 5, "result": "hit", "ts": 1789477367.316349}
+{"service": "routing-execution", "keyword": "HEALTH", "result": "miss", "ts": 1789477405.9470406}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789477423.8224602}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_RECOVERED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789477445.0894408}
+{"service": "routing-execution", "keyword": "Exception", "result": "miss", "ts": 1789477468.846364}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789477509.9041643}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789477543.9005673}
+{"service": "routing-execution", "keyword": "21:17:16", "result": "miss", "ts": 1789477611.1340172}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789477718.8725514}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789477732.905557}
+{"service": "validation-enrichment", "keyword": "Exception", "result": "miss", "ts": 1789477755.202831}
+{"service": "fraud-scoring", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 11, "total_returned": 9, "result": "hit", "ts": 1789477770.089392}
+{"service": "validation-enrichment", "keyword": "Health", "result": "miss", "ts": 1789477790.1059136}
+{"service": "aml-compliance", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 1, "total_returned": 19, "result": "hit", "ts": 1789477914.9479127}
+{"service": "aml-compliance", "keyword": "Exception", "result": "miss", "ts": 1789477937.538711}
+{"service": "aml-compliance", "keyword": "CPU", "result": "miss", "ts": 1789477949.6274729}
+{"service": "gateway", "keyword": "PAYMENT_SUBMITTED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789477993.7938259}
+{"service": "aml-compliance", "keyword": "HEALTH_CHECK_RECOVERED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789478001.4858887}
+{"service": "aml-compliance", "keyword": "AML_SANCTIONS_HIT", "earliest_count": 8, "latest_count": 8, "overlap": 12, "total_returned": 4, "result": "hit", "ts": 1789478049.9163606}
+{"service": "aml-compliance", "keyword": "AML_HOLD", "earliest_count": 4, "latest_count": 4, "overlap": 4, "total_returned": 4, "result": "hit", "ts": 1789478071.417472}
+{"service": "settlement", "keyword": "Error", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789478077.8297756}
+{"service": "gateway", "keyword": "ERROR", "result": "miss", "ts": 1789478110.1307511}
+{"service": "settlement", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789478198.6646059}
+{"service": "settlement", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789478226.0421836}
+{"service": "gateway", "keyword": "ERROR", "result": "miss", "ts": 1789478256.3311195}
+{"service": "aml-compliance", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 2, "total_returned": 18, "result": "hit", "ts": 1789478302.107068}
+{"service": "aml-compliance", "keyword": "AML", "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789478311.045507}
+{"service": "aml-compliance", "keyword": "AML_SCREENING_COMPLETE", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789478330.7399282}
+{"service": "fraud-scoring", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 13, "total_returned": 7, "result": "hit", "ts": 1789478335.2899663}
+{"service": "validation-enrichment", "keyword": null, "result": "miss", "ts": 1789478337.760435}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789478338.6572506}
+{"service": "validation-enrichment", "keyword": "Exception", "result": "miss", "ts": 1789478339.6381812}
+{"service": "gateway", "keyword": null, "result": "miss", "ts": 1789478340.3878262}
+{"service": "routing-execution", "keyword": null, "result": "miss", "ts": 1789478349.7439444}
+{"service": "routing-execution", "keyword": "PAYMENT_ROUTED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789478428.1418996}
+{"service": "settlement", "keyword": "Exception", "result": "miss", "ts": 1789478440.3982325}
+{"service": "settlement", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789478451.091226}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789478470.7016115}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789478486.9829104}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 5, "latest_count": 5, "overlap": 5, "total_returned": 5, "result": "hit", "ts": 1789478523.385163}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789478536.3595788}
+{"service": "fraud-scoring", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 6, "total_returned": 14, "result": "hit", "ts": 1789478551.7002552}
+{"service": "validation-enrichment", "keyword": "Hikari", "result": "miss", "ts": 1789478583.9809616}
+{"service": "validation-enrichment", "keyword": "Connection", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789478601.977338}
+{"service": "settlement", "keyword": "NoClassDefFoundError", "result": "miss", "ts": 1789478726.5229087}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789478744.0320148}
+{"service": "settlement", "keyword": "APACHE_HTTP_CLIENT", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789478763.2833567}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789478840.427332}
+{"service": "routing-execution", "keyword": null, "earliest_count": 7, "latest_count": 7, "overlap": 7, "total_returned": 7, "result": "hit", "ts": 1789478865.1404843}
+{"service": "gateway", "keyword": "ERROR", "result": "miss", "ts": 1789478870.18793}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_RECOVERED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789478894.8586223}
+{"service": "validation-enrichment", "keyword": "", "earliest_count": 5, "latest_count": 5, "overlap": 5, "total_returned": 5, "result": "hit", "ts": 1789479065.8676765}
+{"service": "validation-enrichment", "keyword": "Starting ValidationEnrichmentApplication", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789479067.9390855}
+{"service": "validation-enrichment", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789479080.876159}
+{"service": "unknown", "keyword": "", "result": "miss", "ts": 1789479086.5001261}
+{"service": "gateway", "keyword": "PAYMENT_SUBMITTED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789479091.9334557}
+{"service": "validation-enrichment", "keyword": "PAYMENT_VALIDATED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789479094.3134172}
+{"service": "validation-enrichment", "keyword": "9ded0f99", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789479111.4063623}
+{"service": "routing-execution", "keyword": "a2f95d87", "result": "miss", "ts": 1789479123.4146233}
+{"service": "unknown", "keyword": "a2f95d87", "result": "miss", "ts": 1789479147.2231565}
+{"service": "aml-compliance", "keyword": "AML_HOLD", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789479153.386032}
+{"service": "routing-execution", "keyword": "3057cc23", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789479165.348928}
+{"service": "aml-compliance", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 1, "total_returned": 19, "result": "hit", "ts": 1789479211.7215974}
+{"service": "aml-compliance", "keyword": "Exception", "result": "miss", "ts": 1789479216.2355785}
+{"service": "aml-compliance", "keyword": "OutOfMemory", "result": "miss", "ts": 1789479253.2279708}
+{"service": "aml-compliance", "keyword": "HEALTH_CHECK_RECOVERED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789479265.0227978}
+{"service": "aml-compliance", "keyword": "ERROR", "result": "miss", "ts": 1789479292.5205848}
+{"service": "aml-compliance", "keyword": "HEALTH_CHECK", "result": "miss", "ts": 1789479343.3787892}
+{"service": "aml-compliance", "keyword": "AML_SANCTIONS_HIT", "earliest_count": 2, "latest_count": 2, "overlap": 3, "total_returned": 1, "result": "hit", "ts": 1789479469.3415678}
+{"service": "aml-compliance", "keyword": "AML_HOLD", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789479473.6367996}
+{"service": "gateway", "keyword": null, "result": "miss", "ts": 1789479476.0889707}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789479516.9483163}
+{"service": "settlement", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789479520.5468795}
+{"service": "gateway", "keyword": "HEALTH", "result": "miss", "ts": 1789479523.3363392}
+{"service": "routing-execution", "keyword": "HEALTH", "result": "miss", "ts": 1789479524.39508}
+{"service": "fraud-scoring", "keyword": "HEALTH", "result": "miss", "ts": 1789479525.8756602}
+{"service": "validation-enrichment", "keyword": "HEALTH", "result": "miss", "ts": 1789479528.1633577}
+{"service": "aml-compliance", "keyword": "HEALTH", "result": "miss", "ts": 1789479530.5040345}
+{"service": "audit", "keyword": "HEALTH", "result": "miss", "ts": 1789479533.0213737}
+{"service": "aml-compliance", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 1, "total_returned": 19, "result": "hit", "ts": 1789479566.7777452}
+{"service": "aml-compliance", "keyword": "ERROR", "result": "miss", "ts": 1789479569.0584276}
+{"service": "aml-compliance", "keyword": "Exception", "result": "miss", "ts": 1789479570.4413538}
+{"service": "aml-compliance", "keyword": "HOLD", "result": "miss", "ts": 1789479572.232388}
+{"service": "aml-compliance", "keyword": "DOWN", "result": "miss", "ts": 1789479576.9569588}
+{"service": "aml-compliance", "keyword": "RECOVERED", "result": "miss", "ts": 1789479578.7375546}
+{"service": "aml-compliance", "keyword": "AML", "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789479585.3247783}
+{"service": "aml-compliance", "keyword": "AML_SCREEN", "result": "miss", "ts": 1789479592.9287286}
+{"service": "fraud-scoring", "keyword": "AML", "result": "miss", "ts": 1789479604.057796}
+{"service": "audit", "keyword": "AML", "result": "miss", "ts": 1789479607.260474}
+{"service": "fraud-scoring", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789479615.5870662}
+{"service": "validation-enrichment", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789479617.9848688}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789479620.245999}
+{"service": "audit", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789479621.7403736}
+{"service": "settlement", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789479645.050981}
+{"service": "settlement", "keyword": "Exception", "result": "miss", "ts": 1789479666.896366}
+{"service": "settlement", "keyword": "SETTLEMENT_COMPLETE", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789479673.5506256}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789479690.9760523}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789479725.7768216}
+{"service": "validation-enrichment", "keyword": "", "earliest_count": 5, "latest_count": 5, "overlap": 5, "total_returned": 5, "result": "hit", "ts": 1789479822.774258}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789479840.8798144}
+{"service": "fraud-scoring", "keyword": "", "earliest_count": 9, "latest_count": 9, "overlap": 11, "total_returned": 7, "result": "hit", "ts": 1789479859.5648534}
+{"service": "validation-enrichment", "keyword": "Exception", "result": "miss", "ts": 1789479894.3258321}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789479993.477979}
+{"service": "settlement", "keyword": "Exception", "result": "miss", "ts": 1789480085.3934445}
+{"service": "fraud-scoring", "keyword": null, "earliest_count": 9, "latest_count": 9, "overlap": 11, "total_returned": 7, "result": "hit", "ts": 1789480121.9639792}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK", "result": "miss", "ts": 1789480221.3370502}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789480235.3397162}
+{"service": "routing-execution", "keyword": "Exception", "result": "miss", "ts": 1789480247.7572513}
+{"service": "routing-execution", "keyword": "Connection", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789480266.2904446}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789480317.1332}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 7, "latest_count": 7, "overlap": 7, "total_returned": 7, "result": "hit", "ts": 1789480427.304686}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789480431.4328206}
+{"service": "gateway", "keyword": "PAYMENT_SUBMITTED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789480442.1967485}
+{"service": "aml-compliance", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 1, "total_returned": 19, "result": "hit", "ts": 1789480472.3968985}
+{"service": "aml-compliance", "keyword": "RECOVERED", "result": "miss", "ts": 1789480473.7908823}
+{"service": "gateway", "keyword": "RECOVERED", "result": "miss", "ts": 1789480476.4397879}
+{"service": "aml-compliance", "keyword": "DOWN", "result": "miss", "ts": 1789480478.5457907}
+{"service": "fraud-scoring", "keyword": "HEALTH", "result": "miss", "ts": 1789480480.2765732}
+{"service": "validation-enrichment", "keyword": "HEALTH", "result": "miss", "ts": 1789480482.1746137}
+{"service": "audit", "keyword": "HEALTH", "result": "miss", "ts": 1789480483.5045886}
+{"service": "aml-compliance", "keyword": "CPU", "result": "miss", "ts": 1789480492.6799538}
+{"service": "aml-compliance", "keyword": "Exception", "result": "miss", "ts": 1789480495.1326795}
+{"service": "aml-compliance", "keyword": "AML_SANCTIONS_HIT", "earliest_count": 4, "latest_count": 4, "overlap": 6, "total_returned": 2, "result": "hit", "ts": 1789480562.2730284}
+{"service": "settlement", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789480740.297653}
+{"service": "settlement", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789480743.3894048}
+{"service": "aml-compliance", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 1, "total_returned": 19, "result": "hit", "ts": 1789480801.3078709}
+{"service": "fraud-scoring", "keyword": null, "earliest_count": 9, "latest_count": 9, "overlap": 12, "total_returned": 6, "result": "hit", "ts": 1789480802.0768237}
+{"service": "routing-execution", "keyword": null, "result": "miss", "ts": 1789480802.7887828}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789480804.852373}
+{"service": "validation-enrichment", "keyword": null, "result": "miss", "ts": 1789480805.6071863}
+{"service": "validation-enrichment", "keyword": "PAYMENT_VALIDATED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789480807.9377687}
+{"service": "aml-compliance", "keyword": "AML_SCREENING_COMPLETE", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789480808.857688}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789480856.0867984}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789480857.2747793}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789480861.612532}
+{"service": "settlement", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789480875.478997}
+{"service": "settlement", "keyword": "Error", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789480890.7413812}
+{"service": "settlement", "keyword": "Exception", "result": "miss", "ts": 1789480899.6298585}
+{"service": "settlement", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789480901.3628132}
+{"service": "settlement", "keyword": "Health", "result": "miss", "ts": 1789480903.1457274}
+{"service": "settlement", "keyword": "NullPointer", "result": "miss", "ts": 1789480906.8265474}
+{"service": "settlement", "keyword": "Stack", "result": "miss", "ts": 1789480910.0319023}
+{"service": "gateway", "keyword": "HEALTH", "result": "miss", "ts": 1789480911.1357746}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789480912.4778764}
+{"service": "settlement", "keyword": "Connection", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789480919.645159}
+{"service": "settlement", "keyword": "Failed", "earliest_count": 2, "latest_count": 2, "overlap": 2, "total_returned": 2, "result": "hit", "ts": 1789480920.2761338}
+{"service": "settlement", "keyword": "camel", "earliest_count": 4, "latest_count": 4, "overlap": 4, "total_returned": 4, "result": "hit", "ts": 1789480924.3392053}
+{"service": "settlement", "keyword": "error", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789480931.2569816}
+{"service": "settlement", "keyword": "NoClassDefFoundError", "result": "miss", "ts": 1789480939.6441576}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 5, "latest_count": 5, "overlap": 5, "total_returned": 5, "result": "hit", "ts": 1789480954.7532678}
+{"service": "gateway", "keyword": null, "result": "miss", "ts": 1789480958.6998894}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789480964.2222905}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789480974.101997}
+{"service": "fraud-scoring", "keyword": "HEALTH", "result": "miss", "ts": 1789480985.9889612}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789481064.4039702}
+{"service": "settlement", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789481069.2082508}
+{"service": "settlement", "keyword": "DOWN", "result": "miss", "ts": 1789481076.059915}
+{"service": "gateway", "keyword": "HEALTH", "result": "miss", "ts": 1789481079.5028684}
+{"service": "settlement", "keyword": "HEALTH", "result": "miss", "ts": 1789481086.7993321}
+{"service": "routing-execution", "keyword": "", "earliest_count": 5, "latest_count": 5, "overlap": 5, "total_returned": 5, "result": "hit", "ts": 1789481140.062339}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789481142.7773435}
+{"service": "routing-execution", "keyword": "RECOVERED", "result": "miss", "ts": 1789481156.9196715}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_RECOVERED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789481170.3643754}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 5, "latest_count": 5, "overlap": 5, "total_returned": 5, "result": "hit", "ts": 1789481233.948522}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789481251.690782}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481289.1412349}
+{"service": "validation-enrichment", "keyword": "paymentId", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789481297.7553153}
+{"service": "validation-enrichment", "keyword": "Exception", "result": "miss", "ts": 1789481301.7156117}
+{"service": "gateway", "keyword": "Exception", "result": "miss", "ts": 1789481302.3447337}
+{"service": "fraud-scoring", "keyword": "Exception", "result": "miss", "ts": 1789481303.3902586}
+{"service": "audit", "keyword": "Exception", "result": "miss", "ts": 1789481304.0909824}
+{"service": "routing-execution", "keyword": "Exception", "result": "miss", "ts": 1789481305.3527088}
+{"service": "settlement", "keyword": "Exception", "earliest_count": 10, "latest_count": 10, "overlap": 10, "total_returned": 10, "result": "hit", "ts": 1789481305.9034176}
+{"service": "fraud-scoring", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481309.0885122}
+{"service": "audit", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481309.733493}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481313.1287932}
+{"service": "aml-compliance", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481313.86143}
+{"service": "aml-compliance", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 1, "total_returned": 19, "result": "hit", "ts": 1789481362.4433167}
+{"service": "routing-execution", "keyword": null, "result": "miss", "ts": 1789481367.6689987}
+{"service": "settlement", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789481391.5776381}
+{"service": "routing-execution", "keyword": "", "result": "miss", "ts": 1789481392.424015}
+{"service": "validation-enrichment", "keyword": "", "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789481440.083523}
+{"service": "validation-enrichment", "keyword": "Exception", "result": "miss", "ts": 1789481451.717244}
+{"service": "validation-enrichment", "keyword": "Error", "result": "miss", "ts": 1789481456.8976142}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 7, "latest_count": 7, "overlap": 7, "total_returned": 7, "result": "hit", "ts": 1789481489.2469532}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481518.4666061}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789481524.1445413}
+{"service": "gateway", "keyword": "PAYMENT_REJECTED", "earliest_count": 10, "latest_count": 10, "overlap": 5, "total_returned": 15, "result": "hit", "ts": 1789481533.1079655}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789481579.1037447}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789481581.3361223}
+{"service": "validation-enrichment", "keyword": "Exception", "result": "miss", "ts": 1789481582.24553}
+{"service": "validation-enrichment", "keyword": "HOLD", "result": "miss", "ts": 1789481584.8342288}
+{"service": "gateway", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789481585.6728992}
+{"service": "validation-enrichment", "keyword": "DOWN", "result": "miss", "ts": 1789481588.7178414}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481595.5148063}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481596.6054907}
+{"service": "fraud-scoring", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481597.8229885}
+{"service": "aml-compliance", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481598.8521662}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481599.7814755}
+{"service": "aml-compliance", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 2, "total_returned": 18, "result": "hit", "ts": 1789481608.8797178}
+{"service": "aml-compliance", "keyword": "ERROR", "result": "miss", "ts": 1789481612.9796696}
+{"service": "validation-enrichment", "keyword": "PAYMENT_VALIDATED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789481619.3708947}
+{"service": "aml-compliance", "keyword": "DOWN", "result": "miss", "ts": 1789481623.647809}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481630.1305408}
+{"service": "aml-compliance", "keyword": "AML_SANCTIONS_HIT", "earliest_count": 4, "latest_count": 4, "overlap": 6, "total_returned": 2, "result": "hit", "ts": 1789481653.614944}
+{"service": "aml-compliance", "keyword": "AML_HOLD", "earliest_count": 2, "latest_count": 2, "overlap": 2, "total_returned": 2, "result": "hit", "ts": 1789481663.6665833}
+{"service": "unknown", "keyword": "ERROR", "result": "miss", "ts": 1789481667.7102144}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789481693.6104019}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789481696.9234715}
+{"service": "aml-compliance", "keyword": "AML_SANCTIONS_HIT", "earliest_count": 8, "latest_count": 8, "overlap": 12, "total_returned": 4, "result": "hit", "ts": 1789481716.903881}
+{"service": "aml-compliance", "keyword": "ERROR", "result": "miss", "ts": 1789481722.7023044}
+{"service": "aml-compliance", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 1, "total_returned": 19, "result": "hit", "ts": 1789481779.6376731}
+{"service": "aml-compliance", "keyword": "AML_SCREENING_COMPLETE", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789481786.6095872}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481836.5593777}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481838.042423}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481844.1515787}
+{"service": "fraud-scoring", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481846.2238724}
+{"service": "aml-compliance", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 2, "total_returned": 18, "result": "hit", "ts": 1789481856.8530898}
+{"service": "aml-compliance", "keyword": "ERROR", "result": "miss", "ts": 1789481861.5068388}
+{"service": "aml-compliance", "keyword": "Exception", "result": "miss", "ts": 1789481863.57788}
+{"service": "aml-compliance", "keyword": "HEALTH_CHECK_RECOVERED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789481864.2204704}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481866.642599}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481867.5317636}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481869.8066947}
+{"service": "validation-enrichment", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481873.0964139}
+{"service": "fraud-scoring", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789481874.2303581}
+{"service": "routing-execution", "keyword": "Error", "result": "miss", "ts": 1789481875.0752804}
+{"service": "settlement", "keyword": "Error", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789481879.2165082}
+{"service": "settlement", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789481898.6502078}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789481901.643679}
+{"service": "settlement", "keyword": "DOWN", "result": "miss", "ts": 1789481909.5837169}
+{"service": "settlement", "keyword": "RECOVERED", "result": "miss", "ts": 1789481911.3844264}
+{"service": "gateway", "keyword": "APACHE_HTTP_CLIENT", "result": "miss", "ts": 1789481936.8547142}
+{"service": "settlement", "keyword": "NoClassDefFoundError", "result": "miss", "ts": 1789481939.3274007}
+{"service": "routing-execution", "keyword": null, "earliest_count": 7, "latest_count": 7, "overlap": 7, "total_returned": 7, "result": "hit", "ts": 1789481952.3389225}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789481954.347326}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789482037.5922608}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789482042.7658043}
+{"service": "validation-enrichment", "keyword": "Exception", "result": "miss", "ts": 1789482060.8909068}
+{"service": "validation-enrichment", "keyword": "Connection", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789482067.137346}
+{"service": "validation-enrichment", "keyword": "HikariPool", "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789482092.9399705}
+{"service": "validation-enrichment", "keyword": "HEALTH", "result": "miss", "ts": 1789482109.395664}
+{"service": "validation-enrichment", "keyword": "OutOfMemory", "result": "miss", "ts": 1789482121.1712916}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789482200.1884587}
+{"service": "settlement", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789482211.2052598}
+{"service": "routing-execution", "keyword": "", "result": "miss", "ts": 1789482212.703076}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789482217.7340293}
+{"service": "settlement", "keyword": "health", "result": "miss", "ts": 1789482256.498824}
+{"service": "settlement", "keyword": "Exception", "result": "miss", "ts": 1789482263.0394344}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789482268.6905096}
+{"service": "settlement", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789482331.23688}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789482332.4213357}
+{"service": "settlement", "keyword": "HEALTH", "result": "miss", "ts": 1789482335.4205818}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789482336.8897405}
+{"service": "fraud-scoring", "keyword": "ERROR", "result": "miss", "ts": 1789482339.2700863}
+{"service": "settlement", "keyword": "Exception", "result": "miss", "ts": 1789482343.9248483}
+{"service": "settlement", "keyword": "Connection", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789482345.0043259}
+{"service": "settlement", "keyword": "Failed", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789482346.9617884}
+{"service": "settlement", "keyword": "Cassandra", "result": "miss", "ts": 1789482349.0126042}
+{"service": "gateway", "keyword": "HEALTH", "result": "miss", "ts": 1789482353.9423513}
+{"service": "routing-execution", "keyword": "HEALTH", "result": "miss", "ts": 1789482358.517244}
+{"service": "validation-enrichment", "keyword": "HEALTH", "result": "miss", "ts": 1789482361.5104816}
+{"service": "aml-compliance", "keyword": "HEALTH", "result": "miss", "ts": 1789482362.9487932}
+{"service": "settlement", "keyword": "SETTLEMENT_COMPLETE", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789482365.1922827}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789482415.0008492}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789482440.7597442}
+{"service": "settlement", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789482444.0661693}
+{"service": "routing-execution", "keyword": null, "result": "miss", "ts": 1789482447.8547056}
+{"service": "settlement", "keyword": "Exception", "result": "miss", "ts": 1789482464.9769022}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789482466.7445848}
+{"service": "routing-execution", "keyword": null, "earliest_count": 7, "latest_count": 7, "overlap": 7, "total_returned": 7, "result": "hit", "ts": 1789482505.6663692}
+{"service": "routing-execution", "keyword": "DOWN", "result": "miss", "ts": 1789482509.3465462}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789482520.0990593}
+{"service": "routing-execution", "keyword": "RECOVERED", "result": "miss", "ts": 1789482543.9617245}
+{"service": "routing-execution", "keyword": "Hikari", "result": "miss", "ts": 1789482558.8119285}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789482564.2505093}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789482629.3030791}
+{"service": "aml-compliance", "keyword": null, "earliest_count": 8, "latest_count": 8, "overlap": 9, "total_returned": 7, "result": "hit", "ts": 1789482682.4860864}
+{"service": "aml-compliance", "keyword": "RECOVERED", "result": "miss", "ts": 1789482700.3442698}
+{"service": "aml-compliance", "keyword": "ERROR", "result": "miss", "ts": 1789482708.5303738}
+{"service": "aml-compliance", "keyword": "Exception", "result": "miss", "ts": 1789482714.9476175}
+{"service": "aml-compliance", "keyword": "AML_SANCTIONS_HIT", "earliest_count": 4, "latest_count": 4, "overlap": 6, "total_returned": 2, "result": "hit", "ts": 1789482774.5467758}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789482856.536918}
+{"service": "settlement", "keyword": "SETTLEMENT", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789482865.9777484}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789482910.0474496}
+{"service": "settlement", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789482912.6803133}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789482920.7564535}
+{"service": "fraud-scoring", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789482932.2395601}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789482975.5411303}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789482989.688255}
+{"service": "gateway", "keyword": "ERROR", "result": "miss", "ts": 1789482996.0129423}
+{"service": "settlement", "keyword": "Exception", "result": "miss", "ts": 1789483004.6708999}
+{"service": "settlement", "keyword": "SETTLEMENT_COMPLETE", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789483020.359826}
+{"service": "settlement", "keyword": "DOWN", "result": "miss", "ts": 1789483028.5179207}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789483052.0797389}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789483131.198635}
+{"service": "settlement", "keyword": "Exception", "result": "miss", "ts": 1789483138.2630804}
+{"service": "settlement", "keyword": "timeout", "result": "miss", "ts": 1789483154.684862}
+{"service": "settlement", "keyword": "Error", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789483162.0735238}
+{"service": "gateway", "keyword": "ERROR", "result": "miss", "ts": 1789483165.8954384}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789483166.7803392}
+{"service": "fraud-scoring", "keyword": "ERROR", "result": "miss", "ts": 1789483169.389502}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789483171.6656706}
+{"service": "aml-compliance", "keyword": "ERROR", "result": "miss", "ts": 1789483173.5076196}
+{"service": "routing-execution", "keyword": "", "earliest_count": 7, "latest_count": 7, "overlap": 7, "total_returned": 7, "result": "hit", "ts": 1789483188.8397107}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789483219.332496}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789483222.7712638}
+{"service": "routing-execution", "keyword": "2026-09-09T16:31", "result": "miss", "ts": 1789483253.5194097}
+{"service": "gateway", "keyword": "PAYMENT_SUBMITTED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789483260.749471}
+{"service": "gateway", "keyword": "ERROR", "result": "miss", "ts": 1789483286.5228248}
+{"service": "routing-execution", "keyword": null, "earliest_count": 5, "latest_count": 5, "overlap": 5, "total_returned": 5, "result": "hit", "ts": 1789483361.9958365}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789483364.879914}
+{"service": "gateway", "keyword": "PAYMENT_SUBMITTED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789483376.3545816}
+{"service": "gateway", "keyword": "7cb462ff", "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789483389.590842}
+{"service": "routing-execution", "keyword": "PAYMENT_ROUTED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789483405.3389745}
+{"service": "routing-execution", "keyword": "Exception", "result": "miss", "ts": 1789483425.9875536}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789483491.3894136}
+{"service": "routing-execution", "keyword": "", "earliest_count": 5, "latest_count": 5, "overlap": 5, "total_returned": 5, "result": "hit", "ts": 1789483532.042783}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789483539.647708}
+{"service": "routing-execution", "keyword": "Exception", "result": "miss", "ts": 1789483557.3509357}
+{"service": "routing-execution", "keyword": "paymentId", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789483570.8376656}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789483608.3662753}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789483611.542935}
+{"service": "validation-enrichment", "keyword": "Exception", "result": "miss", "ts": 1789483619.9976332}
+{"service": "validation-enrichment", "keyword": "PAYMENT_VALIDATED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789483629.490996}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 5, "latest_count": 5, "overlap": 5, "total_returned": 5, "result": "hit", "ts": 1789483682.1489038}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789483683.413898}
+{"service": "validation-enrichment", "keyword": "Exception", "result": "miss", "ts": 1789483688.891954}
+{"service": "validation-enrichment", "keyword": "", "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789483730.4668832}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789483732.63736}
+{"service": "validation-enrichment", "keyword": "Exception", "result": "miss", "ts": 1789483734.558893}
+{"service": "fraud-scoring", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 9, "total_returned": 11, "result": "hit", "ts": 1789483735.8485723}
+{"service": "settlement", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789483737.5813172}
+{"service": "audit", "keyword": "", "result": "miss", "ts": 1789483739.7834146}
+{"service": "gateway", "keyword": "", "result": "miss", "ts": 1789483741.7994573}
+{"service": "routing-execution", "keyword": "", "result": "miss", "ts": 1789483742.8563225}
+{"service": "aml-compliance", "keyword": "", "result": "miss", "ts": 1789483744.9631715}
+{"service": "aml-compliance", "keyword": "", "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789483779.426499}
+{"service": "aml-compliance", "keyword": "HEALTH_CHECK", "result": "miss", "ts": 1789483797.3501523}
+{"service": "aml-compliance", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789483799.175435}
+{"service": "aml-compliance", "keyword": "Starting", "earliest_count": 6, "latest_count": 6, "overlap": 6, "total_returned": 6, "result": "hit", "ts": 1789483801.7810068}
+{"service": "aml-compliance", "keyword": "Exception", "result": "miss", "ts": 1789483803.574538}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK", "result": "miss", "ts": 1789483806.4028156}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789483807.913325}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789483809.4632404}
+{"service": "aml-compliance", "keyword": "ERROR", "result": "miss", "ts": 1789483835.6317217}
+{"service": "aml-compliance", "keyword": "WARN", "result": "miss", "ts": 1789483837.669747}
+{"service": "fraud-scoring", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789483841.979863}
+{"service": "aml-compliance", "keyword": "PAYMENT_SUBMITTED", "result": "miss", "ts": 1789483865.4125235}
+{"service": "aml-compliance", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789483876.9064953}
+{"service": "aml-compliance", "keyword": "Exception", "result": "miss", "ts": 1789483885.4289856}
+{"service": "gateway", "keyword": "PAYMENT_SUBMITTED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789483891.7285862}
+{"service": "aml-compliance", "keyword": "ERROR", "result": "miss", "ts": 1789483894.8110802}
+{"service": "aml-compliance", "keyword": "WARN", "result": "miss", "ts": 1789483897.0666957}
+{"service": "aml-compliance", "keyword": "health", "result": "miss", "ts": 1789483897.784241}
+{"service": "aml-compliance", "keyword": "HEALTH_CHECK_RECOVERED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789483900.7383463}
+{"service": "gateway", "keyword": "17:03:09", "result": "miss", "ts": 1789483914.0185869}
+{"service": "gateway", "keyword": "17:03:10", "result": "miss", "ts": 1789483915.6599426}
+{"service": "gateway", "keyword": "17:03:08", "result": "miss", "ts": 1789483918.8086565}
+{"service": "aml-compliance", "keyword": "AML_SCREENING_COMPLETE", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789483920.1089313}
+{"service": "aml-compliance", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 11, "total_returned": 9, "result": "hit", "ts": 1789483975.360163}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789483983.2906396}
+{"service": "gateway", "keyword": "ERROR", "result": "miss", "ts": 1789483991.3505318}
+{"service": "aml-compliance", "keyword": "PAYMENT_REJECTED", "result": "miss", "ts": 1789484014.295122}
+{"service": "aml-compliance", "keyword": "AML_SANCTIONS_HIT", "earliest_count": 10, "latest_count": 10, "overlap": 15, "total_returned": 5, "result": "hit", "ts": 1789484058.1549451}
+{"service": "aml-compliance", "keyword": "AML_HOLD", "earliest_count": 5, "latest_count": 5, "overlap": 5, "total_returned": 5, "result": "hit", "ts": 1789484064.9922464}
+{"service": "aml-compliance", "keyword": "AML_SANCTIONS_HIT", "earliest_count": 4, "latest_count": 4, "overlap": 6, "total_returned": 2, "result": "hit", "ts": 1789484094.7478862}
+{"service": "gateway", "keyword": "ERROR", "result": "miss", "ts": 1789484101.5460732}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789484107.6695426}
+{"service": "aml-compliance", "keyword": "Exception", "result": "miss", "ts": 1789484118.6808238}
+{"service": "aml-compliance", "keyword": "AML_SANCTIONS_HIT", "earliest_count": 2, "latest_count": 2, "overlap": 3, "total_returned": 1, "result": "hit", "ts": 1789484197.1711235}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789484273.7967784}
+{"service": "routing-execution", "keyword": null, "result": "miss", "ts": 1789484277.338669}
+{"service": "settlement", "keyword": "Health", "result": "miss", "ts": 1789484283.2155008}
+{"service": "settlement", "keyword": "Exception", "result": "miss", "ts": 1789484292.9155269}
+{"service": "gateway", "keyword": "HEALTH", "result": "miss", "ts": 1789484305.899984}
+{"service": "settlement", "keyword": null, "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789484366.3289425}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789484372.6913276}
+{"service": "routing-execution", "keyword": null, "result": "miss", "ts": 1789484377.414668}
+{"service": "routing-execution", "keyword": "RAIL_SELECTED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789484380.7640848}
+{"service": "settlement", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789484382.461499}
+{"service": "settlement", "keyword": "RECOVERED", "result": "miss", "ts": 1789484384.7409062}
+{"service": "gateway", "keyword": "Exception", "result": "miss", "ts": 1789484387.727765}
+{"service": "gateway", "keyword": "ERROR", "result": "miss", "ts": 1789484390.5160007}
+{"service": "fraud-scoring", "keyword": "ERROR", "result": "miss", "ts": 1789484394.1255617}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789484395.9601681}
+{"service": "settlement", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789484414.616693}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789484449.9129333}
+{"service": "aml-compliance", "keyword": "", "earliest_count": 6, "latest_count": 6, "overlap": 7, "total_returned": 5, "result": "hit", "ts": 1789484498.210542}
+{"service": "fraud-scoring", "keyword": "ERROR", "result": "miss", "ts": 1789484503.2515583}
+{"service": "aml-compliance", "keyword": null, "earliest_count": 9, "latest_count": 9, "overlap": 11, "total_returned": 7, "result": "hit", "ts": 1789484542.0154576}
+{"service": "aml-compliance", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 9, "total_returned": 11, "result": "hit", "ts": 1789484601.1410825}
+{"service": "aml-compliance", "keyword": "ERROR", "result": "miss", "ts": 1789484612.7378955}
+{"service": "validation-enrichment", "keyword": "PAYMENT_VALIDATED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789484623.2655683}
+{"service": "routing-execution", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789484629.440283}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789484651.150695}
+{"service": "settlement", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789484683.3278897}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789484684.9452965}
+{"service": "routing-execution", "keyword": "PAYMENT_ROUTED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789484689.034635}
+{"service": "settlement", "keyword": "SETTLEMENT_COMPLETE", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789484691.0407817}
+{"service": "unknown", "keyword": "", "result": "miss", "ts": 1789484706.207759}
+{"service": "settlement", "keyword": "Exception", "result": "miss", "ts": 1789484738.4052396}
+{"service": "settlement", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789484740.0924058}
+{"service": "settlement", "keyword": "", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789484814.0808287}
+{"service": "settlement", "keyword": "Exception", "result": "miss", "ts": 1789484820.6786754}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789484825.1724107}
+{"service": "settlement", "keyword": "ERROR", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789484844.9706395}
+{"service": "settlement", "keyword": "Exception", "result": "miss", "ts": 1789484851.4823577}
+{"service": "settlement", "keyword": "HEALTH_CHECK_FAILED", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789484865.174025}
+{"service": "settlement", "keyword": "Failed", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789484882.791376}
+{"service": "gateway", "keyword": "HEALTH_CHECK_FAILED", "result": "miss", "ts": 1789484893.1632605}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 5, "latest_count": 5, "overlap": 5, "total_returned": 5, "result": "hit", "ts": 1789484930.9716384}
+{"service": "validation-enrichment", "keyword": "Exception", "result": "miss", "ts": 1789484940.5048776}
+{"service": "validation-enrichment", "keyword": "health", "result": "miss", "ts": 1789484944.287425}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789484956.7376163}
+{"service": "routing-execution", "keyword": null, "result": "miss", "ts": 1789484961.7938526}
+{"service": "validation-enrichment", "keyword": "Connection", "earliest_count": 1, "latest_count": 1, "overlap": 1, "total_returned": 1, "result": "hit", "ts": 1789485004.0277553}
+{"service": "validation-enrichment", "keyword": "", "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789485054.9282143}
+{"service": "validation-enrichment", "keyword": "ERROR", "result": "miss", "ts": 1789485058.5038924}
+{"service": "gateway", "keyword": "ERROR", "result": "miss", "ts": 1789485079.8011937}
+{"service": "validation-enrichment", "keyword": null, "earliest_count": 3, "latest_count": 3, "overlap": 3, "total_returned": 3, "result": "hit", "ts": 1789485096.6824265}
+{"service": "validation-enrichment", "keyword": "Exception", "result": "miss", "ts": 1789485104.3675432}
+{"service": "gateway", "keyword": "PAYMENT_SUBMITTED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789485118.023581}
+{"service": "validation-enrichment", "keyword": "timeout", "result": "miss", "ts": 1789485125.9105005}
+{"service": "gateway", "keyword": "Exception", "result": "miss", "ts": 1789485206.167875}
+{"service": "validation-enrichment", "keyword": "PAYMENT_VALIDATED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789485225.3725066}
+{"service": "settlement", "keyword": "Error", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789485237.967385}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789485256.3473954}
+{"service": "routing-execution", "keyword": null, "result": "miss", "ts": 1789485435.5449252}
+{"service": "routing-execution", "keyword": null, "result": "miss", "ts": 1789485517.053252}
+{"service": "unknown", "keyword": null, "result": "miss", "ts": 1789485528.2423084}
+{"service": "routing-execution", "keyword": "ERROR", "result": "miss", "ts": 1789485534.5228941}
+{"service": "fraud-scoring", "keyword": "Exception", "result": "miss", "ts": 1789485539.8448312}
+{"service": "gateway", "keyword": "ERROR", "result": "miss", "ts": 1789485548.1387825}
+{"service": "settlement", "keyword": "ClickHouse", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789485573.0174167}
+{"service": "routing-execution", "keyword": "PAYMENT_ROUTED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789485583.0267882}
+{"service": "validation-enrichment", "keyword": "PAYMENT_VALIDATED", "earliest_count": 10, "latest_count": 10, "overlap": 0, "total_returned": 20, "result": "hit", "ts": 1789485595.1481664}

@@ -22,6 +22,29 @@ it. Do not assume correctness from "it compiled" or "the endpoint
 responded." This is a standing practice for this project, not a one-off
 fix — apply it to every new evidence source going forward.
 
+## Standing Rule: Persist Full Reasoning Traces and Logits on Every LLM-Agent Run
+
+Added 2026-09-17 during the RCAEval benchmarking effort. Every run of an
+LLM-driven agent (GEAR-RCA itself, or any harness built to test it, e.g.
+`data-generation/rcaeval_bench/`) must persist, per round per case, not
+just the final answer:
+
+- the full `reasoning_content` field (the model's separate internal
+  reasoning channel — this is real and distinct from `content`; a past
+  bug in this exact project truncated `content` by under-budgeting
+  `max_tokens` because `reasoning_content` was consuming the token
+  budget first and unlogged)
+- `logprobs`/`top_logprobs` if the backing API actually supports them for
+  the model in use — verify support directly against a real request
+  before assuming either way, never guess
+- which tools were called that round and the final decision
+
+Store this in a structured per-case log (not raw unstructured text dumps)
+so it is usable for later debugging and analysis without re-running the
+benchmark. This does not require retroactively re-running already-
+completed benchmark runs, but any run going forward should capture it,
+and reports should note which runs have this data and which predate it.
+
 ## Startup Checklist (Required Before Any Work)
 
 **CRITICAL: Always run this first:**

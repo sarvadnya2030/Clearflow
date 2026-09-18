@@ -38,7 +38,7 @@ POST /api/v1/payments (ISO 20022 pacs.008)
                                                           │
   ┌───────────────────────────────────────────────────────▼──┐
   │  mcp-readonly-gateway :8087                              │
-  │  13 AI tools · code graph 1162 nodes · LLM RCA          │
+  │  13 AI tools · code graph 1294 nodes · LLM RCA          │
   └──────────────────────────────────────────────────────────┘
 ```
 
@@ -55,10 +55,41 @@ POST /api/v1/payments (ISO 20022 pacs.008)
 | **Compliance** | FATF, EU AML6D, OFAC SDN/PEP screening (0.85 fuzzy threshold), Basel III LCR, CTR/SAR auto-generation |
 | **Settlement** | Double-entry accounting (Debit = Credit assertion), `@Version` optimistic locking, imbalance exception circuit |
 | **Audit** | SHA-256 hash chain — each record includes previous record's hash; tamper-evident, court-admissible trail |
-| **AI Layer** | Spring AI MCP server with 13 tools: timeline reconstruction, LLM-powered root cause analysis, broker cascade tracing, code graph (1,162 nodes) |
+| **AI Layer** | Spring AI MCP server with 13 tools: timeline reconstruction, LLM-powered root cause analysis, broker cascade tracing, code graph (1,294 nodes) |
 | **Observability** | Prometheus + Grafana dashboards + Jaeger distributed tracing + ELK structured logs (634k+ events) + 18 Prometheus alerting rules |
 | **DevOps** | GitHub Actions CI (test → build → SonarQube → Docker) + CD (Helm deploy to staging/prod) + Kubernetes Helm charts with HPA |
 | **Performance** | k6 load test: ramp to 200 VUs, SLA: p99 < 500ms, error rate < 1%, accept rate > 95% |
+
+---
+
+## GEAR-RCA Benchmark Results
+
+The MCP layer's LLM root-cause agent (GEAR-RCA: graph-guided, memory-augmented, tool-calling) is evaluated on
+two benchmarks. Full methodology, ablation, and disclosed limitations are in `data-generation/paper/`.
+
+**Live-injected benchmark (this platform, 97 confirmed incidents from real fault injections):**
+
+| Condition | Literal AC@1 | Fair-credit AC@1 |
+|---|---|---|
+| Memory-enabled | 78.4% | 83.5% |
+| Memory-disabled | 66.0% | 74.2% |
+
+Memory's contribution (+12.4 / +9.3 points) is measured via a controlled ablation with everything else held
+fixed; the paired significance test (McNemar's, p=0.136) has not yet reached conventional significance at this
+sample size, disclosed rather than hidden.
+
+**External validation on RCAEval** (published third-party benchmark, all 6 RE2 fault types on TrainTicket,
+n=90): GEAR-RCA reaches **93.3% AC@1**, exceeding both published baselines (BARO, TraceRCA) on 5 of 6 fault
+types.
+
+| Fault | BARO | TraceRCA | GEAR-RCA |
+|---|---|---|---|
+| CPU | 47% | 64% | 80.0% |
+| DELAY | 47% | 85% | 93.3% |
+| MEM | 93% | 63% | 100% |
+| DISK | 100% | 64% | 86.7% |
+| SOCKET | 60% | 60% | 100% |
+| LOSS | 53% | 57% | 100% |
 
 ---
 

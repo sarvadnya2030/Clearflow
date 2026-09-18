@@ -1,0 +1,21 @@
+{
+  "description": "23-case diagnostic subset per IMPROVEMENT_PLAN.md Section 5. Reconstructed and verified 2026-09-17 against gear_rca_rcaeval_results_BASELINE_37of50.json and gear_rca_rcaeval_results.json directly (no saved file from the prior session was found).",
+  "flip_cases_baseline_vs_fixed": [
+    "re1ob_cartservice_cpu_2", "re1ob_cartservice_delay_1",
+    "re1ob_checkoutservice_delay_1", "re1ob_checkoutservice_delay_2",
+    "re1ob_checkoutservice_delay_4", "re1ob_checkoutservice_delay_5",
+    "re1ob_currencyservice_cpu_5", "re1ob_currencyservice_delay_2",
+    "re1ob_productcatalogservice_cpu_1", "re1ob_productcatalogservice_delay_1",
+    "re1ob_productcatalogservice_delay_3", "re1ob_productcatalogservice_delay_4"
+  ],
+  "original_misattribution_subset_new_only": [
+    "re1ob_cartservice_delay_3", "re1ob_cartservice_delay_4",
+    "re1ob_cartservice_delay_5", "re1ob_currencyservice_cpu_3",
+    "re1ob_currencyservice_delay_4", "re1ob_productcatalogservice_cpu_4"
+  ],
+  "regression_check_always_correct": [
+    "re1ob_adservice_cpu_1", "re1ob_adservice_cpu_2", "re1ob_adservice_cpu_3",
+    "re1ob_adservice_cpu_4", "re1ob_adservice_cpu_5"
+  ],
+  "total_unique_count": 23
+}

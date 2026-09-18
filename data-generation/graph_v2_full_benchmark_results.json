@@ -1,0 +1,20 @@
+[
+  {
+    "incident_id": "LIVE-cd1f76ee",
+    "fault_type": "DB_TIMEOUT",
+    "root_service": "settlement",
+    "pred": "settlement",
+    "hit": true,
+    "seconds": 136.7899341583252,
+    "final_text": "ROOT CAUSE: settlement. REASON: Health witness logged settlement DOWN and HEALTH_CHECK_FAILED, indicating settlement service failure."
+  },
+  {
+    "incident_id": "LIVE-158ce68e",
+    "fault_type": "KAFKA_CONSUMER_LAG",
+    "root_service": "routing-execution",
+    "pred": "routing-execution",
+    "hit": true,
+    "seconds": 185.88428044319153,
+    "final_text": "ROOT CAUSE: routing-execution. REASON: Health check failure at 21:17:15 caused the service to stop consuming Kafka, stalling the payment pipeline."
+  }
+]
